@@ -6,7 +6,7 @@
  *
  */
 
-gulp.task('start', 'Starts the  app. --livereload: enable livereload', ['inject'], function () {
+gulp.task('start', 'Starts the  app. --livereload: enable livereload', ['inject', 'vendor-lazy'], function () {
     var options = config.getBrowsersyncOptions();
     if (!args.livereload)
         options.files = []; // no files watched

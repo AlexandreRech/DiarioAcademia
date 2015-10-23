@@ -13,14 +13,14 @@
             name: 'app.aula',
             url: '/aula',
             redirect: '/aula/list',
-            templateUrl: '/src/common/templates/components/inner-view.html',
+            templateUrl: 'src/common/templates/components/inner-view.html',
             displayName: 'Aula',
             $$permissionId: "06"
         }, {
             name: 'app.aula.list',
             url: '/list',
             controller: 'aulaListCtrl as vm',
-            templateUrl: '/src/features/aula/views/aula-list.html',
+            templateUrl: 'src/features/aula/views/aula-list.html',
             resolve: helper.resolveFor('aulaListCtrl'),
             displayName: 'Lista de Aulas',
             $$permissionId: "07"
@@ -28,7 +28,7 @@
             name: 'app.aula.create',
             url: '/create',
             controller: 'aulaCreateCtrl as vm',
-            templateUrl: '/src/features/aula/views/aula-create.html',
+            templateUrl: 'src/features/aula/views/aula-create.html',
             resolve: helper.resolveFor('aulaCreateCtrl'),
             displayName: 'Criação de Aulas',
             $$permissionId: "08"

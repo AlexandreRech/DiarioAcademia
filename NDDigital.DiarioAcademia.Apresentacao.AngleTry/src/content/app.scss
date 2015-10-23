@@ -1,0 +1,204 @@
+/*!
+ * 
+ * Angle - Bootstrap Admin App + AngularJS
+ * 
+ * Version: 3.0.0
+ * Author: @themicon_co
+ * Website: http://themicon.co
+ * License: https://wrapbootstrap.com/help/licenses
+ * 
+ */
+
+/* [Table of contents]
+
+1. Bootstrap reset
+  1.1 bootstrap
+  1.2 bootstrap-reset
+
+2. Typography
+  2.1 typo
+
+3. Layout
+  3.1 layout / .wrapper .content-wrapper
+  3.2 top-navbar / .top-navbar
+  3.3 sidebar / .sidebar
+  3.4 offsidebar / .offsidebar
+  3.4 preloader / .preloader
+
+4. Components
+  4.1  button-extra
+  4.2  placeholder / .box-placeholder
+  4.3  panels
+  4.4  progress-extra
+  4.5  radial-bar / .radial-bar
+  4.6  user-block / .user-block
+  4.7  circles / .circle
+  4.8  timeline / .timeline
+  4.9  dropdown-extra
+  4.10 row-extra / .row-table .row-flush
+  4.11 half-float / .half-float
+  4.12 masonry-grid / .row-masonry
+  4.13 widget / .widget
+  4.14 typeahead / .typeahead-ctrl
+  4.15 animate
+  4.16 loading-bar
+  4.17 table-grid
+  4.18 todo / .todo
+  4.19 ngwig
+  4.20 ngDialog
+  4.21 nestable
+  4.22 carousel
+  4.23 masonry-grid-deck
+
+5. Charts
+  5.1 chart-flot / .flot-chart
+
+6. Form elements
+  6.1 form-elements
+  6.2 form-imgcrop
+  6.3 form-validation
+  6.4 form-wizard
+  6.5 form-tags
+  6.6 uiselect
+  6.7 code-editor
+
+7. Tables
+  7.1 datatable
+  7.2 table-extras
+  7.3 table-ngtable
+  7.4 table-ng-grid
+  7.5 angular grid
+
+8. Plugins
+  8.1 plugins
+  8.2 slim-scroll / .slimScrollBar
+  8.3 datepicker / .bootstrap-datetimepicker-widget
+  8.4 alerts / .alerts
+  8.5 notifiy / .notifiy
+  8.6 calendar / .fc-*
+  8.7 spinner / .whirl
+  8.8 gmap / .gmap
+  8.9 vector-map / vector-map
+  8.10 portlets / .portlet
+
+9. Utilities 
+  9.1 utils
+
+10. Print CSS
+  10.1 print
+
+11. Settings
+  11.1 settings
+
+12. Documentation
+  12.1 docs
+ */
+
+// Override bootstrap variables
+@import "../content/base/variables";
+
+// Bootstrap
+@import "../content/libs/bootstrap/bootstrap/mixins";
+
+// Global definition of media queries
+@import "../content/base/media-queries";
+
+// Utilities 
+@import "../content/base/utils-definitions";
+
+// Bootstrap reset
+@import "../content/libs/bootstrap-reset";
+
+// Typography
+@import "../content/base/typo";
+
+// Layout
+@import "../content/layout/layout";
+@import "../content/layout/layout-extra";
+@import "../content/layout/layout-animation";
+@import "../content/layout/top-navbar";
+@import "../content/layout/sidebar";
+@import "../content/layout/offsidebar";
+@import "../content/layout/manager";
+@import "../content/layout/layout-app";
+
+
+
+
+// Components
+@import "../content/component/preloader";
+@import "../content/component/breadcrumbs";
+@import "../content/component/loading-bar";
+@import "../content/component/animate";
+@import "../content/component/button-extra";
+@import "../content/component/placeholder";
+@import "../content/component/panels";
+@import "../content/component/panel";
+@import "../content/component/progress-extra";
+@import "../content/component/radial-bar";
+@import "../content/component/user-block";
+@import "../content/component/circles";
+@import "../content/component/timeline";
+@import "../content/component/dropdown-extra";
+@import "../content/component/row-extra";
+@import "../content/component/half-float";
+@import "../content/component/masonry-grid";
+@import "../content/component/widget";
+@import "../content/component/typeahead";
+@import "../content/component/table-grid";
+@import "../content/component/todo";
+@import "../content/component/ngwig";
+@import "../content/component/ngdialog";
+@import "../content/component/nestable";
+@import "../content/component/carousel";
+@import "../content/component/masonry-grid-deck";
+@import "../content/component/language-button";
+@import "../content/component/switcher";
+@import "../content/component/jumbotron";
+@import "../content/component/tables/table";
+@import "../content/theme/manager";
+
+
+// Charts
+@import "../content/component/chart-flot";
+
+// Form elements
+@import "../content/component/form/form-elements";
+@import "../content/component/form/form-imgcrop";
+@import "../content/component/form/form-validation";
+@import "../content/component/form/form-tags";
+@import "../content/component/form/form-wizard";
+@import "../content/component/form/uiselect";
+@import "../content/component/form/code-editor";
+
+// Tables
+@import "../content/component/tables/datatable";
+@import "../content/component/tables/table-extras";
+@import "../content/component/tables/table-ngtable";
+@import "../content/component/tables/table-ng-grid";
+@import "../content/component/tables/table-uigrid";
+@import "../content/component/tables/table-angulargrid";
+
+// Plugins
+@import "../content/libs/plugins";
+@import "../content/libs/slim-scroll";
+@import "../content/libs/datepicker";
+@import "../content/libs/alerts";
+@import "../content/libs/notify";
+@import "../content/libs/calendar";
+@import "../content/libs/spinner";
+@import "../content/libs/gmap";
+@import "../content/libs/vector-map";
+@import "../content/libs/portlets";
+
+// Mailbox
+@import "../content/component/mailbox";
+
+// Utilities 
+@import "../content/base/utils";
+
+// Print CSS
+@import "../content/layout/layout";
+
+// Settings
+@import "../content/base/settings";

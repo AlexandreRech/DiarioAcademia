@@ -1,0 +1,53 @@
+﻿
+
+.container-app {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.inner-view {
+    padding: 0 !important;
+}
+
+.disabled {
+    z-index: 1000;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.clear-padding-left {
+    padding-left: 0 !important;
+}
+
+.clear-margin {
+    margin: 0;
+}
+
+.space-bottom {
+    padding-bottom: 3% !important;
+}
+
+.space-left {
+    margin-left: 1% !important;
+}
+
+.padding-left {
+    padding-left: 20px !important;
+}
+
+.align-middle {
+    position: relative;
+    bottom: 5px;
+}
+
+.align-center {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #page-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

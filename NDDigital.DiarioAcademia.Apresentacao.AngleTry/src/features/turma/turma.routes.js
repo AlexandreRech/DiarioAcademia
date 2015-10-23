@@ -13,7 +13,7 @@
             name: 'app.turma',
             url: '/turma',
             redirect: '/turma/list',
-            templateUrl: '/src/common/templates/components/inner-view.html',
+            templateUrl: 'src/common/templates/components/inner-view.html',
             displayName: "Turma",
             $$permissionId: "23"
         }, {
@@ -21,7 +21,7 @@
             url: '/list',
             controller: 'turmaListCtrl as vm',
             resolve: helper.resolveFor('turmaListCtrl'),
-            templateUrl: '/src/features/turma/views/turma-list.html',
+            templateUrl: 'src/features/turma/views/turma-list.html',
             displayName: "Lista de Turmas",
             $$permissionId: "24"
         }, {
@@ -29,7 +29,7 @@
             url: '/details/:turmaId',
             controller: 'turmaDetailsCtrl as vm',
             resolve: helper.resolveFor('turmaDetailsCtrl'),
-            templateUrl: '/src/features/turma/views/turma-details.html',
+            templateUrl: 'src/features/turma/views/turma-details.html',
             displayName: "Detalhes da Turma",
             parents: ["turma.list"],
             $$permissionId: "25"
@@ -39,7 +39,7 @@
             url: '/create',
             controller: 'turmaCreateCtrl as vm',
             resolve: helper.resolveFor('turmaCreateCtrl'),
-            templateUrl: '/src/features/turma/views/turma-create.html',
+            templateUrl: 'src/features/turma/views/turma-create.html',
             displayName: "Criação da Turma",
             $$permissionId: "26"
         }

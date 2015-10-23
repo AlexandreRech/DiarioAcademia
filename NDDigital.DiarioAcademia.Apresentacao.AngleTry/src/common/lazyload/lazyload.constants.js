@@ -10,7 +10,7 @@
             scripts: {
                 'modernizr': [root + 'vendor/modernizr/modernizr.js'],
                 'icons': [root + 'vendor/fontawesome/css/font-awesome.min.css',
-                    root + 'vendor/simple-line-icons/css/simple-line-icons.css']
+                          root + 'vendor/simple-line-icons/css/simple-line-icons.css']
             },
 
             // Angular based script (use the right module name)

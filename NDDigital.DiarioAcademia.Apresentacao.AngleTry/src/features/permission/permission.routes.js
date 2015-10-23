@@ -13,7 +13,7 @@
         routes.push({
             name: 'app.permission',
             url: '/permission',
-            templateUrl: '/src/features/permission/manager-permission.html',
+            templateUrl: 'src/features/permission/manager-permission.html',
             resolve: helper.resolveFor('managerPermissionController'),
             controller: "managerPermissionController as vm",
             displayName: "Permissões",

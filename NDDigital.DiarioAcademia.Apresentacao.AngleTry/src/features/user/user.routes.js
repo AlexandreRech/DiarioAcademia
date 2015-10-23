@@ -15,14 +15,14 @@
             url: '/user',
             'abstract': true,
             redirect: '/user/list',
-            templateUrl: '/src/common/templates/components/inner-view.html',
+            templateUrl: 'src/common/templates/components/inner-view.html',
             controller: "shellController as vm",
             displayName: "Usuario"
         },
          {
              name: 'app.user.list',
              url: '/list',
-             templateUrl: '/src/features/user/views/manager-user-list.html',
+             templateUrl: 'src/features/user/views/manager-user-list.html',
              resolve: helper.resolveFor('managerUserListController'),
              controller: "managerUserListController as vm",
              displayName: "Lista de Usuario",
@@ -31,7 +31,7 @@
         {
             name: 'app.user.edit',
             url: '/edit/:userId',
-            templateUrl: '/src/features/user/views/manager-user-edit.html',
+            templateUrl: 'src/features/user/views/manager-user-edit.html',
             resolve: helper.resolveFor('managerUserEditController'),
             controller: "managerUserEditController as vm",
             displayName: "Edição de Usuário",
@@ -40,7 +40,7 @@
             name: 'app.user.groupEdit',
             url: '/edit/group/:userId',
             resolve: helper.resolveFor('managerUserEditGroupController'),
-            templateUrl: '/src/features/user/views/manager-user-edit-group.html',
+            templateUrl: 'src/features/user/views/manager-user-edit-group.html',
             controller: "managerUserEditGroupController as vm",
             displayName: "Edição de Grupos de Usuário",
             $$permissionId: "16"

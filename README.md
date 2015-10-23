@@ -1,3 +1,4 @@
+
 # DiarioAcademia
 
 Para executar este projeto em seu potencial é necessário ter um servidor Node rodando na máquina.
@@ -27,7 +28,7 @@ O download do projeto pode ser feito de 3 formas:
 
 1) Através do [download do zip](https://github.com/AlexandreRech/DiarioAcademia/archive/master.zip)
 
-2) Através do github para desktop:
+2) Através do github para desktop *(recomendado)*:
 
  - Baixe do [GitHub for desktop](https://desktop.github.com/)
  - Após instalar, clique em [Clone in Desktop](github-windows://openRepo/https://github.com/AlexandreRech/DiarioAcademia)
@@ -52,7 +53,7 @@ O download do projeto pode ser feito de 3 formas:
 
 
 ##### Detalhes
-* Inicie o prompt com permissões de administrador e apontando para a [pasta do projeto web](https://github.com/AlexandreRech/DiarioAcademia/tree/master/NDDigital.DiarioAcademia.Apresentacao.WebApp) (onde está o `gulpfile.js`)
+* Inicie o prompt com permissões de administrador e apontando para a pasta do projeto web (onde está o `gulpfile.js`)
 * Instale a versão mais atual do npm  `> npm install npm -g`
 * Instale gulp e bower globalmente inserindo no prompt `> npm install gulp bower -g`
  * Será instalado na pasta de sistema `AppData` no caso do Windows
@@ -64,10 +65,16 @@ O download do projeto pode ser feito de 3 formas:
  * Se tudo estiver ok, o prompt irá listar todas as tasks do gulp
 
 #### Executando
+Basicamente deve estar executando a API e um dos projetos web à escolha:
+
 * Web Api
  * No Visual Studio, set o projeto `Distributed Services\Webapi`  `as StartUp Project` e o execute
-* Web App
- * Com o prompt apontado para a pasta raíz do projeto web, insira `> gulp start`
+* Web App ([layout](https://raw.githubusercontent.com/AlexandreRech/DiarioAcademia/master/media/webapp.png))
+ * Projeto com arquitetura separados por tipos (*controllers, services, routes, etc.*)
+ * Com o prompt apontado para a [pasta raíz](https://github.com/AlexandreRech/DiarioAcademia/tree/master/NDDigital.DiarioAcademia.Apresentacao.WebApp) do projeto web, insira `> gulp start`
+* AngleTry ([layout](https://raw.githubusercontent.com/AlexandreRech/DiarioAcademia/master/media/angletry.PNG))
+ * Projeto com arquitetura separados por features (*aluno, turma, login, etc.*)
+ * Com o prompt apontado para a [pasta raíz](https://github.com/AlexandreRech/DiarioAcademia/tree/master/NDDigital.DiarioAcademia.Apresentacao.AngleTry) do projeto web, insira `> gulp start`
  
 A aplicação já deve estar executando em  [http://localhost:3000](http://localhost:3000). Lembrando que para tudo funcionar corretamente, o projeto [Webapi](https://github.com/AlexandreRech/DiarioAcademia/tree/master/NDDigital.DiarioAcademia.WebApi) deve estar executando no IIS.
 

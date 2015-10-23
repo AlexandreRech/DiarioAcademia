@@ -15,7 +15,7 @@
             name: 'login',
             url: '/login',
             controller: 'loginController as vm',
-            templateUrl: '/src/features/authentication/views/login.html',
+            templateUrl: 'src/features/authentication/views/login.html',
             allowAnnonymous: true,
             resolve: helper.resolveFor('loginController'),
             displayName: 'Login',
@@ -25,7 +25,7 @@
             url: '/signup',
             controller: 'signupController as vm',
             resolve: helper.resolveFor('signupController'),
-            templateUrl: '/src/features/authentication/views/signup.html',
+            templateUrl: 'src/features/authentication/views/signup.html',
             allowAnnonymous: true,
             displayName: "Registre-se",
             $$permissionId: "10"

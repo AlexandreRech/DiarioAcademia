@@ -235,6 +235,10 @@ fieldset {
     }
 }
 
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent !important;
+}
+
 // DROPDOWN
 .dropdown-menu {
     border-radius: $border-radius-small;
@@ -320,7 +324,7 @@ $fa-var-folder-open: "\f07c";
 
 .glyphicon {
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+    font: normal normal normal 14px/1 'glyphicons halflings' FontAwesome; // shortening font declaration
     font-size: inherit; // can't have font-size inherit on line above, so need to override
     text-rendering: auto; // optimizelegibility throws things off #1094
     -webkit-font-smoothing: antialiased;

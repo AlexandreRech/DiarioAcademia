@@ -7,7 +7,7 @@
  */
 
 
-gulp.task('build', 'Build of application optimized', gulpsync.sync(['clean-dist', 'inject',
+gulp.task('build', 'Build of application optimized', gulpsync.sync(['clean-dist', "vendor-lazy", 'inject',
     ['build-images', 'build-lazy-css', 'build-lazy-js', 'build-fonts', 'build-json', 'build-html']]), function () {
 
     var builder = loader.useref.assets({ searchPath: "./" });

@@ -74,6 +74,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura.Security", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngleTry", "NDDigital.DiarioAcademia.Apresentacao.AngleTry\AngleTry.csproj", "{94DE22C2-D5C9-4CB1-B122-75F0F5D2DF74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiFull", "NDDigital.DiarioAcademia.WebApiFull\WebApiFull.csproj", "{3CD595DA-E4E6-4471-9D86-430B068B619A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,10 @@ Global
 		{94DE22C2-D5C9-4CB1-B122-75F0F5D2DF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94DE22C2-D5C9-4CB1-B122-75F0F5D2DF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94DE22C2-D5C9-4CB1-B122-75F0F5D2DF74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD595DA-E4E6-4471-9D86-430B068B619A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD595DA-E4E6-4471-9D86-430B068B619A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD595DA-E4E6-4471-9D86-430B068B619A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD595DA-E4E6-4471-9D86-430B068B619A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,5 +192,6 @@ Global
 		{A797581C-2BA5-4D68-A3D3-CD68818F9B84} = {5892B3AB-0E7B-4983-83BB-355146B9D5DE}
 		{81E9C407-A1F1-47C5-8DC4-705F7FF5DC17} = {5892B3AB-0E7B-4983-83BB-355146B9D5DE}
 		{94DE22C2-D5C9-4CB1-B122-75F0F5D2DF74} = {7F72C8E0-C109-45DF-8C25-1912DAC6C3BF}
+		{3CD595DA-E4E6-4471-9D86-430B068B619A} = {FC83C23F-468A-4718-A569-6B7B968FD10B}
 	EndGlobalSection
 EndGlobal

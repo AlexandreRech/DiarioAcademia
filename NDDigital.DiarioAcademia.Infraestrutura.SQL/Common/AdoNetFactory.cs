@@ -75,12 +75,8 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.SQL.Common
             set { _command = value; }
         }
 
-        internal void CriaCommand()
-        {
-            CriaCommand(false);
-        }
-
-        internal void CriaCommand(bool existingTransaction)
+     
+        internal void CriaCommand(bool existingTransaction=false)
         {
             if (existingTransaction)
             {

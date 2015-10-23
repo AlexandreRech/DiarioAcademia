@@ -23,10 +23,13 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
 
             Uow = new ADOUnitOfWork(Factory);
 
+            new DatabaseTestInitializer(Uow, Factory);
+
             AlunoRepository = new AlunoRepositorySql(Factory);
             TurmaRepository = new TurmaRepositorySql(Factory);
             AulaRepository = new AulaRepositorySql(Factory);
             PresencaRepository = new PresencaRepositorySql(Factory);
+
         }
     }
 }

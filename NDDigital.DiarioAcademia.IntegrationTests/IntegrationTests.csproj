@@ -112,32 +112,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ADO\AlunoADOTest.cs" />
-    <Compile Include="ADO\AulaADOTest.cs" />
-    <Compile Include="ADO\BaseADOTest.cs" />
-    <Compile Include="ADO\PresencaADOTest.cs" />
-    <Compile Include="ADO\TurmaADOTest.cs" />
-    <Compile Include="ADO\RepositoryBaseADOTests.cs" />
-    <Compile Include="Base\BaseAuthTest.cs" />
     <Compile Include="Base\BaseTest.cs" />
-    <Compile Include="Base\BaseEntityFrameworkTest.cs" />
     <Compile Include="Common\DatabaseAuthFixture.cs" />
-    <Compile Include="EF\BaseEFTest.cs" />
-    <Compile Include="Security\BaseSecurityTest.cs" />
-    <Compile Include="Base\DatabaseTestInitializer.cs" />
     <Compile Include="Base\ObjectBuilder.cs" />
     <Compile Include="Common\DatabaseBootstrapper.cs" />
     <Compile Include="Common\DatabaseEntityFrameworkFixture.cs" />
-    <Compile Include="EF\AlunoEFTest.cs" />
-    <Compile Include="EF\AulaEFTest.cs" />
-    <Compile Include="EF\TurmaEFTest.cs" />
-    <Compile Include="IoC\IoCNinjectEntityFrameworkTest.cs" />
-    <Compile Include="IoC\IoCNinjectSqlTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\AuthenticationTest.cs" />
-    <Compile Include="Security\GroupRepositoryTest.cs" />
-    <Compile Include="Security\PermissionRepositoryTest.cs" />
-    <Compile Include="Security\UserRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DiarioAcademia%28Dados%29.sql" />

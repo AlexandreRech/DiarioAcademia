@@ -41,7 +41,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.SQL.Repositories
         {
             try
             {
-                Insert(SqlInsert, Take(turma));
+                turma.Id = Insert(SqlInsert, Take(turma));
             }
             catch (Exception te)
             {

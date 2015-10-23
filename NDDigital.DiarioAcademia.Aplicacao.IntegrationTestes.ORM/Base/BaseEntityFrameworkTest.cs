@@ -4,6 +4,7 @@ using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.Infraestrutura.Orm.Common;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories;
 using NDDigital.DiarioAcademia.IntegrationTests.Common;
+using System.Data.Entity;
 
 namespace NDDigital.DiarioAcademia.IntegrationTests.Base
 {
@@ -34,6 +35,9 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
             var context = Factory.Get();
 
             Uow = new EntityFrameworkUnitOfWork(Factory);
+
+            Database.SetInitializer(new DatabaseTestInitializer());
+
         }
     }
 }

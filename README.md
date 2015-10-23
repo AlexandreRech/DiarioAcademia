@@ -9,7 +9,7 @@ Todas as dependencias podem ser opcionalmente instaladas através do [Chocolatey
 #####NodeJS
 * Obtenha o NodeJS pelo:
  * [Site oficial](https://nodejs.org/), ou use
- * `choco install nodejs`
+ * `choco install nodejs.install`
  
 #####Python
 * Instale o Python por:

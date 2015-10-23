@@ -3,15 +3,15 @@
     "use strict";
     //using
 
-    turmaListCtrl.$inject = ["turmaService", "$state"];
+    turmaListController.$inject = ["turmaService", "$state"];
 
     //namespace
     angular
         .module("app.turma")
-        .controller("turmaListCtrl", turmaListCtrl);
+        .controller("turmaListController", turmaListController);
 
     //class
-    function turmaListCtrl(turmaService, $state) {
+    function turmaListController(turmaService, $state) {
         var vm = this;
         vm.title = "Lista das Turmas";
         vm.classe = "selecionado";

@@ -19,17 +19,17 @@
         }, {
             name: 'app.aula.list',
             url: '/list',
-            controller: 'aulaListCtrl as vm',
+            controller: 'aulaListController as vm',
             templateUrl: 'src/features/aula/views/aula-list.html',
-            resolve: helper.resolveFor('aulaListCtrl'),
+            resolve: helper.resolveFor('aulaListController'),
             displayName: 'Lista de Aulas',
             $$permissionId: "07"
         }, {
             name: 'app.aula.create',
             url: '/create',
-            controller: 'aulaCreateCtrl as vm',
+            controller: 'aulaCreateController as vm',
             templateUrl: 'src/features/aula/views/aula-create.html',
-            resolve: helper.resolveFor('aulaCreateCtrl'),
+            resolve: helper.resolveFor('aulaCreateController'),
             displayName: 'Criação de Aulas',
             $$permissionId: "08"
         });

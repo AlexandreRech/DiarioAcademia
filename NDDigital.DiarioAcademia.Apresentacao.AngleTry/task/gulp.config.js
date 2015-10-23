@@ -53,14 +53,14 @@ module.exports = function () {
             css: {
                 'static': [paths.app + "content/**/**/*.css",
                    paths.app + "content/css/**/app.css",
-                   "!" + paths.app + "content/theme/theme*.css",
+                   "!" + paths.app + "content/css/theme/theme*.css",
                    "!" + paths.app + "content/**/**/bootstrap*.css"
                 ],
 
                 lazy: {
                     theme: {
-                        src: [paths.app + "content/theme/theme*.css"],
-                        dist: paths.dist + "src/content/theme/"
+                        src: [paths.app + "content/css/theme/theme*.css"],
+                        dist: paths.dist + "src/content/css/theme/"
                     },
                     vendor: {
                         src: [paths.app + "vendor/**/**/*.css"],
@@ -71,7 +71,8 @@ module.exports = function () {
             sass: {
                 all: paths.app + "content/**/**/**/*.scss",
                 bootstrap: paths.app + "content/libs/bootstrap/bootstrap.scss",
-                angle: paths.app + "content/app.scss"
+                angle: paths.app + "content/app.scss",
+                themes: paths.app + "content/**/theme*.scss"
             },
 
             json: [paths.app + '**/**/*.json'],
@@ -111,7 +112,8 @@ module.exports = function () {
             dist: {
                 all: "./dist",
                 css: paths.app + "content/css/**/**/*.css",
-            }
+            },
+            vendor: [paths.app + "vendor/*.*"]
 
         },
 

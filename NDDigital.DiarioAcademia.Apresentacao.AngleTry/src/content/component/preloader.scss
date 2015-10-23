@@ -5,6 +5,7 @@
 $preloader-bg:  $brand-info;
 $preloader-wd:  400px;
 $preloader-hg:  31px;
+
 /*@noflip*/
 .preloader {
   position: fixed;
@@ -30,7 +31,7 @@ $preloader-hg:  31px;
   height: $preloader-hg;
   margin: auto;
   overflow: auto;
-  background-image: url(/src/images/preloader/preloader.empty.png);
+  background-image: url(../src/images/preloader/preloader.empty.png), url(/src/images/preloader/preloader.empty.png);
   background-size: $preloader-wd $preloader-hg; 
 }
 /*@noflip*/
@@ -40,7 +41,7 @@ $preloader-hg:  31px;
   left: 0;
   bottom: 0;
   min-width: 10px;
-  background-image: url(/src/images/preloader/preloader.full.png);
+  background-image: url(../src/images/preloader/preloader.full.png), url(/src/images/preloader/preloader.full.png);
   background-size: $preloader-wd $preloader-hg; 
 }
 

@@ -32,5 +32,8 @@
         "require-dir": "^0.3.0",
         "wiredep": "^2.2.2",
         "yargs": "^3.29.0"
+    },
+    "scripts": { 
+        "postinstall": "npm rebuild node-sass"
     }
 }

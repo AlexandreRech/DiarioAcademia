@@ -20,7 +20,7 @@
                 icon: "@",
                 security:"@"
             },
-            templateUrl: '/src/common/ndd-toolbar/ndd-toolbar-option.html'
+            templateUrl: 'src/common/ndd-toolbar/ndd-toolbar-option.html'
         };
 
         function link(scope, element, attrs) {

@@ -19,7 +19,7 @@
                 callback: "=",
                 info: "@"
             },
-            templateUrl: '/src/common/ndd-modal/ndd-modal.html'
+            templateUrl: 'src/common/ndd-modal/ndd-modal.html'
         };
 
         function link(scope, element, attrs) {}

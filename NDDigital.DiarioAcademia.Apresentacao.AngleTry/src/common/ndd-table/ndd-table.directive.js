@@ -24,7 +24,7 @@
                 securityEdit: "@",
                 securityRemove: "@"
             },
-            templateUrl: '/src/common/ndd-table/ndd-table.html'
+            templateUrl: 'src/common/ndd-table/ndd-table.html'
         }
 
         function link(scope, element, attrs) {

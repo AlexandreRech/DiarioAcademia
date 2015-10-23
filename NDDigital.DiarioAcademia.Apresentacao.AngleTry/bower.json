@@ -11,8 +11,6 @@
     "theme",
     "dashboard"
   ],
-  "license": "http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses",
-  "homepage": "http://themicon.co",
   "private": true,
   "ignore": [
     "**/.*"

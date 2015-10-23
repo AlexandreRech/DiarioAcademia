@@ -1,0 +1,19 @@
+.profile-img-card {
+  border-radius: 200px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 10px;
+}
+.form-signin input {
+  margin: 2% 0 1% 0;
+}
+.form-signin button {
+  width: 50%;
+  margin: 0 auto;
+}
+.form-signin .btn {
+  margin-top: 5%;
+}
+.login {
+  margin-top: 3%;
+}

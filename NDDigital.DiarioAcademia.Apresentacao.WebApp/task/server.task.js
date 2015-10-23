@@ -11,6 +11,7 @@ gulp.task('start', 'Start dev app.--livereload: use livereload', ['inject'], fun
     if (!yargs.livereload)
         options.files = [];  // break livereload - no watched files
     browserSync.init(options);
+    gulp.watch([config.app.less.all], ['compile-less']);
 });
 
 gulp.task('start-app', 'Start publish version of app optimized', ['build-optimized'], function () {

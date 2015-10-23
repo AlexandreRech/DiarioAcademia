@@ -23,7 +23,7 @@
           horizontal: false,
           isFloat: false,
           asideHover: false,
-          theme: "/src/content/theme/theme-a.css"
+          theme: "src/content/css/theme/theme-a.css"
         },
         useFullLayout: false,
         hiddenFooter: false,

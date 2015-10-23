@@ -38,9 +38,15 @@
 
             html: app + "/**/**/*.html",
 
-            css: ["./content/**/**/*.css", "!./content/**/**/*.min.css"],
+            less: {
+                all: ["./content/**/**/*.less"],
+                dist: "./content/css/"
+            },
+
+            css: ["./content/css/**/**/*.css"],
 
             images: [app + '/**/**/*.png', app + '/**/**/*.gif', app + '/**/**/*.jpg']
+
         },
 
         templatecache: {
@@ -97,7 +103,7 @@
             //watcher for restart
             files: [
                 app + '/**/*.*',
-                './content/**/*.css',
+                './content/css/**/*.css',
                 './*.html',
             ],
             ghostMode: {

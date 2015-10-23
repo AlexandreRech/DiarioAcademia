@@ -1,15 +1,15 @@
 ﻿(function (angular) {
     'use strict';
     //using
-    alunoListCtrl.$inject = ["alunoService", "$state"];
+    alunoListController.$inject = ["alunoService", "$state"];
 
     //namespace
     angular
         .module("app.aluno")
-        .controller("alunoListCtrl", alunoListCtrl);
+        .controller("alunoListController", alunoListController);
 
     //class
-    function alunoListCtrl(alunoService, $state) {
+    function alunoListController(alunoService, $state) {
         var vm = this;
         vm.title = "Lista de Alunos";
         vm.classe = "selecionado";

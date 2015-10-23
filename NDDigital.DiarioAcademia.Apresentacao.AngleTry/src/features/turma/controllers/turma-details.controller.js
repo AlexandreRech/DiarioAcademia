@@ -1,15 +1,15 @@
 ﻿(function () {
     "use strict";
     //using
-    turmaDetailsCtrl.$inject = ["turmaService", "$stateParams", "$state"];
+    turmaDetailsController.$inject = ["turmaService", "$stateParams", "$state"];
 
     //namespace
     angular
         .module("app.turma")
-        .controller("turmaDetailsCtrl", turmaDetailsCtrl);
+        .controller("turmaDetailsController", turmaDetailsController);
 
     //class
-    function turmaDetailsCtrl(turmaService, params, $state) {
+    function turmaDetailsController(turmaService, params, $state) {
         var vm = this;
         vm.title = "Atualização de Turma";
         vm.turma = {};

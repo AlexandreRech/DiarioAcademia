@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var root = '../src/';
+    var root = 'src/';
 
     angular
         .module('app.lazyload')
@@ -15,21 +15,22 @@
 
             // Angular based script (use the right module name)
             modules: [
+               // Authentication
                { name: 'loginController', files: [root + 'features/authentication/controllers/login.controller.js'] },
                { name: 'signupController', files: [root + 'features/authentication/controllers/signup.controller.js'] },
                //Class
-               { name: 'turmaListCtrl', files: [root + 'features/turma/controllers/turma-list.controller.js'] },
-               { name: 'turmaDetailsCtrl', files: [root + 'features/turma/controllers/turma-details.controller.js'] },
-               { name: 'turmaCreateCtrl', files: [root + 'features/turma/controllers/turma-create.controller.js'] },
+               { name: 'turmaListController', files: [root + 'features/turma/controllers/turma-list.controller.js'] },
+               { name: 'turmaDetailsController', files: [root + 'features/turma/controllers/turma-details.controller.js'] },
+               { name: 'turmaCreateController', files: [root + 'features/turma/controllers/turma-create.controller.js'] },
                //Student
-               { name: 'alunoListCtrl', files: [root + 'features/aluno/controllers/aluno-list.controller.js'] },
-               { name: 'alunoDetailsCtrl', files: [root + 'features/aluno/controllers/aluno-details.controller.js'] },
-               { name: 'alunoCreateCtrl', files: [root + 'features/aluno/controllers/aluno-create.controller.js'] },
+               { name: 'alunoListController', files: [root + 'features/aluno/controllers/aluno-list.controller.js'] },
+               { name: 'alunoDetailsController', files: [root + 'features/aluno/controllers/aluno-details.controller.js'] },
+               { name: 'alunoCreateController', files: [root + 'features/aluno/controllers/aluno-create.controller.js'] },
                //Lesson
-               { name: 'aulaListCtrl', files: [root + 'features/aula/controllers/aula-list.controller.js'] },
-               { name: 'aulaCreateCtrl', files: [root + 'features/aula/controllers/aula-create.controller.js'] },
+               { name: 'aulaListController', files: [root + 'features/aula/controllers/aula-list.controller.js'] },
+               { name: 'aulaCreateController', files: [root + 'features/aula/controllers/aula-create.controller.js'] },
                //Class Register
-               { name: 'chamadaCtrl', files: [root + 'features/chamada/chamada.controller.js'] },
+               { name: 'chamadaController', files: [root + 'features/chamada/chamada.controller.js'] },
                //User
                { name: 'managerUserListController', files: [root + 'features/user/controllers/manager-user-list.controller.js'] },
                { name: 'managerUserEditController', files: [root + 'features/user/controllers/manager-user-edit.controller.js'] },

@@ -19,16 +19,16 @@
         }, {
             name: 'app.turma.list',
             url: '/list',
-            controller: 'turmaListCtrl as vm',
-            resolve: helper.resolveFor('turmaListCtrl'),
+            controller: 'turmaListController as vm',
+            resolve: helper.resolveFor('turmaListController'),
             templateUrl: 'src/features/turma/views/turma-list.html',
             displayName: "Lista de Turmas",
             $$permissionId: "24"
         }, {
             name: 'app.turma.details',
             url: '/details/:turmaId',
-            controller: 'turmaDetailsCtrl as vm',
-            resolve: helper.resolveFor('turmaDetailsCtrl'),
+            controller: 'turmaDetailsController as vm',
+            resolve: helper.resolveFor('turmaDetailsController'),
             templateUrl: 'src/features/turma/views/turma-details.html',
             displayName: "Detalhes da Turma",
             parents: ["turma.list"],
@@ -37,8 +37,8 @@
         }, {
             name: 'app.turma.create',
             url: '/create',
-            controller: 'turmaCreateCtrl as vm',
-            resolve: helper.resolveFor('turmaCreateCtrl'),
+            controller: 'turmaCreateController as vm',
+            resolve: helper.resolveFor('turmaCreateController'),
             templateUrl: 'src/features/turma/views/turma-create.html',
             displayName: "Criação da Turma",
             $$permissionId: "26"

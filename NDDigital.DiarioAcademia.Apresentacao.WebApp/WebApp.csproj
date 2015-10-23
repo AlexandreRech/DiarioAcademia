@@ -416,8 +416,9 @@
     <Content Include="app\views\turma\turma-create.html" />
     <Content Include="app\views\turma\turma-details.html" />
     <Content Include="app\views\turma\turma-list.html" />
-    <Content Include="content\base\sb-admin.css" />
-    <Content Include="content\base\switcher.css" />
+    <None Include="content\base\sb-admin.less" />
+    <None Include="content\component\switcher.less" />
+    <Content Include="task\build.task.js" />
     <Content Include="task\server.task.js" />
     <Content Include="task\clean.task.js" />
     <Content Include="task\code.task.js" />
@@ -433,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\filters\" />
+    <Folder Include="content\css\" />
     <Folder Include="dist\" />
   </ItemGroup>
   <PropertyGroup>

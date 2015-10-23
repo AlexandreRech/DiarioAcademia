@@ -12,8 +12,8 @@
         routes.push({
             name: 'app.chamada',
             url: '/create',
-            resolve: helper.resolveFor('chamadaCtrl'),
-            controller: 'chamadaCtrl as vm',
+            resolve: helper.resolveFor('chamadaController'),
+            controller: 'chamadaController as vm',
             templateUrl: 'src/features/chamada/chamada.html',
             displayName: 'Realizar Chamada',
             $$permissionId: "11"

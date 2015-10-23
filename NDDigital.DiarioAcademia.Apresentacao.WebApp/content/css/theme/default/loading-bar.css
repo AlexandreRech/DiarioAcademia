@@ -1,0 +1,9 @@
+#loading-bar .bar {
+  background: #E25D41;
+  height: 2px;
+}
+#loading-bar-spinner .spinner-icon {
+  border: solid 4px transparent;
+  border-top-color: #E25D41;
+  border-left-color: #E25D41;
+}

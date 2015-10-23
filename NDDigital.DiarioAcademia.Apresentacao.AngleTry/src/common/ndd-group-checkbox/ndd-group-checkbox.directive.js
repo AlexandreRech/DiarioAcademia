@@ -17,7 +17,7 @@
                 method: "=",
                 label: "@"
             },
-            templateUrl: '/src/common/ndd-group-checkbox/ndd-group-checkbox.html'
+            templateUrl: 'src/common/ndd-group-checkbox/ndd-group-checkbox.html'
         };
 
         function link(scope, element, attrs) {

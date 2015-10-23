@@ -23,3 +23,12 @@ gulp.task('start-publish', 'Start publish version of app optimized', ['build'], 
         }
     });
 });
+
+gulp.task('start-demo', 'Start publish version of app optimized', function () {
+    //start application
+    browserSync.init({
+        server: {
+            baseDir: "C:/Diario/"   //publish version
+        }
+    });
+});

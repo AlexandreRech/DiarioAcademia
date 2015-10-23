@@ -2,15 +2,15 @@
 
     'use strict';
     //using
-    alunoCreateCtrl.$inject = ["alunoService", "turmaService", "cepService", "$state", "$scope"];
+    alunoCreateController.$inject = ["alunoService", "turmaService", "cepService", "$state", "$scope"];
 
     //namespace
     angular
         .module("app.aluno")
-        .controller("alunoCreateCtrl", alunoCreateCtrl);
+        .controller("alunoCreateController", alunoCreateController);
 
     //class
-    function alunoCreateCtrl(alunoService, turmaService, cepService, $state, $scope) {
+    function alunoCreateController(alunoService, turmaService, cepService, $state, $scope) {
         var vm = this;
         vm.aluno = { endereco: { cep: "" } }; //Standard DTO requires initialize attrs cep
         vm.title = "Cadastro de Alunos";

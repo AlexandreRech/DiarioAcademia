@@ -116,7 +116,7 @@
                 if (!status)
                     logger.error(res.unavailable_server);
                 else
-                    logger.error(err.error_description);
+                    logger.error(err.error_description || status);
                 logOut();
                 deferred.reject(err);
 

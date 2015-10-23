@@ -2,13 +2,13 @@
 
     'use strict';
     //using
-    chamadaCtrl.$inject = ["chamadaService", "aulaService", "turmaService"];
+    chamadaController.$inject = ["chamadaService", "aulaService", "turmaService"];
 
     //namespace
-    angular.module("app.chamada").controller("chamadaCtrl", chamadaCtrl);
+    angular.module("app.chamada").controller("chamadaController", chamadaController);
 
     //class
-    function chamadaCtrl(chamadaService, aulaService, turmaService, $scope) {
+    function chamadaController(chamadaService, aulaService, turmaService, $scope) {
         var vm = this;
 
         vm.title = "Realizar chamada";

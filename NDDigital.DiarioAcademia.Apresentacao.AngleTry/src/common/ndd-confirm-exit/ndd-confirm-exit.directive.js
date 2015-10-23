@@ -17,7 +17,7 @@
             scope: {
                 controller: "="
             },
-            templateUrl: '/src/common/ndd-confirm-exit/ndd-confirm-exit.html'
+            templateUrl: 'src/common/ndd-confirm-exit/ndd-confirm-exit.html'
         };
 
         function link(scope, element, attrs) {

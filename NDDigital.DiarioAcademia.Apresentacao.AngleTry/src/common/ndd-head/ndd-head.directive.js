@@ -17,7 +17,7 @@
             scope: {
                 title: "@"
             },
-            templateUrl: '/src/common/ndd-head/ndd-head.html'
+            templateUrl: 'src/common/ndd-head/ndd-head.html'
         };
 
         function link(scope, element, attrs) {

@@ -1,0 +1,29 @@
+.dashboard-div-wrapper {
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+.dashboard-div-wrapper:hover {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.08), 0 0 16px #66afe9;
+}
+.dashboard-div-wrapper .progress {
+  height: 2px;
+}
+.bk-clr-three {
+  background-color: #1e8451;
+}
+.dashboard-div-icon {
+  border: 2px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+}
+.dashboard-div-icon:hover {
+  border: 2px solid #66afe9;
+}

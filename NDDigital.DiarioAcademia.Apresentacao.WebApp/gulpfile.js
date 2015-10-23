@@ -14,7 +14,8 @@ log = util.log;
 yargs = require('yargs').argv;
 browserSync = require('browser-sync').create();
 modRewrite = require('connect-modrewrite');
-
+compileLess = require("gulp-less");
+gulpsync = require("gulp-sync")(gulp);
 
 // TASKS
 requireDir('./task/');

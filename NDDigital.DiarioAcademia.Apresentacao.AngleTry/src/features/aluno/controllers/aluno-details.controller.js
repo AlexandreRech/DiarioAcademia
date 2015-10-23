@@ -2,15 +2,15 @@
 
     "use strict";
     //using
-    alunoDetailsCtrl.$inject = ["alunoService", "turmaService", "$stateParams", "$state", "$scope", "cepService"];
+    alunoDetailsController.$inject = ["alunoService", "turmaService", "$stateParams", "$state", "$scope", "cepService"];
 
     //namespace
     angular
         .module("app.aluno")
-        .controller("alunoDetailsCtrl", alunoDetailsCtrl);
+        .controller("alunoDetailsController", alunoDetailsController);
 
     //class
-    function alunoDetailsCtrl(alunoService, turmaService, params, $state, $scope, cepService) {
+    function alunoDetailsController(alunoService, turmaService, params, $state, $scope, cepService) {
         var vm = this;
         vm.title = "Atualização de Alunos";
         vm.aluno = { endereco: { cep: "" } }; //Graças ao DTO tive que inicializar com um CEP para o serviço funcionar

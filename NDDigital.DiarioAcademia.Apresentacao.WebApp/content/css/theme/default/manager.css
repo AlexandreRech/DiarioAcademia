@@ -1,0 +1,45 @@
+.border-success {
+  border: solid 1px green;
+}
+.form-control {
+  cursor: default;
+}
+input[type="checkbox"] {
+  cursor: pointer !important;
+}
+table .glyphicon-star {
+  color: #f0ad4e;
+}
+.input-group:hover span {
+  border-color: #0F75B3;
+  font-weight: 600;
+}
+.input-group:hover input {
+  border-color: #0F75B3;
+  font-weight: 600;
+}
+.text-indicator-actived {
+  color: #EB8A76;
+}
+.text-indicator {
+  color: #CECECE;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+}
+.text-indicator span {
+  margin-right: 10px;
+  position: relative;
+  top: 6px;
+  left: 15px;
+  cursor: pointer;
+}
+.text-indicator span:hover {
+  color: #c3624e;
+}
+.msgAllPermission {
+  margin-left: 2%;
+}
+.msgAllPermission i {
+  color: #f0ad4e;
+}

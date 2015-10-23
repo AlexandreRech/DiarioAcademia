@@ -3,15 +3,15 @@
     "use strict";
     //using
 
-    turmaCreateCtrl.$inject = ["turmaService", "$state"];
+    turmaCreateController.$inject = ["turmaService", "$state"];
 
     //namespace
     angular
         .module("app.turma")
-        .controller("turmaCreateCtrl", turmaCreateCtrl);
+        .controller("turmaCreateController", turmaCreateController);
 
     //class
-    function turmaCreateCtrl(turmaService, $state) {
+    function turmaCreateController(turmaService, $state) {
         var vm = this;
         vm.title = "Cadastro de Turma";
         vm.turma = {};

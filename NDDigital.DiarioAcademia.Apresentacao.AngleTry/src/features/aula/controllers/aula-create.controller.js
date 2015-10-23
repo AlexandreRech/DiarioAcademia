@@ -2,15 +2,15 @@
 
     'use strict';
     //using
-    aulaCreateCtrl.$inject = ["aulaService","turmaService", "$state"];
+    aulaCreateController.$inject = ["aulaService", "turmaService", "$state"];
 
     //namespace
     angular
         .module("app.aula")
-        .controller("aulaCreateCtrl", aulaCreateCtrl);
+        .controller("aulaCreateController", aulaCreateController);
 
     //class
-    function aulaCreateCtrl(aulaService,turmaService, $state) {
+    function aulaCreateController(aulaService, turmaService, $state) {
         var vm = this;
         vm.title = "Cadastro de Aulas";
         activate();

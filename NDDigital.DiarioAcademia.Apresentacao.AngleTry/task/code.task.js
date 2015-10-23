@@ -44,6 +44,7 @@ gulp.task('compile-sass', 'Compile sass', function () {
     return gulp.src(config.app.sass.angle)
               //.pipe(changed(config.dist.css, { extension: '.css' })) // Keep in the pipeline only changed files
               .pipe(addsrc(config.app.sass.bootstrap))
+              .pipe(addsrc(config.app.sass.themes))
               .pipe(compileSass().on('error', compileSass.logError))
               .pipe(gulp.dest(config.dist.css))
               .pipe(loader.if(args.livereload, browserSync.stream()));

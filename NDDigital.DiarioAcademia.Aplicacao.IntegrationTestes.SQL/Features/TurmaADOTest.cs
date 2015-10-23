@@ -15,13 +15,15 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.ADO
         {
             var turma = ObjectBuilder.CreateTurma();
 
+            var qtdTurmasBefore = TurmaRepository.GetAll().Count;
+
             TurmaRepository.Add(turma);
 
-            var qtdTurmas = TurmaRepository.GetAll().Count;
+            var qtdTurmasAfter = TurmaRepository.GetAll().Count;
 
             Uow.Commit();
 
-            Assert.AreEqual(2, qtdTurmas);
+            Assert.AreEqual(qtdTurmasBefore+1, qtdTurmasAfter);
         }
 
         [TestMethod]
@@ -67,17 +69,17 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.ADO
 
             TurmaRepository.Add(turma);
 
-            var qtdTurmas = TurmaRepository.GetAll().Count;
+            Uow.Commit();
 
-            Assert.AreEqual(2, qtdTurmas);
+            var qtdTurmasBefore = TurmaRepository.GetAll().Count;
 
-            TurmaRepository.Delete(2);
-
-            qtdTurmas = TurmaRepository.GetAll().Count;
+            TurmaRepository.Delete(turma.Id);
 
             Uow.Commit();
 
-            Assert.AreEqual(1, qtdTurmas);
+            var qtdTurmasAfter = TurmaRepository.GetAll().Count;
+
+            Assert.AreEqual(qtdTurmasBefore - 1, qtdTurmasAfter);
         }
     }
 }

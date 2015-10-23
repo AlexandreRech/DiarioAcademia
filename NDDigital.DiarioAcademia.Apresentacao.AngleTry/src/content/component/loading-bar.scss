@@ -21,7 +21,7 @@ $loading-bar-hg: 3px;
 
     .bar {
         background: #E25D41;
-        height: 2px;
+        height: 2px !important;
     }
 }
 
@@ -51,7 +51,6 @@ $loading-bar-hg: 3px;
 }
 
 #loading-bar .bar {
-    height: 100%;
     width: 100%;
     -webkit-transition: width 350ms;
     -moz-transition: width 350ms;

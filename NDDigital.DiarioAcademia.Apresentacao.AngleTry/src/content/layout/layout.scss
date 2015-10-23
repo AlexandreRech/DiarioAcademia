@@ -46,7 +46,7 @@ html, body {
 // Main wrapper
 // -----------------------------
 .wrapper {
-    position: relative;
+    /*position: relative;*/
     width: 100%;
     height: auto;
     min-height: 100%;
@@ -58,7 +58,7 @@ html, body {
     // Contains the main sidebar
     > .aside {
         // visibility: hidden;
-        position: absolute;
+        /*position: absolute;*/
         width: $aside-wd;
         top: 0;
         left: 0;
@@ -90,7 +90,8 @@ html, body {
     }
     // Contains the main content
     > section {
-        position: relative;
+        /*position: relative;*/
+        position: static;
         height: 100%;
         margin-left: 0;
         // overflow: hidden;
@@ -100,7 +101,7 @@ html, body {
     }
     // Page Footer
     > footer {
-        position: absolute;
+        position: static;
         left: 0;
         right: 0;
         bottom: 0;

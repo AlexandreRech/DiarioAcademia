@@ -38,7 +38,7 @@
 
             html: app + "/**/**/*.html",
 
-            css: ["./content/**/**/*.css","!./content/**/**/*.min.css"],
+            css: ["./content/**/**/*.css", "!./content/**/**/*.min.css"],
 
             images: [app + '/**/**/*.png', app + '/**/**/*.gif', app + '/**/**/*.jpg']
         },

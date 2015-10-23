@@ -66,7 +66,7 @@ module.exports = function () {
                         src: [paths.app + "vendor/**/**/*.css"],
                         dist: paths.dist + "src/vendor/"
                     }
-                }
+                },
             },
             sass: {
                 all: paths.app + "content/**/**/**/*.scss",
@@ -172,6 +172,7 @@ module.exports = function () {
             },
             //watcher for restart
             files: [
+               'src/content/theme/*.css',
                'src/**/**/**/**/*.js',
                '**/**/**/*.html'
             ],

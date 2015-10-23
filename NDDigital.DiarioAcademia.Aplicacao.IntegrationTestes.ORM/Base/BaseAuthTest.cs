@@ -4,6 +4,7 @@ using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Common;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using NDDigital.DiarioAcademia.IntegrationTests.Common;
+using System.Data.Entity;
 
 namespace NDDigital.DiarioAcademia.IntegrationTests.Base
 {
@@ -38,6 +39,9 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
             IdentityUserStore = new UserStore<User>();
 
             Uow = new AuthUnitOfWork(Factory);
+
+            Database.SetInitializer(new DatabaseTestInitializer());
+
         }
     }
 }

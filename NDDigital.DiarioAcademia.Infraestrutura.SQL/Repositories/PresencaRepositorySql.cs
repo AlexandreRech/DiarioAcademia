@@ -80,7 +80,7 @@ public class PresencaRepositorySql : RepositoryBaseADO, IPresencaRepository
     {
         try
         {
-            Insert(SqlInsert, Take(presenca));
+           presenca.Id= Insert(SqlInsert, Take(presenca));
         }
         catch (Exception te)
         {

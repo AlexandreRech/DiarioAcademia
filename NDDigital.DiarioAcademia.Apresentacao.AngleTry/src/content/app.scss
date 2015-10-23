@@ -101,24 +101,28 @@
 @import "../content/libs/bootstrap/bootstrap/mixins";
 
 // Global definition of media queries
-@import "../content/base/media-queries.scss";
+@import "../content/base/media-queries";
 
 // Utilities 
 @import "../content/base/utils-definitions";
 
 // Bootstrap reset
-@import "../content/base/bootstrap-reset";
+@import "../content/libs/bootstrap-reset";
 
 // Typography
 @import "../content/base/typo";
 
 // Layout
-@import "../content/layout/layout.scss";
+@import "../content/layout/layout";
 @import "../content/layout/layout-extra";
 @import "../content/layout/layout-animation";
 @import "../content/layout/top-navbar";
 @import "../content/layout/sidebar";
 @import "../content/layout/offsidebar";
+@import "../content/layout/manager";
+@import "../content/layout/layout-app";
+
+
 
 
 // Components
@@ -129,6 +133,7 @@
 @import "../content/component/button-extra";
 @import "../content/component/placeholder";
 @import "../content/component/panels";
+@import "../content/component/panel";
 @import "../content/component/progress-extra";
 @import "../content/component/radial-bar";
 @import "../content/component/user-block";
@@ -147,6 +152,12 @@
 @import "../content/component/nestable";
 @import "../content/component/carousel";
 @import "../content/component/masonry-grid-deck";
+@import "../content/component/language-button";
+@import "../content/component/switcher";
+@import "../content/component/jumbotron";
+@import "../content/component/tables/table";
+@import "../content/theme/manager";
+
 
 // Charts
 @import "../content/component/chart-flot";

@@ -82,7 +82,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.SQL.Repositories
         {
             try
             {
-                Insert(SqlInsert, Take(entity));
+               entity.Id= Insert(SqlInsert, Take(entity));
             }
             catch (Exception te)
             {

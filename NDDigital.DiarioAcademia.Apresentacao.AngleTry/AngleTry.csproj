@@ -114,16 +114,9 @@
     <Content Include="src\common\templates\components\user-profile.html" />
     <Content Include="src\common\translate\language.service.js" />
     <Content Include="src\content\component\ngwig.scss" />
+    <None Include="Properties\PublishProfiles\inetpub.pubxml" />
     <None Include="src\content\component\switcher.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="src\content\theme\theme-a.css" />
-    <Content Include="src\content\theme\theme-b.css" />
-    <Content Include="src\content\theme\theme-c.css" />
-    <Content Include="src\content\theme\theme-d.css" />
-    <Content Include="src\content\theme\theme-e.css" />
-    <Content Include="src\content\theme\theme-f.css" />
-    <Content Include="src\content\theme\theme-g.css" />
-    <Content Include="src\content\theme\theme-h.css" />
     <Content Include="src\features\aluno\aluno.adapter.js" />
     <Content Include="src\features\aluno\aluno.routes.js" />
     <Content Include="src\features\aluno\aluno.service.js" />
@@ -227,7 +220,6 @@
     <Content Include="src\common\translate\i18n\pt.json" />
     <Content Include="src\content\layout\layout-app.scss" />
     <Content Include="src\content\component\tables\table.scss" />
-    <None Include="src\content\theme\manager.scss" />
     <None Include="src\content\layout\manager.scss" />
     <None Include="src\content\component\loading-bar.scss" />
     <Content Include="src\content\libs\alerts.scss" />
@@ -367,6 +359,14 @@
     <Content Include="src\content\libs\bootstrap\_bootstrap-mincer.scss" />
     <Content Include="src\content\libs\bootstrap\_bootstrap-sprockets.scss" />
     <Content Include="src\content\libs\bootstrap\bootstrap.scss" />
+    <Content Include="src\content\theme\theme-a.scss" />
+    <Content Include="src\content\theme\theme-b.scss" />
+    <Content Include="src\content\theme\theme-c.scss" />
+    <Content Include="src\content\theme\theme-d.scss" />
+    <Content Include="src\content\theme\theme-e.scss" />
+    <Content Include="src\content\theme\theme-f.scss" />
+    <Content Include="src\content\theme\theme-g.scss" />
+    <Content Include="src\content\theme\theme-h.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

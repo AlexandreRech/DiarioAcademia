@@ -114,7 +114,6 @@
     <Content Include="src\common\templates\components\user-profile.html" />
     <Content Include="src\common\translate\language.service.js" />
     <Content Include="src\content\component\ngwig.scss" />
-    <None Include="Properties\PublishProfiles\inetpub.pubxml" />
     <None Include="src\content\component\switcher.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\features\aluno\aluno.adapter.js" />

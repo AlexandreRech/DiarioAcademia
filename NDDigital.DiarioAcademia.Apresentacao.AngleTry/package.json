@@ -5,7 +5,7 @@
     "author": "PD&I - NDDigital",
     "dependencies": {
         "gulp": "^3.8.10",
-        "browser-sync": "^2.7.6"
+        "browser-sync": "^2.9.11"
     },
     "devDependencies": {
         "del": "^1.2.0",
@@ -32,8 +32,5 @@
         "require-dir": "^0.3.0",
         "wiredep": "^2.2.2",
         "yargs": "^3.29.0"
-    },
-    "scripts": { 
-        "postinstall": "npm rebuild node-sass"
-    }
+    }\
 }

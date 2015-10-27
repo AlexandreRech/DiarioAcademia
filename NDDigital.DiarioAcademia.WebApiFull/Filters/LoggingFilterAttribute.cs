@@ -7,7 +7,6 @@ using System.Web.Http.Filters;
 using System.Web.Script.Serialization;
 using Ninject;
 using Ninject.Extensions.Logging;
-using NDDigital.DiarioAcademia.WebApiFull.Services;
 using Kendo.DynamicLinq;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Filters

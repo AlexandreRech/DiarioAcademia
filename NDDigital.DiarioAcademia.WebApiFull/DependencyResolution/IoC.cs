@@ -18,7 +18,6 @@ using NDDigital.DiarioAcademia.WebApiFull.Factories;
 using NDDigital.DiarioAcademia.WebApiFull.Interceptors;
 using NDDigital.DiarioAcademia.WebApiFull.Loggers;
 using NDDigital.DiarioAcademia.WebApiFull.Providers;
-using NDDigital.DiarioAcademia.WebApiFull.Services;
 using WebApiContrib.IoC.Ninject;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.DependencyResolution
@@ -38,8 +37,6 @@ namespace NDDigital.DiarioAcademia.WebApiFull.DependencyResolution
             RegisterDependencyResolver(kernel);
 
             RegisterFilters(kernel);
-
-            RegisterServices(kernel);
 
             //RegisterLoggers(kernel);
 
@@ -83,20 +80,5 @@ namespace NDDigital.DiarioAcademia.WebApiFull.DependencyResolution
                x => x.ValidatorFactory = kernel.Get<IValidatorFactory>());
         }
 
-        private static void RegisterServices(IKernel kernel)
-        {
-            kernel.Bind<IAuthService>()
-                .To<AuthServiceStub>()
-                .Intercept()
-               .With<StopWatchNinjectInterceptor>();
-
-
-            kernel.Bind<IEventService>()
-               .To<EventServiceStub>()
-               .Intercept()
-               .With<StopWatchNinjectInterceptor>();
-
-
-        }
     }
 }

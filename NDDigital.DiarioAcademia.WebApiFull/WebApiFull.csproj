@@ -251,8 +251,6 @@
     <Compile Include="App_Start\TracingConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Binders\DataSourceRequestModelBinder.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\Base\BaseApiController.cs" />
     <Compile Include="Controllers\Base\BaseEntityController.cs" />
     <Compile Include="Controllers\Base\BaseSecurityController.cs" />
@@ -262,7 +260,6 @@
     <Compile Include="Controllers\Entities\ChamadaController.cs" />
     <Compile Include="Controllers\Entities\OverviewController.cs" />
     <Compile Include="Controllers\Entities\TurmaController.cs" />
-    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\OData\AlunosController.cs" />
     <Compile Include="Controllers\Security\AccountsController.cs" />
     <Compile Include="Controllers\Security\AuthorizationController.cs" />
@@ -286,11 +283,7 @@
     <Compile Include="Providers\CustomJwtFormat.cs" />
     <Compile Include="Providers\CustomOAuthProvider.cs" />
     <Compile Include="Providers\NinjectWebApiFilterProvider.cs" />
-    <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
-    <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Results\NotFoundTextPlainActionResult.cs" />
-    <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\EventService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\CreateNewEventCommandValidator.cs" />
     <Compile Include="Validators\RegisterNewAccountCommandValidator.cs" />
@@ -306,7 +299,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NDDigital.DiarioAcademia.Aplicacao\Aplicacao.csproj">

@@ -41,7 +41,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.DependencyResolution
 
             RegisterServices(kernel);
 
-            RegisterLoggers(kernel);
+            //RegisterLoggers(kernel);
 
             return kernel;
         }
@@ -95,6 +95,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.DependencyResolution
                .To<EventServiceStub>()
                .Intercept()
                .With<StopWatchNinjectInterceptor>();
+
 
         }
     }

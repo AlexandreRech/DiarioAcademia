@@ -13,7 +13,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull
 
             config.Filters.Add(new ValidateModelFilterAttribute());
 
-            // config.Filters.Add(new LoggingFilterAttribute());
+            config.Filters.Add(new LoggingFilterAttribute());
 
         }
     }

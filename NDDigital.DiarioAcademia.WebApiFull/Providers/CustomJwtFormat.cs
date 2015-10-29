@@ -5,7 +5,7 @@ using System.Configuration;
 using System.IdentityModel.Tokens;
 using Thinktecture.IdentityModel.Tokens;
 
-namespace NDDigital.DiarioAcademia.WebApi.Providers
+namespace NDDigital.DiarioAcademia.WebApiFull.Providers
 {
     public class CustomJwtFormat : ISecureDataFormat<AuthenticationTicket>
     {

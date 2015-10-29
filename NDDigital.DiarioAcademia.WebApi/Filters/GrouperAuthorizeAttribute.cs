@@ -43,7 +43,7 @@ namespace NDDigital.DiarioAcademia.WebApi.Filters
             }
 
             Permissions = Permissions.Distinct().ToList();
-            Permissions.RemoveAll(x => x == "");
+            Permissions.RemoveAll(string.IsNullOrWhiteSpace);
         }
 
         protected override bool IsAuthorized(HttpActionContext actionContext)

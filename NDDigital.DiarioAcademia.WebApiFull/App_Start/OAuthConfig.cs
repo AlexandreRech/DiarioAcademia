@@ -5,12 +5,13 @@ using NDDigital.DiarioAcademia.WebApiFull.Providers;
 using System;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Contexts;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories;
-using NDDigital.DiarioAcademia.WebApi.Providers;
 
 namespace NDDigital.DiarioAcademia.WebApiFull
 {
     public static class OAuthConfig
     {
+        public static OAuthAuthorizationServerOptions OAuthServerOptions { get; private set; }
+
         public static void ConfigureOAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request
@@ -18,17 +19,18 @@ namespace NDDigital.DiarioAcademia.WebApiFull
             app.CreatePerOwinContext<UserRepository>(UserRepository.Create);
 
 
-            var oAuthServerOptions = new OAuthAuthorizationServerOptions
+            OAuthServerOptions = new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/oauth/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new CustomOAuthProvider(),
-                AccessTokenFormat = new CustomJwtFormat("http://localhost:31648")
+                //AccessTokenFormat = new CustomJwtFormat("http://localhost:62179"),
+                AccessTokenFormat = new CustomJwtFormat("")
             };
 
             // Token Generation
-            app.UseOAuthAuthorizationServer(oAuthServerOptions);
+            app.UseOAuthAuthorizationServer(OAuthServerOptions);
 
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
         }

@@ -8,6 +8,7 @@
         .constant('APP_ROUTES', [])
         //service
         .value("BASEURL", "http://localhost:31648/")
+        //.value("BASEURL", "http://localhost:62179/")
         //storage
         .value('storageKeys', {
             authoData: 'authorizationData',

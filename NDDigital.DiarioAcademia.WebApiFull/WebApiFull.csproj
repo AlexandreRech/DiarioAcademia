@@ -254,7 +254,6 @@
     <Compile Include="App_Start\OAuthConfig.cs" />
     <Compile Include="App_Start\RoutesConfig.cs" />
     <Compile Include="App_Start\TracingConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Binders\DataSourceRequestModelBinder.cs" />
     <Compile Include="Controllers\Base\BaseApiController.cs" />
     <Compile Include="Controllers\Base\BaseEntityController.cs" />

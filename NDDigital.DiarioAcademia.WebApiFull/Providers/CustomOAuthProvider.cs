@@ -6,7 +6,7 @@ using NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace NDDigital.DiarioAcademia.WebApi.Providers
+namespace NDDigital.DiarioAcademia.WebApiFull.Providers
 {
     public class CustomOAuthProvider : OAuthAuthorizationServerProvider
     {

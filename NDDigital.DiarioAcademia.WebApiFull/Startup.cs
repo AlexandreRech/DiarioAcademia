@@ -30,11 +30,15 @@ namespace NDDigital.DiarioAcademia.WebApiFull
 
             TracingConfig.Configure();
 
+            TokenConfig.ConfigureOAuthTokenConsumption(app);
+
             app.UseCors(CorsOptions.AllowAll);
 
             app.UseNinjectMiddleware(IoC.CreateKernel);
 
             app.UseNinjectWebApi(config);
+
+
         }
 
 

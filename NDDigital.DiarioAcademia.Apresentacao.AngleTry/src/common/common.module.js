@@ -7,8 +7,8 @@
         })
         .constant('APP_ROUTES', [])
         //service
-        .value("BASEURL", "http://localhost:31648/")
-        //.value("BASEURL", "http://localhost:62179/")
+        .value("BASEURL", "http://localhost:31648/")// slim
+        //.value("BASEURL", "http://localhost:62179/") //full
         //storage
         .value('storageKeys', {
             authoData: 'authorizationData',

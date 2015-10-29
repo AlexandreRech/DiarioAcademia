@@ -1,6 +1,7 @@
 ﻿using NDDigital.DiarioAcademia.Dominio.Entities;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 
@@ -28,6 +29,10 @@ namespace NDDigital.DiarioAcademia.WebApiFull
               routeName: "ODataRoute",
               routePrefix: "odata",
               model: builder.GetEdmModel());
+
+            // Web API enable CORS
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
         }
     }
 }

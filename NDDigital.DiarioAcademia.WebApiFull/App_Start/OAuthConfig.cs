@@ -21,12 +21,13 @@ namespace NDDigital.DiarioAcademia.WebApiFull
 
             OAuthServerOptions = new OAuthAuthorizationServerOptions
             {
+                //For Dev enviroment only (on production should be AllowInsecureHttp = false)
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/oauth/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new CustomOAuthProvider(),
-                //AccessTokenFormat = new CustomJwtFormat("http://localhost:62179"),
-                AccessTokenFormat = new CustomJwtFormat("")
+                AccessTokenFormat = new CustomJwtFormat("http://localhost:62179"),
+               
             };
 
             // Token Generation

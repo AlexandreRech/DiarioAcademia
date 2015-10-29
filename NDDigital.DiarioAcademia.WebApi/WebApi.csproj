@@ -224,6 +224,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\TokenConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FormattersConfig.cs" />
     <Compile Include="App_Start\OAuthConfig.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Filters\GrouperAuthorizeAttribute.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\ModelFactory.cs" />
+    <Compile Include="Models\ObjectExtension.cs" />
     <Compile Include="Providers\CustomJwtFormat.cs" />
     <Compile Include="Providers\CustomOAuthProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

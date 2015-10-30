@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
 
@@ -14,8 +9,10 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
         {
             Mapper.Initialize(map =>
             {
-
-
+                map.AddProfile(new TurmaProfiles());
+                map.AddProfile(new AlunoProfiles());
+                map.AddProfile(new AulaProfiles());
+                map.AddProfile(new ChamadaProfiles());
             });
         }
     }

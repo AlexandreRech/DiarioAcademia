@@ -35,6 +35,7 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
 
         public AlunoService(IAlunoRepository repoAluno, ITurmaRepository repoTurma, IUnitOfWork unitOfWork)
         {
+
             _alunoRepository = repoAluno;
             _turmaRepository = repoTurma;
             _unitOfWork = unitOfWork;

@@ -5,6 +5,8 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
 {
     public static class AutoMapperConfig
     {
+       
+
         public static void ConfigMappers()
         {
             Mapper.Initialize(map =>

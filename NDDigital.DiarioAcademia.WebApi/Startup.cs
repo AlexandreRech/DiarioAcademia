@@ -3,6 +3,7 @@ using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.DataHandler.Encoder;
 using Microsoft.Owin.Security.Jwt;
+using NDDigital.DiarioAcademia.Aplicacao.Profiles;
 using NDDigital.DiarioAcademia.WebApi.App_Start;
 using Owin;
 using System.Configuration;
@@ -25,6 +26,8 @@ namespace NDDigital.DiarioAcademia.WebApi
             FormattersConfig.Configure(config);
 
             TokenConfig.ConfigureOAuthTokenConsumption(app);
+
+            AutoMapperConfig.ConfigMappers();
 
             app.UseCors(CorsOptions.AllowAll);
 

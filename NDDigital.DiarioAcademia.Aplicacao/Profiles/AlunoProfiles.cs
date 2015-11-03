@@ -9,6 +9,9 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
         protected override void Configure()
         {
             Mapper.CreateMap<Aluno, AlunoDTO>()
+                 .ForMember(dto => dto.Id,
+                           map => map
+                               .MapFrom(x => x.Id))
                 .ForMember(dto => dto.Descricao,
                            map => map
                                .MapFrom(x => x.ToString()))

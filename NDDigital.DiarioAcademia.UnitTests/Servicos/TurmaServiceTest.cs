@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NDDigital.DiarioAcademia.Aplicacao.DTOs;
+using NDDigital.DiarioAcademia.Aplicacao.Profiles;
 using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.Dominio.Contracts;
 using NDDigital.DiarioAcademia.Dominio.Entities;
@@ -22,6 +23,8 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 
         public TurmaServiceTest()
         {
+            AutoMapperConfig.ConfigMappers();
+
             _unitOfWork = new Mock<IUnitOfWork>();
 
             _turmaRepository = new Mock<ITurmaRepository>();

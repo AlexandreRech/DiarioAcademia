@@ -5,31 +5,17 @@ using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.Dominio.Contracts;
 using NDDigital.DiarioAcademia.Dominio.Entities;
 using NDDigital.DiarioAcademia.Infraestrutura.DAO.Common.Uow;
+using NDDigital.DiarioAcademia.UnitTests.Base;
 using System.Collections.Generic;
 
 namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 {
     [TestClass]
-    public class AlunoServiceTest
+    public class AlunoServiceTest: BaseServiceTest
     {
-        private readonly Mock<IAlunoRepository> _alunoRepository = null;
-        private readonly Mock<ITurmaRepository> _turmaRepository = null;
-        private readonly Mock<IUnitOfWork> _unitOfWork = null;
-        private IAlunoService _alunoService;
-
+       
         private const string TestCategory =
             "Teste de Serviço - Aluno";
-
-        public AlunoServiceTest()
-        {
-            _unitOfWork = new Mock<IUnitOfWork>();
-
-            _alunoRepository = new Mock<IAlunoRepository>();
-
-            _turmaRepository = new Mock<ITurmaRepository>();
-
-            _alunoService = new AlunoService(_alunoRepository.Object, _turmaRepository.Object, _unitOfWork.Object);
-        }
 
         [TestMethod]
         [TestCategory(TestCategory)]
@@ -40,18 +26,18 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 
             aluno.Turma = ObjectBuilder.CreateTurma();
 
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.Add(It.IsAny<Aluno>()));
 
-            _unitOfWork.Setup(x => x.Commit());
+            UnitOfWork.Setup(x => x.Commit());
 
             //act
-            _alunoService.Add(new AlunoDTO(aluno));
+            AlunoService.Add(new AlunoDTO(aluno));
 
             //assert
-            _alunoRepository.Verify(x => x.Add(It.IsAny<Aluno>()), Times.Once());
+            AlunoRepository.Verify(x => x.Add(It.IsAny<Aluno>()), Times.Once());
 
-            _unitOfWork.Verify(x => x.Commit(), Times.Once());
+            UnitOfWork.Verify(x => x.Commit(), Times.Once());
         }
 
         [TestMethod]
@@ -59,15 +45,15 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
         public void Deveria_Chamar_Servico_de_Buscar_Aluno_Test()
         {
             //arrange
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.GetById(It.IsAny<int>()))
                 .Returns(ObjectBuilder.CreateAluno());
 
             //act
-            _alunoService.GetById(1);
+            AlunoService.GetById(1);
 
             //assert
-            _alunoRepository.Verify(x => x.GetById(It.IsAny<int>()), Times.Once());
+            AlunoRepository.Verify(x => x.GetById(It.IsAny<int>()), Times.Once());
         }
 
         [TestMethod]
@@ -79,22 +65,22 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 
             aluno.Nome = "Alex Regis";
 
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.Update(aluno));
 
-            _alunoRepository
+            AlunoRepository
              .Setup(x => x.GetById(It.IsAny<int>()))
              .Returns(aluno);
 
-            _unitOfWork.Setup(x => x.Commit());
+            UnitOfWork.Setup(x => x.Commit());
 
             //act
-            _alunoService.Update(new AlunoDTO(aluno));
+            AlunoService.Update(new AlunoDTO(aluno));
 
             //assert
-            _alunoRepository.Verify(x => x.Update(aluno), Times.Once());
+            AlunoRepository.Verify(x => x.Update(aluno), Times.Once());
 
-            _unitOfWork.Verify(x => x.Commit(), Times.Once());
+            UnitOfWork.Verify(x => x.Commit(), Times.Once());
         }
 
         [TestMethod]
@@ -104,15 +90,15 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
             //arrange
             var alunos = new List<Aluno>() { ObjectBuilder.CreateAluno() };
 
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.GetAll())
                 .Returns(alunos);
 
             //act
-            _alunoService.GetAll();
+            AlunoService.GetAll();
 
             //assert
-            _alunoRepository.Verify(x => x.GetAll(), Times.Once());
+            AlunoRepository.Verify(x => x.GetAll(), Times.Once());
         }
 
         [TestMethod]
@@ -120,18 +106,18 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
         public void Deveria_Chamar_Servico_de_Remover_Aluno_Test()
         {
             //arrange
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.Delete(It.IsAny<int>()));
 
             //act
-            _alunoService.Delete(1);
+            AlunoService.Delete(1);
 
-            _unitOfWork.Setup(x => x.Commit());
+            UnitOfWork.Setup(x => x.Commit());
 
             //assert
-            _alunoRepository.Verify(x => x.Delete(It.IsAny<int>()), Times.Once());
+            AlunoRepository.Verify(x => x.Delete(It.IsAny<int>()), Times.Once());
 
-            _unitOfWork.Verify(x => x.Commit(), Times.Once());
+            UnitOfWork.Verify(x => x.Commit(), Times.Once());
         }
     }
 }

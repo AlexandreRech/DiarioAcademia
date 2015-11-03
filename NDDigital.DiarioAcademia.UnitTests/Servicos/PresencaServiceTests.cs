@@ -1,39 +1,20 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NDDigital.DiarioAcademia.Aplicacao.DTOs;
-using NDDigital.DiarioAcademia.Aplicacao.Services;
-using NDDigital.DiarioAcademia.Dominio.Contracts;
 using NDDigital.DiarioAcademia.Dominio.Entities;
 using NDDigital.DiarioAcademia.Dominio.Exceptions;
-using NDDigital.DiarioAcademia.Infraestrutura.DAO.Common.Uow;
+using NDDigital.DiarioAcademia.UnitTests.Base;
 using System;
 using System.Collections.Generic;
 
 namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 {
     [TestClass]
-    public class PresencaServiceTests
+    public class PresencaServiceTests: BaseServiceTest
     {
-        private readonly Mock<IAlunoRepository> _alunoRepository = null;
-        private readonly Mock<IAulaRepository> _aulaRepository = null;
-        private readonly Mock<ITurmaRepository> _turmaRepository = null;
-        private readonly Mock<IUnitOfWork> _unitOfWork = null;
-
-        private IAulaService aulaService = null;
-
         private const string TestCategory =
       "Teste de Serviço - Presenças";
 
-        public PresencaServiceTests()
-        {
-            _alunoRepository = new Mock<IAlunoRepository>();
-            _aulaRepository = new Mock<IAulaRepository>();
-            _turmaRepository = new Mock<ITurmaRepository>();
-
-            _unitOfWork = new Mock<IUnitOfWork>();
-
-            aulaService = new AulaService(_aulaRepository.Object, _alunoRepository.Object, _turmaRepository.Object, _unitOfWork.Object);
-        }
 
         [TestMethod]
         [TestCategory(TestCategory)]
@@ -53,21 +34,21 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 
             var comando = ObjectBuilder.CriaRegistraPresencaCommand(ids);
 
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.GetAllByTurmaId(It.IsAny<int>()))
                 .Returns(alunos);
 
-            _aulaRepository
+            AulaRepository
                 .Setup(x => x.GetById(It.IsAny<int>()))
                 .Returns(new Aula(DateTime.Now, new Turma(2014)));
 
             //act
-            aulaService.RealizaChamada(comando);
+            AulaService.RealizaChamada(comando);
 
             //assert
-            _alunoRepository.Verify(x => x.Update(It.IsAny<Aluno>()), Times.Exactly(5));
+            AlunoRepository.Verify(x => x.Update(It.IsAny<Aluno>()), Times.Exactly(5));
 
-            _unitOfWork.Verify(x => x.Commit(), Times.Once());
+            UnitOfWork.Verify(x => x.Commit(), Times.Once());
         }
 
         [TestMethod]
@@ -76,14 +57,14 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
         public void RegistraPresenca_deveria_lancar_excecao_AlunoNaoEncontrado()
         {
             //arrange
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.GetAllByTurmaId(It.IsAny<int>()))
                 .Returns(null as List<Aluno>);
 
             var comando = new ChamadaDTO { AnoTurma = 2000 };
 
             // act
-            aulaService.RealizaChamada(comando);
+            AulaService.RealizaChamada(comando);
 
             // assert is [ExpectedException]
         }
@@ -98,11 +79,11 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 
             var alunos = ObjectBuilder.CriaListaAlunos(qtdAlunos);
 
-            _alunoRepository
+            AlunoRepository
                 .Setup(x => x.GetAllByTurmaId(It.IsAny<int>()))
                 .Returns(alunos);
 
-            _aulaRepository
+            AulaRepository
                 .Setup(x => x.GetById(It.IsAny<int>()))
                 .Returns(null as Aula);
 
@@ -110,7 +91,7 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 
             //act
 
-            aulaService.RealizaChamada(comando);
+            AulaService.RealizaChamada(comando);
             // assert is [ExpectedException]
         }
     }

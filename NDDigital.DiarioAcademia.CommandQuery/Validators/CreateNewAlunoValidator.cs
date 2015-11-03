@@ -1,15 +1,20 @@
 ﻿using FluentValidation;
+using FluentValidation.Attributes;
 using NDDigital.DiarioAcademia.Aplicacao.DTOs;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Validators
 {
-    public class CreateNewAlunoCommandValidator : AbstractValidator<AlunoDTO>
+    public class CreateNewAlunoValidator : AbstractValidator<AlunoDTO>
     {
-        public CreateNewAlunoCommandValidator()
+        public CreateNewAlunoValidator()
         {
             RuleFor(x => x.Descricao)
                 .NotEmpty()
                 .NotNull();
+
+
+            RuleFor(x => x.Descricao.Length)
+                .GreaterThanOrEqualTo(10);
 
             RuleFor(x => x.TurmaId)
                 .NotEmpty()
@@ -27,5 +32,6 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Validators
           .NotEmpty()
           .NotNull();
         }
+
     }
 }

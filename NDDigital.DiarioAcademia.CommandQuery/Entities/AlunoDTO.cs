@@ -1,7 +1,10 @@
-﻿using NDDigital.DiarioAcademia.Dominio.Entities;
+﻿using FluentValidation.Attributes;
+using NDDigital.DiarioAcademia.Dominio.Entities;
+using NDDigital.DiarioAcademia.WebApiFull.Validators;
 
 namespace NDDigital.DiarioAcademia.Aplicacao.DTOs
 {
+    [Validator(typeof(CreateNewAlunoValidator))]
     public class AlunoDTO
     {
         public AlunoDTO()

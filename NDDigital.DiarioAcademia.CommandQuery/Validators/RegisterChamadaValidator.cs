@@ -7,9 +7,9 @@ using System.Web;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Validators
 {
-    public class RegisterChamadaCommandValidator : AbstractValidator<ChamadaDTO>
+    public class RegisterChamadaValidator : AbstractValidator<ChamadaDTO>
     {
-        public RegisterChamadaCommandValidator()
+        public RegisterChamadaValidator()
         {
             RuleFor(x => x.Alunos)
                .NotNull();

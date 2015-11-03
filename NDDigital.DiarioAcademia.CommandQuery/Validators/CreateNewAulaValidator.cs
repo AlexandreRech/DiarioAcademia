@@ -3,9 +3,9 @@ using NDDigital.DiarioAcademia.Aplicacao.DTOs;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Validators
 {
-    public class CreateNewAulaCommandValidator : AbstractValidator<AulaDTO>
+    public class CreateNewAulaValidator : AbstractValidator<AulaDTO>
     {
-        public CreateNewAulaCommandValidator()
+        public CreateNewAulaValidator()
         {
             RuleFor(x => x.AnoTurma)
                 .NotEmpty()

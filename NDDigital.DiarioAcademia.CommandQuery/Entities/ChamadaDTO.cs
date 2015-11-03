@@ -1,8 +1,12 @@
-﻿using System;
+﻿using FluentValidation.Attributes;
+using NDDigital.DiarioAcademia.WebApiFull.Validators;
+using System;
 using System.Collections.Generic;
 
 namespace NDDigital.DiarioAcademia.Aplicacao.DTOs
 {
+    [Validator(typeof(RegisterChamadaValidator))]
+
     public class ChamadaDTO
     {
         public ChamadaDTO()

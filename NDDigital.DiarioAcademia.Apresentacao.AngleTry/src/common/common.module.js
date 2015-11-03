@@ -1,5 +1,6 @@
 ﻿(function () {
     'use strict';
+
     angular.module("app.common", [])
         //Route
         .constant('CONSTANT_KEYS', {
@@ -7,8 +8,8 @@
         })
         .constant('APP_ROUTES', [])
         //service
-        .value("BASEURL", "http://localhost:31648/")// slim
-        //.value("BASEURL", "http://localhost:62179/") //full
+         //.value("BASEURL", "http://localhost:31648/")// slim
+       .value("BASEURL", "http://localhost:62179/") //full
         //storage
         .value('storageKeys', {
             authoData: 'authorizationData',

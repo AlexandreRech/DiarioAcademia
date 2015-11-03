@@ -290,6 +290,7 @@
     <Compile Include="Interceptors\StopWatchNinjectInterceptor.cs" />
     <Compile Include="Loggers\WebApiTracerLogger.cs" />
     <Compile Include="Models\Accounts\RegisterNewAccountCommand.cs" />
+    <Compile Include="Models\Accounts\RegisterNewAccountCommandValidator.cs" />
     <Compile Include="Models\Events\EventDTO.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\ObjectExtension.cs" />
@@ -299,12 +300,6 @@
     <Compile Include="Providers\NinjectWebApiFilterProvider.cs" />
     <Compile Include="Results\NotFoundTextPlainActionResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Validators\CreateNewAulaCommandValidator.cs" />
-    <Compile Include="Validators\CreateNewAlunoCommandValidator.cs" />
-    <Compile Include="Validators\CreateNewTurmaCommandValidator.cs" />
-    <Compile Include="Validators\CreateNewEventCommandValidator.cs" />
-    <Compile Include="Validators\RegisterChamadaCommandValidator.cs" />
-    <Compile Include="Validators\RegisterNewAccountCommandValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,30 +1,22 @@
 ﻿using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 using NDDigital.DiarioAcademia.Aplicacao.DTOs;
-using NDDigital.DiarioAcademia.Aplicacao.Services;
-using NDDigital.DiarioAcademia.Dominio.Contracts;
 using NDDigital.DiarioAcademia.Dominio.Entities;
-using NDDigital.DiarioAcademia.Infraestrutura.DAO.Common.Uow;
 using NDDigital.DiarioAcademia.UnitTests.Base;
 using System;
-using System.Collections.Generic;
 
 namespace NDDigital.DiarioAcademia.UnitTests.Servicos
 {
     [TestClass]
-    public class AulaMapperTest: BaseTest
+    public class AulaMapperTest : BaseTest
     {
         private const string TestCategory =
             "Mapeamento - Aula";
 
-       
-
         [TestMethod]
         [TestCategory(TestCategory)]
-        public void Aluno_To_AlunoDTO_Mapper_Test()
+        public void Aula_To_AulaDTO_Mapper_Test()
         {
-
             var aula = ObjectBuilder.CreateAula();
 
             var dto = Mapper.Map<AulaDTO>(aula);
@@ -34,12 +26,22 @@ namespace NDDigital.DiarioAcademia.UnitTests.Servicos
             Assert.AreEqual(dto.DataAula, aula.Data);
         }
 
-
         [TestMethod]
         [TestCategory(TestCategory)]
-        public void AlunoDTO_To_Aluno_Mapper_Test()
+        public void AulaDTO_To_Aula_Mapper_Test()
         {
-            Assert.Inconclusive();
+            var dto = new AulaDTO
+            {
+                Id = 2,
+                AnoTurma = 2014,
+                DataAula = DateTime.Now.AddYears(-1),
+                TurmaId = 5
+            };
+
+            var aula = Mapper.Map<Aula>(dto);
+
+            Assert.AreEqual(dto.Id, aula.Id);
+            Assert.AreEqual(dto.DataAula, aula.Data);
         }
     }
 }

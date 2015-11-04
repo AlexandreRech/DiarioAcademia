@@ -114,10 +114,7 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
 
         public ChamadaDTO GetChamadaByAula(AulaDTO aulaDTO)
         {
-            var chamada = new ChamadaDTO();
-
-            chamada.AnoTurma = aulaDTO.AnoTurma;
-            chamada.Data = aulaDTO.DataAula;
+            var chamada = Mapper.Map<ChamadaDTO>(aulaDTO);
 
             Aula aula = _aulaRepository.GetById(aulaDTO.Id);
 

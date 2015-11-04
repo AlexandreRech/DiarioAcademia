@@ -30,33 +30,10 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
                 .ForMember(x => x.Nome,
                             map => map.MapFrom(dto => dto.Descricao.Split(':')[0].Trim()))
                 .ForMember(x => x.Endereco,
-                            map => map.MapFrom(dto => Mapper.Map<Endereco>(dto)))
-                            ;
+                            map => map.MapFrom(dto => Mapper.Map<Endereco>(dto)));
+
             //Sub mappers
             Mapper.CreateMap<AlunoDTO, Endereco>();
-        }
-
-
-        public class ExtractLocalidade : ValueResolver<Endereco, string>
-        {
-            protected override string ResolveCore(Endereco source)
-            {
-                return source.Localidade;
-            }
-        }
-        public class ExtractUf: ValueResolver<Endereco, string>
-        {
-            protected override string ResolveCore(Endereco source)
-            {
-                return source.Uf;
-            }
-        }
-        public class ExtractBairro: ValueResolver<Endereco, string>
-        {
-            protected override string ResolveCore(Endereco source)
-            {
-                return source.Bairro;
-            }
         }
     } 
 }

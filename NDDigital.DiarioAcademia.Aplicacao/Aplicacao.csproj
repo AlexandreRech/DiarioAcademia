@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Profiles\AulaProfiles.cs" />
-    <Compile Include="Profiles\ChamadaProfiles.cs" />
     <Compile Include="Profiles\TurmaProfiles.cs" />
     <Compile Include="Profiles\AlunoProfiles.cs" />
     <Compile Include="Profiles\AutoMapperConfig.cs" />

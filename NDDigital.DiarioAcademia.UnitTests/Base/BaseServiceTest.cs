@@ -4,11 +4,12 @@ using NDDigital.DiarioAcademia.Dominio.Contracts;
 using Moq;
 using NDDigital.DiarioAcademia.Infraestrutura.DAO.Common.Uow;
 using NDDigital.DiarioAcademia.Aplicacao.Services;
+using NDDigital.DiarioAcademia.Aplicacao.Profiles;
 
 namespace NDDigital.DiarioAcademia.UnitTests.Base
 {
     [TestClass]
-    public class BaseServiceTest
+    public class BaseServiceTest:BaseTest
     {
         protected readonly Mock<IAulaRepository> AulaRepository = null;
         protected readonly Mock<IAlunoRepository> AlunoRepository = null;
@@ -27,6 +28,8 @@ namespace NDDigital.DiarioAcademia.UnitTests.Base
             AulaRepository = new Mock<IAulaRepository>();
             TurmaRepository = new Mock<ITurmaRepository>();
 
+            AutoMapperConfig.ConfigMappers();
+
         }
 
         [TestInitialize]
@@ -39,10 +42,17 @@ namespace NDDigital.DiarioAcademia.UnitTests.Base
                 UnitOfWork.Object
                 );
 
-            AulaService = new AulaService(AulaRepository.Object,
-                AlunoRepository.Object, TurmaRepository.Object, UnitOfWork.Object);
+            AulaService = new AulaService(
+                AulaRepository.Object,
+                AlunoRepository.Object,
+                TurmaRepository.Object,
+                UnitOfWork.Object
+                );
 
-            TurmaService = new TurmaService(TurmaRepository.Object, UnitOfWork.Object);
+            TurmaService = new TurmaService(
+                TurmaRepository.Object, 
+                UnitOfWork.Object
+                );
         }
 
     }

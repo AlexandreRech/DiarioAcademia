@@ -18,6 +18,17 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
               .ForMember(dto => dto.TurmaId,
                             map => map
                                 .MapFrom(x => x.Turma.Id));
+
+            Mapper.CreateMap<AulaDTO, Aula>()
+               .ForMember(x => x.Turma,
+                          map => map
+                              .MapFrom(dto => dto.AnoTurma))
+            .ForMember(x => x.Turma,
+                          map => map
+                              .MapFrom(dto => dto.Id))
+               .ForMember(x => x.Data,
+                          map => map
+                              .MapFrom(dto => dto.DataAula));
         }
     }
 }

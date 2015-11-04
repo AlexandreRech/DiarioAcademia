@@ -17,12 +17,12 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
             //                 .MapFrom(x => x.Ano));
 
             Mapper.CreateMap<Turma, TurmaDTO>();
-              //  .ForMember(dto => dto.Id,
-              //             map => map
-              //                 .MapFrom(x => x.Id))
-              //  .ForMember(dto => dto.Ano,
-              //             map => map
-              //                 .MapFrom(x => x.Ano));
+            //  .ForMember(x => x.Id,
+            //             map => map
+            //                 .MapFrom(dto => dto.Id))
+            //  .ForMember(x => x.Ano,
+            //             map => map
+            //                 .MapFrom(dto => dto.Ano));
         }
     }
 }

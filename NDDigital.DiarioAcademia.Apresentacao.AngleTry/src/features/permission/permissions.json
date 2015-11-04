@@ -22,57 +22,57 @@
         "displayName": "header.CREATE_LESSON"
     },
 
-    "10": {
+    "11": {
         "name": "app.chamada",
         "displayName": "header.CLASS_REGISTER"
     },
 
-    "13": {
+    "14": {
         "name": "app.user.list",
         "displayName": "header.LIST_USERS"
     },
-    "14": {
+    "15": {
         "name": "app.user.edit",
         "displayName": "header.CREATE_USERS"
     },
-    "15": {
+    "16": {
         "name": "app.user.groupEdit",
         "displayName": "header.EDIT_USERS_GROUP"
     },
 
-    "17": {
+    "18": {
         "name": "app.group.list",
         "displayName": "header.LIST_GROUPS"
     },
-    "18": {
+    "19": {
         "name": "app.group.create",
         "displayName": "header.CREATE_GROUPS"
 
     },
-    "19": {
+    "20": {
         "name": "app.group.edit",
         "displayName": "header.EDIT_GROUPS"
     },
-    "20": {
+    "21": {
         "name": "app.group.permissionsEdit",
         "displayName": "header.EDIT_GROUPS_PERMISSIONS"
     },
 
-    "21": {
+    "22": {
         "name": "app.permission",
         "displayName": "header.LIST_PERMISSIONS"
     },
 
-    "23": {
+    "24": {
         "name": "app.turma.list",
         "displayName": "header.LIST_CLASS"
     },
-    "24": {
+    "25": {
         "name": "app.turma.create",
         "displayName": "header.CREATE_CLASS"
 
     },
-    "25": {
+    "26": {
         "name": "app.turma.details",
         "displayName": "header.EDIT_CLASS"
     },

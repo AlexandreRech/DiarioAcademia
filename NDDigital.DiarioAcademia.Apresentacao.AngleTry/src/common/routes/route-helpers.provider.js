@@ -15,8 +15,6 @@
 
       /* jshint validthis:true */
       return {
-        // provider access level
-        basepath: basepath,
         resolveFor: resolveFor,
         // controller access level
         $get: function() {
@@ -26,12 +24,6 @@
           };
         }
       };
-
-      // Set here the base of the relative path
-      // for all app views
-      function basepath(uri) {
-        return 'src/common/layout/' + uri;
-      }
 
       // Generates a resolve object by passing script names
       // previously configured in constant.APP_REQUIRES

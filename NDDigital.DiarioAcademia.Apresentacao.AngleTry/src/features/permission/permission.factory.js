@@ -2,39 +2,45 @@
     angular.module('app.permission')
         .factory('permissions.factory', permissionFactory);
 
-    permissionFactory.$inject = ['$state', 'compareState', 'permissionGroups'];
+    permissionFactory.$inject = ['$state', 'compareState', 'permissionGroups', 'permissionsService'];
 
-    function permissionFactory($state, compareState, permissionGroups) {
+    function permissionFactory($state, compareState, permissionGroups, permissionsService) {
+
+        var permissions = [];
+
+        activate();
+        function activate() {
+            //Get list of permissions
+            permissionsService.getStates().then(function (results) {
+
+                for (var permissionId in results) {
+                    var permission = {
+                        name: results[permissionId].name,
+                        displayName: results[permissionId].displayName,
+                        permissionId: permissionId
+                    }
+                    permissions.push(permission);
+                }
+            });
+        }
 
         return {
             getPermissions: getPermissions,
             getPermissionById: getPermissionById,
-            getCustomPermissions: getCustomPermissions,
-            getDefaultPermissions: getDefaultPermissions,
             getFilters: getFilters,
-            createPermission: createPermission,
             filterPermissions: filterPermissions,
             containsPermissionByName: containsPermissionByName,
-            getByName: getByName
+            getByName: getByName,
+            getStateByName: getStateByName
         };
 
         //public methods
-
-        function getCustomPermissions() {
-            var customPermissions = [
-                { name: "action.deleteAluno", displayName: "Excluir Aluno", permissionId: '27' },
-                { name: "action.deleteTurma", displayName: "Excluir Turma", permissionId: '28' }];
-            return customPermissions;
-        }
-
         function getPermissions() {
-            var permissions = getDefaultPermissions();
-            permissions = permissions.concat(getCustomPermissions()); // join 'states permissions' with 'custom permissions'
             return permissions; // all permissions
         }
 
+
         function getPermissionById(id) {
-            var permissions = getPermissions();
             for (var i in permissions) {
                 if (permissions[i].permissionId == id)
                     return permissions[i];
@@ -42,40 +48,13 @@
             return undefined;
         }
 
-
-        function getDefaultPermissions() {
-            var states = $state.get();
-            var filtered = [];
-            for (var i = 0; i < states.length; i++) {
-                var state = states[i];
-                if (state.abstract) {
-                    states.splice(i, 1);
-                    i--;
-                    continue;
-                }
-                filtered.push(createPermission(state)); // parse state for permission
-            }
-            return filtered;
-        }
-
-        function createPermission(state) {
-            return {
-                name: state.name,
-                displayName: state.data.displayName,
-                permissionId: state.data.$$permissionId,
-                parent: state.parent || ""
-            };
-        }
-
         function filterPermissions(permissionDb) {
-
-            var permissions = getPermissions();
             var filtered = [];
             var countCheck = 0;
             var filter;
             var permission;
 
-            for (var i = 0; i < permissions.length; i++) {
+            for (var i in permissions) {
                 permission = permissions[i];
                 filter = getFilter(permission.name);
                 if (!filter)
@@ -95,27 +74,34 @@
             return permissionGroups;
         }
 
-        function getByName(permissions, name) {
-            if (!permissions)
+        function getByName(permissionsCustom, name) {
+            if (!permissionsCustom)
                 return undefined;
+            for (var i = 0; i < permissionsCustom.length; i++) {
+                if (permissionsCustom[i].indexOf(name) >= 0)
+                    return permissionsCustom[i];
+            }
+            return undefined;
+        }
+
+        function getStateByName(name) {
             for (var i = 0; i < permissions.length; i++) {
-                if (permissions[i].indexOf(name) >= 0)
+                if (permissions[i].name.indexOf(name) >= 0)
                     return permissions[i];
             }
             return undefined;
         }
 
-        function containsPermissionByName(permissions, name) {
-            return getByName(permissions, name) != undefined;
+        function containsPermissionByName(permissionsCustom, name) {
+            return getByName(permissionsCustom, name) != undefined;
         }
 
         //private methods
         function getFilter(name) {
             if (permissionGroups.contains(name))
                 return name;
-            var filter = name.replace("app.", "").split(".");
-            filter = filter.length >= 2 ? filter[0] : undefined;
-            return filter;
+            var filter = name.replace("app.", "").split(".");      
+            return filter[0];
         }
 
     }

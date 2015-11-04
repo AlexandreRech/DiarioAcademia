@@ -7,10 +7,13 @@
         "LIST_CLASS": "List of Class",
         "EDIT_CLASS": "Edit Class",
         "CREATE_CLASS": "Create Class",
+        "REMOVE_CLASS": "Remove Class",
 
         "LIST_STUDENT": "List of Student",
         "CREATE_STUDENT": "Create Student",
         "EDIT_STUDENT": "Edit Student",
+        "REMOVE_STUDENT": "Remove Student",
+
 
         "LIST_LESSON": "List of Lesson",
         "CREATE_LESSON": "Create Lesson",
@@ -20,10 +23,13 @@
         "LIST_USERS": "List of Users",
         "CREATE_USERS": "Create Users",
         "EDIT_USERS": "Edit Users",
+        "EDIT_USERS_GROUP": "Change User groups",
+
 
         "LIST_GROUPS": "List of Groups",
         "CREATE_GROUPS": "Create Group",
         "EDIT_GROUPS": "Edit Group",
+        "EDIT_GROUPS_PERMISSIONS": "Change Permissions of Group",
 
         "LIST_PERMISSIONS": "List of Permissions",
 

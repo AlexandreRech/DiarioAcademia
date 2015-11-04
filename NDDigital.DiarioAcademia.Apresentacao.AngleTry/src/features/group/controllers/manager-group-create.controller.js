@@ -18,7 +18,7 @@
             if (!vm.group.name)
                 return;
             groupService.save(vm.group).then(function (results) {
-                $state.go('manager.group.list');
+                $state.go('app.group.list');
             });
         }
 

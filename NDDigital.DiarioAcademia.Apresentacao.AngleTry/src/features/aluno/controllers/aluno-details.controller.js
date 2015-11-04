@@ -36,7 +36,7 @@
         //public methods
         vm.save = function () {
             alunoService.edit(convertDto(vm.aluno)).then(function () {
-                $state.go('aluno.list');
+                $state.go('app.aluno.list');
             });
             vm.clearFields();
         };

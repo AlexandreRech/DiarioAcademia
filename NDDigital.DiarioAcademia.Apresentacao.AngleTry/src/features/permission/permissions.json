@@ -1,0 +1,89 @@
+﻿{
+    "03": {
+        "name": "app.aluno.list",
+        "displayName": "header.LIST_STUDENT"
+    },
+
+    "04": {
+        "name": "app.aluno.details",
+        "displayName": "header.EDIT_STUDENT"
+    },
+    "05": {
+        "name": "app.aluno.create",
+        "displayName": "header.CREATE_STUDENT"
+    },
+
+    "07": {
+        "name": "app.aula.list",
+        "displayName": "header.LIST_LESSON"
+    },
+    "08": {
+        "name": "app.aula.create",
+        "displayName": "header.CREATE_LESSON"
+    },
+
+    "10": {
+        "name": "app.chamada",
+        "displayName": "header.CLASS_REGISTER"
+    },
+
+    "13": {
+        "name": "app.user.list",
+        "displayName": "header.LIST_USERS"
+    },
+    "14": {
+        "name": "app.user.edit",
+        "displayName": "header.CREATE_USERS"
+    },
+    "15": {
+        "name": "app.user.groupEdit",
+        "displayName": "header.EDIT_USERS_GROUP"
+    },
+
+    "17": {
+        "name": "app.group.list",
+        "displayName": "header.LIST_GROUPS"
+    },
+    "18": {
+        "name": "app.group.create",
+        "displayName": "header.CREATE_GROUPS"
+
+    },
+    "19": {
+        "name": "app.group.edit",
+        "displayName": "header.EDIT_GROUPS"
+    },
+    "20": {
+        "name": "app.group.permissionsEdit",
+        "displayName": "header.EDIT_GROUPS_PERMISSIONS"
+    },
+
+    "21": {
+        "name": "app.permission",
+        "displayName": "header.LIST_PERMISSIONS"
+    },
+
+    "23": {
+        "name": "app.turma.list",
+        "displayName": "header.LIST_CLASS"
+    },
+    "24": {
+        "name": "app.turma.create",
+        "displayName": "header.CREATE_CLASS"
+
+    },
+    "25": {
+        "name": "app.turma.details",
+        "displayName": "header.EDIT_CLASS"
+    },
+
+    "27": {
+        "name": "action.deleteAluno",
+        "displayName": "header.REMOVE_STUDENT"
+    },
+
+    "28": {
+        "name": "action.deleteTurma",
+        "displayName": "header.REMOVE_CLASS"
+    }
+}

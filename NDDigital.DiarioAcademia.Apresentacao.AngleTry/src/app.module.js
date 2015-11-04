@@ -45,12 +45,8 @@
             //features
             'app.layout',
             'app.auth',
-            'app.turma',
-            'app.aula',
-            'app.aluno',
-            'app.chamada',
-            'app.group',
             'app.user',
+            'app.group',
             'app.permission',
             'app.routes.config',
         ]);

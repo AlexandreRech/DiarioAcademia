@@ -1,27 +1,28 @@
 ﻿
 (function () {
     'use strict';
-    var KEYS = angular.injector(['app.common']).get('CONSTANT_KEYS');
 
     angular
         .module('app.layout')
         .config(configRoutes);
 
-    configRoutes.$inject = [KEYS.APP_ROUTES, 'RouteHelpersProvider'];
+    configRoutes.$inject = ['RouteHelpersProvider', "$stateProvider"];
 
-    function configRoutes(routes, helper) {
-        routes.push({
-            name: "app",
-            url: '/app',
-            abstract: true,
-            redirect: "app.home",
-            templateUrl: helper.basepath('app.html'),
-            resolve: helper.resolveFor('modernizr', 'icons')
-        }, {
-            name: 'app.home',
-            url: '/home',
-            title: 'Home',
-            templateUrl: helper.basepath('home.html')
-        });
+    function configRoutes(helper, $stateProvider) {
+
+        $stateProvider
+            .state("app", {
+                url: '/app',
+                abstract: true,
+                redirect: "app.home",
+                templateUrl: 'src/common/layout/views/app.html',
+                resolve: helper.resolveFor('modernizr', 'icons')
+            })
+            .state('app.home', {
+                name: 'app.home',
+                url: '/home',
+                title: 'Home',
+                templateUrl: 'src/common/layout/views/home.html'
+            });
     }
 })();

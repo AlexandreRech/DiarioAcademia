@@ -1,46 +1,37 @@
 ﻿(function () {
     'use strict';
-    var KEYS = angular.injector(['app.common']).get('CONSTANT_KEYS');
 
     angular
         .module('app.aluno')
         .config(configRoutes);
 
-    configRoutes.$inject = [KEYS.APP_ROUTES, 'RouteHelpersProvider'];
+    configRoutes.$inject = ['RouteHelpersProvider', "$stateProvider"];
 
 
-    function configRoutes(routes, helper) {
-        routes.push({
-            name: 'app.aluno',
-            url: '/aluno',
-            'abstract': true,
-            redirect: '/aluno/list',
-            templateUrl: 'src/common/templates/components/inner-view.html',
-            displayName: "Aluno"
-        }, {
-            name: 'app.aluno.list',
-            url: '/list',
-            resolve: helper.resolveFor('alunoListController'),
-            controller: 'alunoListController as vm',
-            templateUrl: 'src/features/aluno/views/aluno-list.html',
-            displayName: "Lista de Aluno",
-            $$permissionId: "03"
-        }, {
-            name: 'app.aluno.details',
-            url: '/details/:alunoId',
-            resolve: helper.resolveFor('alunoDetailsController'),
-            controller: 'alunoDetailsController as vm',
-            templateUrl: 'src/features/aluno/views/aluno-details.html',
-            displayName: "Detalhes do Aluno",
-            $$permissionId: "04"
-        }, {
-            name: 'app.aluno.create',
-            url: '/create',
-            resolve: helper.resolveFor('alunoCreateController'),
-            controller: 'alunoCreateController as vm',
-            templateUrl: 'src/features/aluno/views/aluno-create.html',
-            displayName: "Criação de Aluno",
-            $$permissionId: "05"
-        });
+    function configRoutes(helper, $stateProvider) {
+
+        $stateProvider
+         .state('app.aluno', {
+             url: '/aluno',
+             'abstract': true,
+             redirect: '/aluno/list',
+             templateUrl: 'src/common/templates/components/inner-view.html',
+             displayName: "Aluno"
+         })
+         .state('app.aluno.list', {
+             url: '/list',
+             controller: 'alunoListController as vm',
+             templateUrl: 'src/features/aluno/views/aluno-list.html',
+         })
+          .state('app.aluno.details', {
+              url: '/details/:alunoId',
+              controller: 'alunoDetailsController as vm',
+              templateUrl: 'src/features/aluno/views/aluno-details.html',
+          })
+          .state('app.aluno.create', {
+              url: '/create',
+              controller: 'alunoCreateController as vm',
+              templateUrl: 'src/features/aluno/views/aluno-create.html',
+          })
     }
 })();

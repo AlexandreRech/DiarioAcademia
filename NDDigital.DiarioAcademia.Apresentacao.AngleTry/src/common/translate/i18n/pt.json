@@ -7,10 +7,12 @@
         "LIST_CLASS": "Lista de Turma",
         "EDIT_CLASS": "Edição de Turma",
         "CREATE_CLASS": "Cadastro de Turma",
+        "REMOVE_CLASS": "Remover Turma",
 
         "LIST_STUDENT": "Lista de Aluno",
         "CREATE_STUDENT": "Cadastro de Aluno",
-        "EDIT_STUDENT": "EEdição de Aluno",
+        "EDIT_STUDENT": "Edição de Aluno",
+        "REMOVE_STUDENT": "Remover Aluno",
 
         "LIST_LESSON": "Lista de Aula",
         "CREATE_LESSON": "Cadastro de Aula",
@@ -20,12 +22,14 @@
         "LIST_USERS": "Lista de Usuário",
         "CREATE_USERS": "Cadastro de Usuário",
         "EDIT_USERS": "Edição de Usuário",
+        "EDIT_USERS_GROUP": "Edição de Grupos de Usuário",
 
         "LIST_GROUPS": "Lista de Grupos",
         "CREATE_GROUPS": "Cadastro de Grupo",
         "EDIT_GROUPS": "Edição de grupo",
+        "EDIT_GROUPS_PERMISSIONS": "Edição de Permissões de Grupos",
 
-        "LIST_PERMISSIONS": "List of Permissions",
+        "LIST_PERMISSIONS": "Lista de Permissões",
 
         "SETTINGS": "Configurações",
         "USER_OPTIONS": "Minha Conta",
@@ -59,7 +63,7 @@
         "MANAGER": "Gerenciador",
         "USER": "Usuário",
         "GROUP": "Grupo",
-        "PERMISSIONS": "Permissiões"
+        "PERMISSIONS": "Permissões"
     },
     "action": {
         "CREATE": "Criar",

@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.auth', []);
+        .module('app.auth', ['app.user']);
 })();

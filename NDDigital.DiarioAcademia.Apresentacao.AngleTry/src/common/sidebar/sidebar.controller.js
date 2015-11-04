@@ -3,7 +3,7 @@
  * Handle sidebar collapsible elements
  =========================================================*/
 
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -11,103 +11,108 @@
         .controller('SidebarController', SidebarController);
 
     SidebarController.$inject = ['$rootScope', '$scope', '$state', 'SidebarLoader', 'Utils'];
-    function SidebarController($rootScope, $scope, $state, SidebarLoader,  Utils) {
+
+    function SidebarController($rootScope, $scope, $state, SidebarLoader, Utils) {
+        var self = this;
 
         activate();
-
-        ////////////////
-
         function activate() {
-          var collapseList = [];
+            var collapseList = [];
 
-          // demo: when switch from collapse to hover, close all items
-          $rootScope.$watch('app.layout.asideHover', function(oldVal, newVal){
-            if ( newVal === false && oldVal === true) {
-              closeAllBut(-1);
+            // demo: when switch from collapse to hover, close all items
+            $rootScope.$watch('app.layout.asideHover', function (oldVal, newVal) {
+                if (newVal === false && oldVal === true) {
+                    closeAllBut(-1);
+                }
+            });
+
+
+            // Load menu from json file
+            // ----------------------------------- 
+
+            SidebarLoader.getMenu(sidebarReady);
+
+            function sidebarReady(items) {
+                $scope.menuItems = items;
             }
-          });
 
+            // Handle sidebar and collapse items
+            // ----------------------------------
 
-          // Load menu from json file
-          // ----------------------------------- 
+            $scope.getMenuItemPropClasses = function (item) {
+                return (item.heading ? 'nav-heading' : '') +
+                       (isActive(item) ? ' active' : '');
+            };
 
-          SidebarLoader.getMenu(sidebarReady);
-          
-          function sidebarReady(items) {
-            $scope.menuItems = items;
-          }
+            $scope.addCollapse = function ($index, item) {
+                collapseList[$index] = $rootScope.app.layout.asideHover ? true : !isActive(item);
+            };
 
-          // Handle sidebar and collapse items
-          // ----------------------------------
-          
-          $scope.getMenuItemPropClasses = function(item) {
-            return (item.heading ? 'nav-heading' : '') +
-                   (isActive(item) ? ' active' : '') ;
-          };
+            $scope.isCollapse = function ($index) {
+                return (collapseList[$index]);
+            };
 
-          $scope.addCollapse = function($index, item) {
-            collapseList[$index] = $rootScope.app.layout.asideHover ? true : !isActive(item);
-          };
+            $scope.toggleCollapse = function ($index, isParentItem) {
 
-          $scope.isCollapse = function($index) {
-            return (collapseList[$index]);
-          };
+                // collapsed sidebar doesn't toggle drodopwn
+                if (Utils.isSidebarCollapsed() || $rootScope.app.layout.asideHover) return true;
 
-          $scope.toggleCollapse = function($index, isParentItem) {
+                // make sure the item index exists
+                if (angular.isDefined(collapseList[$index])) {
+                    if (!$scope.lastEventFromChild) {
+                        collapseList[$index] = !collapseList[$index];
+                        closeAllBut($index);
+                    }
+                }
+                else if (isParentItem) {
+                    closeAllBut(-1);
+                }
 
-            // collapsed sidebar doesn't toggle drodopwn
-            if( Utils.isSidebarCollapsed() || $rootScope.app.layout.asideHover ) return true;
+                $scope.lastEventFromChild = isChild($index);
 
-            // make sure the item index exists
-            if( angular.isDefined( collapseList[$index] ) ) {
-              if ( ! $scope.lastEventFromChild ) {
-                collapseList[$index] = !collapseList[$index];
-                closeAllBut($index);
-              }
-            }
-            else if ( isParentItem ) {
-              closeAllBut(-1);
-            }
-            
-            $scope.lastEventFromChild = isChild($index);
+                return true;
 
-            return true;
-          
-          };
+            };
 
-          // Controller helpers
-          // ----------------------------------- 
+            // Controller helpers
+            // ----------------------------------- 
 
             // Check item and children active state
             function isActive(item) {
 
-              if(!item) return;
+                if (!item) return;
 
-              if( !item.sref || item.sref === '#') {
-                var foundActive = false;
-                angular.forEach(item.submenu, function(value) {
-                  if(isActive(value)) foundActive = true;
-                });
-                return foundActive;
-              }
-              else
-                return $state.is(item.sref) || $state.includes(item.sref);
+                if (!item.sref || item.sref === '#') {
+                    var foundActive = false;
+                    angular.forEach(item.submenu, function (value) {
+                        if (isActive(value)) foundActive = true;
+                    });
+                    return foundActive;
+                }
+                else
+                    return $state.is(item.sref) || $state.includes(item.sref);
             }
 
             function closeAllBut(index) {
-              index += '';
-              for(var i in collapseList) {
-                if(index < 0 || index.indexOf(i) < 0)
-                  collapseList[i] = true;
-              }
+                index += '';
+                for (var i in collapseList) {
+                    if (index < 0 || index.indexOf(i) < 0)
+                        collapseList[i] = true;
+                }
             }
 
             function isChild($index) {
-              /*jshint -W018*/
-              return (typeof $index === 'string') && !($index.indexOf('-') < 0);
+                /*jshint -W018*/
+                return (typeof $index === 'string') && !($index.indexOf('-') < 0);
             }
-        
+
         } // activate
+
+
+        self.redirect = function (route, params) {
+            if (route && route != "#")
+                $state.go(route, params);
+        }
     }
 
 })();

@@ -28,7 +28,7 @@
 
             groupService.getGroupById(params.groupId).then(function (results) {
                 if (results == undefined)
-                    $state.go('manager.group');
+                    $state.go('app.group.list');
                 vm.group = results;
 
                 permissionsService.getPermissions().then(function (results) {
@@ -78,11 +78,11 @@
         }
 
         function save(permission) {
-            groupService.addPermission(vm.group, permission).then(function (results) { });
+            return groupService.addPermission(vm.group, permission);
         }
 
         function remove(permission) {
-            groupService.removePermission(vm.group, permission).then(function (results) { });
+            return groupService.removePermission(vm.group, permission);
         }
 
         function modal() {

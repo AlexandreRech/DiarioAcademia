@@ -366,6 +366,7 @@
     <Content Include="src\content\theme\theme-f.scss" />
     <Content Include="src\content\theme\theme-g.scss" />
     <Content Include="src\content\theme\theme-h.scss" />
+    <Content Include="src\features\permission\permissions.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -382,14 +383,14 @@
     <Content Include="src\common\core\core.constants.js" />
     <Content Include="src\common\core\core.module.js" />
     <Content Include="src\common\core\core.run.js" />
-    <Content Include="src\common\layout\app.html" />
-    <Content Include="src\common\layout\footer.html" />
+    <Content Include="src\common\layout\views\app.html" />
+    <Content Include="src\common\layout\views\footer.html" />
     <Content Include="src\common\sidebar\views\offsidebar-tab1-config.html" />
     <Content Include="src\common\sidebar\views\offsidebar-tab2-user.html" />
     <Content Include="src\common\sidebar\views\offsidebar.html" />
     <Content Include="src\common\sidebar\views\sidebar.html" />
-    <Content Include="src\common\layout\top-navbar.html" />
-    <Content Include="src\common\layout\home.html" />
+    <Content Include="src\common\layout\views\top-navbar.html" />
+    <Content Include="src\common\layout\views\home.html" />
     <Content Include="src\common\lazyload\lazyload.config.js" />
     <Content Include="src\common\lazyload\lazyload.module.js" />
     <Content Include="src\common\loadingbar\loadingbar.config.js" />

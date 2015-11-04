@@ -13,10 +13,17 @@
 	function permissionsService($http, logger, baseUrl, $state, res) {
 		var self = this;
 		var serviceUrl = baseUrl + "api/permission/";
-
+		var resource = "src/features/permission/permissions.json";
+		
 		//public methods
 		self.getPermissions = function () {
 			return $http.get(serviceUrl)
+				 .then(logger.successCallback)
+				 .catch(logger.errorCallback)
+		};
+
+		self.getStates = function () {
+			return $http.get(resource)
 				 .then(logger.successCallback)
 				 .catch(logger.errorCallback)
 		};

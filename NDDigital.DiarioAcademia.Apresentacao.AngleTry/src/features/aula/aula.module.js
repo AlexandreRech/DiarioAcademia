@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.aula', []);
+        .module('app.aula', ['app.turma']);
 })();

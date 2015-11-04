@@ -1,5 +1,6 @@
 ﻿using NDDigital.DiarioAcademia.Aplicacao.Services.Overview;
 using NDDigital.DiarioAcademia.WebApi.Controllers.Base;
+using NDDigital.DiarioAcademia.WebApi.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;

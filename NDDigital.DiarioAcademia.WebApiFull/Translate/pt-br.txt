@@ -1,7 +1,0 @@
-﻿SAVED_SUCCESSFUL=Salvo com sucesso
-DELETED_SUCCESSFUL=Excluido com sucesso
-UNAVAILABLE_SERVER=Servidor Indisponível
-SUCCESS_REQUEST=Solicitação realizada com sucesso!
-STUDENT_FOUNDED=Aluno encontrado, id: 
-STUDENT_EDITED=Aluno editado para: 
-WELCOME=Bem vindo 

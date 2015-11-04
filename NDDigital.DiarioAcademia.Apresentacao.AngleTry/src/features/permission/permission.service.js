@@ -23,7 +23,7 @@
 		};
 
 		self.getStates = function () {
-			return $http.get(resource)
+		    return $http.get(serviceUrl + 'metadata')
 				 .then(logger.successCallback)
 				 .catch(logger.errorCallback)
 		};

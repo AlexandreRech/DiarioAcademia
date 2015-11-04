@@ -1,4 +1,6 @@
-﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs;
+﻿using AutoMapper;
+using NDDigital.DiarioAcademia.Aplicacao.DTOs;
+using NDDigital.DiarioAcademia.Aplicacao.Profiles;
 using NDDigital.DiarioAcademia.Dominio;
 using NDDigital.DiarioAcademia.Dominio.Contracts;
 using NDDigital.DiarioAcademia.Dominio.Entities;
@@ -27,7 +29,7 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
         {
             try
             {
-                Turma turma = new Turma(turmaDto.Ano);
+                Turma turma = Mapper.Map<Turma>(turmaDto);
 
                 _turmaRepository.Add(turma);
 

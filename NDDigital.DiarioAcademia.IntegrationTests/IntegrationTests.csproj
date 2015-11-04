@@ -114,7 +114,7 @@
   <ItemGroup>
     <Compile Include="Base\BaseTest.cs" />
     <Compile Include="Common\DatabaseAuthFixture.cs" />
-    <Compile Include="Base\ObjectBuilder.cs" />
+    <Compile Include="Common\ObjectBuilder.cs" />
     <Compile Include="Common\DatabaseBootstrapper.cs" />
     <Compile Include="Common\DatabaseEntityFrameworkFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,6 +6,7 @@ using Ninject.Web.WebApi.OwinHost;
 using NDDigital.DiarioAcademia.WebApiFull.DependencyResolution;
 using System.Web.Http;
 using NDDigital.DiarioAcademia.WebApiFull.App_Start;
+using NDDigital.DiarioAcademia.Aplicacao.Profiles;
 
 [assembly: OwinStartup(typeof(NDDigital.DiarioAcademia.WebApiFull.Startup))]
 namespace NDDigital.DiarioAcademia.WebApiFull
@@ -30,11 +31,19 @@ namespace NDDigital.DiarioAcademia.WebApiFull
 
             TracingConfig.Configure();
 
+            TokenConfig.ConfigureOAuthTokenConsumption(app);
+
+            AutoMapperConfig.ConfigMappers();
+
             app.UseCors(CorsOptions.AllowAll);
 
             app.UseNinjectMiddleware(IoC.CreateKernel);
 
             app.UseNinjectWebApi(config);
+
+
+
+
         }
 
 

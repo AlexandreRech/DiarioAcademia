@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
+using NDDigital.Extensions;
 
 namespace NDDigital.DiarioAcademia.WebApi.Filters
 {
@@ -43,11 +44,14 @@ namespace NDDigital.DiarioAcademia.WebApi.Filters
             }
 
             Permissions = Permissions.Distinct().ToList();
-            Permissions.RemoveAll(x => x == "");
+            Permissions.RemoveAll(string.IsNullOrWhiteSpace);
         }
 
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
+
+           // var xml = actionContext.Serialize();
+
             var result = base.IsAuthorized(actionContext);
             if (result)
             {

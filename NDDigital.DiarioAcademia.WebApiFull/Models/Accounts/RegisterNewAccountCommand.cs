@@ -1,4 +1,5 @@
 ﻿using FluentValidation.Attributes;
+using NDDigital.DiarioAcademia.WebApiFull.Models.Accounts;
 using NDDigital.DiarioAcademia.WebApiFull.Validators;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Models.CommandModels.Accounts

@@ -30,6 +30,8 @@ namespace NDDigital.DiarioAcademia.WebApi.App_Start
 
             // OAuth 2.0 Bearer Access Token Generation
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
+
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
         }
     }
 }

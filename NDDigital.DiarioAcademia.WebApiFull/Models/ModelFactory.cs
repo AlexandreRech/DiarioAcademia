@@ -30,18 +30,18 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Models
                 Email = appUser.Email,
             };
         }
+    }
 
-        public class UserReturnModel
-        {
-            public string Url { get; set; }
-            public string Id { get; set; }
-            public string UserName { get; set; }
-            public string FullName { get; set; }
-            public string Email { get; set; }
-            public bool IsAdmin { get; set; }
+    public class UserReturnModel
+    {
+        public string Url { get; set; }
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public bool IsAdmin { get; set; }
 
-            public IList<Permission> Permissions { get; set; }
-        }
+        public IList<Permission> Permissions { get; set; }
     }
 
     public class CreateUserBindingModel

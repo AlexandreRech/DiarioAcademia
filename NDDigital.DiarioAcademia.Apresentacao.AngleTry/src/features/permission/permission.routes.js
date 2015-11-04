@@ -12,7 +12,6 @@
         $stateProvider.state('app.permission', {
             url: '/permission',
             templateUrl: 'src/features/permission/manager-permission.html',
-            resolve: helper.resolveFor('app.permission', 'app.aluno', 'app.turma', 'app.aula', 'app.chamada'),
             controller: "managerPermissionController as vm"
         })
     }

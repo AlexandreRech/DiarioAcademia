@@ -7,7 +7,7 @@
  */
 
 gulp.task('build', 'Build of application optimized', gulpsync.sync(['clean-dist', 'inject',
-    ['build-images', 'build-lazy-css', 'build-lazy-js', 'build-fonts', 'build-json', 'build-vendor','build-html']]), function () {
+    ['build-images', 'build-lazy-css', 'build-lazy-js', 'build-fonts', 'build-json', 'build-vendor', 'build-html']]), function () {
 
         var builder = loader.useref.assets({ searchPath: "./" });
         var cssFilter = loader.filter('**/*.css', { restore: true });
@@ -33,7 +33,13 @@ gulp.task('build', 'Build of application optimized', gulpsync.sync(['clean-dist'
                   .pipe(jsAppFilter.restore())
                   .pipe(builder.restore())
                   .pipe(loader.useref())  // define build in index
-                  .pipe(gulp.dest(config.dist.root));
+                  .pipe(gulp.dest(config.dist.root).on('end', function () {
+                      gulp.src(config.dist.root + "index.html")
+                            .pipe(loader.minifyHtml({
+                                conditionals: true
+                            }))
+                            .pipe(gulp.dest(config.dist.root));
+                  }));
     });
 
 

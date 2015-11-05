@@ -35,6 +35,8 @@
                     var permissionsDb = results;
                     for (var i = 0; i < permissionsDb.length; i++) {
                         var permission = permissionsFactory.getPermissionById(permissionsDb[i].permissionId);
+                        if (!permission)
+                            continue;
                         permission.id = permissionsDb[i].id;
                         vm.permissions.push(permission);
                     }

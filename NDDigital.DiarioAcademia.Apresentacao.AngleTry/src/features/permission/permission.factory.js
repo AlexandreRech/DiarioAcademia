@@ -12,12 +12,11 @@
         function activate() {
             //Get list of permissions
             permissionsService.getStates().then(function (results) {
-
-                for (var permissionId in results) {
+                for (var i = 0; i < results.length; i++) {
                     var permission = {
-                        name: results[permissionId].name,
-                        displayName: results[permissionId].displayName,
-                        permissionId: permissionId
+                        name: results[i].name,
+                        displayName: results[i].displayName,
+                        permissionId: results[i].id
                     }
                     permissions.push(permission);
                 }

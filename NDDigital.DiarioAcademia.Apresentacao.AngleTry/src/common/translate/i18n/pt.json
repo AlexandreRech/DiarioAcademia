@@ -82,12 +82,18 @@
         "CLASS_REGISTER_NOT_CREATE": "Chamada não cadastrada !",
         "CLASS_REGISTER_CREATE": "Chamada cadastrada !",
         "IS_ADMIN": "É admistrador",
-        "IS_NOT_ADMIN": "Não é administrador"
+        "IS_NOT_ADMIN": "Não é administrador",
+        "SAVED_SUCCESSFUL": "Salvo com sucesso!",
+        "DELETED_SUCCESSFUL": "Excluido com sucesso!",
+        "UNAVAILABLE_SERVER": "Servidor Indisponível !",
+        "SUCCESS_REQUEST": "Request realizado com sucesso!",
+        "STUDENT_FOUNDED": "Aluno encontrado !",
+        "STUDENT_EDITED": "Aluno editado !",
+        "WELCOME": "Bem vindo"
     },
     "home": {
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",
         "MESSAGE_DESCRIPTION": "O aplicativo semente não faz muito e tem a maior parte do recurso removido para que você possa adicionar tema como por suas necessidades apenas seguindo os exemplos de aplicativos de demonstração."
-
     }
 
 }

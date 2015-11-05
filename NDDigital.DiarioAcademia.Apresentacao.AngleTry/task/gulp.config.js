@@ -17,54 +17,31 @@ module.exports = function () {
             html: [paths.app + "**/**/*.html"],
 
             js: {
-                'static': {
-                    modules: paths.app + '**/**/*.module.js',
-                    extentions: paths.app + 'common/extentions/*.js',
-                    configs: [paths.app + "**/**/*.config.js", '!' + paths.app + "common/routes/routes.config.js"],
-                    constant: paths.app + "**/**/*.constants.js",
-                    provider: paths.app + "**/**/*.provider.js",
-                    adapters: paths.app + "**/**/*.adapter.js",
-                    factory: paths.app + "**/**/*.factory.js",
-                    services: paths.app + '**/**/*.service.js',
-                    controllers: [paths.app + 'common/layout/shell.controller.js',
-                                  paths.app + 'common/sidebar/sidebar.controller.js',
-                                  paths.app + 'common/sidebar/sidebar.userblock.controller.js'],
-                    route: paths.app + '**/**/*.routes.js',
-                    routeConfig: paths.app + 'common/routes/routes.config.js',
-                    directive: paths.app + "**/**/*.directive.js",
-                    run: paths.app + "**/**/*.run.js",
-                },
-
-                lazy: {
-                    controller: {
-                        src: [paths.app + '**/**/**/*.controller.js',
-                              "!" + paths.app + 'common/layout/shell.controller.js',
-                              "!" + paths.app + 'common/sidebar/sidebar.controller.js',
-                              "!" + paths.app + 'common/sidebar/sidebar.userblock.controller.js'],
-                        dist: paths.dist + "src/"
-                    },
-                    vendor: {
-                        src: [paths.app + "vendor/**/**/*.js"],
-                        dist: paths.dist + "src/vendor/"
-                    }
-                }
+                modules: [paths.app + '**/**/*.module.js'],
+                extentions: [paths.app + 'common/extentions/*.js'],
+                configs: [paths.app + "**/**/*.config.js", '!' + paths.app + "common/routes/routes.config.js"],
+                constant: [paths.app + "**/**/*.constants.js"],
+                provider: [paths.app + "**/**/*.provider.js"],
+                adapters: [paths.app + "**/**/*.adapter.js"],
+                factory: [paths.app + "**/**/*.factory.js"],
+                services: [paths.app + '**/**/*.service.js'],
+                controllers: [paths.app + '**/**/*.controller.js'],
+                route: [paths.app + '**/**/*.routes.js', paths.app + 'common/routes/routes.config.js'],
+                directive: [paths.app + "**/**/*.directive.js"],
+                run: [paths.app + "**/**/*.run.js"]
             },
 
             css: {
                 'static': [paths.app + "content/**/**/*.css",
-                   paths.app + "content/css/**/app.css",
-                   "!" + paths.app + "content/css/theme/theme*.css",
-                   "!" + paths.app + "content/**/**/bootstrap*.css"
+                           paths.app + "content/css/**/app.css",
+                           "!" + paths.app + "content/css/theme/theme*.css",
+                           "!" + paths.app + "content/**/**/bootstrap*.css"
                 ],
 
                 lazy: {
                     theme: {
                         src: [paths.app + "content/css/theme/theme*.css"],
                         dist: paths.dist + "src/content/css/theme/"
-                    },
-                    vendor: {
-                        src: [paths.app + "vendor/**/**/*.css"],
-                        dist: paths.dist + "src/vendor/"
                     }
                 },
             },
@@ -84,7 +61,10 @@ module.exports = function () {
 
             images: [paths.app + "images/**/**/*.*"],
 
-            vendor: paths.app + "vendor/"
+            vendor: {
+                root: paths.app + "vendor/",
+                all: paths.app + "vendor/**/**/**/*.*"
+            }
         },
 
         libs: {
@@ -102,7 +82,8 @@ module.exports = function () {
             src: {
                 root: paths.dist + "src/",
                 images: paths.dist + "src/images/",
-                fonts: paths.dist + "/fonts/"
+                fonts: paths.dist + "/fonts/",
+                vendor: paths.dist + "src/vendor/"
             },
             css: paths.app + "content/css/",
             images: paths.dist + "images/"
@@ -130,22 +111,29 @@ module.exports = function () {
 
     // Resources
     config.getResourcesInjected = function () {
-        return {
-            'modules': config.app.js.static.modules,
-            'extentions': config.app.js.static.extentions,
-            'provider': config.app.js.static.provider,
-            'config': config.app.js.static.configs,
-            'constant': config.app.js.static.constant,
-            'adapters': config.app.js.static.adapters,
-            'factory': config.app.js.static.factory,
-            'service': config.app.js.static.services,
-            'controller': config.app.js.static.controllers,
-            'routes': config.app.js.static.route,
-            'config.routes': config.app.js.static.routeConfig,
-            'directive': config.app.js.static.directive,
-            'templates': config.templatecache.path + config.templatecache.file,
-            'run': config.app.js.static.run,
+        var resources = {
+            'modules': config.app.js.modules,
+            'extentions': config.app.js.extentions,
+            'provider': config.app.js.provider,
+            'config': config.app.js.configs,
+            'constant': config.app.js.constant,
+            'factory': config.app.js.factory,
+            'service': config.app.js.services,
+            'controller': config.app.js.controllers,
+            'routes': config.app.js.route,
+            'directive': config.app.js.directive,
+            'templates': [config.templatecache.path + config.templatecache.file],
+            'run': config.app.js.run,
         }
+
+        var ignored = require("../src/lazy-resources.json");
+
+        for (var resource in resources) {
+            ignored.map(function (ignore) {
+                resources[resource].push("!" + ignore);
+            });
+        }
+        return resources;
     }
 
     // Wiredep
@@ -212,6 +200,5 @@ module.exports = function () {
     }
 
     return config;
-
 
 }

@@ -34,6 +34,9 @@
 
     <!-- Themes-->
     <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
+
+    <!-- Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-controller="shellController as shell"
@@ -140,10 +143,9 @@
     <script src="/src/common/colors/colors.constants.js"></script>
     <script src="/src/common/core/core.constants.js"></script>
     <script src="/src/common/lazyload/lazyload.constants.js"></script>
+    <script src="/src/common/translate/translate.constants.js"></script>
     <!--endinject-->
 
-    <!--inject:adapters-->
-    <!--endinject-->
 
     <!--inject:factory-->
     <script src="/src/common/automapper/automapper.factory.js"></script>
@@ -159,7 +161,6 @@
     <script src="/src/common/logger/logger.service.js"></script>
     <script src="/src/common/navsearch/navsearch.service.js"></script>
     <script src="/src/common/sidebar/sidebar.service.js"></script>
-    <script src="/src/common/translate/language.service.js"></script>
     <script src="/src/common/utils/browser.service.js"></script>
     <script src="/src/common/utils/utils.service.js"></script>
     <script src="/src/features/authentication/auth.service.js"></script>
@@ -171,8 +172,8 @@
     
     <!--inject:controller-->
     <script src="/src/common/layout/shell.controller.js"></script>
+    <script src="/src/common/sidebar/sidebar.block.controller.js"></script>
     <script src="/src/common/sidebar/sidebar.controller.js"></script>
-    <script src="/src/common/sidebar/sidebar.userblock.controller.js"></script>
     <!--endinject-->
 
     <!--inject:routes-->
@@ -181,11 +182,9 @@
     <script src="/src/features/group/group.routes.js"></script>
     <script src="/src/features/permission/permission.routes.js"></script>
     <script src="/src/features/user/user.routes.js"></script>
-    <!--endinject-->
-
-    <!--inject:config.routes-->
     <script src="/src/common/routes/routes.config.js"></script>
     <!--endinject-->
+
 
     <!--inject:directive-->
     <script src="/src/common/navsearch/navsearch.directive.js"></script>

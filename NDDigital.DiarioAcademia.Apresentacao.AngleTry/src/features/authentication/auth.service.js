@@ -106,12 +106,12 @@
 
                              localStorageService.set(storageKeys.autheData, authorization);
                          });
-                logger.success(res.welcome + " " + (authentication.userName));
+                logger.success(res.WELCOME + " " + (authentication.userName));
                 deferred.resolve(response);
 
             }).error(function (err, status) {
                 if (!status)
-                    logger.error(res.unavailable_server);
+                    logger.error(res.UNAVAILABLE_SERVER);
                 else
                     logger.error(err.error_description);
                 logOut();

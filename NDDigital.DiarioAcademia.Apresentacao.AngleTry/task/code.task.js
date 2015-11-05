@@ -10,23 +10,8 @@
 gulp.task('inject', 'Inject the files in the index.html', ['inject-css', 'templatecache'], function (callback) {
     var resources = config.getResourcesInjected();
     var source = gulp.src(config.index);
+
     for (var resource in resources) {
-
-        var ignoneTurma = "!./src/**/**/turma*.js";
-        var ignoneAluno = "!./src/**/**/aluno*.js";
-        var ignoneAula = "!./src/**/**/aula*.js";
-        var ignoneChamada = "!./src/**/**/chamada*.js";
-
-
-        if (typeof resources[resource] == "string") {
-            resources[resource] = [resources[resource], ignoneTurma, ignoneAluno, ignoneAula, ignoneChamada];
-        } else {
-            resources[resource].push(ignoneTurma);
-            resources[resource].push(ignoneAluno);
-            resources[resource].push(ignoneAula);
-            resources[resource].push(ignoneChamada);
-        }
-
         source = source.pipe(loader.inject(gulp.src(resources[resource]), {
             starttag: "<!--inject:" + resource + "-->"
         }));
@@ -80,9 +65,8 @@ gulp.task('templatecache', 'Generate template cache', function () {
 
 
 //Deploy of lazy load resources describes in vendor.json
-gulp.task('vendor-lazy', 'Put in vendor lazy dependencies define in vendor.json', function () {
+gulp.task('vendor-lazy', 'Put in paste vendor lazy dependencies define in vendor.json', function (done) {
     var vendors = require("../src/vendor.json");
-
     gulp.src(vendors, { base: 'bower_components' })
-        .pipe(gulp.dest(config.app.vendor));
+        .pipe(gulp.dest(config.app.vendor.root).on('end', done));
 });

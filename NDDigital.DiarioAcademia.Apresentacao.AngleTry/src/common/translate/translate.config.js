@@ -4,9 +4,10 @@
     angular
         .module('app.translate')
         .config(translateConfig);
-
+       
+        
     translateConfig.$inject = ['$translateProvider'];
-    function translateConfig($translateProvider){
+    function translateConfig($translateProvider) {
   
       $translateProvider.useStaticFilesLoader({
           prefix : 'src/common/translate/i18n/',
@@ -15,6 +16,5 @@
       $translateProvider.preferredLanguage('en');
       $translateProvider.useLocalStorage();
       $translateProvider.usePostCompiling(true);
-
     }
 })();

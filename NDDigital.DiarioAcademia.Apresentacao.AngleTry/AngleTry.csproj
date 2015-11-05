@@ -112,7 +112,7 @@
     <Content Include="src\common\templatecache\templates.js" />
     <Content Include="src\common\templates\components\inner-view.html" />
     <Content Include="src\common\templates\components\user-profile.html" />
-    <Content Include="src\common\translate\language.service.js" />
+    <Content Include="src\common\translate\translate.constants.js" />
     <Content Include="src\content\component\ngwig.scss" />
     <None Include="src\content\component\switcher.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
@@ -367,6 +367,7 @@
     <Content Include="src\content\theme\theme-g.scss" />
     <Content Include="src\content\theme\theme-h.scss" />
     <Content Include="src\features\permission\permissions.json" />
+    <Content Include="src\lazy-resources.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -409,7 +410,7 @@
     <Content Include="src\common\sidebar\sidebar.directive.js" />
     <Content Include="src\common\sidebar\sidebar.module.js" />
     <Content Include="src\common\sidebar\sidebar.service.js" />
-    <Content Include="src\common\sidebar\sidebar.userblock.controller.js" />
+    <Content Include="src\common\sidebar\sidebar.block.controller.js" />
     <Content Include="src\common\translate\translate.config.js" />
     <Content Include="src\common\translate\translate.module.js" />
     <Content Include="src\common\translate\translate.run.js" />

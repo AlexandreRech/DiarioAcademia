@@ -56,7 +56,7 @@
         ///////////////////// callback functions
         
         function successCallback(response) {
-            success(res.success_request);
+            success(res.SUCCESS_REQUEST);
             return response.data.results || response.data;
         }
 
@@ -76,7 +76,7 @@
                 service[infolog.type](infolog.message, info.content, infolog.title);
 
             } else
-                error(response.message, null, res.unavailable_server);
+                error(response.message, null, res.UNAVAILABLE_SERVER);
         }
         function emptyMessageCallback(response) {
             return response.data.results || response.data;

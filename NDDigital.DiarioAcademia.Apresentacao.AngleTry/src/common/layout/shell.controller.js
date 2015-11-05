@@ -3,7 +3,7 @@
     'use strict';
 
     //using
-    shellController.$inject = ['$rootScope', '$state', 'authService', 'languageService', 'resource', 'permissions.factory'];
+    shellController.$inject = ['$rootScope', '$state', 'authService', 'permissions.factory'];
 
     //namespace
     angular
@@ -11,7 +11,7 @@
         .controller('shellController', shellController);
 
     //class
-    function shellController($rootScope, $state, authService, languageService, res, permissionFactory) {
+    function shellController($rootScope, $state, authService, permissionFactory) {
         var self = this;
         self.authentication = {};
 
@@ -22,13 +22,10 @@
             self.authorization = authService.authorization;
             toastr.options.preventDuplicates = true;
             toastr.options.timeOut = 900;
-            self.currentLanguage = languageService.currentLanguage;
-            reTranslate('pt-br');
             var date = new Date();
             self.year = date.getFullYear();
         }
 
-        self.reTranslate = reTranslate;
 
         //public methods
         self.logOut = function () {
@@ -49,11 +46,7 @@
         self.isLogged = function () {
             return self.authentication.isAuth && $(document).width() > 768;
         }
+
         //private methods
-        function reTranslate(language) {
-
-            languageService.updateLanguage(language);
-
-        };
     }
 })();

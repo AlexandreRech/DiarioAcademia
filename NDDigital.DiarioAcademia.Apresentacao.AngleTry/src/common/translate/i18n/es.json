@@ -82,11 +82,18 @@
         "CLASS_REGISTER_NOT_CREATE": "Clase Registro no crea!",
         "CLASS_REGISTER_CREATE": "Clase Registro salvado!",
         "IS_ADMIN": "Yo soy el administrador",
-        "IS_NOT_ADMIN": "No es un administrador"
+        "IS_NOT_ADMIN": "No es un administrador",
+        "SAVED_SUCCESSFUL": "Guardado éxito!",
+        "DELETED_SUCCESSFUL": "Suprimido éxito!",
+        "UNAVAILABLE_SERVER": "Servidor no disponible !",
+        "SUCCESS_REQUEST": "Solicitar éxito!",
+        "STUDENT_FOUNDED": "Estudiante Fundada!",
+        "STUDENT_EDITED": "Estudiante Editado",
+        "WELCOME": "Bienvenido"
     },
     "home": {
         "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",
-    "MESSAGE_DESCRIPTION":  "La aplicación semilla no hacer mucho y tiene la mayor parte de la función de quitar para que pueda agregar el tema según sus necesidades simplemente siguiendo los ejemplos de aplicaciones de demostración."
+        "MESSAGE_DESCRIPTION": "La aplicación semilla no hacer mucho y tiene la mayor parte de la función de quitar para que pueda agregar el tema según sus necesidades simplemente siguiendo los ejemplos de aplicaciones de demostración."
 
     }
 }

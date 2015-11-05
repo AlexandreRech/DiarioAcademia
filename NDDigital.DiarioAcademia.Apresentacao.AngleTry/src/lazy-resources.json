@@ -1,0 +1,11 @@
+﻿[
+    "./src/**/**/turma*.js",
+    "./src/**/**/aluno*.js",
+    "./src/**/**/aula*.js",
+    "./src/**/**/chamada*.js",
+    "./src/**/**/login.controller.js",
+    "./src/**/**/signup.controller.js",
+    "./src/**/**/*user*.controller.js",
+    "./src/**/**/*permission*.controller.js",
+    "./src/**/**/*group*.controller.js"
+]

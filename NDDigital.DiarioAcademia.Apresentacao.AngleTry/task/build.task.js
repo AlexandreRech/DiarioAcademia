@@ -6,36 +6,35 @@
  * 
  */
 
+gulp.task('build', 'Build of application optimized', gulpsync.sync(['clean-dist', 'inject',
+    ['build-images', 'build-lazy-css', 'build-lazy-js', 'build-fonts', 'build-json', 'build-vendor','build-html']]), function () {
 
-gulp.task('build', 'Build of application optimized', gulpsync.sync(['clean-dist', "vendor-lazy", 'inject',
-    ['build-images', 'build-lazy-css', 'build-lazy-js', 'build-fonts', 'build-json', 'build-html']]), function () {
+        var builder = loader.useref.assets({ searchPath: "./" });
+        var cssFilter = loader.filter('**/*.css', { restore: true });
+        var jsAppFilter = loader.filter('**/app.js', { restore: true });
+        var jsLibsFilter = loader.filter('**/libs.js', { restore: true });
 
-    var builder = loader.useref.assets({ searchPath: "./" });
-    var cssFilter = loader.filter('**/*.css', { restore: true });
-    var jsAppFilter = loader.filter('**/app.js', { restore: true });
-    var jsLibsFilter = loader.filter('**/libs.js', { restore: true });
-
-    return gulp.src(config.index)
-              .pipe(builder) //verify the tags 'build' and generate the builds
-              //all css in index
-              .pipe(cssFilter)
-              .pipe(loader.stripCssComments({ all: true }))
-              .pipe(loader.csso()) // css optimize
-              .pipe(cssFilter.restore())
-              //libs js
-              .pipe(jsLibsFilter)
-              .pipe(loader.ngAnnotate()) // $inject
-              .pipe(loader.uglify()) // minify
-              .pipe(jsLibsFilter.restore())
-              //app js
-              .pipe(jsAppFilter)
-              .pipe(loader.ngAnnotate()) // $inject
-              .pipe(loader.uglify()) // minify
-              .pipe(jsAppFilter.restore())
-              .pipe(builder.restore())
-              .pipe(loader.useref())  // define build in index
-              .pipe(gulp.dest(config.dist.root));
-});
+        return gulp.src(config.index)
+                  .pipe(builder) //verify the tags 'build' and generate the builds
+                  //all css in index
+                  .pipe(cssFilter)
+                  .pipe(loader.stripCssComments({ all: true }))
+                  .pipe(loader.csso()) // css optimize
+                  .pipe(cssFilter.restore())
+                  //libs js
+                  .pipe(jsLibsFilter)
+                  .pipe(loader.ngAnnotate()) // $inject
+                  .pipe(loader.uglify()) // minify
+                  .pipe(jsLibsFilter.restore())
+                  //app js
+                  .pipe(jsAppFilter)
+                  .pipe(loader.ngAnnotate()) // $inject
+                  .pipe(loader.uglify()) // minify
+                  .pipe(jsAppFilter.restore())
+                  .pipe(builder.restore())
+                  .pipe(loader.useref())  // define build in index
+                  .pipe(gulp.dest(config.dist.root));
+    });
 
 
 gulp.task('build-html', 'Optimized construction of html files', function (done) {
@@ -48,12 +47,12 @@ gulp.task('build-html', 'Optimized construction of html files', function (done) 
 
 
 gulp.task('build-lazy-js', 'Optimized construction of css files in lazy load', function () {
-    var resources = config.app.js.lazy;
+    var resources = require("../src/lazy-resources.json");
     for (var res in resources) {
-        gulp.src(resources[res].src)
+        gulp.src(resources[res])
              .pipe(loader.ngAnnotate()) // $inject
              .pipe(loader.uglify()) // minify
-            .pipe(gulp.dest(resources[res].dist));
+             .pipe(gulp.dest(config.dist.src.root));
     }
 });
 
@@ -64,7 +63,24 @@ gulp.task('build-lazy-css', 'Optimized construction of js files in lazy load', f
             .pipe(loader.stripCssComments({ all: true }))
             .pipe(loader.csso()) // css optimize
             .pipe(gulp.dest(resources[res].dist));
-    }   
+    }
+});
+
+gulp.task('build-vendor', 'Optimized construction of vendor files in build', ["vendor-lazy"], function () {
+    var cssFilter = loader.filter('**/*.css', { restore: true });
+    var jsFilter = loader.filter('**/*.js', { restore: true });
+
+    gulp.src(config.app.vendor.all)
+            .pipe(cssFilter)
+            .pipe(loader.stripCssComments({ all: true }))
+            .pipe(loader.csso()) // css optimize
+            .pipe(cssFilter.restore())
+            .pipe(jsFilter)
+            .pipe(loader.ngAnnotate()) // $inject
+            .pipe(loader.uglify()) // minify
+            .pipe(jsFilter.restore())
+            .pipe(gulp.dest(config.dist.src.vendor));
+
 });
 
 gulp.task('build-images', 'Publish Optimized Images', function (done) {

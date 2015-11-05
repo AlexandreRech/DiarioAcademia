@@ -84,12 +84,18 @@
         "CLASS_REGISTER_NOT_CREATE": "Class Register not create !",
         "CLASS_REGISTER_CREATE": "Class Register saved !",
         "IS_ADMIN": "It is administrator",
-        "IS_NOT_ADMIN": "It is not an administrator"
-
+        "IS_NOT_ADMIN": "It is not an administrator",
+        "SAVED_SUCCESSFUL": "Saved Successfully ! !",
+        "DELETED_SUCCESSFUL": "Deleted Successfully ! !",
+        "UNAVAILABLE_SERVER": "Server Unavailable !",
+        "SUCCESS_REQUEST": "Request Successfully ! !",
+        "STUDENT_FOUNDED": "Student Founded !",
+        "STUDENT_EDITED": "Student Edited",
+        "WELCOME": "Welcome"
     },
     "home": {
         "MESSAGE_START": "This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.",
-    "MESSAGE_DESCRIPTION":  " The seed app doesn't do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples."
+        "MESSAGE_DESCRIPTION": " The seed app doesn't do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples."
     }
 
 }

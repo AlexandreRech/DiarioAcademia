@@ -251,7 +251,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Translate\pt-br.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -280,7 +279,6 @@
     <Compile Include="Controllers\Security\AuthorizationController.cs" />
     <Compile Include="Controllers\Security\GroupController.cs" />
     <Compile Include="Controllers\Security\PermissionController.cs" />
-    <Compile Include="Controllers\Translate\LanguageController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="Factories\NinjectValidatorFactory.cs" />
     <Compile Include="Filters\AutoFilterData.cs" />
@@ -291,10 +289,9 @@
     <Compile Include="Handlers\LanguageMessageHandlers.cs" />
     <Compile Include="Interceptors\StopWatchNinjectInterceptor.cs" />
     <Compile Include="Loggers\WebApiTracerLogger.cs" />
-    <Compile Include="Models\Accounts\RegisterNewAccountCommand.cs" />
-    <Compile Include="Models\Accounts\RegisterNewAccountCommandValidator.cs" />
-    <Compile Include="Models\Events\EventDTO.cs" />
     <Compile Include="Models\ModelFactory.cs" />
+    <Compile Include="Models\PermissionModel.cs" />
+    <Compile Include="Models\UserModelFactory.cs" />
     <Compile Include="Models\ObjectExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\CustomJwtFormat.cs" />

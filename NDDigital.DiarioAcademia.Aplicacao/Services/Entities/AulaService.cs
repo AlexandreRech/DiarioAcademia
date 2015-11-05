@@ -1,4 +1,5 @@
-﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs;
+﻿using AutoMapper;
+using NDDigital.DiarioAcademia.Aplicacao.DTOs;
 using NDDigital.DiarioAcademia.Dominio;
 using NDDigital.DiarioAcademia.Dominio.Contracts;
 using NDDigital.DiarioAcademia.Dominio.Entities;
@@ -99,29 +100,21 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
         {
             var aula = _aulaRepository.GetById(id);
 
-            return new AulaDTO
-            {
-                Id = aula.Id,
-                DataAula = aula.Data,
-                TurmaId = aula.Turma.Id
-            };
+            return Mapper.Map<AulaDTO>(aula);
         }
 
         public IEnumerable<AulaDTO> GetAllByTurma(int id)
         {
             return _aulaRepository
                 .GetAllByTurmaId()
-                .Select(aula => new AulaDTO(aula))
+                .Select(aula => Mapper.Map<AulaDTO>(aula))
                 .Where(aula => aula.TurmaId == id)
                 .ToList();
         }
 
         public ChamadaDTO GetChamadaByAula(AulaDTO aulaDTO)
         {
-            var chamada = new ChamadaDTO();
-
-            chamada.AnoTurma = aulaDTO.AnoTurma;
-            chamada.Data = aulaDTO.DataAula;
+            var chamada = Mapper.Map<ChamadaDTO>(aulaDTO);
 
             Aula aula = _aulaRepository.GetById(aulaDTO.Id);
 
@@ -154,7 +147,7 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
         public IList<AulaDTO> GetAll()
         {
             return _aulaRepository.GetAll()
-                .Select(aula => new AulaDTO(aula))
+                .Select(aula => Mapper.Map<AulaDTO>(aula))
                 .ToList();
         }
     }

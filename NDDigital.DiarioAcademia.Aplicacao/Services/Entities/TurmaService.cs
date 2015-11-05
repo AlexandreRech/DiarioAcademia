@@ -92,7 +92,7 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
         {
             return _turmaRepository
                 .GetAll()
-                .Select(turma => new TurmaDTO(turma))
+                .Select(turma => Mapper.Map<TurmaDTO>(turma))
                 .ToList();
         }
     }

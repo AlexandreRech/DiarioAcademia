@@ -1,5 +1,6 @@
 ﻿using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
+using NDDigital.DiarioAcademia.WebApi.Models;
 using NDDigital.DiarioAcademia.WebApiFull.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApiFull.Filters;
 using System.Collections.Generic;
@@ -64,6 +65,14 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             
                 
                 return Ok();
+        }
+
+        // GET: api/Permission/byuser/username
+        [AllowAnonymous]
+        [Route("metadata")]
+        public IHttpActionResult getPermissionMetadata()
+        {
+            return Ok(PermissionModel.Get());
         }
     }
 }

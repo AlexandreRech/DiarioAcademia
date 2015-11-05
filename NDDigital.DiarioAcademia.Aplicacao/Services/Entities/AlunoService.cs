@@ -1,4 +1,5 @@
-﻿using iTextSharp.text;
+﻿using AutoMapper;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using NDDigital.DiarioAcademia.Aplicacao.DTOs;
 using NDDigital.DiarioAcademia.Dominio;
@@ -86,34 +87,20 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
         {
             var aluno = _alunoRepository.GetById(id);
 
-            var alunoDto = new AlunoDTO
-            {
-                Id = aluno.Id,
-                Descricao = aluno.Nome,
-                TurmaId = aluno.Turma.Id,
-                Cep = aluno.Endereco.Cep,
-                Bairro = aluno.Endereco.Bairro,
-                Localidade = aluno.Endereco.Localidade,
-                Uf = aluno.Endereco.Uf
-            };
-
-            if (aluno.Turma != null)
-                alunoDto.TurmaId = aluno.Turma.Id;
-
-            return alunoDto;
+            return Mapper.Map<AlunoDTO>(aluno);
         }
 
         public IList<AlunoDTO> GetAll()
         {
             return _alunoRepository.GetAll()
-                .Select(aluno => new AlunoDTO(aluno))
+                .Select(aluno => Mapper.Map<AlunoDTO>(aluno))
                 .ToList();
         }
 
         public IList<AlunoDTO> GetAllByTurmaId(int id)
         {
             return _alunoRepository.GetAll()
-              .Select(aluno => new AlunoDTO(aluno))
+              .Select(aluno => Mapper.Map<AlunoDTO>(aluno))
               .Where(aluno => aluno.TurmaId == id)
               .ToList();
         }

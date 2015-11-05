@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -83,10 +87,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Base\BaseTest.cs" />
     <Compile Include="Base\BaseServiceTest.cs" />
     <Compile Include="Dominio\AlunoTests.cs" />
     <Compile Include="Dominio\PresencaTests.cs" />
     <Compile Include="Common\ObjectBuilder.cs" />
+    <Compile Include="Mappers\AulaMapperTests.cs" />
+    <Compile Include="Mappers\AlunoMapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\AlunoServiceTests.cs" />
     <Compile Include="Servicos\AulaServiceTests.cs" />

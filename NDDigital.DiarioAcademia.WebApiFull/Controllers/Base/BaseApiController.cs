@@ -36,7 +36,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers
             {
                 if (_modelFactory == null)
                 {
-                    _modelFactory = new ModelFactory(this.Request, this.UserRepository);
+                    _modelFactory = new ModelFactory(Request, this.UserRepository);
                 }
                 return _modelFactory;
             }

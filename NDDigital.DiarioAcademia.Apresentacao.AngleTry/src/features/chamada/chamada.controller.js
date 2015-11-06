@@ -51,7 +51,8 @@
             if (vm.chamada.aula) {
                 chamadaService.getChamadaByAula(vm.chamada.aula.id).then(function (data) {
                     vm.chamadaDto = data;
-                    vm.alunos = checkStatus(vm.chamadaDto, vm.chamadaDto.alunos);
+                    if (vm.chamadaDto)
+                        vm.alunos = checkStatus(vm.chamadaDto, vm.chamadaDto.alunos);
                 });
             }
             vm.aulaSelected = true;

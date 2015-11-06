@@ -295,6 +295,15 @@ html, body {
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .modal-open {
+        section {
+            transform: none !important;
+            @include transition(none !important);
+        }
+    }
+}
+
 // Toggle and collapsed behavior overrides
 
 @media only screen and (max-width: $mq-up-to-tablet) {

@@ -24,6 +24,10 @@
             toastr.options.timeOut = 900;
             var date = new Date();
             self.year = date.getFullYear();
+
+            var rs = $(window).width();
+            if (rs <= 767)
+                $rootScope.app.layout.isCollapsed = true;
         }
 
 

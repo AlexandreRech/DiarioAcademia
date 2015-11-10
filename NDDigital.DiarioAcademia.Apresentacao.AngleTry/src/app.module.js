@@ -40,7 +40,7 @@
             'app.nddtoolbar',
             'app.modal',
             'app.checkbox',
-            'app.ndd-confirm-exit',
+            'app.ndd-confirm',
             'app.ndd-security',
             //features
             'app.layout',

@@ -1,5 +1,7 @@
-﻿<ndd-head title="{{ 'header.LIST_CLASS' | translate }}" ></ndd-head>
+﻿<ndd-head title="{{ 'header.LIST_CLASS' | translate }}"></ndd-head>
 
 
-<ndd-table title="{{ 'entities.CLASS' | translate }}" columns="['ID', 'TURMA']" attrs="['id', 'descricao']" data="vm.turmas" cb-edit="vm.edit" cb-remove="vm.remove"
+<ndd-table title="{{ 'entities.CLASS' | translate }}" columns="['ID', 'TURMA']" attrs="['id', 'descricao']" 
+           data="vm.turmas" cb-edit="vm.edit" cb-remove="vm.remove" 
            security-remove="action.deleteTurma" security-edit="app.turma.details"></ndd-table>
+

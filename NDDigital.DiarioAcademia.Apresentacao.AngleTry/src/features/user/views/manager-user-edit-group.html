@@ -12,17 +12,10 @@
     <div class="row">
         <div class="col-xs-12 text-center clear-padding">
             <hr />
-            <button class="btn btn-success" ng-click="vm.modal()"
-                    data-toggle="modal" data-target="#modelEditUser" ng-disabled="!vm.hasChange">
+            <button class="btn btn-success" ng-click="vm.save()" ng-disabled="!vm.hasChange">
                 <i class="fa fa-save"></i>
                 <span>{{'action.SAVE' | translate}}</span>
             </button>
         </div>
     </div>
 </div>
-
-<ndd-modal target="modelEditUser" label="{{vm.titleModelEdit}}" callback="vm.saveChanges">
-    {{vm.bodyModelEdit}}
-</ndd-modal>
-
-<ndd-confirm-exit controller="vm"><ndd-confirm-exit>

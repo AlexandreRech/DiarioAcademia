@@ -189,16 +189,19 @@ module.exports = function () {
                          "!" + bower + "**/**/**/font-awesome*.css",
                          "!" + bower + "**/**/**/bootstrap*.css",
                          "!" + bower + "**/examples/**/*.css",
+                         "!" + bower + "**/**/**/example*.css",
                          "!" + bower + "modernizr/**/**/*.css",
-                         "!" + bower + "/ng-table/docs/**/*.css"];
+                         "!" + bower + "/ng-table/docs/**/*.css",
+                         "!" + bower + "/**/sweetalert/themes/**/*.css",
+                         "!" + bower + "/**/sweetalert/dev/**/*.css"];
 
         var vendors = require("../src/vendor.json");
         vendors.map(function (vendor) {
             resources.push("!" + vendor);
         });
+
         return resources;
     }
-
     return config;
 
 }

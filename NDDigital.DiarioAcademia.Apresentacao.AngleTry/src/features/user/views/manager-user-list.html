@@ -1,6 +1,4 @@
 ﻿<ndd-head title="{{'header.LIST_USERS' | translate }}"></ndd-head>
 
 <ndd-table columns="['ID','NOME', 'LOGON', 'E-MAIL']" attrs="['id','fullName', 'userName', 'email']" data="vm.users"
-           cb-edit="vm.cbEdit" cb-remove="vm.cbRemove" security-edit="app.user.edit"></ndd-table>
-
-<ndd-modal target="modelRemoveUser" label="{{vm.titleModelRemove}}" callback="vm.remove">{{vm.bodyModelRemove}}</ndd-modal>
+           cb-edit="vm.edit" cb-remove="vm.remove" security-edit="app.user.edit"></ndd-table>

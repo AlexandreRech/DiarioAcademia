@@ -4,24 +4,15 @@
         .module('app.user')
         .controller('managerUserListController', managerUserListController);
 
-    managerUserListController.$inject = ['$scope', 'userService', '$state'];
+    managerUserListController.$inject = ['$scope', 'userService', '$state', "$translate", "SweetAlert"];
 
-    function managerUserListController($scope, managerService, $state) {
+    function managerUserListController($scope, managerService, $state, $translate, SweetAlert) {
         var vm = this;
-        var users = [];
-
-      
+    
         //public methods
-        vm.modal = modal;
         vm.remove = remove;
-        vm.cbRemove = cbRemove;
-        vm.cbEdit = cbEdit;
+        vm.edit = edit;
 
-        //angular pagination
-        vm.currentPage = 1;
-        vm.numPerPage = 10;
-        vm.maxSize = 4;
-        vm.countUsers = 0;
 
         activate();
         function activate() {
@@ -30,45 +21,44 @@
 
         function makeRequest() {
             managerService.getUsers().then(function (results) {
-                users = results;
-                vm.countUsers = users.length;
-
-                $scope.$watch("vm.currentPage + vm.numPerPage", function () {
-                    var begin = ((vm.currentPage - 1) * vm.numPerPage)
-                    , end = begin + vm.numPerPage;
-                    vm.users = users.slice(begin, end);
-                });
+                vm.users = results;
             });
         }
 
-
-        function cbEdit(user) {
+        function edit(user) {
             if (user)
                 $state.go('app.user.edit', { userId: user.id });
         }
 
        
-        function cbRemove(user) {
-            if (!user)
-                return;
+        function remove(user) {
             vm.user = user;
-            vm.modal(user);
-            $("#modelRemoveUser").modal();
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_DELETE'),
+                text: $translate.instant('confirm.CONFIRM_DELETE_USER', { username: vm.user.fullName }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionRemove);
         }
 
         // Private Methods
-        function remove() {
-            managerService.delete(vm.user).then(function (results) {
+        function actionRemove(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.USER_NOT_DELETED'), 'error');
+                return;
+            }
+            managerService.delete(vm.user).then(function () {
                 makeRequest();
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                                $translate.instant('info.USER_DELETED'), "success");
                 vm.user = undefined;
             });
         }
-
-        function modal(user) {
-            vm.user = user;
-            vm.titleModelRemove = 'Exclusão';
-            vm.bodyModelRemove = 'Remover ' + user.fullName + ' (' + user.userName + ') ?'
-        }
-
     }
 })(window.angular);

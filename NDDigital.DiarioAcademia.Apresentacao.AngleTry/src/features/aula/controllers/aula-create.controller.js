@@ -2,7 +2,7 @@
 
     'use strict';
     //using
-    aulaCreateController.$inject = ["aulaService", "turmaService", "$state"];
+    aulaCreateController.$inject = ["aulaService", "turmaService", "$state", "$translate", "SweetAlert"];
 
     //namespace
     angular
@@ -10,7 +10,7 @@
         .controller("aulaCreateController", aulaCreateController);
 
     //class
-    function aulaCreateController(aulaService, turmaService, $state) {
+    function aulaCreateController(aulaService, turmaService, $state, $translate, SweetAlert) {
         var vm = this;
         vm.title = "Cadastro de Aulas";
         activate();
@@ -23,8 +23,17 @@
         }
 
         vm.save = function () {
-            aulaService.save(convertAulaToDto(vm.aula));
-            vm.clearFields();
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_CREATE'),
+                text: $translate.instant('confirm.CONFIRM_CREATE_LESSON', { lessonDate: new Date(vm.aula.data).toLocaleDateString('pt-BR') }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionCreate);
         };
 
         vm.clearFields = function () {
@@ -32,6 +41,7 @@
             vm.aulaForm.$setPristine();
         }
 
+        //private methods
         function convertAulaToDto(aula) {
             return {
                 id: aula.id,
@@ -39,6 +49,19 @@
                 anoTurma: aula.turma.ano,
                 turmaId: aula.turma.id
             };
+        }
+
+        function actionCreate(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.LESSON_NOT_CREATE'), 'error');
+                return;
+            }
+            aulaService.save(convertAulaToDto(vm.aula)).then(function () {
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                              $translate.instant('info.LESSON_CREATE'), "success");
+                $state.go('app.aula.list');
+            });
         }
     }
 }(window.angular));

@@ -27,8 +27,7 @@
         };
 
         self.save = function (aula) {
-
-            $http.post(serviceUrl, aula);
+            return $http.post(serviceUrl, aula);
         };
 
         self.delete = function (aula) {

@@ -14,16 +14,16 @@
 		var self = this;
 		var serviceUrl = baseUrl + "api/permission/";
 		var resource = "src/features/permission/permissions.json";
-		
+
 		//public methods
 		self.getPermissions = function () {
 			return $http.get(serviceUrl)
-				 .then(logger.successCallback)
+				 .then(logger.emptyMessageCallback)
 				 .catch(logger.errorCallback)
 		};
 
 		self.getStates = function () {
-		    return $http.get(serviceUrl + 'metadata')
+			return $http.get(serviceUrl + 'metadata')
 				 .then(logger.successCallback)
 				 .catch(logger.errorCallback)
 		};
@@ -35,23 +35,28 @@
 		};
 
 		self.save = function (permission) {
-			logger.success(res.saved_successful, permission);
 			return $http.post(serviceUrl, permission)
-				.then(logger.emptyMessageCallback)
-				 .catch(logger.errorCallback);
+							.then(logger.emptyMessageCallback)
+							.then(function () {
+							    logger.success(res.SAVED_SUCCESSFUL, permission, "Create");
+							})
+							.catch(logger.errorCallback);
 		};
 
 		self.delete = function (permission) {
-			logger.error(res.deleted_successful, permission, "Delete");
 
 			permission = getPermissionsId(permission);
 			return $http({
 				url: serviceUrl,
 				method: 'DELETE',
-				data:  permission,
+				data: permission,
 				headers: { "Content-Type": "application/json;charset=utf-8" }
 			})
 				.then(logger.emptyMessageCallback)
+				.then(function () {
+				    logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
+
+				})
 				.catch(logger.errorCallback);
 		};
 

@@ -89,11 +89,87 @@
         "SUCCESS_REQUEST": "Solicitar éxito!",
         "STUDENT_FOUNDED": "Estudiante Fundada!",
         "STUDENT_EDITED": "Estudiante Editado",
-        "WELCOME": "Bienvenido"
+        "WELCOME": "Bienvenido",
+        "SUCCESS": "Éxito",
+        "ACTION_CANCELED": "Acción cancelada",
+        "COMPLETED": "Terminado !"
     },
     "home": {
         "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",
         "MESSAGE_DESCRIPTION": "La aplicación semilla no hacer mucho y tiene la mayor parte de la función de quitar para que pueda agregar el tema según sus necesidades simplemente siguiendo los ejemplos de aplicaciones de demostración."
 
+    },
+    "info": {
+        "CHANGE_DISPOSAL": "Todos se descartaron cambios no guardados!",
+        "CHANGE_NOT_SAVE": "Los cambios se han hecho y no se guarda. ¿De verdad quieres de la edición?",
+
+        "CLASS_NOT_DELETED": "Clase no excluidos !",
+        "CLASS_DELETED": "Suprimido clase con éxito",
+        "CLASS_CREATE": "Clase registrado correctamente",
+        "CLASS_NOT_CREATE": "Clase no registrada",
+        "CLASS_EDITED": "Clase actualizado correctamente",
+        "CLASS_NOT_EDITED": "Los cambios en la clase no se guardaron",
+
+        "STUDENT_NOT_DELETED": "El estudiante no excluye",
+        "STUDENT_DELETED": "Estudiante incluido con éxito",
+        "STUDENT_CREATE": "Estudiante registrado correctamente",
+        "STUDENT_NOT_CREATE": "Estudiante no registrado",
+        "STUDENT_EDITED": "Estudiante actual con éxito",
+        "STUDENT_NOT_EDITED": "Los cambios en los estudiantes que no son salvos",
+
+        "LESSON_NOT_DELETED": "No excluye Clase",
+        "LESSON_DELETED": "Eliminado correctamente lección",
+        "LESSON_CREATE": "Clase registrado correctamente",
+        "LESSON_NOT_CREATE": "No se ha registrado lección",
+
+        "CLASS_REGISTER_CREATE": "Llame registrado correctamente",
+        "CLASS_REGISTER_NOT_CREATE": "Llame no registrada",
+
+        "USER_NOT_DELETED": "El usuario no borra!",
+        "USER_DELETED": "Usuario eliminado correctamente!",
+        "USER_CREATE": "Con éxito registrado Usuario!",
+        "USER_NOT_CREATE": "Usuario no registrado!",
+        "USER_EDITED": "Usuario actualiza correctamente!",
+        "USER_NOT_EDITED": "No se han guardado los cambios del usuario!",
+
+        "GROUP_NOT_DELETED": "Grupo no borra!",
+        "GROUP_DELETED": "Excluidos éxito del grupo!",
+        "GROUP_CREATE": "Grupo registrado correctamente!",
+        "GROUP_NOT_CREATE": "Grupo no registrado!",
+        "GROUP_EDITED": "Con éxito actualizada grupo!",
+        "GROUP_NOT_EDITED": "No se han guardado los cambios de grupo!",
+
+        "PERMISSIONS_NOT_MODIFIED": "Permisos sin cambios!",
+        "PERMISSIONS_MODIFIED":  "Permisos modificados!"
+
+    },
+    "confirm": {
+        "CONFIRM_ACTION": "Confirme la acción",
+        "CONFIRM_DELETE": "Confirme Borrar",
+        "CONFIRM_CREATE": "De registro de cheques",
+        "CONFIRM_EDIT": "Confirme Edición",
+
+        "CONFIRM_DELETE_CLASS": "¿Quieres eliminar la clase {{classDescription}} ?",
+        "CONFIRM_CREATE_CLASS": "Desea crear la clase {{classDescription}} ?",
+        "CONFIRM_EDIT_CLASS": "Guarde los cambios realizados en {{classDescription}} ?",
+
+        "CONFIRM_DELETE_STUDENT": "¿Quieres eliminar el estudiante {{studentName}} ?",
+        "CONFIRM_CREATE_STUDENT": "¿Quieres crear el estudiante {{studentName}} ?",
+        "CONFIRM_EDIT_STUDENT": "Guarde los cambios realizados en el estudiante {{studentName}} ?",
+
+        "CONFIRM_DELETE_LESSON": "¿Quieres eliminar la clase {{lessonDate}} ?",
+        "CONFIRM_CREATE_LESSON": "¿Quieres crear la clase {{lessonDate}} ?",
+
+        "CONFIRM_CREATE_CLASS_REGISTER": "¿Quiere dar de alta la llamada {{dateClassRegister}} ?",
+
+        "CONFIRM_DELETE_USER": "¿Quieres eliminar el usuario {{username}} ?",
+        "CONFIRM_CREATE_USER": "¿Quieres crear el usuario {{username}} ?",
+        "CONFIRM_EDIT_USER": "Guarde los cambios realizados en el Usuario {{username}} ?",
+
+        "CONFIRM_DELETE_GROUP": "¿Quieres eliminar el grupo {{groupname}} ?",
+        "CONFIRM_CREATE_GROUP": "¿Quieres crear el grupo {{groupname}} ?",
+        "CONFIRM_EDIT_GROUP": "Guarde los cambios realizados en el grupo {{groupname}} ?",
+
+        "CONFIRM_MODIFY_PERMISSIONS":  "¿Quieres modificar los permisos de la Academia Daily ?"
     }
 }

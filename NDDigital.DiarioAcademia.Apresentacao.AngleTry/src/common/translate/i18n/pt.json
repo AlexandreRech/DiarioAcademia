@@ -35,7 +35,6 @@
         "USER_OPTIONS": "Minha Conta",
         "LANGUAGE": "Idioma",
         "THEMES": "Temas"
-
     },
     "topbar": {
         "search": {
@@ -48,11 +47,7 @@
             "HEADER": "Navegação Principal"
         },
         "nav": {
-            "HOME": "Página Principal",
-            "menu": {
-                "MENU": "Menu",
-                "SUBMENU": "Sub Menu"
-            }
+            "HOME": "Página Principal"
         }
     },
     "entities": {
@@ -89,11 +84,86 @@
         "SUCCESS_REQUEST": "Request realizado com sucesso!",
         "STUDENT_FOUNDED": "Aluno encontrado !",
         "STUDENT_EDITED": "Aluno editado !",
-        "WELCOME": "Bem vindo"
+        "COMPLETED": "Concluido !",
+        "WELCOME": "Bem vindo",
+        "SUCCESS": "Sucesso",
+        "ACTION_CANCELED": "Ação cancelada"
     },
     "home": {
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",
         "MESSAGE_DESCRIPTION": "O aplicativo semente não faz muito e tem a maior parte do recurso removido para que você possa adicionar tema como por suas necessidades apenas seguindo os exemplos de aplicativos de demonstração."
-    }
+    },
+    "info": {
+        "CHANGE_DISPOSAL": "Todas as alterações não salvas foram descartadas !",
+        "CHANGE_NOT_SAVE": "Alterações foram realizadas e não salvas. Deseja realmente sair da edição ?",
 
+        "CLASS_NOT_DELETED": "Turma não excluída",
+        "CLASS_DELETED": "Turma excluída com sucesso",
+        "CLASS_CREATE": "Turma cadastrada com sucesso",
+        "CLASS_NOT_CREATE": "Turma não cadastrada",
+        "CLASS_EDITED": "Turma atualizada com sucesso",
+        "CLASS_NOT_EDITED": "Alterações da turma não foram salvas",
+
+        "STUDENT_NOT_DELETED": "Aluno não excluído",
+        "STUDENT_DELETED": "Aluno excluído com sucesso",
+        "STUDENT_CREATE": "Aluno cadastrado com sucesso",
+        "STUDENT_NOT_CREATE": "Aluno não cadastrado",
+        "STUDENT_EDITED": "Aluno atualizado com sucesso",
+        "STUDENT_NOT_EDITED": "Alterações do aluno não foram salvas",
+
+        "LESSON_NOT_DELETED": "Aula não excluída",
+        "LESSON_DELETED": "Aula excluída com sucesso",
+        "LESSON_CREATE": "Aula cadastrada com sucesso",
+        "LESSON_NOT_CREATE": "Aula não cadastrada",
+
+        "CLASS_REGISTER_CREATE": "Chamada cadastrada com sucesso",
+        "CLASS_REGISTER_NOT_CREATE": "Chamada não cadastrada",
+
+        "USER_NOT_DELETED": "Usuário não excluído !",
+        "USER_DELETED": "Usuário excluído com sucesso !",
+        "USER_CREATE": "Usuário cadastrado com sucesso !",
+        "USER_NOT_CREATE": "Usuário não cadastrado !",
+        "USER_EDITED": "Usuário atualizado com sucesso !",
+        "USER_NOT_EDITED": "Alterações do usuário não foram salvas !",
+
+        "GROUP_NOT_DELETED": "Grupo não excluído !",
+        "GROUP_DELETED": "Grupo excluído com sucesso !",
+        "GROUP_CREATE": "Grupo cadastrado com sucesso !",
+        "GROUP_NOT_CREATE": "Grupo não cadastrado !",
+        "GROUP_EDITED": "Grupo atualizado com sucesso !",
+        "GROUP_NOT_EDITED": "Alterações do grupo não foram salvas !",
+
+        "PERMISSIONS_NOT_MODIFIED": "Permissões não modificadas !",
+        "PERMISSIONS_MODIFIED":  "Permissões modificadas !"
+
+    },
+    "confirm": {
+        "CONFIRM_ACTION": "Confirmar Ação",
+        "CONFIRM_DELETE": "Confirmar Exclusão",
+        "CONFIRM_CREATE": "Confirmar Cadastro",
+        "CONFIRM_EDIT": "Confirmar Edição",
+
+        "CONFIRM_DELETE_CLASS": "Deseja remover a turma {{classDescription}} ?",
+        "CONFIRM_CREATE_CLASS": "Deseja criar a turma {{classDescription}} ?",
+        "CONFIRM_EDIT_CLASS": "Salvar alterações realizadas em {{classDescription}} ?",
+
+        "CONFIRM_DELETE_STUDENT": "Deseja remover o aluno {{studentName}} ?",
+        "CONFIRM_CREATE_STUDENT": "Deseja criar o aluno {{studentName}} ?",
+        "CONFIRM_EDIT_STUDENT": "Salvar alterações realizadas no aluno {{studentName}} ?",
+
+        "CONFIRM_DELETE_LESSON": "Deseja remover a aula {{lessonDate}} ?",
+        "CONFIRM_CREATE_LESSON": "Deseja criar a aula {{lessonDate}} ?",
+
+        "CONFIRM_CREATE_CLASS_REGISTER": "Deseja registrar a chamada de {{dateClassRegister}} ?",
+
+        "CONFIRM_DELETE_USER": "Deseja remover o usuario {{username}} ?",
+        "CONFIRM_CREATE_USER": "Deseja criar o usuario {{username}} ?",
+        "CONFIRM_EDIT_USER": "Salvar alterações realizadas no usuario {{username}} ?",
+
+        "CONFIRM_DELETE_GROUP": "Deseja remover o grupo {{groupname}} ?",
+        "CONFIRM_CREATE_GROUP": "Deseja criar o grupo {{groupname}} ?",
+        "CONFIRM_EDIT_GROUP": "Salvar alterações realizadas no grupo {{groupname}} ?",
+
+        "CONFIRM_MODIFY_PERMISSIONS":  "Deseja modificar as permissões do DiarioAcademia ?"
+    }
 }

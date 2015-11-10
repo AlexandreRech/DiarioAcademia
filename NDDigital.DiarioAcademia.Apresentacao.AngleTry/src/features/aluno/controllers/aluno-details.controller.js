@@ -2,7 +2,8 @@
 
     "use strict";
     //using
-    alunoDetailsController.$inject = ["alunoService", "turmaService", "$stateParams", "$state", "$scope", "cepService"];
+    alunoDetailsController.$inject = ["alunoService", "turmaService", "$stateParams", "$state", "$scope", "cepService",
+                                      "$translate", "SweetAlert"];
 
     //namespace
     angular
@@ -10,7 +11,7 @@
         .controller("alunoDetailsController", alunoDetailsController);
 
     //class
-    function alunoDetailsController(alunoService, turmaService, params, $state, $scope, cepService) {
+    function alunoDetailsController(alunoService, turmaService, params, $state, $scope, cepService, $translate, SweetAlert) {
         var vm = this;
         vm.title = "Atualização de Alunos";
         vm.aluno = { endereco: { cep: "" } };
@@ -20,7 +21,6 @@
         activate();
 
         function activate() {
-
             turmaService.getTurmas()
                 .then(function (dataTurmas) {
 
@@ -35,10 +35,17 @@
 
         //public methods
         vm.save = function () {
-            alunoService.edit(convertDto(vm.aluno)).then(function () {
-                $state.go('app.aluno.list');
-            });
-            vm.clearFields();
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_EDIT'),
+                text: $translate.instant('confirm.CONFIRM_EDIT_STUDENT', { studentName: vm.aluno.nome }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionEdit);
         };
 
         vm.clearFields = function () {
@@ -94,6 +101,19 @@
                     uf: alunoDto.endereco.uf
                 }
             };
+        }
+
+        function actionEdit(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.STUDENT_NOT_EDITED'), 'error');
+                return;
+            }
+            alunoService.edit(convertDto(vm.aluno)).then(function () {
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                              $translate.instant('info.STUDENT_EDITED'), "success");
+                $state.go('app.aluno.list');
+            });
         }
 
     }

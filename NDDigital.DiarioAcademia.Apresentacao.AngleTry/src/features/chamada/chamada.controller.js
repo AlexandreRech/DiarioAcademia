@@ -2,16 +2,14 @@
 
     'use strict';
     //using
-    chamadaController.$inject = ["chamadaService", "aulaService", "turmaService"];
+    chamadaController.$inject = ["chamadaService", "aulaService", "turmaService", "$translate", "SweetAlert"];
 
     //namespace
     angular.module("app.chamada").controller("chamadaController", chamadaController);
 
     //class
-    function chamadaController(chamadaService, aulaService, turmaService, $scope) {
+    function chamadaController(chamadaService, aulaService, turmaService, $translate, SweetAlert) {
         var vm = this;
-
-        vm.title = "Realizar chamada";
 
         vm.alunos = [];
         vm.turmas = [];
@@ -34,8 +32,20 @@
         //public methods
         vm.save = function () {
             vm.chamada.alunos = vm.alunos;
-            chamadaService.realizarChamada(vm.chamada);
-            clearFields();
+
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_CREATE'),
+                text: $translate.instant('confirm.CONFIRM_CREATE_CLASS_REGISTER', {
+                    dateClassRegister: new Date(vm.chamada.aula.dataAula).toLocaleDateString('pt-BR')
+                }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionCreate);
         };
 
         vm.populateAulas = function (turma) {
@@ -86,6 +96,19 @@
             vm.aulas = [];
             vm.turmaSelected = false;
             vm.aulaSelected = false;
+        }
+
+        function actionCreate(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.CLASS_REGISTER_NOT_CREATE'), 'error');
+                return;
+            }
+            chamadaService.realizarChamada(vm.chamada).then(function () {
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                              $translate.instant('info.CLASS_REGISTER_CREATE'), "success");
+                clearFields();
+            });
         }
     }
 }(window.angular));

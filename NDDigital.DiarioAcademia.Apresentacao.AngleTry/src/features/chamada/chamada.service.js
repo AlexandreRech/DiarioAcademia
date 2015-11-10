@@ -16,9 +16,8 @@
         //public methods
         self.realizarChamada = function (chamada) {
             chamada = convertToChamadaDto(chamada);
-            $http.post(serviceUrl, chamada).then(function (result) {
-                logger.success(res.saved_successful, chamada);
-            });
+            return $http.post(serviceUrl, chamada)
+                            .then(logger.emptyMessageCallback)
         };
         self.getChamadas = function () {
             return $http.get(serviceUrl)

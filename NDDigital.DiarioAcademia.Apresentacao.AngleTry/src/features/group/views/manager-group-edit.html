@@ -22,25 +22,9 @@
 
     <hr />
     <div class="text-center col-sm-12 clear-padding">
-        <button class="btn btn-success" ng-click="vm.modalEdit(vm.save)" data-toggle="modal" data-target="#modalEditGroup">
+        <button class="btn btn-success" ng-click="vm.save()">
             <i class="fa fa-save"></i>
             {{'action.SAVE' | translate}}
-
-        </button>
-
-        <button class="btn btn-danger" ng-click="vm.modalRemove(vm.remove)"
-                data-toggle="modal" data-target="#modalRemoveGroup" ng-disabled="!vm.group">
-            <i class="fa fa-times"></i>
-            {{'action.DELETE' | translate}}
         </button>
     </div>
 </div>
-<br />
-<ndd-modal target="modalEditGroup" label="{{vm.titleModal}}" callback="vm.callback">
-    {{vm.bodyModal}}
-</ndd-modal>
-
-<ndd-modal target="modalRemoveGroup" label="{{vm.titleModalRemove}}" callback="vm.remove">
-    {{vm.bodyModalRemove}}
-</ndd-modal>
-<ndd-confirm-exit controller="vm"><ndd-confirm-exit>

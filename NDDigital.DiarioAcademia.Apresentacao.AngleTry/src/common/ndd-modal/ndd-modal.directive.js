@@ -22,7 +22,7 @@
             templateUrl: 'src/common/ndd-modal/ndd-modal.html'
         };
 
-        function link(scope, element, attrs) {}
+        function link(scope, element, attrs) { }
     }
 
 

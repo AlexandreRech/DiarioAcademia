@@ -37,9 +37,7 @@
         };
 
         self.edit = function (turma) {
-            logger.success("Turma " + turma.descricao + " editada", null, "Edição");
-
-            $http.put(serviceUrl +  turma.id, turma);
+            return $http.put(serviceUrl + turma.id, turma);
         };
     }
 })(window.angular);

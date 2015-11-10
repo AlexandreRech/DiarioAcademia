@@ -63,9 +63,6 @@
 
         function errorCallback(response) {
             if (response.status) {
-
-               
-
                 var infolog = {
                     message: formatMessageLog(response.data),
                     content: response.data,
@@ -83,7 +80,8 @@
         }
 
         function formatMessageLog(data) {
-
+           if (!data)
+                return "";
 
             var message = (typeof data === 'string') ? "" :
             data.message || data.errors[0].errorMessage;

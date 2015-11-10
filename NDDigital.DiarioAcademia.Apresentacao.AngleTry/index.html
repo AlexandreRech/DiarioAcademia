@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/bower_components/angular-loading-bar/src/loading-bar.css">
         <link rel="stylesheet" href="/bower_components/angular-local-storage/demo/demo-style.css">
         <link rel="stylesheet" href="/bower_components/ng-table/dist/ng-table.css">
+        <link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css">
         <link rel="stylesheet" href="/bower_components/datatables/media/css/dataTables.bootstrap.css">
         <link rel="stylesheet" href="/bower_components/datatables/media/css/dataTables.foundation.css">
         <link rel="stylesheet" href="/bower_components/datatables/media/css/dataTables.jqueryui.css">
@@ -37,6 +38,7 @@
 
     <!-- Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-controller="shellController as shell"
@@ -86,6 +88,8 @@
     <script src="/bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
     <script src="/bower_components/ng-table/dist/ng-table.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/bower_components/ngSweetAlert/SweetAlert.js"></script>
     <!-- endbower -->
 <!--endbuild-->
 
@@ -103,7 +107,7 @@
     <script src="/src/common/loadingbar/loadingbar.module.js"></script>
     <script src="/src/common/logger/logger.module.js"></script>
     <script src="/src/common/navsearch/navsearch.module.js"></script>
-    <script src="/src/common/ndd-confirm-exit/ndd-confirm-exit.module.js"></script>
+    <script src="/src/common/ndd-confirm/ndd-confirm.module.js"></script>
     <script src="/src/common/ndd-group-checkbox/ndd-group-checkbox.module.js"></script>
     <script src="/src/common/ndd-head/ndd-head.module.js"></script>
     <script src="/src/common/ndd-modal/ndd-modal.module.js"></script>
@@ -188,7 +192,7 @@
 
     <!--inject:directive-->
     <script src="/src/common/navsearch/navsearch.directive.js"></script>
-    <script src="/src/common/ndd-confirm-exit/ndd-confirm-exit.directive.js"></script>
+    <script src="/src/common/ndd-confirm/ndd-confirm.directive.js"></script>
     <script src="/src/common/ndd-group-checkbox/ndd-group-checkbox.directive.js"></script>
     <script src="/src/common/ndd-head/ndd-head.directive.js"></script>
     <script src="/src/common/ndd-modal/ndd-modal.directive.js"></script>

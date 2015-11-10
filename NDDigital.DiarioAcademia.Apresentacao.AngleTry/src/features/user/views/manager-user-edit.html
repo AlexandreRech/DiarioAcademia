@@ -26,7 +26,7 @@
     <div class="footer">
         <br /><br />
         <hr />
-        <button class="btn btn-success" data-toggle="modal" data-target="#modelEditUser" ng-disabled="vm.formUser.$pristine">
+        <button class="btn btn-success" ng-click="vm.saveChanges()" ng-disabled="vm.formUser.$pristine">
             <i class="fa fa-check-square-o"></i>
             <span>Salvar Alterações</span>
 
@@ -37,6 +37,3 @@
         </button>
     </div>
 </div>
-
-
-<ndd-modal target="modelEditUser" label="{{vm.titleModelEdit}}" callback="vm.editUser">{{vm.bodyModelEdit}}</ndd-modal>

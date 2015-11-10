@@ -1,7 +1,7 @@
 ﻿(function (angular) {
     'use strict';
     //using
-    aulaListController.$inject = ["aulaService"];
+    aulaListController.$inject = ["aulaService", "$translate", "SweetAlert"];
 
     //namespace
     angular
@@ -9,10 +9,8 @@
         .controller("aulaListController", aulaListController);
 
     //class
-    function aulaListController(aulaService, $state) {
+    function aulaListController(aulaService, $translate, SweetAlert) {
         var vm = this;
-        vm.title = "Lista de Aulas";
-        vm.classe = "selecionado";
 
         vm.criterioDeBusca = "";
 
@@ -26,12 +24,24 @@
         //public method
         vm.remove = remove;
 
-        function remove(entity) {
-            if (!entity)
+        function remove(aula) {
+            if (!aula)
                 return;
-            aulaService.delete(entity).then(function () {
-                makeRequest();
-            });
+
+            vm.aula = aula;
+
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_DELETE'),
+                text: $translate.instant('confirm.CONFIRM_DELETE_LESSON', { lessonDate: new Date(vm.aula.dataAula).toLocaleDateString('pt-BR') }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionRemove);
+
         }
 
         //private methods
@@ -40,5 +50,18 @@
                 vm.aulas = data;
             });
         };
+
+        function actionRemove(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.LESSON_NOT_DELETED'), 'error');
+                return;
+            }
+            aulaService.delete(vm.aula).then(function () {
+                makeRequest();
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                                $translate.instant('info.LESSON_DELETED'), "success");
+            });
+        }
     }
 }(window.angular));

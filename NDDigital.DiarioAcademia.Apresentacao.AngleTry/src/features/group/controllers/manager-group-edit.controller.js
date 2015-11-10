@@ -2,18 +2,14 @@
     angular.module('app.group')
         .controller('managerGroupEditController', managerGroupEditController);
 
-    managerGroupEditController.$inject = ['groupService', 'permissionsService', '$state', '$stateParams', 'logger', "$scope"];
+    managerGroupEditController.$inject = ['groupService', 'permissionsService', '$state', '$stateParams', 'logger',  "$translate", "SweetAlert"];
 
-    function managerGroupEditController(groupService, permissionsService, $state, $stateParams, log, $scope) {
+    function managerGroupEditController(groupService, permissionsService, $state, $stateParams, log, $translate, SweetAlert) {
         var vm = this;
         vm.group = [];
         vm.hasChange = false;;
 
-        // public methods
         vm.setAdmin = setAdmin;
-        vm.remove = remove;
-        vm.modalEdit = modalEdit;
-        vm.modalRemove = modalRemove;
         vm.save = save;
         vm.editPermission = editPermission;
        
@@ -30,7 +26,7 @@
             });
         }
 
-
+        // public methods
         function setAdmin() {
             vm.hasChange = true;
             vm.group.isAdmin = !vm.group.isAdmin;
@@ -39,34 +35,35 @@
 
 
         function save() {
-            return groupService.edit(vm.group).then(function () {
-                vm.hasChange = false;
-                $state.go('app.group.list', {}, {reload: true});
-            });
-        }
-
-        function remove() {
-            groupService.delete(vm.group).then(function (results) {
-                vm.hasChange = false;
-                $state.go('app.group.list');
-            });
-        }
-
-
-        // helpers
-        function modalEdit(cb) {
-            vm.titleModal = 'Edição';
-            vm.bodyModal = 'Salvar as alterações realizadas no grupo ' + vm.name + ' ?';
-            vm.callback = cb;
-        }
-
-        function modalRemove(cb) {
-            vm.titleModalRemove = 'Exclusão';
-            vm.bodyModalRemove = 'Remover ' + vm.group.name + '?'
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_EDIT'),
+                text: $translate.instant('confirm.CONFIRM_EDIT_GROUP', { groupname: vm.group.name }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionEdit);
         }
 
         function editPermission() {
             $state.go('app.group.permissionsEdit', { groupId: vm.group.id });
+        }
+
+        //private methods
+        function actionEdit(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.GROUP_NOT_EDITED'), 'error');
+                return;
+            }
+            groupService.edit(vm.group).then(function () {
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                              $translate.instant('info.GROUP_EDITED'), "success");
+                $state.go('app.group.list');
+            });
         }
     }
 })(window.angular);

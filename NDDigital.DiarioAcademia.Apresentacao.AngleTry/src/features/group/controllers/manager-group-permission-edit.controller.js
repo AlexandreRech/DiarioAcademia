@@ -3,29 +3,23 @@
         .controller('managerGroupPermissionEditController', managerGroupPermissionEditController);
 
     managerGroupPermissionEditController.$inject = ['groupService', 'permissionsService', 'permissions.factory', 'compareState',
-        '$state', '$stateParams', 'changes.factory'];
+        '$state', '$stateParams', 'changes.factory', "$translate", "SweetAlert"];
 
     function managerGroupPermissionEditController(groupService, permissionsService, permissionsFactory,
-        compareState, $state, params, changesFactory) {
+        compareState, $state, params, changesFactory, $translate, SweetAlert) {
 
         var vm = this;
 
-        //public functions
         vm.comparePermissions = compareState;
-        vm.permissions = [];
-        vm.modal = modal;
-        vm.saveChanges = saveChanges;
         vm.onchange = onchange;
+        vm.save = save;
+
+        vm.permissions = [];
         vm.hasChange = false;
         vm.changes = [];
-        vm.redirect = redirect;
 
         activate();
         function activate() {
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-
             groupService.getGroupById(params.groupId).then(function (results) {
                 if (results == undefined)
                     $state.go('app.group.list');
@@ -45,11 +39,26 @@
             });
         }
 
+        //public methods
         function onchange(obj, check) {
             vm.hasChange = true;
             if (compareState(vm.changes, obj) < 0)
                 vm.changes.push(obj);
             obj.action = check;
+        }
+
+        function save() {
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_EDIT'),
+                text: $translate.instant('confirm.CONFIRM_EDIT_GROUP', { groupname: vm.group.name }),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, actionEdit);
         }
 
         function saveChanges() {
@@ -64,36 +73,30 @@
 
                 if (needInclude) {
 
-                    save(include).then(function () {
-
+                    return groupService.addPermission(vm.group, include).then(function () {
                         if (needExclude) {
-                            remove(exclude);
+                            return groupService.removePermission(vm.group, exclude);
                         }
                     })
 
                 } else if (needExclude) {
-                    remove(exclude);
+                    return groupService.removePermission(vm.group, exclude);
                 }
-
-
             }
         }
 
-        function save(permission) {
-            return groupService.addPermission(vm.group, permission);
-        }
-
-        function remove(permission) {
-            return groupService.removePermission(vm.group, permission);
-        }
-
-        function modal() {
-            vm.titleModalEdit = 'Edição';
-            vm.bodyModalEdit = 'Editar ' + vm.group.name + ' ?';
-        }
-
-        function redirect() {
-            $state.go('app.group.edit', { groupId: vm.group.id });
+        //private methods
+        function actionEdit(isConfirm) {
+            if (!isConfirm) {
+                SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
+                                $translate.instant('info.GROUP_NOT_EDITED'), 'error');
+                return;
+            }
+            saveChanges().then(function () {
+                SweetAlert.swal($translate.instant('status.SUCCESS'),
+                              $translate.instant('info.GROUP_EDITED'), "success");
+                $state.go('app.group.list');
+            });
         }
     }
 })(window.angular);

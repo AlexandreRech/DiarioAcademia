@@ -76,9 +76,8 @@
     <Content Include="src\common\changes\changes.factory.js" />
     <Content Include="src\common\changes\changes.module.js" />
     <Content Include="src\common\common.module.js" />
-    <Content Include="src\common\ndd-confirm-exit\ndd-confirm-exit.directive.js" />
-    <Content Include="src\common\ndd-confirm-exit\ndd-confirm-exit.html" />
-    <Content Include="src\common\ndd-confirm-exit\ndd-confirm-exit.module.js" />
+    <Content Include="src\common\ndd-confirm\ndd-confirm.directive.js" />
+    <Content Include="src\common\ndd-confirm\ndd-confirm.module.js" />
     <Content Include="src\common\ndd-group-checkbox\ndd-group-checkbox.directive.js" />
     <Content Include="src\common\ndd-group-checkbox\ndd-group-checkbox.html" />
     <Content Include="src\common\extentions\array.js" />

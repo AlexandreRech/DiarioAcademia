@@ -57,9 +57,8 @@
         };
 
         function edit(aluno) {
-            return $http.put(serviceUrl + aluno.id, aluno).then(function (results) {
-                logger.success(res.student_edited + aluno.descricao);
-            });
+            return $http.put(serviceUrl + aluno.id, aluno)
+                          .then(logger.emptyMessageCallback);
         };
 
         //private methods

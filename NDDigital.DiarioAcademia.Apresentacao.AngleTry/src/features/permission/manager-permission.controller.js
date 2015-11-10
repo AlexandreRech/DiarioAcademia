@@ -2,9 +2,12 @@
     angular.module('app.permission')
         .controller('managerPermissionController', managerPermissionController);
 
-    managerPermissionController.$inject = ['permissionsService', 'compareState', 'permissions.factory', '$state', '$rootScope', 'changes.factory'];
+    managerPermissionController.$inject = ['permissionsService', 'compareState', 'permissions.factory',
+        '$state', '$rootScope', 'changes.factory', "$translate", "SweetAlert"];
 
-    function managerPermissionController(permissionService, compareState, permissionsFactory, $state, $rootScope, changesFactory) {
+    function managerPermissionController(permissionService, compareState, permissionsFactory, $state,
+                 $rootScope, changesFactory, $translate, SweetAlert) {
+
         var vm = this;
 
         vm.filters = permissionsFactory.getFilters();
@@ -14,20 +17,14 @@
 
         vm.compareState = compareState;
         vm.onchange = onchange;
-        vm.saveChanges = saveChanges;
+        vm.save = save;
         vm.modifyGroupPermissions = modifyGroupPermissions;
         vm.verifyPanelSuccess = verifyPanelSuccess;
         vm.modifyAll = modifyAll;
 
         activate();
         function activate() {
-            permissionService.getPermissions().then(function (results) {
-                vm.routes = results;
-                vm.showRoutes = vm.routes.slice();
-                vm.permission = permissionsFactory.filterPermissions(vm.showRoutes);
-                vm.allPermissions = permissionsFactory.getPermissions();
-
-            });
+            makeRequest();
         }
 
         //public methods
@@ -39,18 +36,20 @@
             vm.permission = permissionsFactory.filterPermissions(vm.showRoutes);
         }
 
-        function saveChanges() {
-            vm.hasChange = false;
-            if (vm.changes.length == 0)
-                return;
-            var include = changesFactory.getInclude(vm.changes),
-                exclude = changesFactory.getExclude(vm.changes);
-            if (include.length != 0)
-                save(include);
-            if (exclude.length != 0)
-                remove(exclude);
-            vm.changes = [];
+        function save() {
+            SweetAlert.swal({
+                title: $translate.instant('confirm.CONFIRM_CREATE'),
+                text: $translate.instant('confirm.CONFIRM_MODIFY_PERMISSIONS'),
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
+                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
+                closeOnConfirm: true,
+                closeOnCancel: true
+            }, saveChanges);
         }
+
 
         function modifyGroupPermissions(isAll, filter) {
             var isShow, index, array = vm.permission[filter];
@@ -69,21 +68,43 @@
         }
 
         // private methods
-        function save(array) {
+        function makeRequest() {
+            return permissionService.getPermissions().then(function (results) {
+                vm.routes = results;
+                vm.showRoutes = vm.routes.slice();
+                vm.permission = permissionsFactory.filterPermissions(vm.showRoutes);
+                vm.allPermissions = permissionsFactory.getPermissions();
+
+            });
+        }
+
+        function saveChanges(isConfirm) {
+            if (!isConfirm)
+                return;
+            vm.hasChange = false;
+            if (vm.changes.length == 0)
+                return;
+            var include = changesFactory.getInclude(vm.changes),
+                exclude = changesFactory.getExclude(vm.changes);
+            if (include.length != 0)
+                savePermission(include);
+            if (exclude.length != 0)
+                remove(exclude);
+            vm.changes = [];
+        }
+
+        function savePermission(array) {
             cleanRepeatedPermissions(array, true);
             if (array.length == 0)
                 return;
-            permissionService.save(array).then(function (results) {
-                    vm.routes = vm.routes.concat(results);
-                    vm.permission = permissionsFactory.filterPermissions(vm.showRoutes);
-                });
+            permissionService.save(array).then(makeRequest);
         }
 
         function remove(array) {
             cleanRepeatedPermissions(array, false);
             if (array.length == 0)
                 return;
-            permissionService.delete(array);
+            permissionService.delete(array).then(makeRequest);
         }
 
         function cleanRepeatedPermissions(array, isSaved) {
@@ -96,7 +117,7 @@
                 }
             }
         }
- 
+
         //GUI Helpers 
         function verifyPanelSuccess(filter) {
             if (vm.permission && vm.permission[filter])

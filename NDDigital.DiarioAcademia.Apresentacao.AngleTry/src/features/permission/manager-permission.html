@@ -11,7 +11,7 @@
             <i class="fa fa-check-square-o"></i>
             <span>{{'action.SELECT_ALL' | translate}}</span>
         </button>
-        <button class="btn btn-success pull-right space-left" ng-disabled="!vm.hasChange" ng-click="vm.saveChanges()">
+        <button class="btn btn-success pull-right space-left" ng-disabled="!vm.hasChange" ng-click="vm.save()">
             <i class="fa fa-save"></i>
             <span>{{'action.SAVE' | translate}}</span>
         </button>
@@ -26,10 +26,18 @@
                     <b class="text-capitalize">{{filter}}</b>
                 </div>
                 <div class="panel-body">
-                    <ndd-group-checkbox array="vm.permission[filter]" compare="vm.showRoutes" method="vm.compareState" callback="vm.onchange"></ndd-group-checkbox>
+                    <ndd-group-checkbox array="vm.permission[filter]" compare="vm.showRoutes" 
+                                        method="vm.compareState" callback="vm.onchange"></ndd-group-checkbox>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<ndd-confirm-exit controller="vm"><ndd-confirm-exit>
+
+<ndd-confirm controller="vm" title="{{'confirm.CONFIRM_ACTION' | translate}}"
+             title-success="{{'status.COMPLETED' | translate}}"
+             text-success="{{'info.CHANGE_DISPOSAL' | translate}}"
+             type-success="success"
+             close-oncancel="true"
+             text="{{'info.CHANGE_NOT_SAVE' | translate}}"
+             prop="hasChange"><ndd-confirm>

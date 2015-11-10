@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.ndd-confirm-exit', []);
+        .module('app.ndd-confirm', []);
 })();

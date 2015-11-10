@@ -33,27 +33,17 @@
 		}
 
 		self.delete = function (user) {
-
-			return $http.delete(serviceUrl + "user/" + user.id)
-					.then(logger.emptyMessageCallback)
-					.then(function (response) {
-						logger.success(res.deleted_successful, user, "Delete");
-						return response;
-					});
+		    return $http.delete(serviceUrl + "user/" + user.id)
+					.then(logger.emptyMessageCallback);
 		};
 
 		self.edit = function (user) {
 			return $http.post(serviceUrl + "edit/", user)
 							.then(logger.successCallback)
-							.then(function (response) {
-								logger.success("User " + user.firstName + " editado", null, "Edição");
-								return response;
-							})
 							.catch(logger.errorCallback);
 		};
 
-		//users
-
+		//Group's User
 		self.addUserGroup = function (user, groups) {
 			return $http.post(serviceAuthenticationUrl + "addgroup/" + user.userName, groups)
 			 .then(logger.successCallback)

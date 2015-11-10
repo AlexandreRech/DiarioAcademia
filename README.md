@@ -43,7 +43,7 @@ O download do projeto pode ser feito de 3 formas:
 ##### Resumo dos comandos
     > npm install npm -g
         -reinicie o prompt
-    > npm install gulp bower browser-sync -g
+    > npm install gulp bower -g
         -reinicie o prompt
         -aponte para a pasta do projeto web
     > npm install

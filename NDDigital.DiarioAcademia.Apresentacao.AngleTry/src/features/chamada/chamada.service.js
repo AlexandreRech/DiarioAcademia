@@ -15,7 +15,7 @@
 
         //public methods
         self.realizarChamada = function (chamada) {
-            chamada = convertToChamadaDto(chamada);
+            chamada = convertToChamadaDto($.extend(true, {}, chamada));
             return $http.post(serviceUrl, chamada)
                             .then(logger.emptyMessageCallback)
         };

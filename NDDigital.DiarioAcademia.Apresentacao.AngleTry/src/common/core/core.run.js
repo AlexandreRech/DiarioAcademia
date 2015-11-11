@@ -42,35 +42,34 @@
     };
 
 
-    runStateNotFound.$inject = ["$rootScope", "APP_REQUIRES", "$ocLazyLoad", "$state"];
-    function runStateNotFound($rootScope, APP_REQUIRES, $ocLL, $state) {
+    runStateNotFound.$inject = ["$rootScope", "APP_REQUIRES", "$ocLazyLoad", "$state",
+        "authService", 'permissions.factory', '$translate', 'logger'];
+    function runStateNotFound($rootScope, APP_REQUIRES, $ocLL, $state, authService, permissionFactory, $translate, logger) {
         $rootScope.$on('$stateNotFound',
                function (event, unfoundState, fromState, fromParams) {
-
+                   //Search module to load
                    var moduleToLoad = getModule(APP_REQUIRES["modules"], unfoundState.to);
-
                    if (!moduleToLoad) {
                        console.log({ Change: "error: ", fromState: fromState.name, toState: unfoundState.to });
                        return;
                    }
                    event.preventDefault();
-
+                   //Verifiy permissions before load the module
+                   var isAuthorized = checkAuth(authService, unfoundState);
+                   if (!isAuthorized) {
+                       logNoAuthorized(permissionFactory, $translate, logger, unfoundState);
+                       return;
+                   }
+                   //Load The module
                    $ocLL.load(moduleToLoad).then(function () {
                        $state.go(unfoundState.to, unfoundState.toParams);
                    });
                });
     };
 
-    function getModule(modules, routeTo) {
-        for (var module in modules) {
-            var routes = modules[module].routes; // routes of module  
-            if (routes && routes.contains(routeTo))
-                return modules[module].name;
-        }
-    }
 
-    runStateChangeStart.$inject = ['$rootScope', '$state', 'authService', 'logger', 'permissions.factory', '$filter'];
-    function runStateChangeStart($rootScope, $state, authService, logger, permissionFactory, $filter) {
+    runStateChangeStart.$inject = ['$rootScope', '$state', 'authService', 'logger', 'permissions.factory', '$translate'];
+    function runStateChangeStart($rootScope, $state, authService, logger, permissionFactory, $translate) {
 
 
         $rootScope.$on('$stateChangeStart',
@@ -86,31 +85,41 @@
                    return $state.go('login');
                }
 
-               if (toState.allowAnnonymous) return;
+               var isAuthorized = checkAuth(authService, toState);
+               if (isAuthorized)
+                   return;
 
-               if (authService.authorization.groups)
-                   var userIsAdmin = authService.authorization.groups.any('isAdmin', true);
 
-               if (authService.authorization.isAdmin) return;
-
-               var stateToGo = 'login';
-
-               if (authService.authentication.isAuth) {
-                   var hasPermission = authService.checkAuthorize(toState.name);
-                   if (hasPermission) return;
-               }
-
-               var $translate = $filter('translate');
-
-               var permissionRequired = permissionFactory.getStateByName(toState.name);
-               logger.warning("Você não tem permissão para acessar \"" + $translate(permissionRequired.displayName) + "\"");
-
-               authService.lastState = toState.name;
+               logNoAuthorized(permissionFactory, $translate, logger, toState);
                event.preventDefault();
-               $state.go(stateToGo);
+               $state.go('login');
            });
     }
 
+
+    // Helpers
+    function getModule(modules, routeTo) {
+        for (var module in modules) {
+            var routes = modules[module].routes; // routes of module  
+            if (routes && routes.contains(routeTo))
+                return modules[module].name;
+        }
+    }
+
+    function checkAuth(authService, toState) {
+        if (toState.allowAnnonymous) return true;
+        if (authService.authorization.isAdmin) return true;
+        if (authService.authentication.isAuth) {
+            return authService.checkAuthorize(toState.name);
+        }
+        return false;
+    }
+
+
+    function logNoAuthorized(permissionFactory, $translate, logger, toState) {
+        var permissionRequired = permissionFactory.getStateByName(toState.name || toState.to);
+        logger.warning("Você não tem permissão para acessar \"" + $translate.instant(permissionRequired.displayName) + "\"");
+    }
 
 })();
 

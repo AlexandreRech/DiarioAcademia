@@ -87,7 +87,8 @@
         "COMPLETED": "Concluido !",
         "WELCOME": "Bem vindo",
         "SUCCESS": "Sucesso",
-        "ACTION_CANCELED": "Ação cancelada"
+        "ACTION_CANCELED": "Ação cancelada",
+        "NOT_AUTHORIZED":  "Você não tem permissão para acessar {{ resourceName }}"
     },
     "home": {
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",

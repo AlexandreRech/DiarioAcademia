@@ -92,7 +92,8 @@
         "WELCOME": "Bienvenido",
         "SUCCESS": "Éxito",
         "ACTION_CANCELED": "Acción cancelada",
-        "COMPLETED": "Terminado !"
+        "COMPLETED": "Terminado !",
+        "NOT_AUTHORIZED":  "No se le permite el acceso {{ resourceName }}"
     },
     "home": {
         "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",

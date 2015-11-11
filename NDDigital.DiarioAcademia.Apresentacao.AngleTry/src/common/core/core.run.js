@@ -118,7 +118,9 @@
 
     function logNoAuthorized(permissionFactory, $translate, logger, toState) {
         var permissionRequired = permissionFactory.getStateByName(toState.name || toState.to);
-        logger.warning("Você não tem permissão para acessar \"" + $translate.instant(permissionRequired.displayName) + "\"");
+        logger.warning($translate.instant('status.NOT_AUTHORIZED', {
+            resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
+        }));
     }
 
 })();

@@ -47,17 +47,19 @@
         };
 
         function save(aluno) {
-            logger.success(res.saved_successful, aluno);
-            return $http.post(serviceUrl, convertToDto(aluno));
+            return $http.post(serviceUrl, convertToDto(aluno)).then(function () {
+                logger.success(res.saved_successful, aluno);
+            });
         };
 
         function deleteFunction(aluno) {
-            logger.error(res.deleted_successful, aluno, "Delete");
-            return $http.delete(serviceUrl + aluno.id);
+            return $http.delete(serviceUrl + aluno.id).then(function () {
+                logger.error(res.deleted_successful, aluno, "Delete");
+            });
         };
 
         function edit(aluno) {
-            return $http.put(serviceUrl + aluno.id, aluno)
+            return $http.put(serviceUrl + aluno.id, convertToDto(aluno))
                           .then(logger.emptyMessageCallback);
         };
 

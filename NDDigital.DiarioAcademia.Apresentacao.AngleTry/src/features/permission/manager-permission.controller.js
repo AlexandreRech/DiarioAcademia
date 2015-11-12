@@ -70,6 +70,8 @@
         // private methods
         function makeRequest() {
             return permissionService.getPermissions().then(function (results) {
+                if (!results)
+                    return;
                 vm.routes = results;
                 vm.showRoutes = vm.routes.slice();
                 vm.permission = permissionsFactory.filterPermissions(vm.showRoutes);

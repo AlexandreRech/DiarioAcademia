@@ -37,8 +37,9 @@
 		self.save = function (permission) {
 			return $http.post(serviceUrl, permission)
 							.then(logger.emptyMessageCallback)
-							.then(function () {
+							.then(function (response) {
 							    logger.success(res.SAVED_SUCCESSFUL, permission, "Create");
+							    return response;
 							})
 							.catch(logger.errorCallback);
 		};

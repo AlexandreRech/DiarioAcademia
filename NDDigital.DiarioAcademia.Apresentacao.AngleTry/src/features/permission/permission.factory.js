@@ -2,9 +2,9 @@
     angular.module('app.permission')
         .factory('permissions.factory', permissionFactory);
 
-    permissionFactory.$inject = ['$state', 'compareState', 'permissionGroups', 'permissionsService'];
+    permissionFactory.$inject = ['$state', 'compareState', 'permissionGroups', 'permissionsService', '$log'];
 
-    function permissionFactory($state, compareState, permissionGroups, permissionsService) {
+    function permissionFactory($state, compareState, permissionGroups, permissionsService, $log) {
 
         var permissions = [];
 
@@ -12,6 +12,9 @@
         function activate() {
             //Get list of permissions
             permissionsService.getStates().then(function (results) {
+                if (!results) {
+                    return;
+                }
                 for (var i = 0; i < results.length; i++) {
                     var permission = {
                         name: results[i].name,

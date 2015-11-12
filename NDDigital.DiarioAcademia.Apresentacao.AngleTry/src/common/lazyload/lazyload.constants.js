@@ -21,13 +21,13 @@
                            root + 'features/turma/controllers/turma-create.controller.js']
                }, {
                    name: 'app.aluno',
-                   files: [ root + 'features/aluno/controllers/aluno-list.controller.js',
+                   files: [root + 'features/aluno/controllers/aluno-list.controller.js',
                             root + 'features/aluno/controllers/aluno-details.controller.js',
                             root + 'features/aluno/controllers/aluno-create.controller.js']
 
                }, {
                    name: 'app.aula',
-                   files: [  root + 'features/aula/controllers/aula-list.controller.js',
+                   files: [root + 'features/aula/controllers/aula-list.controller.js',
                              root + 'features/aula/controllers/aula-create.controller.js']
 
                }, {
@@ -52,6 +52,6 @@
                            root + 'features/group/controllers/manager-group-edit.controller.js',
                            root + 'features/group/controllers/manager-group-permission-edit.controller.js',
                            root + 'features/group/controllers/manager-group-permission-edit.controller.js']
-               } ]
+               }]
         });
 })();

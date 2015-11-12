@@ -29,8 +29,8 @@
         ///////////////////// loggers
 
         function error(message, data, title) {
-            toastr.error(message, title);
-            $log.error('Error: ' + message, data);
+            toastr.error(message || "", title);
+            $log.error('Error: ' + message || "", data || title);
         }
 
         function danger(message, data, title) {
@@ -62,7 +62,7 @@
 
 
         function errorCallback(response) {
-            if (response.status) {
+            if (response.status && response.status != -1) {
                 var infolog = {
                     message: formatMessageLog(response.data),
                     content: response.data,

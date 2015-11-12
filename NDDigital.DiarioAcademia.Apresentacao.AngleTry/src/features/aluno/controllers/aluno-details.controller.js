@@ -25,10 +25,9 @@
                 .then(function (dataTurmas) {
 
                     alunoService.getAlunoById(params.alunoId)
-                        .then(function (resultsAluno) {
-
+                        .then(function (result) {
                             vm.turmas = dataTurmas;
-                            vm.aluno = convertDtoToAluno(resultsAluno);
+                            vm.aluno = result;
                         });
                 });
         }
@@ -69,18 +68,6 @@
         });
 
         //private methods
-        function convertDto(aluno) {
-            return {
-                id: aluno.id,
-                turmaId: aluno.turma.id,
-                descricao: aluno.nome + ": Presenças: 0, Faltas: 0 ",
-                cep: aluno.endereco.cep,
-                bairro: aluno.endereco.bairro,
-                localidade: aluno.endereco.localidade,
-                uf: aluno.endereco.uf
-            };
-        }
-
         function getTurmaById(id) {
             for (var i = 0; i < vm.turmas.length; i++) {
                 if (vm.turmas[i].id == id) {
@@ -89,27 +76,13 @@
             }
         }
 
-        function convertDtoToAluno(alunoDto) {
-            return {
-                id: alunoDto.id,
-                nome: alunoDto.nome.split(':')[0],
-                turma: getTurmaById(alunoDto.turma.id),
-                endereco: {
-                    cep: alunoDto.endereco.cep,
-                    bairro: alunoDto.endereco.bairro,
-                    localidade: alunoDto.endereco.localidade,
-                    uf: alunoDto.endereco.uf
-                }
-            };
-        }
-
         function actionEdit(isConfirm) {
             if (!isConfirm) {
                 SweetAlert.swal($translate.instant('status.ACTION_CANCELED'),
                                 $translate.instant('info.STUDENT_NOT_EDITED'), 'error');
                 return;
             }
-            alunoService.edit(convertDto(vm.aluno)).then(function () {
+            alunoService.edit(vm.aluno).then(function () {
                 SweetAlert.swal($translate.instant('status.SUCCESS'),
                               $translate.instant('info.STUDENT_EDITED'), "success");
                 $state.go('app.aluno.list');

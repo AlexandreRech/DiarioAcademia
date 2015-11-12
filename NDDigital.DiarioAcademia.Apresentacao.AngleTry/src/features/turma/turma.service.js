@@ -1,43 +1,49 @@
 ﻿(function () {
-    'use strict';
+	'use strict';
 
-    //using
-    turmaService.$inject = ['$http', 'logger', 'BASEURL'];
+	//using
+	turmaService.$inject = ['$http', 'logger', 'BASEURL'];
 
-    //namespace
-    angular.module('app.turma')
-       .service('turmaService', turmaService);
+	//namespace
+	angular.module('app.turma')
+	   .service('turmaService', turmaService);
 
-    //class
-    function turmaService($http, logger, baseUrl) {
-        var self = this;
-        var serviceUrl = baseUrl + "api/turma/";
+	//class
+	function turmaService($http, logger, baseUrl) {
+		var self = this;
+		var serviceUrl = baseUrl + "api/turma/";
 
-        self.getTurmas = function () {
-            return $http.get(serviceUrl)
-                .then(logger.successCallback);
-        };
+		self.getTurmas = function () {
+			return $http.get(serviceUrl)
+							.then(logger.successCallback)
+							.catch(logger.errorCallback);
 
-        self.save = function (turma) {
-            return $http.post(serviceUrl, turma);
-        };
+		};
 
-        self.delete = function (turma) {
-            return $http.delete(serviceUrl + turma.id)
-                          .then(logger.emptyMessageCallback)
-                          .catch(logger.errorCallback);
+		self.save = function (turma) {
+			return $http.post(serviceUrl, turma)
+							.then(logger.successCallback)
+							.catch(logger.errorCallback);
+		};
 
-        };
+		self.delete = function (turma) {
+			return $http.delete(serviceUrl + turma.id)
+						  .then(logger.emptyMessageCallback)
+						  .catch(logger.errorCallback);
 
-        self.getTurmaById = function (id) {
-            logger.success("Turma com id " + id + " encontrada", null, "Busca");
+		};
 
-            return $http.get(serviceUrl + id)
-                            .then(logger.emptyMessageCallback);
-        };
+		self.getTurmaById = function (id) {
+			return $http.get(serviceUrl + id)
+							.then(logger.successCallback)
+						    .catch(logger.errorCallback);
 
-        self.edit = function (turma) {
-            return $http.put(serviceUrl + turma.id, turma);
-        };
-    }
+		};
+
+		self.edit = function (turma) {
+		    return $http.put(serviceUrl + turma.id, turma)
+		                    .then(logger.successCallback)
+						    .catch(logger.errorCallback);;
+		};
+	}
 })(window.angular);

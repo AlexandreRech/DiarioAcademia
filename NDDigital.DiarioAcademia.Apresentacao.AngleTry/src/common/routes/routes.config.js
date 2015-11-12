@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('app.routes.config', [])
+    angular.module('app.routes')
         .config(configRoutes);
 
     configRoutes.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', 'routeConfigProvider'];

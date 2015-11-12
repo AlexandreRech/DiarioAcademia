@@ -42,28 +42,11 @@
     };
 
 
-    runStateNotFound.$inject = ["$rootScope", "APP_REQUIRES", "$ocLazyLoad", "$state",
-        "authService", 'permissions.factory', '$translate', 'logger'];
-    function runStateNotFound($rootScope, APP_REQUIRES, $ocLL, $state, authService, permissionFactory, $translate, logger) {
+    runStateNotFound.$inject = ["$rootScope"];
+    function runStateNotFound($rootScope) {
         $rootScope.$on('$stateNotFound',
                function (event, unfoundState, fromState, fromParams) {
-                   //Search module to load
-                   var moduleToLoad = getModule(APP_REQUIRES["modules"], unfoundState.to);
-                   if (!moduleToLoad) {
-                       console.log({ Change: "error: ", fromState: fromState.name, toState: unfoundState.to });
-                       return;
-                   }
-                   event.preventDefault();
-                   //Verifiy permissions before load the module
-                   var isAuthorized = checkAuth(authService, unfoundState);
-                   if (!isAuthorized) {
-                       logNoAuthorized(permissionFactory, $translate, logger, unfoundState);
-                       return;
-                   }
-                   //Load The module
-                   $ocLL.load(moduleToLoad).then(function () {
-                       $state.go(unfoundState.to, unfoundState.toParams);
-                   });
+                   console.log({ Change: "error: ", fromState: fromState.name, toState: unfoundState.to });
                });
     };
 

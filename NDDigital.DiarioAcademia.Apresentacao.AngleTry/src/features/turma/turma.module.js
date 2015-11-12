@@ -4,3 +4,4 @@
     angular
         .module('app.turma', []);
 })();
+

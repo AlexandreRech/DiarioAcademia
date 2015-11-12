@@ -55,10 +55,11 @@ gulp.task('build-html', 'Optimized construction of html files', function (done) 
 gulp.task('build-lazy-js', 'Optimized construction of css files in lazy load', function () {
     var resources = require("../src/lazy-resources.json");
     for (var res in resources) {
+        var destPath = config.dist.root + resources[res].substring(0, resources[res].lastIndexOf("/"));
         gulp.src(resources[res])
              .pipe(loader.ngAnnotate()) // $inject
              .pipe(loader.uglify()) // minify
-             .pipe(gulp.dest(config.dist.src.root));
+             .pipe(gulp.dest(destPath));
     }
 });
 

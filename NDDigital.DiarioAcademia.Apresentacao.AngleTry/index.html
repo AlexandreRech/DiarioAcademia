@@ -90,6 +90,7 @@
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/bower_components/ngSweetAlert/SweetAlert.js"></script>
+    <script src="/bower_components/requirejs/require.js"></script>
     <!-- endbower -->
 <!--endbuild-->
 
@@ -120,9 +121,13 @@
     <script src="/src/common/sidebar/sidebar.module.js"></script>
     <script src="/src/common/translate/translate.module.js"></script>
     <script src="/src/common/utils/utils.module.js"></script>
+    <script src="/src/features/aluno/aluno.module.js"></script>
+    <script src="/src/features/aula/aula.module.js"></script>
     <script src="/src/features/authentication/authentication.module.js"></script>
+    <script src="/src/features/chamada/chamada.module.js"></script>
     <script src="/src/features/group/group.module.js"></script>
     <script src="/src/features/permission/permission.module.js"></script>
+    <script src="/src/features/turma/turma.module.js"></script>
     <script src="/src/features/user/user.module.js"></script>
     <!--endinject-->
 
@@ -159,6 +164,11 @@
     <script src="/src/features/permission/permission.factory.js"></script>
     <!--endinject-->
 
+    <!--inject:adapter-->
+    <script src="/src/features/aluno/aluno.adapter.js"></script>
+    <script src="/src/features/chamada/chamada.adapter.js"></script>
+    <!--endinject-->
+
     <!--inject:service-->
     <script src="/src/common/cep/cep.service.js"></script>
     <script src="/src/common/colors/colors.service.js"></script>
@@ -167,10 +177,14 @@
     <script src="/src/common/sidebar/sidebar.service.js"></script>
     <script src="/src/common/utils/browser.service.js"></script>
     <script src="/src/common/utils/utils.service.js"></script>
+    <script src="/src/features/aluno/aluno.service.js"></script>
+    <script src="/src/features/aula/aula.service.js"></script>
     <script src="/src/features/authentication/auth.service.js"></script>
     <script src="/src/features/authentication/authInterceptor.service.js"></script>
+    <script src="/src/features/chamada/chamada.service.js"></script>
     <script src="/src/features/group/group.service.js"></script>
     <script src="/src/features/permission/permission.service.js"></script>
+    <script src="/src/features/turma/turma.service.js"></script>
     <script src="/src/features/user/user.service.js"></script>
     <!--endinject-->
     
@@ -182,9 +196,13 @@
 
     <!--inject:routes-->
     <script src="/src/common/layout/layout.routes.js"></script>
+    <script src="/src/features/aluno/aluno.routes.js"></script>
+    <script src="/src/features/aula/aula.routes.js"></script>
     <script src="/src/features/authentication/authentication.routes.js"></script>
+    <script src="/src/features/chamada/chamada.routes.js"></script>
     <script src="/src/features/group/group.routes.js"></script>
     <script src="/src/features/permission/permission.routes.js"></script>
+    <script src="/src/features/turma/turma.routes.js"></script>
     <script src="/src/features/user/user.routes.js"></script>
     <script src="/src/common/routes/routes.config.js"></script>
     <!--endinject-->

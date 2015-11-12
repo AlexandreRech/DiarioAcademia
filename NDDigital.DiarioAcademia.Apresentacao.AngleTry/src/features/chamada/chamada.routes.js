@@ -11,7 +11,8 @@
         $stateProvider.state('app.chamada', {
             url: '/create',
             controller: 'chamadaController as vm',
-            templateUrl: 'src/features/chamada/chamada.html'
+            templateUrl: 'src/features/chamada/chamada.html',
+            resolve: helper.resolveFor('app.chamada')
         });
     }
 })();

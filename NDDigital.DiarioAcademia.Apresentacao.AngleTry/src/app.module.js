@@ -48,7 +48,11 @@
             'app.user',
             'app.group',
             'app.permission',
-            'app.routes.config',
+            'app.aluno',
+            'app.turma',
+            'app.chamada',
+            'app.aula'
         ]);
 })();
+
 

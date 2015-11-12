@@ -118,6 +118,7 @@ module.exports = function () {
             'config': config.app.js.configs,
             'constant': config.app.js.constant,
             'factory': config.app.js.factory,
+            'adapter': config.app.js.adapters,
             'service': config.app.js.services,
             'controller': config.app.js.controllers,
             'routes': config.app.js.route,

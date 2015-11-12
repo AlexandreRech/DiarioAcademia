@@ -16,7 +16,8 @@
              'abstract': true,
              redirect: '/aluno/list',
              templateUrl: 'src/common/templates/components/inner-view.html',
-             displayName: "Aluno"
+             displayName: "Aluno",
+             resolve: helper.resolveFor('app.aluno')
          })
          .state('app.aluno.list', {
              url: '/list',

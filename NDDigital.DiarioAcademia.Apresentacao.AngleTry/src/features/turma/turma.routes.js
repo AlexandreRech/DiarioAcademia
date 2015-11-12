@@ -15,6 +15,7 @@
                redirect: '/turma/list',
                'abstract': true,
                templateUrl: 'src/common/templates/components/inner-view.html',
+               resolve: helper.resolveFor('app.turma')
            })
            .state('app.turma.list', {
                url: '/list',

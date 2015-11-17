@@ -98,6 +98,7 @@
     <!--inject:modules-->
     <script src="/src/app.module.js"></script>
     <script src="/src/common/common.module.js"></script>
+    <script src="/src/common/authentication/authentication.module.js"></script>
     <script src="/src/common/automapper/automapper.module.js"></script>
     <script src="/src/common/cep/cep.module.js"></script>
     <script src="/src/common/changes/changes.module.js"></script>
@@ -123,7 +124,6 @@
     <script src="/src/common/utils/utils.module.js"></script>
     <script src="/src/features/aluno/aluno.module.js"></script>
     <script src="/src/features/aula/aula.module.js"></script>
-    <script src="/src/features/authentication/authentication.module.js"></script>
     <script src="/src/features/chamada/chamada.module.js"></script>
     <script src="/src/features/group/group.module.js"></script>
     <script src="/src/features/permission/permission.module.js"></script>
@@ -170,6 +170,8 @@
     <!--endinject-->
 
     <!--inject:service-->
+    <script src="/src/common/authentication/auth.service.js"></script>
+    <script src="/src/common/authentication/authInterceptor.service.js"></script>
     <script src="/src/common/cep/cep.service.js"></script>
     <script src="/src/common/colors/colors.service.js"></script>
     <script src="/src/common/logger/logger.service.js"></script>
@@ -179,8 +181,6 @@
     <script src="/src/common/utils/utils.service.js"></script>
     <script src="/src/features/aluno/aluno.service.js"></script>
     <script src="/src/features/aula/aula.service.js"></script>
-    <script src="/src/features/authentication/auth.service.js"></script>
-    <script src="/src/features/authentication/authInterceptor.service.js"></script>
     <script src="/src/features/chamada/chamada.service.js"></script>
     <script src="/src/features/group/group.service.js"></script>
     <script src="/src/features/permission/permission.service.js"></script>
@@ -195,10 +195,10 @@
     <!--endinject-->
 
     <!--inject:routes-->
+    <script src="/src/common/authentication/authentication.routes.js"></script>
     <script src="/src/common/layout/layout.routes.js"></script>
     <script src="/src/features/aluno/aluno.routes.js"></script>
     <script src="/src/features/aula/aula.routes.js"></script>
-    <script src="/src/features/authentication/authentication.routes.js"></script>
     <script src="/src/features/chamada/chamada.routes.js"></script>
     <script src="/src/features/group/group.routes.js"></script>
     <script src="/src/features/permission/permission.routes.js"></script>

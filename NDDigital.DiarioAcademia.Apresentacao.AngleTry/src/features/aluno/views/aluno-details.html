@@ -8,7 +8,7 @@
             <input class="form-control" type="text" ng-model="vm.aluno.endereco.bairro" name="bairro" placeholder="Bairro" ng-required="true" /><br>
             <input class="form-control" type="text" ng-model="vm.aluno.endereco.localidade" name="localidade" placeholder="Localidade" ng-required="true" /><br>
             <input class="form-control" type="text" ng-model="vm.aluno.endereco.uf" name="uf" placeholder="UF" ng-required="true" /><br>
-            <select class="form-control" ng-model="vm.aluno.turma" ng-options="turma.descricao for turma in vm.turmas">
+            <select class="form-control" ng-model="vm.aluno.turma" ng-options="turma.descricao for turma in vm.turmas" ng-disabled="true">
                 <option value="">Selecione a Turma</option>
             </select><br>
 

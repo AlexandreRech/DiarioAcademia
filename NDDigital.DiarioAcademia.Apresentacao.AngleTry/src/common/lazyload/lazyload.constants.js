@@ -35,8 +35,8 @@
                    files: [root + 'features/chamada/chamada.controller.js']
                }, {
                    name: 'app.auth',
-                   files: [root + 'features/authentication/controllers/login.controller.js',
-                           root + 'features/authentication/controllers/signup.controller.js']
+                   files: [root + 'common/authentication/controllers/login.controller.js',
+                           root + 'common/authentication/controllers/signup.controller.js']
                }, {
                    name: 'app.user',
                    files: [root + 'features/user/controllers/manager-user-list.controller.js',

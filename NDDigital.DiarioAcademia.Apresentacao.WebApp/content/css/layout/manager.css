@@ -64,35 +64,6 @@
 .input-search-user {
   border-right: none !important;
 }
-.submit-lente {
-  position: absolute;
-  top: 0;
-  right: 0;
-  line-height: 26px;
-  z-index: 10;
-  border: none;
-  background: transparent;
-  outline: none;
-  color: #808080;
-  cursor: pointer;
-}
-.submit-line {
-  width: 50%;
-  max-width: 400px;
-  position: relative;
-  right: 20px;
-}
-.submit-line input {
-  height: 30px;
-}
-.submit-line input {
-  width: 100%;
-}
-@media screen and (max-width: 768px) {
-  .submit-line {
-    width: 40%;
-  }
-}
 .col-grid {
   padding-right: 50px !important;
 }

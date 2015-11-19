@@ -1,4 +1,5 @@
 ﻿using NDDigital.DiarioAcademia.Dominio.Entities;
+using System.Net;
 using System.Xml.Linq;
 
 namespace NDDigital.DiarioAcademia.Infraestrutura.CepServices
@@ -9,22 +10,28 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.CepServices
 
         public Endereco PreencheEndereco(string cep, string format = "xml")
         {
-            var url = WebserviceUrl
-                            .Replace("@cep", cep)
-                            .Replace("@format", format);
-            var xml = XElement.Load(url);
-
-            var endereco = new Endereco();
-
-            if (xml.Element("erro") == null)
+            try
             {
+                var url = WebserviceUrl
+                                .Replace("@cep", cep)
+                                .Replace("@format", format);
+                var xml = XElement.Load(url);
 
-                endereco.Cep = xml.Element("cep").Value;
-                endereco.Bairro = xml.Element("bairro").Value;
-                endereco.Localidade = xml.Element("localidade").Value;
-                endereco.Uf = xml.Element("uf").Value;
+                var endereco = new Endereco();
+
+                if (xml.Element("erro") == null)
+                {
+
+                    endereco.Cep = xml.Element("cep").Value;
+                    endereco.Bairro = xml.Element("bairro").Value;
+                    endereco.Localidade = xml.Element("localidade").Value;
+                    endereco.Uf = xml.Element("uf").Value;
+                }
+                return endereco;
             }
-            return endereco;
+            catch (WebException ex) {
+                return null;
+            }
         }
     }
 }

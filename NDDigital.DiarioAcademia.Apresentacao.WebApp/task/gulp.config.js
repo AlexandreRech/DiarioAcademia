@@ -15,6 +15,7 @@
         // Build config     
         dist: {
             root: dist,
+            app: dist + "/app",
             all: dist + '/**/*.*',
             js: dist + '/**/*.js',
             css: dist + '/**/*.css',
@@ -33,19 +34,21 @@
                 routeConfig: routesConfig,
                 service: app + "/services/**/*.js",
                 controllers: app + "/controllers/**/*.controller.js",
-                directives: app + "/directives/**/*.directives.js"
+                directives: app + "/directives/**/*.directive.js"
             },
 
             html: app + "/**/**/*.html",
 
             less: {
-                all: ["./content/**/**/*.less"],
+                all: ["./content/**/**/*.less", "!./content/**/**/sb-admin.less"],
                 dist: "./content/css/"
             },
 
             css: ["./content/css/**/**/*.css"],
 
-            images: [app + '/**/**/*.png', app + '/**/**/*.gif', app + '/**/**/*.jpg']
+            images: [app + '/**/**/*.png', app + '/**/**/*.gif', app + '/**/**/*.jpg'],
+
+            json: app + "/**/*.json"
 
         },
 
@@ -61,7 +64,9 @@
 
         libs: {
             js: [bower + "/**/**/**/*.min.js"],
-            css: [bower + "/**/**/**/*.css", "!" + bower + "**/**/**/*.min.css"]
+            css: [ bower + "/**/**/**/*.css",
+                   "!" + bower + "**/**/**/*.min.css",
+                   "!" + bower + "**/**/**/bootstrap-theme*.css"]
         },
 
         bower: {

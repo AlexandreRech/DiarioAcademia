@@ -2,7 +2,7 @@
 
     'use strict';
     //using
-    homeAppController.$inject = ['alunoService', 'turmaService', 'aulaService', 'authService', '$scope'];
+    homeAppController.$inject = ['overviewService', 'eventService', '$rootScope'];
 
     //namespace
     angular
@@ -10,47 +10,39 @@
         .controller('homeAppController', homeAppController);
 
     //class
-    function homeAppController(alunoService, turmaService, aulaService, authService, $scope) {
+    function homeAppController(overviewService, eventService, $rootScope) {
         var vm = this;
+        var numLoad = 5;
+        vm.loadMore = loadMore;
 
-        //script load
+
         activate();
-
         function activate() {
-            getAlunos();
-            $scope.$on('login', function () {
-                getAlunos();
+            overviewService.getOverview().then(function (results) {
+                vm.alunos = results.totalAlunos || 0;
+                vm.turmas = results.totalTurmas || 0;
+                vm.aulas = results.totalAulas || 0;
             });
+            load();
+        }
+
+        //public methods
+        function loadMore() {
+            numLoad++;
+            load();
         }
 
         //private methods
-        function getAlunos() {
-            if (!authService.authorization.isAuthorized('aluno.list')) {
-                return getTurmas();
-            }
-            alunoService.getAlunos().then(function (alunos) {
-                vm.alunos = alunos.length;
-                getTurmas();
-            });
-        };
+        function load() {
+            var panel = $("#panelUpdates"),
+                whirlClass = 'whirl';
+            // start showing the spinner
+            panel.addClass(whirlClass + ' standard');
 
-        function getTurmas() {
-            if (!authService.authorization.isAuthorized('turmas.list')) {
-                return getAulas();
-            }
-            turmaService.getTurmas().then(function (turmas) {
-                vm.turmas = turmas.length;
-                getAulas();
+            eventService.getLatestActivities(numLoad).then(function (results) {
+                vm.events = results;
+                panel.removeClass(whirlClass);
             });
-        };
-
-        function getAulas() {
-            if (!authService.authorization.isAuthorized('aulas.list'))
-                return
-            aulaService.getAulas().then(function (aulas) {
-                vm.aulas = aulas.length;
-            });
-        };
+        }
     }
-
 })();

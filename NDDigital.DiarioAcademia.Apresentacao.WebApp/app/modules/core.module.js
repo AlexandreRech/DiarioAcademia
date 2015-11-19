@@ -8,8 +8,11 @@
         , 'LocalStorageModule'
         , 'angular-loading-bar'
         , 'ngAutomapper'
+        , 'pascalprecht.translate'
+        , 'ngCookies'
         //app modules
         , 'common.module'
+        , 'translate.module'
         , 'factories.module'
         , 'controllers.module'
         , 'directives.module'
@@ -21,6 +24,7 @@
     .config(configInterceptors)
     .run(runStateChangeSuccess)
     .run(runStateChangeStart);
+
 
     configInterceptors.$inject = ['$httpProvider'];
     function configInterceptors($httpProvider) {
@@ -42,8 +46,8 @@
                });
     };
 
-    runStateChangeStart.$inject = ['$rootScope', '$state', 'authService','logger'];
-    function runStateChangeStart($rootScope, $state, authService, logger) {
+    runStateChangeStart.$inject = ['$rootScope', '$state', 'authService', 'logger', '$translate'];
+    function runStateChangeStart($rootScope, $state, authService, logger, $translate) {
 
         $rootScope.$on('$stateChangeStart',
            function (event, toState, toParams, fromState, fromParams) {
@@ -51,12 +55,7 @@
                if (authService.authentication.isAuth) {
                    if (toState.name == 'home') {
                        event.preventDefault();
-                       return $state.go('homeapp');
-                   }
-
-                   if (toState.name == 'login') {
-                       event.preventDefault();
-                       return $state.go('homeapp');
+                       return $state.go('app.homeapp');
                    }
                }
 
@@ -66,19 +65,17 @@
                    var userIsAdmin = authService.authorization.groups.any('isAdmin', true);
 
                if (authService.authorization.isAdmin) return;
-
-               var stateToGo = 'login';
-
+               var stateToGo = 'home';
                if (authService.authentication.isAuth) {
                    var hasPermission = authService.checkAuthorize(toState.name);
                    if (hasPermission) return;
                }
-
-               logger.warning("Você não tem permissão para acessar \"" + toState.data.displayName + "\"");
+               logger.warning($translate.instant('status.NOT_AUTHORIZED', { resourceName: toState.data.displayName }))
 
                authService.lastState = toState.name;
                event.preventDefault();
                $state.go(stateToGo);
            });
     }
+
 })(window.angular);

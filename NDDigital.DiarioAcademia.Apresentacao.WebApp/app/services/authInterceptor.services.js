@@ -11,7 +11,11 @@
         
         var request = function (config) {
 
+
             config.headers = config.headers || {};
+
+            if (config.ignoreAuth)
+                return config;
 
             var authoData = localStorageService.get('authorizationData');
             if (authoData) {

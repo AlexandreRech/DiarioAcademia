@@ -1,68 +1,53 @@
-﻿<div class="collapse navbar-collapse navbar-ex1-collapse" ng-controller="sidebarController as vm">
-    <ul class="nav navbar-nav side-nav sidemenu-custom" ng-show="shell.authentication.isAuth" ng-class="{'slider-enter': shell.authentication.isAuth, 'slider-leave': !shell.authentication.isAuth }">
-        <li class="li separator-menu" style="height:5px; pointer-events: none">
-            <a href="#"></a>
+﻿<div class="collapse navbar-collapse" ng-controller="sidebarController as vm">
+    <ul class="nav navbar-nav side-nav sidemenu-custom" ng-show="shell.authentication.isAuth"
+        ng-class="{'slider-enter': shell.authentication.isAuth, 'slider-leave': !shell.authentication.isAuth }">
+        <!--Button Collapse-->
+        <li class="li cursor-pointer collapse-btn" ng-click="app.isSideCollapse = !app.isSideCollapse">
+            <a>              
+                <i class="icon-bar"></i>
+                <i class="icon-bar middle"></i>
+                <i class="icon-bar"></i>
+            </a>
         </li>
 
         <!--Home -->
-        <ndd-sidemenu-option route-show="home" name="Inicio" icon="fa-home" class="home-li"
-                             route="homeapp" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('home')"></div>
+        <ndd-sidemenu-option route-show="['app.homeapp']" name="Home" icon="fa-home" class="home-li"
+                             route="app.homeapp" state="{{state}}"></ndd-sidemenu-option>
 
         <!--Turma -->
-
-        <ndd-sidemenu-option route-show="turma" name="Listar Turmas" icon="fa-bars"
-                             route="turma.list" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('turma.list')"></div>
-
-
-        <ndd-sidemenu-option route-show="turma" name="Nova Turma" icon="fa-plus"
-                             route="turma.create" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('turma.create')"></div>
+        <ndd-sidemenu-option route-show="['app.turma']" name="{{'header.LIST_CLASS' | translate}}" i icon="fa-university"
+                             route="app.turma.list" state="{{state}}"></ndd-sidemenu-option>
 
         <!--Aluno -->
+        <ndd-sidemenu-option route-show="['app.aluno']" name="{{'header.LIST_STUDENT' | translate}}" icon="fa-graduation-cap "
+                             route="app.aluno.list" state="{{state}}"></ndd-sidemenu-option>
 
-        <ndd-sidemenu-option route-show="aluno" name="Listar Alunos" icon="fa-bars"
-                             route="aluno.list" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('aluno.list')"></div>
-
-
-        <ndd-sidemenu-option route-show="aluno" name="Novo Aluno" icon="fa-plus"
-                             route="aluno.create" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('aluno.create')"></div>
 
         <!--Aula -->
+        <ndd-sidemenu-option route-show="['app.aula']" name="{{'header.LIST_LESSON' | translate}}" icon="fa-calendar"
+                             route="app.aula.list" state="{{state}}"></ndd-sidemenu-option>
 
-        <ndd-sidemenu-option route-show="aula" name="Lista de Aula" icon="fa-bars"
-                             route="aula.list" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('aula.list')"></div>
 
         <!--Chamada -->
-        <ndd-sidemenu-option route-show="chamada" name="Realizar Chamada" icon="fa-bars"
-                             route="chamada.create" state="{{state}}"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('chamada.create')"></div>
+        <ndd-sidemenu-option route-show="['app.chamada']" name="{{'header.CLASS_REGISTER' | translate}}" icon="fa-check"
+                             route="app.chamada.create" state="{{state}}"></ndd-sidemenu-option>
 
+        <!--User -->
+        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.permission', 'app.group']" 
+                             name="{{'entities.USER' | translate}}" route-actived="app.user"
+                             route="app.user.list" state="{{state}}" icon="fa-user"></ndd-sidemenu-option>
 
-        <!--Manager -->
+        <!--Groups -->
+        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.permission', 'app.group']"
+                              name="{{'entities.GROUP' | translate}}" route-actived="app.group"
+                             route="app.group.list" state="{{state}}" icon="fa-users"></ndd-sidemenu-option>
 
-        <ndd-sidemenu-option route-show="manager" name="Usuários" route-actived="manager.user"
-                             route="manager.user.list" state="{{state}}" icon="fa-user"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('manager.user')"></div>
-
-
-        <ndd-sidemenu-option route-show="manager" name="Grupos" route-actived="manager.group"
-                             route="manager.group.list" state="{{state}}" icon="fa-users"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('manager.group')"></div>
-
-
-        <ndd-sidemenu-option route-show="manager" name="Permissões"
-                             route="manager.permissions" state="{{state}}" icon="fa-copy"></ndd-sidemenu-option>
-        <div class="seta-direita" ng-show="state.contains('manager.permissions')"></div>
-
-
-        <li class="li separator-menu" style="height: calc(100%); pointer-events: none">
-            <a href="javascript:;" style="height: 100%;">
-            </a>
-        </li>
+        <!--Permissions -->
+        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.permission', 'app.group']" 
+                             name="{{'entities.PERMISSIONS' | translate}}"
+                             route="app.permissions" state="{{state}}" icon="fa-database"></ndd-sidemenu-option>
     </ul>
+    <div class="li sidebar-separe text-center">
+        <a href="javascript:;" style="height: 100%;"></a>
+    </div>
 </div>

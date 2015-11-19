@@ -1,4 +1,4 @@
-﻿<ndd-head title="{{vm.title}}"></ndd-head>
+﻿<ndd-head title="{{'header.LIST_STUDENT' | translate}}" back-route="app.aluno.list"></ndd-head>
 
 <div class="container-view padding-left">
     <div class="col-sm-12 clear-padding">
@@ -18,14 +18,11 @@
             <div ng-show="vm.alunoForm.nome.$error.minlength && vm.alunoForm.nome.$dirty" class="alert alert-danger">
                 O campo nome deve ter mais de 10 caractéres!
             </div>
-            <!--<div ng-show="vm.alunoForm.endereco.cep.$error.minlength && vm.alunoForm.endereco.cep.$dirty"    class="alert alert-danger">
-                O campo CEP deve ter 8 caracteres!
-            </div>-->
             <div ng-show="vm.alunoForm.turma.$error.required && vm.alunoForm.uf.$dirty" class="alert alert-danger">
                 Selecione uma turma válida!
             </div>
-            <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.alunoForm.$invalid">Salvar</button>
-            <button class="btn btn-success" ng-click="vm.clearFields()">Limpar</button>
+            <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.alunoForm.$invalid">{{'action.SAVE' | translate}}</button>
+            <button class="btn btn-success" ng-click="vm.clearFields()">{{'action.CLEAN' | translate}}</button>
         </form>
     </div>
 </div>

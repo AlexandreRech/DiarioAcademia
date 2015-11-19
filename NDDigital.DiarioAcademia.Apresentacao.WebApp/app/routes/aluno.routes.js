@@ -10,37 +10,33 @@
 
     function configRoutes(routes) {
         routes.push({
-            name: 'aluno',
+            name: 'app.aluno',
             url: '/aluno',
             redirect: '/aluno/list',
-            templateUrl: '/app/templates/components/inner-view.html',
+            templateUrl: 'app/templates/components/inner-view.html',
             displayName: "Aluno",
-            displayIcon: "fa-user",
-            $$permissionId: "02"
+            displayIcon: "fa-user"
         }, {
-            name: 'aluno.list',
+            name: 'app.aluno.list',
             url: '/list',
             controller: 'alunoListCtrl as vm',
-            templateUrl: '/app/views/aluno/aluno-list.html',
+            templateUrl: 'app/views/aluno/aluno-list.html',
             allowAnnonymous: false,
             displayName: "Lista de Aluno",
-            displayIcon: "fa-user",
-            $$permissionId: "03"
+            displayIcon: "fa-user"
         }, {
-            name: 'aluno.details',
+            name: 'app.aluno.details',
             url: '/details/:alunoId',
             controller: 'alunoDetailsCtrl as vm',
-            templateUrl: '/app/views/aluno/aluno-details.html',
-            displayName: "Detalhes do Aluno",
-            $$permissionId: "04"
+            templateUrl: 'app/views/aluno/aluno-details.html',
+            displayName: "Detalhes do Aluno"
         }, {
-            name: 'aluno.create',
+            name: 'app.aluno.create',
             url: '/create',
             controller: 'alunoCreateCtrl as vm',
-            templateUrl: '/app/views/aluno/aluno-create.html',
+            templateUrl: 'app/views/aluno/aluno-create.html',
             displayName: "Criação de Aluno",
-            displayIcon: "fa-user-plus",
-            $$permissionId: "05"
+            displayIcon: "fa-user-plus"
         });
     }
 })();

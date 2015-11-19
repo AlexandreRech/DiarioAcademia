@@ -60,12 +60,9 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
 
         public void Update(AlunoDTO alunoDto)
         {
-            Turma turma = _turmaRepository.GetById(alunoDto.TurmaId);
-
             Aluno aluno = _alunoRepository.GetById(alunoDto.Id);
 
             aluno.Nome = alunoDto.Descricao.Split(':')[0];
-            aluno.Turma = turma;
             aluno.Endereco.Bairro = alunoDto.Bairro;
             aluno.Endereco.Cep = alunoDto.Cep;
             aluno.Endereco.Localidade = alunoDto.Localidade;

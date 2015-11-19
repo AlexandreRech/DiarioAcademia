@@ -1,14 +1,7 @@
-﻿<div class="container-view">
-    <ndd-head title="{{vm.title}}" back-route="aluno"></ndd-head>
-    <div class="col-sm-12 clear-padding">
-        <div class="submit-line pull-right">
-            <input type="text" class="form-control" placeholder="Pesquisar" ng-model="nameFilter" />
-            <button class="submit-lente" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-            <br />
-        </div>
-    </div>
-    <ndd-table columns="['ALUNOS', 'PRESENÇAS', 'FALTAS']" attrs="['nome', 'presencas', 'faltas']" data="vm.alunos" cb-click="vm.onClick" ng-model="nameFilter"></ndd-table>
-</div>
-<ndd-toolbar cb-properties="vm.edit" security-properties="aluno.details" cb-remove="vm.remove" security-remove="action.deleteAluno"></ndd-toolbar>
+﻿<ndd-toolbar cb-properties="vm.edit" security-properties="app.aluno.details"
+             cb-remove="vm.remove" security-remove="action.deleteAluno"
+             state-new="app.aluno.create"></ndd-toolbar>
+
+<ndd-table columns="['ALUNOS', 'PRESENÇAS', 'FALTAS']" attrs="['nome', 'presencas', 'faltas']" data="vm.alunos" 
+           cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>
+

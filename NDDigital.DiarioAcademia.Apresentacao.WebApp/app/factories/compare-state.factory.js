@@ -1,8 +1,8 @@
 ﻿(function (angular) {
     angular.module("factories.module")
-        .factory("compareState", compareState);
+        .factory("comparePermission", comparePermission);
 
-    function compareState() {
+    function comparePermission() {
         return function (array, obj) {
             for (var i = 0; i < array.length; i++) {
                 if (array[i].permissionId == obj.permissionId )

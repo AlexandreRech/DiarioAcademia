@@ -37,7 +37,7 @@
 
         function edit() {
             if (vm.turmaSelecionada)
-                $state.go('turma.details', { turmaId: vm.turmaSelecionada.id });
+                $state.go('app.turma.details', { turmaId: vm.turmaSelecionada.id });
         }
 
         function remove() {

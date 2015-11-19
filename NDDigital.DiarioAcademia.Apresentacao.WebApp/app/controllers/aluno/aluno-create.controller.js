@@ -25,7 +25,7 @@
 
         vm.save = function () {
             alunoService.save(vm.aluno).then(function () {
-                $state.go('aluno.list');
+                $state.go('app.aluno.list');
             });
             vm.clearFields();
         };

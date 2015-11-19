@@ -1,0 +1,201 @@
+﻿{
+    "dashboard": {
+        "APP_NAME": "Academia del programador",
+        "WELCOME": "Bienvenido a {{appName}}"
+    },
+    "header": {
+        "LIST_CLASS": "Lista de Clase",
+        "EDIT_CLASS": "Clase Editar",
+        "CREATE_CLASS": "Crear clase",
+        "REMOVE_CLASS": "Retire Clase",
+
+
+        "LIST_STUDENT": "Lista de Estudiante",
+        "CREATE_STUDENT": "Crear Estudiante",
+        "EDIT_STUDENT": "Editar Estudiante",
+        "REMOVE_STUDENT": "Retire Estudiante",
+
+        "LIST_LESSON": "Lista de la lección",
+        "CREATE_LESSON": "Crear la lección",
+
+        "CLASS_REGISTER": "Clase Registro",
+
+        "LIST_USERS": "Lista de Usuarios",
+        "CREATE_USERS": "Crear usuario",
+        "EDIT_USERS": "Editar Usuarios",
+        "EDIT_USERS_GROUP": "Editar grupos de usuarios",
+
+        "LIST_GROUPS": "Lista de grupos",
+        "CREATE_GROUPS": "Crear grupo",
+        "EDIT_GROUPS": "Edición de grupo",
+        "EDIT_GROUPS_PERMISSIONS": "Editar los permisos de los grupos",
+
+        "LIST_PERMISSIONS": "Lista de permisos",
+        "SIGNUP":  "Inscríbete en la Academia Programador",
+        "MANAGER":  "Gerente de Academia Programador",
+        "SETTINGS": "Configuración",
+        "USER_OPTIONS": "Mi Cuenta",
+        "LANGUAGE": "Idioma",
+        "THEMES": "Temas"
+    },
+    "topbar": {
+        "search": {
+            "PLACEHOLDER": "Tipo y pulsa enter .."
+        }
+    },
+    "sidebar": {
+        "BIENVENIDOS": "Bienvenidos",
+        "heading": {
+            "HEADER": "Navegación Principal"
+        },
+        "nav": {
+            "HOME": "Home",
+            "MENU": {
+                "MENU": "Menú",
+                "Submenú": "Sub Menu"
+            }
+        }
+    },
+    "entities": {
+        "CLASS": "Clase",
+        "STUDENT": "Estudiante",
+        "LESSON": "Lección",
+        "CLASS_REGISTER": "Clase Registro",
+        "MANAGER": "Gerente",
+        "USER": "Usuario",
+        "GROUP": "Grupo",
+        "PERMISSIONS": "Permisos"
+    },
+    "action": {
+        "CREATE": "Crear",
+        "LIST": "Lista",
+        "EDIT": "Editar",
+        "SAVE": "Guardar",
+        "DELETE": "Borrar",
+        "CLEAN": "Limpio",
+        "CLEAN_ALL": "Limpio Todos",
+        "SELECT_ALL": "Seleccionar todo",
+        "CANCEL": "Cancelar",
+        "OK": "Ok",
+        "CREATE_CLASS_REGISTER": "Crear clase registro!",
+        "LOGIN": "Iniciar sesión",
+        "SIGNUP":  "Inscríbete",
+        "LOAD_MORE": "Carga más"
+    },
+    "status": {
+        "CLASS_REGISTER_NOT_CREATE": "Clase Registro no crea!",
+        "CLASS_REGISTER_CREATE": "Clase Registro salvado!",
+        "IS_ADMIN": "Yo soy el administrador",
+        "IS_NOT_ADMIN": "No es un administrador",
+        "SAVED_SUCCESSFUL": "Guardado éxito!",
+        "DELETED_SUCCESSFUL": "Suprimido éxito!",
+        "UNAVAILABLE_SERVER": "Servidor no disponible !",
+        "SUCCESS_REQUEST": "Solicitar éxito!",
+        "STUDENT_FOUNDED": "Estudiante Fundada!",
+        "STUDENT_EDITED": "Estudiante Editado",
+        "WELCOME": "Bienvenido",
+        "SUCCESS": "Éxito",
+        "ACTION_CANCELED": "Acción cancelada",
+        "COMPLETED": "Terminado !",
+        "NOT_AUTHORIZED": "No se le permite el acceso {{ resourceName }}"
+    },
+    "home": {
+        "TITLE": "GESTIÓN DE PROGRAMADOR ACADEMIA",
+        "ABOUT_TITLE": "Sobre el proyecto",
+        "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",
+        "MESSAGE_DESCRIPTION": "La aplicación semilla no hacer mucho y tiene la mayor parte de la función de quitar para que pueda agregar el tema según sus necesidades simplemente siguiendo los ejemplos de aplicaciones de demostración.",
+        "UPDATES_ACADEMY":  "Última Academia Actualizaciones diarias",
+        "subtitles": {
+            "STUDENT": "Gestión de estudiantes",
+            "CLASS": "Clases de Coordinación",
+            "LESSON": "Registro de Lecciones",
+            "CLASS_REGISTER":  "Hacer Clase de Registro"
+        }
+    },
+    "info": {
+        "CHANGE_DISPOSAL": "Todos se descartaron cambios no guardados!",
+        "CHANGE_NOT_SAVE": "Los cambios se han hecho y no se guarda. ¿De verdad quieres de la edición?",
+
+        "CLASS_NOT_DELETED": "Clase no excluidos !",
+        "CLASS_DELETED": "Suprimido clase con éxito",
+        "CLASS_CREATE": "Clase registrado correctamente",
+        "CLASS_NOT_CREATE": "Clase no registrada",
+        "CLASS_EDITED": "Clase actualizado correctamente",
+        "CLASS_NOT_EDITED": "Los cambios en la clase no se guardaron",
+
+        "STUDENT_NOT_DELETED": "El estudiante no excluye",
+        "STUDENT_DELETED": "Estudiante incluido con éxito",
+        "STUDENT_CREATE": "Estudiante registrado correctamente",
+        "STUDENT_NOT_CREATE": "Estudiante no registrado",
+        "STUDENT_EDITED": "Estudiante actual con éxito",
+        "STUDENT_NOT_EDITED": "Los cambios en los estudiantes que no son salvos",
+
+        "LESSON_NOT_DELETED": "No excluye Clase",
+        "LESSON_DELETED": "Eliminado correctamente lección",
+        "LESSON_CREATE": "Clase registrado correctamente",
+        "LESSON_NOT_CREATE": "No se ha registrado lección",
+
+        "CLASS_REGISTER_CREATE": "Llame registrado correctamente",
+        "CLASS_REGISTER_NOT_CREATE": "Llame no registrada",
+
+        "USER_NOT_DELETED": "El usuario no borra!",
+        "USER_DELETED": "Usuario eliminado correctamente!",
+        "USER_CREATE": "Con éxito registrado Usuario!",
+        "USER_NOT_CREATE": "Usuario no registrado!",
+        "USER_EDITED": "Usuario actualiza correctamente!",
+        "USER_NOT_EDITED": "No se han guardado los cambios del usuario!",
+
+        "GROUP_NOT_DELETED": "Grupo no borra!",
+        "GROUP_DELETED": "Excluidos éxito del grupo!",
+        "GROUP_CREATE": "Grupo registrado correctamente!",
+        "GROUP_NOT_CREATE": "Grupo no registrado!",
+        "GROUP_EDITED": "Con éxito actualizada grupo!",
+        "GROUP_NOT_EDITED": "No se han guardado los cambios de grupo!",
+
+        "PERMISSIONS_NOT_MODIFIED": "Permisos sin cambios!",
+        "PERMISSIONS_MODIFIED": "Permisos modificados!"
+
+    },
+    "confirm": {
+        "CONFIRM_ACTION": "Confirme la acción",
+        "CONFIRM_DELETE": "Confirme Borrar",
+        "CONFIRM_CREATE": "De registro de cheques",
+        "CONFIRM_EDIT": "Confirme Edición",
+
+        "CONFIRM_DELETE_CLASS": "¿Quieres eliminar la clase {{classDescription}} ?",
+        "CONFIRM_CREATE_CLASS": "Desea crear la clase {{classDescription}} ?",
+        "CONFIRM_EDIT_CLASS": "Guarde los cambios realizados en {{classDescription}} ?",
+
+        "CONFIRM_DELETE_STUDENT": "¿Quieres eliminar el estudiante {{studentName}} ?",
+        "CONFIRM_CREATE_STUDENT": "¿Quieres crear el estudiante {{studentName}} ?",
+        "CONFIRM_EDIT_STUDENT": "Guarde los cambios realizados en el estudiante {{studentName}} ?",
+
+        "CONFIRM_DELETE_LESSON": "¿Quieres eliminar la clase {{lessonDate}} ?",
+        "CONFIRM_CREATE_LESSON": "¿Quieres crear la clase {{lessonDate}} ?",
+
+        "CONFIRM_CREATE_CLASS_REGISTER": "¿Quiere dar de alta la llamada {{dateClassRegister}} ?",
+
+        "CONFIRM_DELETE_USER": "¿Quieres eliminar el usuario {{username}} ?",
+        "CONFIRM_CREATE_USER": "¿Quieres crear el usuario {{username}} ?",
+        "CONFIRM_EDIT_USER": "Guarde los cambios realizados en el Usuario {{username}} ?",
+
+        "CONFIRM_DELETE_GROUP": "¿Quieres eliminar el grupo {{groupname}} ?",
+        "CONFIRM_CREATE_GROUP": "¿Quieres crear el grupo {{groupname}} ?",
+        "CONFIRM_EDIT_GROUP": "Guarde los cambios realizados en el grupo {{groupname}} ?",
+
+        "CONFIRM_MODIFY_PERMISSIONS": "¿Quieres modificar los permisos de la Academia Daily ?"
+    },
+    "filter": {
+        "permission": {
+            "STUDENT": "Estudiante",
+            "CLASS": "Clase",
+            "CUSTOM": "Personalizado",
+            "USER": "Usuario",
+            "CLASS_REGISTER":  "Clase Registro",
+            "LESSON":  "Lección",
+            "GROUP": "Grupo",
+            "PERMISSION":  "Permisos"
+
+        }
+    }
+}

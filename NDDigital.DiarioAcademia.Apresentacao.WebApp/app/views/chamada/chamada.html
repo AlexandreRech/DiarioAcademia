@@ -1,5 +1,5 @@
 ﻿<div class="col-sm-12 col-xs-12 clear-padding">
-    <ndd-head title="Chamada" back-route="homeapp"></ndd-head>
+    <ndd-head title="{{'header.CLASS_REGISTER' | translate}}" back-route="app.homeapp"></ndd-head>
     <div class="col-xs-offset-1 col-xs-10">
         <form name="vm.chamadaForm" class="jumbotron">
             <select class="form-control" ng-model="vm.chamada.turma"
@@ -25,10 +25,10 @@
 
             <span class="btn alert-success notify-status" ng-class="{'alert-success': vm.chamadaDto.chamadaRealizada, 'alert-danger': !vm.chamadaDto.chamadaRealizada}" ng-show="vm.aulaSelected">
                 <i class="fa fa-check"></i>
-                <span>{{ vm.chamadaDto.chamadaRealizada ? 'Chamada registrada' : 'Chamada não registrada'}}</span>
+                <span>{{ vm.chamadaDto.chamadaRealizada ? ('status.CLASS_REGISTER_CREATE' | translate) : ('status.CLASS_REGISTER_NOT_CREATE' | translate)}}</span>
             </span>
 
-            <button class="btn btn-success pull-right" ng-click="vm.save()" ng-disabled="vm.chamadaForm.$invalid">Chamada Realizada!</button>
+            <button class="btn btn-success pull-right" ng-click="vm.save()" ng-disabled="vm.chamadaForm.$invalid">{{'action.CREATE_CLASS_REGISTER' | translate}}</button>
         </form>
     </div>
     <div class="col-xs-offset-1 col-xs-10">

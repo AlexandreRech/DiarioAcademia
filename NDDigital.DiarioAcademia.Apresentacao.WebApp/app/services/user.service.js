@@ -24,12 +24,16 @@
 
 		self.getUserById = function (id) {
 			return $http.get(serviceUrl +"user/"+ id)
-				 .then(logger.successCallback);
+				 .then(logger.successCallback)
+			.catch(logger.errorCallback);
+
 		};
 
 		self.getUserByUsername = function (username) {
 			return $http.get(serviceUrl + "user/username/" + username)
-				 .then(logger.emptyMessageCallback);
+				            .then(logger.emptyMessageCallback)
+			                .catch(logger.errorCallback);
+
 		}
 
 		self.delete = function (user) {

@@ -12,7 +12,6 @@
         padding-top: 6px;
         cursor: pointer;
     }
-   
 }
 
 .container-help {
@@ -33,6 +32,54 @@
     text-align: center;
 }
 
-.navbar-header{
+.navbar-header {
     width: 100%;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.menu-log {
+    left: 5px;
+    bottom: 9px;
+    position: relative;
+}
+
+.profile-ava {
+    position: relative;
+    bottom: 5px;
+}
+
+.navbar-brand img {
+    position: relative;
+    bottom: 12px;
+}
+
+
+.navbar-ex1-collapse {
+    background-color: rgb(15, 117, 179) !important;
+
+    a {
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+
+        &:hover, &:focus {
+            background-color: #0f75b3 - 20 !important;
+        }
+    }
+
+    .nav .nav a{
+        padding-left: 45px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-ex1-collapse, .collapse.in {
+        display: none;
+    }
+
+
 }

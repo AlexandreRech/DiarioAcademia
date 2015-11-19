@@ -14,7 +14,7 @@ gulp.task('start', 'Start dev app.--livereload: use livereload', ['inject'], fun
     gulp.watch([config.app.less.all], ['compile-less']);
 });
 
-gulp.task('start-app', 'Start publish version of app optimized', ['build-optimized'], function () {
+gulp.task('start-publish', 'Start publish version of app optimized', ['build-optimized'], function () {
     //start application
     browserSync.init({
         server: {

@@ -1,0 +1,15 @@
+.header-signup {
+  height: 110px;
+}
+.header-signup img {
+  height: 45px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  top: 30%;
+}
+.section-signup {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 100px;
+}

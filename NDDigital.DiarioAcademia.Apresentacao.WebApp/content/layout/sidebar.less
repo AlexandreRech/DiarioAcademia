@@ -1,0 +1,96 @@
+﻿
+.sidemenu-custom {
+    top: 70px;
+    height: ~"calc(100% - 68px) !important";
+    overflow: hidden;
+    width: 100%;
+}
+
+.side-menu-header {
+    margin-top: 5px;
+}
+
+.collapse-btn {
+    border-bottom: solid 1px #eee;
+    height: 48px;
+    float: none !important;
+    width: 200px;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+
+    a:hover {
+        background-color: transparent !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidemenu-custom {
+        margin: 0;
+        height: auto !important;
+    }
+
+    .navbar-collapse {
+        padding: 0;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        padding-top: 20px;
+    }
+}
+
+
+.icon-sidebar {
+    width: 22px;
+    font-size: 18px;
+}
+
+.icon-sidebar.ng-show, .icon-sidebar.ng-hide {
+    transition: none !important;
+}
+
+
+.side-nav {
+    .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #888;
+        margin-top: 4px;
+    }
+}
+
+.aside-collapse.logged {
+    .side-nav {
+        .icon-bar {
+            width: 14px;
+        }
+
+        .icon-bar.middle {
+            width: 10px;
+        }
+    }
+}
+
+
+.sidebar-separe {
+    display: none;
+    height: 100%;
+    width: 200px;
+    pointer-events: none;
+    position: fixed !important;
+    z-index: -1;
+    border-right: solid 5px rgba(204, 204, 204, 0.4);
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.logged {
+    .sidebar-separe {
+        display: block;
+    }
+}

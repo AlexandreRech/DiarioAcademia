@@ -9,18 +9,18 @@
     configRoutes.$inject = [KEYS.APP_ROUTES];
     function configRoutes(routes) {
         routes.push({
-            name: 'chamada',
+            name: 'app.chamada',
             url: '/chamada',
             'abstract': true,
             redirect: '/chamada/list',
-            templateUrl: '/app/templates/components/inner-view.html',
+            templateUrl: 'app/templates/components/inner-view.html',
             displayName: 'Chamada',
             displayIcon: 'fa-check'
         }, {
-            name: 'chamada.create',
+            name: 'app.chamada.create',
             url: '/create',
             controller: 'chamadaCtrl as vm',
-            templateUrl: '/app/views/chamada/chamada.html',
+            templateUrl: 'app/views/chamada/chamada.html',
             displayName: 'Realizar Chamada',
             displayIcon: 'fa-plus',
             $$permissionId: "11"

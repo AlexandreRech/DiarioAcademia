@@ -1,45 +1,88 @@
 ﻿
-<div class="col-xs-12">
-    <br />
-    <h1 style="margin-top: 5px"> Diário </h1>
+<div class="header-homeapp">
+    <h1> {{ 'dashboard.APP_NAME' | translate }} </h1>
     <hr />
 </div>
 
-<div class="col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
-    <div class="panel panel-default">
-        <div class="panel-heading"><strong>Objetivo</strong></div>
+<div class="col-lg-8">
+    <div id="panelSobre" class="panel panel-default standard">
+        <div class="panel-heading">
+            {{'home.ABOUT_TITLE' | translate}}
+        </div>
         <div class="panel-body">
-            <span>
-                Capacitar colaboradores para a NDDigital.
-            </span>
-            <br /><br />
-            <span>
-                Anualmente a empresa garimpa talentos
-                tanto para área de desenvolvimento como para outros setores da empresa.
-            </span>
+            <p> {{'home.MESSAGE_START' | translate}}</p>
+            <p>
+                {{'home.MESSAGE_DESCRIPTION' | translate}}
+            </p>
+            <br />
+
+            <div class="col-lg-4">
+                <div id="panelInfoTurma" class="panel panel-default standard">
+                    <div class="panel-heading">
+                        Numero de turmas na academia
+                    </div>
+                    <br />
+                    <ndd-chart-knob name="{{'entities.CLASS' | translate}}" data="{{vm.turmas}}" color="#FF9D15"></ndd-chart-knob>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div id="panelInfoAluno" class="panel panel-default standard">
+                    <div class="panel-heading">
+                        Numero de alunos na academia
+                    </div>
+                    <br />
+                    <ndd-chart-knob name="{{'entities.STUDENT' | translate}}" data="{{vm.alunos}}" color="#15A7FF"></ndd-chart-knob>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div id="panelInfoAula" class="panel panel-default standard">
+                    <div class="panel-heading">
+                        Numero de aulas na academia
+                    </div>
+                    <br />
+                    <ndd-chart-knob name="{{'entities.LESSON' | translate}}" data="{{vm.aulas}}" color="#FF2F32"></ndd-chart-knob>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-<div class="col-xs-12">
-    <br />
-    <i class="fa fa-2x fa-line-chart pull-left"></i>
-    <h3 class="clear-margin">Overview</h3>
-    <hr />
+
+<div class="col-lg-4">
+    <div id="panelUpdates" class="panel panel-default standard">
+        <div class="panel-heading">
+            {{'home.UPDATES_ACADEMY' | translate}}
+        </div>
+
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="event in vm.events">
+                <div class="media-box">
+                    <div class="pull-left">
+                        <span class="fa-stack">
+                            <em class="fa fa-circle fa-stack-2x text-purple"></em>
+                            <em class="fa fa-cloud-upload fa-stack-1x fa-inverse text-white"></em>
+                        </span>
+                    </div>
+                    <div class="media-box-body clearfix">
+                        <small class="text-muted pull-right ml">{{event.date}}</small>
+                        <div class="media-box-heading">
+                            <a ng-href="{{event.url}}" target="_blank" class="text-purple m0">{{event.message}}</a>
+                        </div>
+                        <p class="m0">
+                            <small>
+                                <a ng-href="{{event.author.url}}" target="_blank">{{event.author.name}}</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer clearfix">
+            <a href="#" class="pull-left" ng-click="vm.loadMore()">
+                <small>{{'action.LOAD_MORE' | translate}}</small>
+            </a>
+        </div>
+    </div>
 </div>
-<br />
-<div class="col-xs-12">
-    <div class="col-sm-4 col-xs-12">
-        <ndd-chart-knob name="TURMAS" data="{{vm.turmas}}" color="#FF9D15" security="turmas.list"></ndd-chart-knob>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-        <ndd-chart-knob name="ALUNOS" data="{{vm.alunos}}" color="#15A7FF" security="alunos.list"></ndd-chart-knob>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-        <ndd-chart-knob name="AULAS" data="{{vm.aulas}}" color="#FF2F32" security="aulas.list"></ndd-chart-knob>
-    </div>
-</div>
-<div class="col-xs-12"><br /><br /></div>
-
-
-
-

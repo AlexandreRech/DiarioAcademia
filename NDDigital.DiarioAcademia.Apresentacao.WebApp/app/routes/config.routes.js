@@ -24,40 +24,17 @@
                     abstract: route.abstract,
                     data: {
                         displayName: route.displayName,
-                        allowAnnonymous: route.allowAnnonymous,
-                        $$permissionId: verifyPermission(routes, i, route)
+                        allowAnnonymous: route.allowAnnonymous
                     },
                     ncyBreadcrumb: {
                         label: route.displayName,
                         icon: route.displayIcon,
                     },
                 });
-            if (route.abstract)
+            if (route.abstract && route.redirect)
                 $urlRouterProvider.when(route.url, route.redirect);
         }
 
        
-    }
-
-    function verifyPermission(routes, startIndex, route) {
-        var exclude = ['home', 'homeapp'];
-        var errorIdUndefined = " can't have the attribute $$permissionId to be undefined",
-            errorIdAlreadyExists = " can't have the attribute $$permissionId because already exists";
-        if (route.abstract)
-            return;
-        for (var i = startIndex + 1; i < routes.length; i++) {
-            var other = routes[i];
-            if (other.abstract || exclude.contains(other.name))
-                continue;
-            if (!other.$$permissionId)
-                throwRouteError(routes[i].name, errorIdUndefined);
-            if (other.$$permissionId == route.$$permissionId)
-                throwRouteError(routes[i].name, errorIdAlreadyExists);
-        }
-        return route.$$permissionId;
-    }
-
-    function throwRouteError(route, msg) {
-        throw new Error("The route " + route + msg);
     }
 })();

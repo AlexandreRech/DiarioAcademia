@@ -29,3 +29,41 @@
 .navbar-header {
   width: 100%;
 }
+.navbar-collapse {
+  padding: 0;
+}
+.menu-log {
+  left: 5px;
+  bottom: 9px;
+  position: relative;
+}
+.profile-ava {
+  position: relative;
+  bottom: 5px;
+}
+.navbar-brand img {
+  position: relative;
+  bottom: 12px;
+}
+.navbar-ex1-collapse {
+  background-color: #0f75b3 !important;
+}
+.navbar-ex1-collapse a {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+}
+.navbar-ex1-collapse a:hover,
+.navbar-ex1-collapse a:focus {
+  background-color: #00619f !important;
+}
+.navbar-ex1-collapse .nav .nav a {
+  padding-left: 45px;
+}
+@media screen and (min-width: 768px) {
+  .navbar-ex1-collapse,
+  .collapse.in {
+    display: none;
+  }
+}

@@ -1,0 +1,7 @@
+﻿<ndd-toolbar cb-properties="vm.edit" security-properties="app.group.edit" 
+             state-new="app.group.create" cb-remove="vm.onRemove"></ndd-toolbar>
+
+<ndd-table columns="['NOME', 'ADMINISTRADOR']" attrs="['name', 'isAdmin']" 
+           data="vm.groups" cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>
+
+<ndd-modal target="modelRemoveUser" label="{{vm.titleModelRemove}}" callback="vm.remove">{{vm.bodyModelRemove}}</ndd-modal>

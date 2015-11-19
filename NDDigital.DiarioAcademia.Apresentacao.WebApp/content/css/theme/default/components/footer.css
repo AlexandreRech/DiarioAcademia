@@ -1,0 +1,9 @@
+footer {
+  background-color: #0F75B3;
+  color: black ;
+  font-size: 12px;
+}
+.logged .container-footer footer {
+  background-color: #0F75B3;
+  color: white;
+}

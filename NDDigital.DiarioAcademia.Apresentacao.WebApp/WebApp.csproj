@@ -77,281 +77,122 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\controllers\layout\header.controller.js" />
+    <Content Include="app\adapters\event.adapter.js" />
     <Content Include="app\controllers\layout\home-app.controller.js" />
-    <Content Include="app\controllers\layout\navbar.controller.js" />
     <Content Include="app\controllers\manager\group\manager-group-permission-edit.controller.js" />
     <Content Include="app\controllers\manager\group\manager-group-edit.controller.js" />
     <Content Include="app\controllers\manager\group\manager-group-list.controller.js" />
     <Content Include="app\controllers\manager\group\manager-group-create.controller.js" />
     <Content Include="app\controllers\manager\permission\manager-permission.controller.js" />
-    <Content Include="app\controllers\manager\user\manager-user-edit.controller.js" />
-    <Content Include="app\controllers\manager\user\manager-user-edit-group.controller.js" />
-    <Content Include="app\controllers\manager\user\manager-user-list.controller.js" />
-    <Content Include="app\directives\ndd-chart-knob\ndd-chart-knob.directives.js" />
+    <Content Include="app\controllers\user\user-edit.controller.js" />
+    <Content Include="app\controllers\user\user-edit-group.controller.js" />
+    <Content Include="app\controllers\user\user-list.controller.js" />
+    <Content Include="app\directives\ndd-chart-knob\ndd-chart-knob.directive.js" />
     <Content Include="app\directives\ndd-chart-knob\ndd-chart-knob.html" />
-    <Content Include="app\directives\ndd-confirm-exit\ndd-confirm-exit.directives.js" />
+    <Content Include="app\directives\ndd-confirm-exit\ndd-confirm-exit.directive.js" />
     <Content Include="app\directives\ndd-confirm-exit\ndd-confirm-exit.html" />
-    <Content Include="app\directives\ndd-group-checkbox\ndd-group-checkbox.directives.js" />
+    <Content Include="app\directives\ndd-group-checkbox\ndd-group-checkbox.directive.js" />
     <Content Include="app\directives\ndd-group-checkbox\ndd-group-checkbox.html" />
-    <Content Include="app\directives\ndd-head\ndd-head.directives.js" />
+    <Content Include="app\directives\ndd-head\ndd-head.directive.js" />
     <Content Include="app\directives\ndd-head\ndd-head.html" />
-    <Content Include="app\directives\ndd-modal\ndd-modal.directives.js" />
-    <Content Include="app\directives\ndd-modal\ndd-modal.html" />
-    <Content Include="app\directives\ndd-panel\ndd-panel.directives.js" />
-    <Content Include="app\directives\ndd-panel\ndd-panel.html" />
-    <Content Include="app\directives\ndd-security\ndd-security.directives.js" />
-    <Content Include="app\directives\ndd-table\ndd-table.directives.js" />
-    <Content Include="app\directives\ndd-table\ndd-table.html" />
-    <Content Include="app\directives\ndd-toolbar-option\ndd-toolbar-option.directives.js" />
-    <Content Include="app\directives\ndd-toolbar-option\ndd-toolbar-option.html" />
-    <Content Include="app\directives\ndd-sidemenu-option\ndd-sidemenu-option.directives.js" />
-    <Content Include="app\directives\ndd-sidemenu-option\ndd-sidemenu-option.html" />
-    <Content Include="app\directives\ndd-toolbar\ndd-toolbar.directives.js" />
+    <Content Include="app\directives\ndd-popover\ndd-popover.directive.js" />
+    <Content Include="app\directives\ndd-toolbar\ndd-toolbar.directive.js" />
     <Content Include="app\directives\ndd-toolbar\ndd-toolbar.html" />
+    <Content Include="app\directives\ndd-modal\ndd-modal.directive.js" />
+    <Content Include="app\directives\ndd-modal\ndd-modal.html" />
+    <Content Include="app\directives\ndd-panel\ndd-panel.directive.js" />
+    <Content Include="app\directives\ndd-panel\ndd-panel.html" />
+    <Content Include="app\directives\ndd-security\ndd-security.directive.js" />
+    <Content Include="app\directives\ndd-table\ndd-table.directive.js" />
+    <Content Include="app\directives\ndd-table\ndd-table.html" />
+    <Content Include="app\directives\ndd-toolbar-option\ndd-toolbar-option.directive.js" />
+    <Content Include="app\directives\ndd-toolbar-option\ndd-toolbar-option.html" />
+    <Content Include="app\directives\ndd-sidemenu-option\ndd-sidemenu-option.directive.js" />
+    <Content Include="app\directives\ndd-sidemenu-option\ndd-sidemenu-option.html" />
     <Content Include="app\extentions\array.js" />
     <Content Include="app\extentions\string.js" />
     <Content Include="app\factories\changes.factory.js" />
     <Content Include="app\factories\compare-state.factory.js" />
-    <Content Include="app\images\avatar_login.png" />
-    <Content Include="app\images\avatar_plus.gif" />
+    <Content Include="app\factories\permission.factory.js" />
     <Content Include="app\images\favicon.ico" />
-    <Content Include="app\images\profile-menu.png" />
+    <Content Include="app\images\icons\Icon_back.png" />
+    <Content Include="app\images\icons\menu_icon.svg" />
+    <Content Include="app\images\login.jpg" />
+    <Content Include="app\images\logo-single.png" />
+    <Content Include="app\images\logo.png" />
+    <Content Include="app\images\logo_gray.png" />
     <Content Include="app\images\slides\slide_one.jpg" />
     <Content Include="app\images\slides\slide_three.jpg" />
     <Content Include="app\images\slides\slide_two.jpg" />
+    <Content Include="app\modules\translate.module.js" />
+    <Content Include="app\routes\group.routes.js" />
     <Content Include="app\routes\manager.routes.js" />
     <Content Include="app\adapters\chamada.adapter.js" />
-    <Content Include="app\services\group.services.js" />
-    <Content Include="app\services\language.service.js" />
-    <Content Include="app\services\permissions.service.js" />
+    <Content Include="app\routes\user.routes.js" />
+    <Content Include="app\services\event.service.js" />
+    <Content Include="app\services\group.service.js" />
+    <Content Include="app\services\overview.service.js" />
+    <Content Include="app\services\permission.service.js" />
     <Content Include="app\services\user.service.js" />
     <Content Include="app\templates\components\user-profile.html" />
+    <Content Include="app\templates\layout\top-menu-xs.html" />
     <Content Include="app\templates\layout\top-menu.html" />
-    <Content Include="app\factories\permissions.factory.js" />
+    <Content Include="app\views\layout\app.html" />
     <Content Include="app\views\layout\home-app.html" />
-    <Content Include="app\views\manager\group\manager-group-create.html" />
-    <Content Include="app\views\manager\group\manager-group-permission-edit.html" />
-    <Content Include="app\views\manager\group\manager-group-edit.html" />
-    <Content Include="app\views\manager\group\manager-group-list.html" />
+    <Content Include="app\views\group\group-create.html" />
+    <Content Include="app\views\group\group-permission-edit.html" />
+    <Content Include="app\views\group\group-edit.html" />
+    <Content Include="app\views\group\group-list.html" />
+    <Content Include="app\views\manager\manager.html" />
     <Content Include="app\views\manager\permission\manager-permission.html" />
-    <Content Include="app\views\manager\user\manager-user-edit-group.html" />
-    <Content Include="app\views\manager\user\manager-user-edit.html" />
-    <Content Include="app\views\manager\user\manager-user-list.html" />
-    <Content Include="content\animations\animations.css">
-      <DependentUpon>animations.less</DependentUpon>
-    </Content>
-    <Content Include="content\animations\animations.min.css">
-      <DependentUpon>animations.css</DependentUpon>
-    </Content>
-    <Content Include="content\component\dashboard.css">
-      <DependentUpon>dashboard.less</DependentUpon>
-    </Content>
-    <Content Include="content\component\dashboard.min.css">
-      <DependentUpon>dashboard.css</DependentUpon>
-    </Content>
-    <Content Include="content\component\jumbotron.css">
-      <DependentUpon>jumbotron.less</DependentUpon>
-    </Content>
-    <Content Include="content\component\jumbotron.min.css">
-      <DependentUpon>jumbotron.css</DependentUpon>
-    </Content>
-    <Content Include="content\component\panel.css">
-      <DependentUpon>panel.less</DependentUpon>
-    </Content>
-    <Content Include="content\component\panel.min.css">
-      <DependentUpon>panel.css</DependentUpon>
-    </Content>
-    <Content Include="content\component\table.css">
-      <DependentUpon>table.less</DependentUpon>
-    </Content>
-    <Content Include="content\component\table.min.css">
-      <DependentUpon>table.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\chamada.css">
-      <DependentUpon>chamada.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\chamada.min.css">
-      <DependentUpon>chamada.css</DependentUpon>
-    </Content>
-    <Content Include="content\layout\footer.css">
-      <DependentUpon>footer.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\footer.min.css">
-      <DependentUpon>footer.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\head.css">
-      <DependentUpon>head.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\head.min.css">
-      <DependentUpon>head.css</DependentUpon>
-    </Content>
-    <Content Include="content\layout\home.css">
-      <DependentUpon>home.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\home.min.css">
-      <DependentUpon>home.css</DependentUpon>
-    </Content>
-    <Content Include="content\layout\layout.css">
-      <DependentUpon>layout.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\layout.min.css">
-      <DependentUpon>layout.css</DependentUpon>
-    </Content>
-    <Content Include="content\component\login.css">
-      <DependentUpon>login.less</DependentUpon>
-    </Content>
-    <Content Include="content\component\login.min.css">
-      <DependentUpon>login.css</DependentUpon>
-    </Content>
-    <Content Include="content\layout\manager.css">
-      <DependentUpon>manager.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\manager.min.css">
-      <DependentUpon>manager.css</DependentUpon>
-    </Content>
-    <Content Include="content\layout\navbar.css">
-      <DependentUpon>navbar.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\navbar.min.css">
-      <DependentUpon>navbar.css</DependentUpon>
-    </Content>
+    <Content Include="app\views\user\manager-user-edit-group.html" />
+    <Content Include="app\views\user\manager-user-edit.html" />
+    <Content Include="app\views\user\manager-user-list.html" />
     <Content Include="content\layout\footer.less" />
-    <Content Include="content\layout\sidemenu.css">
-      <DependentUpon>sidemenu.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\sidemenu.less" />
-    <Content Include="content\layout\home.less" />
+    <Content Include="content\layout\sidebar.less" />
     <Content Include="content\component\dashboard.less" />
-    <Content Include="content\theme\default\head.less" />
-    <Content Include="content\theme\default\chamada.less" />
+    <Content Include="content\theme\default\components\ndd-head.less" />
+    <Content Include="content\theme\default\layouts\chamada.less" />
     <Content Include="content\component\table.less" />
     <Content Include="content\component\panel.less" />
     <Content Include="content\component\jumbotron.less" />
-    <None Include="content\layout\toolbar.less" />
-    <Content Include="content\layout\sidemenu.min.css">
-      <DependentUpon>sidemenu.css</DependentUpon>
-    </Content>
-    <Content Include="content\layout\toolbar.css">
-      <DependentUpon>toolbar.less</DependentUpon>
-    </Content>
-    <Content Include="content\layout\toolbar.min.css">
-      <DependentUpon>toolbar.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\footer.css">
-      <DependentUpon>footer.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\footer.min.css">
-      <DependentUpon>footer.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\home.css">
-      <DependentUpon>home.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\home.min.css">
-      <DependentUpon>home.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\homeapp.css">
-      <DependentUpon>homeapp.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\homeapp.min.css">
-      <DependentUpon>homeapp.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\layout.css">
-      <DependentUpon>layout.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\layout.min.css">
-      <DependentUpon>layout.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\loading-bar.css">
-      <DependentUpon>loading-bar.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\loading-bar.min.css">
-      <DependentUpon>loading-bar.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\manager.css">
-      <DependentUpon>manager.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\manager.min.css">
-      <DependentUpon>manager.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\navbar.css">
-      <DependentUpon>navbar.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\navbar.min.css">
-      <DependentUpon>navbar.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\sidemenu.css">
-      <DependentUpon>sidemenu.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\sidemenu.min.css">
-      <DependentUpon>sidemenu.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\toolbar.css">
-      <DependentUpon>toolbar.less</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\toolbar.min.css">
-      <DependentUpon>toolbar.css</DependentUpon>
-    </Content>
+    <Content Include="content\component\input-search.less" />
+    <Content Include="content\component\ndd-head.less" />
+    <Content Include="content\component\ndd-sidemenu-option.less" />
+    <Content Include="content\component\ndd-chart-knob.less" />
+    <Content Include="content\component\spinner.less" />
+    <Content Include="app\resources\en.json" />
+    <Content Include="app\resources\es.json" />
+    <Content Include="app\resources\pt.json" />
+    <Content Include="content\component\alert.less" />
+    <Content Include="content\component\popover.less" />
+    <None Include="content\component\toolbar.less" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="package.json" />
     <Content Include="bower.json" />
     <Content Include=".bowerrc" />
     <Content Include="content\layout\manager.less" />
-    <Content Include="content\layout\manager.css.map">
-      <DependentUpon>manager.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\manager.less" />
-    <Content Include="content\theme\default\manager.css.map">
-      <DependentUpon>manager.css</DependentUpon>
-    </Content>
-    <Content Include="content\animations\animations.less" />
-    <Content Include="content\animations\animations.css.map">
-      <DependentUpon>animations.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\navbar.less" />
-    <Content Include="content\theme\default\navbar.css.map">
-      <DependentUpon>navbar.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\sidemenu.less" />
-    <Content Include="content\theme\default\sidemenu.css.map">
-      <DependentUpon>sidemenu.css</DependentUpon>
-    </Content>
+    <Content Include="content\theme\default\layouts\manager.less" />
+    <Content Include="content\theme\default\components\navbar.less" />
+    <Content Include="content\theme\default\layouts\sidemenu.less" />
     <Content Include="content\layout\layout.less" />
-    <Content Include="content\layout\layout.css.map">
-      <DependentUpon>layout.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\layout.less" />
-    <Content Include="content\theme\default\layout.css.map">
-      <DependentUpon>layout.css</DependentUpon>
-    </Content>
-    <Content Include="content\component\login.less" />
-    <Content Include="content\component\login.css.map">
-      <DependentUpon>login.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\home.less" />
-    <Content Include="content\theme\default\home.css.map">
-      <DependentUpon>home.css</DependentUpon>
-    </Content>
-    <Content Include="content\theme\default\homeapp.less" />
-    <Content Include="content\theme\default\homeapp.css.map">
-      <DependentUpon>homeapp.css</DependentUpon>
-    </Content>
-    <Content Include="app\factories\permission-groups.factory.js" />
-    <Content Include="content\theme\default\footer.less" />
-    <Content Include="content\theme\default\footer.css.map">
-      <DependentUpon>footer.css</DependentUpon>
-    </Content>
+    <Content Include="content\theme\default\layouts\layout.less" />
+    <Content Include="content\theme\default\layouts\homeapp.less" />
+    <Content Include="content\theme\default\components\footer.less" />
     <Content Include="content\layout\navbar.less" />
-    <Content Include="content\layout\navbar.css.map">
-      <DependentUpon>navbar.css</DependentUpon>
-    </Content>
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </Content>
-    <Content Include="content\theme\default\loading-bar.less" />
-    <Content Include="content\theme\default\toolbar.less" />
+    <Content Include="content\theme\default\components\loading-bar.less" />
+    <Content Include="content\theme\default\components\ndd-toolbar-option.less" />
+    <Content Include="content\layout\util.less" />
+    <Content Include="content\layout\homeapp.less" />
+    <Content Include="content\layout\home.less" />
+    <Content Include="content\theme\default\layouts\home.less" />
+    <Content Include="content\layout\signup.less" />
+    <Content Include="content\theme\default\layouts\signup.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -365,14 +206,10 @@
     <Content Include="app\controllers\aluno\aluno-list.controller.js" />
     <Content Include="app\controllers\aula\aula-create.controller.js" />
     <Content Include="app\controllers\aula\aula-list.controller.js" />
-    <Content Include="app\controllers\authentication\login.controller.js" />
-    <Content Include="app\controllers\authentication\signup.controller.js" />
-    <Content Include="app\controllers\chamada\chamada.controller.js" />
-    <Content Include="app\controllers\layout\footer.controller.js" />
     <Content Include="app\controllers\layout\home.controller.js" />
+    <Content Include="app\controllers\chamada\chamada.controller.js" />
     <Content Include="app\controllers\layout\shell.controller.js" />
     <Content Include="app\controllers\layout\sidebar.controller.js" />
-    <Content Include="app\controllers\layout\toolbar.controller.js" />
     <Content Include="app\controllers\turma\turma-create.controller.js" />
     <Content Include="app\controllers\turma\turma-details.controller.js" />
     <Content Include="app\controllers\turma\turma-list.controller.js" />
@@ -385,38 +222,33 @@
     <Content Include="app\modules\services.module.js" />
     <Content Include="app\routes\aluno.routes.js" />
     <Content Include="app\routes\aula.routes.js" />
-    <Content Include="app\routes\authentication.routes.js" />
     <Content Include="app\routes\chamada.routes.js" />
     <Content Include="app\routes\config.routes.js" />
     <Content Include="app\routes\layout.routes.js" />
     <Content Include="app\routes\turma.routes.js" />
-    <Content Include="app\services\aluno.services.js" />
+    <Content Include="app\services\aluno.service.js" />
     <Content Include="app\adapters\aluno.adapter.js" />
-    <Content Include="app\services\aula.services.js" />
-    <Content Include="app\services\auth.services.js" />
+    <Content Include="app\services\aula.service.js" />
+    <Content Include="app\services\auth.service.js" />
     <Content Include="app\services\authInterceptor.services.js" />
-    <Content Include="app\services\cep.services.js" />
-    <Content Include="app\services\chamada.services.js" />
-    <Content Include="app\services\logger.services.js" />
-    <Content Include="app\services\turma.services.js" />
+    <Content Include="app\services\cep.service.js" />
+    <Content Include="app\services\chamada.service.js" />
+    <Content Include="app\services\logger.service.js" />
+    <Content Include="app\services\turma.service.js" />
     <Content Include="app\templates\components\inner-view.html" />
     <Content Include="app\templates\layout\footer.html" />
     <Content Include="app\templates\layout\navbar.html" />
     <Content Include="app\templates\layout\sidebar.html" />
-    <Content Include="app\templates\layout\toolbar.html" />
     <Content Include="app\views\aluno\aluno-create.html" />
     <Content Include="app\views\aluno\aluno-details.html" />
     <Content Include="app\views\aluno\aluno-list.html" />
     <Content Include="app\views\aula\aula-create.html" />
     <Content Include="app\views\aula\aula-list.html" />
-    <Content Include="app\views\authentication\login.html" />
-    <Content Include="app\views\authentication\signup.html" />
-    <Content Include="app\views\chamada\chamada.html" />
     <Content Include="app\views\layout\home.html" />
+    <Content Include="app\views\chamada\chamada.html" />
     <Content Include="app\views\turma\turma-create.html" />
     <Content Include="app\views\turma\turma-details.html" />
     <Content Include="app\views\turma\turma-list.html" />
-    <None Include="content\base\sb-admin.less" />
     <None Include="content\component\switcher.less" />
     <Content Include="task\build.task.js" />
     <Content Include="task\server.task.js" />
@@ -434,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\filters\" />
+    <Folder Include="content\base\" />
     <Folder Include="content\css\" />
     <Folder Include="dist\" />
   </ItemGroup>

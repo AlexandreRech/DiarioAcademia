@@ -22,6 +22,8 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
                            map => map.MapFrom(x => x.Endereco.Uf))
                 .ForMember(dto => dto.Bairro,
                            map => map.MapFrom(x => x.Endereco.Bairro))
+               .ForMember(dto => dto.Cep,
+                           map => map.MapFrom(x => x.Endereco.Cep))
                 .ForMember(dto => dto.TurmaId,
                            map => map.MapFrom(x => x.Turma.Id));
 

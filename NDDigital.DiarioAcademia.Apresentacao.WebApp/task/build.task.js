@@ -6,7 +6,7 @@
  * 
  */
 
-gulp.task('build-optimized', 'Build of application optimized', ['inject', 'build-optimized-resources'], function () {
+gulp.task('build-optimized', 'Build of application optimized', ['inject', 'build-resources', 'build-json'], function () {
     var builder = loader.useref.assets({ searchPath: "./" });
     var cssFilter = loader.filter('**/*.css', { restore: true });
     var jsAppFilter = loader.filter('**/app.js', { restore: true });
@@ -33,7 +33,7 @@ gulp.task('build-optimized', 'Build of application optimized', ['inject', 'build
 });
 
 
-gulp.task('build-optimized-resources', 'Publish of resources used by application', function (done) {
+gulp.task('build-resources', 'Publish of resources used by application', function (done) {
     //fonts
     gulp.src(config.fonts)
                 .pipe(gulp.dest(config.dist.font));
@@ -52,4 +52,9 @@ gulp.task('build-optimized-resources', 'Publish of resources used by application
                     optmizationLevel: 7  // 0 - 7
                 }))
                 .pipe(gulp.dest(config.dist.app).on('end', done));
+});
+
+gulp.task('build-json', 'Deploy of json', function () {
+    gulp.src(config.app.json)
+                .pipe(gulp.dest(config.dist.app));
 });

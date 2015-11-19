@@ -9,39 +9,33 @@
     configRoutes.$inject = [KEYS.APP_ROUTES];
     function configRoutes(routes) {
         routes.push({
-            name: 'turma',
+            name: 'app.turma',
             url: '/turma',
             redirect: '/turma/list',
-            templateUrl: '/app/templates/components/inner-view.html',
+            templateUrl: 'app/templates/components/inner-view.html',
             displayName: "Turma",
-            displayIcon: 'fa-university',
-            $$permissionId: "23"
+            displayIcon: 'fa-university'
         }, {
-            name: 'turma.list',
+            name: 'app.turma.list',
             url: '/list',
             controller: 'turmaListCtrl as vm',
-            templateUrl: '/app/views/turma/turma-list.html',
+            templateUrl: 'app/views/turma/turma-list.html',
             displayName: "Lista de Turmas",
-            displayIcon: 'fa-bars',
-            $$permissionId: "24"
+            displayIcon: 'fa-bars'
         }, {
-            name: 'turma.details',
+            name: 'app.turma.details',
             url: '/details/:turmaId',
             controller: 'turmaDetailsCtrl as vm',
-            templateUrl: '/app/views/turma/turma-details.html',
+            templateUrl: 'app/views/turma/turma-details.html',
             displayName: "Detalhes da Turma",
-            displayIcon: 'fa-pencil',
-            parents: ["turma.list"],
-            $$permissionId: "25"
-
+            displayIcon: 'fa-pencil'
         }, {
-            name: 'turma.create',
+            name: 'app.turma.create',
             url: '/create',
             controller: 'turmaCreateCtrl as vm',
-            templateUrl: '/app/views/turma/turma-create.html',
+            templateUrl: 'app/views/turma/turma-create.html',
             displayName: "Criação da Turma",
-            displayIcon: 'fa-plus',
-            $$permissionId: "26"
+            displayIcon: 'fa-plus'
         }
 );
     }

@@ -49,7 +49,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
 
         public IHttpActionResult Post([FromBody]List<Permission> values)
         {
-            _permissionService.Add(values.Select(p=>p.PermissionId).ToArray());
+            _permissionService.Add(values.Select(p => p.PermissionId).ToArray());
 
             return Ok(values);
         }
@@ -59,12 +59,8 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         {
             if (ids == null)
                 return BadRequest();
-
-
-            _permissionService.Delete(ids);
-            
-                
-                return Ok();
+           _permissionService.Delete(ids);
+            return Ok();
         }
 
         // GET: api/Permission/byuser/username

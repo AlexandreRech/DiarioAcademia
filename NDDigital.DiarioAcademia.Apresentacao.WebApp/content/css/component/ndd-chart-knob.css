@@ -1,0 +1,11 @@
+.circular-bar div {
+  display: block !important;
+  margin: 0 auto ;
+}
+.circular-bar div:last-child {
+  margin-bottom: 10px !important;
+}
+.circular-bar-content strong {
+  margin-top: 15px;
+  display: block;
+}

@@ -24,7 +24,7 @@ gulp.task('inject-lib',  'Inject only libs in the index.html', function (callbac
 
     gulp.src(config.index)
           .pipe(wiredep(options))
-          .pipe(loader.inject(gulp.src(config.libs.css)))
+          .pipe(loader.inject(gulp.src(config.libs.css))) //inject libs css
           .pipe(gulp.dest(config.root).on('end', callback));
 });
 

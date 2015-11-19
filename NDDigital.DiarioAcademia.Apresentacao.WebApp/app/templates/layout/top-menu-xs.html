@@ -1,0 +1,60 @@
+﻿<div class="collapse navbar-ex1-collapse" id="#menuCollapse">
+    <ul class="nav">
+        <li class="li">
+            <a ui-sref="app.homeapp" ng-class="{'actived-option': state.contains('home')}"
+                data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.turma.list" ndd-security="app.turma.list" data-target=".navbar-ex1-collapse" data-toggle="collapse"
+               ng-class="{'actived-option': state.contains('app.turma.list')}">
+                <i class="fa fa-university"></i>
+                <span>{{'entities.CLASS' | translate}}</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.aluno.list" ng-class="{'actived-option': state.contains('aluno.list')}" ndd-security="app.aluno.list"
+               data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-user"></i>
+                <span>{{'entities.STUDENT' | translate}}</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.chamada.create" ng-class="{'actived-option': state.contains('app.chamada.create')}" ndd-security="app.chamada.create"
+               data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-check"></i>
+                <span>{{'entities.CLASS_REGISTER' | translate}}</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.aula.list" ng-class="{'actived-option': state.contains('app.aula.list')}" ndd-security="app.aula.list"
+               data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-calendar"></i>
+                <span>{{'entities.LESSON' | translate}}</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.user.list" ng-class="{'actived-option': state.contains('app.user.list')}" ndd-security="app.user.list"
+               data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-user"></i>
+                <span>{{'entities.USER' | translate}}</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.group.list" ng-class="{'actived-option': state.contains('app.group.list')}" ndd-security="app.group.list"
+               data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-users"></i>
+                <span>{{'entities.GROUP' | translate}}</span>
+            </a>
+        </li>
+        <li class="li">
+            <a ui-sref="app.permissions" ng-class="{'actived-option': state.contains('app.permissions')}" ndd-security="app.permissions"
+               data-target=".navbar-ex1-collapse" data-toggle="collapse">
+                <i class="fa fa-check"></i>
+                <span>{{'entities.PERMISSIONS' | translate}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

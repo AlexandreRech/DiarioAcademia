@@ -1,14 +1,6 @@
-﻿<ndd-head title="{{vm.title}}" back-route="turma"></ndd-head>
-<div class="container-view">
-    <div class="col-sm-12 clear-padding">
-        <div class="submit-line pull-right">
-            <input type="text" class="form-control" placeholder="Pesquisar" ng-model="nameFilter" />
-            <button class="submit-lente" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-            <br />
-        </div>
-    </div>
-    <ndd-table columns="['TURMA']" attrs="['descricao']" data="vm.turmas" cb-click="vm.onClick" ng-model="nameFilter"></ndd-table>
-</div>
-<ndd-toolbar cb-properties="vm.edit" security-properties="turma.details" cb-remove="vm.remove" security-remove="action.deleteTurma"></ndd-toolbar>
+﻿<ndd-toolbar cb-properties="vm.edit" security-properties="app.turma.details"
+             cb-remove="vm.remove" security-remove="action.deleteTurma"
+             state-new="app.turma.create"></ndd-toolbar>
+
+
+<ndd-table columns="['TURMA']" attrs="['descricao']" data="vm.turmas" cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>

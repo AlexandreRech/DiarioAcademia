@@ -1,16 +1,16 @@
-﻿<div class="container-view">
-    <ndd-head title="Aulas"></ndd-head>
-    <div class="col-lg-offset-1 col-lg-10">
-        <div class="jumbotron">
-            <form name="vm.aulaForm" class="jumbotron">
-                <input class="form-control" type="date" ng-model="vm.aula.data" name="data" ng-required="true" ng-minlength="10" /><br>
-                <input class="form-control" type="text" ng-model="vm.aula.turma" name="turma" ng-hide="true" ng-required="true" /><br>
-                <select class="form-control" ng-model="vm.aula.turma" ng-options="turma.descricao for turma in vm.turmas">
-                    <option value="">Selecione a Turma</option>
-                </select><br>
-                <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.aulaForm.$invalid">Salvar</button>
-                <button class="btn btn-success" ng-click="vm.clearFields()">Limpar</button>
-            </form>
-        </div>
+﻿
+<ndd-head title="{{'header.CREATE_LESSON' | translate}}" back-route="app.aula.list"></ndd-head>
+
+<div class="col-lg-offset-1 col-lg-10">
+    <div class="jumbotron">
+        <form name="vm.aulaForm" class="jumbotron">
+            <input class="form-control" type="date" ng-model="vm.aula.data" name="data" ng-required="true" ng-minlength="10" /><br>
+            <input class="form-control" type="text" ng-model="vm.aula.turma" name="turma" ng-hide="true" ng-required="true" /><br>
+            <select class="form-control" ng-model="vm.aula.turma" ng-options="turma.descricao for turma in vm.turmas">
+                <option value="">Selecione a Turma</option>
+            </select><br>
+            <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.aulaForm.$invalid">{{'action.SAVE' | translate}}</button>
+            <button class="btn btn-success" ng-click="vm.clearFields()">{{'action.CLEAN' | translate}}</button>
+        </form>
     </div>
 </div>

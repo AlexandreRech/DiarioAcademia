@@ -37,7 +37,7 @@
 
         function edit() {
             if (vm.alunoSelecionado)
-                $state.go('aluno.details', { alunoId: vm.alunoSelecionado.id });
+                $state.go('app.aluno.details', { alunoId: vm.alunoSelecionado.id });
         }
 
        function remove() {

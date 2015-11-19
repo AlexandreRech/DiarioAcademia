@@ -1,0 +1,24 @@
+.toolbar {
+  width: 100%;
+}
+.toolbar li {
+  max-width: 140px;
+  padding-right: 30px;
+  position: relative;
+  top: 7px;
+  float: right;
+}
+.toolbar li a i {
+  float: left;
+}
+.toolbar li a span {
+  position: relative;
+  bottom: 1px;
+}
+.toolbar ndd-toolbar-option:first-child li {
+  padding-right: 10px;
+}
+.container-toolbar {
+  padding: 0 0 14px 0;
+  margin: 0;
+}

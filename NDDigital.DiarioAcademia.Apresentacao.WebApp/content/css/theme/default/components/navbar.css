@@ -1,0 +1,71 @@
+.caret {
+  border-top: 5px solid white !important;
+}
+.nav-custom {
+  background-color: #0F75B3 !important;
+  background-image: none !important;
+  height: 40px !important;
+  min-height: 40px !important;
+}
+.navbar-toggle {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.navbar-inverse {
+  border-color: transparent !important;
+}
+.navbar-inverse .navbar-nav > li > a {
+  text-shadow: none !important;
+  color: #4D4D4D !important;
+}
+.navbar-brand {
+  color: white !important;
+  font-size: 18px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  line-height: 10px;
+  padding-left: 10px !important;
+}
+.navbar {
+  margin-bottom: 0;
+  color: white !important;
+}
+.top-nav > li > a {
+  background-color: #0D5F9A !important;
+  float: left;
+  max-height: 40px;
+}
+.nav-options-custom {
+  background-color: #FBFBFB !important;
+  border-bottom: solid #F0F0F0 1px;
+  min-height: 30px !important;
+  height: 30px;
+  margin-top: 40px;
+  padding-left: 10px;
+  z-index: 3 !important;
+  min-width: 626px;
+}
+@media screen and (max-width: 768px) {
+  .nav-options-custom {
+    max-height: 100px;
+    height: auto;
+    min-width: 100%;
+  }
+}
+.option-nav {
+  color: #4D4D4D !important;
+  cursor: pointer;
+}
+.option-nav:hover {
+  background-color: rgba(204, 204, 204, 0.5);
+}
+.actived-option {
+  background-color: #E25D41 !important;
+  color: white !important;
+}
+.nav-option a:hover {
+  cursor: pointer;
+}
+.nav-option span:hover {
+  cursor: pointer;
+}

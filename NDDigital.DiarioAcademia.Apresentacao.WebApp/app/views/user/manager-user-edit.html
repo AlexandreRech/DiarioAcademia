@@ -1,0 +1,43 @@
+﻿
+<ndd-head title="Edição de Usuário" back-route="app.user.list"></ndd-head>
+   
+<div class="col-sm-offset-2 col-sm-8">
+    <div style="padding-right: 2%;">
+        <div ng-include="'/app/templates/components/user-profile.html'"></div>
+    </div>
+
+    <div class="col-sm-12 clear-padding">
+        <br />
+        <div class="col-xs-12 clear-padding">
+            <h3 style="margin-top: 0;">Configurações</h3>
+            <hr style="margin-top: 2%" />
+            <br />
+        </div>    
+        <label for="groups">Grupos:</label>
+        <button class="btn btn-info" ng-click="vm.editGroups()">
+            <i class="fa fa-users"></i>
+            <span>Editar Grupos</span>
+        </button>
+    </div>
+</div>
+
+<div class="col-sm-12 clear-padding text-center">
+    <div class="footer">
+        <br /><br />
+        <hr />
+        <button class="btn btn-success" data-toggle="modal" data-target="#modelEditUser" ng-disabled="vm.formUser.$pristine">
+            <i class="fa fa-check-square-o"></i>
+            <span>Salvar Alterações</span>
+
+        </button>
+        <button class="btn btn-info" ng-click="vm.clear()">
+            <i class="fa fa-history"></i>
+            <span>Desfazer Alterações</span>
+        </button>
+    </div>
+</div>
+
+
+<ndd-modal target="modelEditUser" label="{{vm.titleModelEdit}}" callback="vm.editUser">
+    {{vm.bodyModelEdit}}
+</ndd-modal>

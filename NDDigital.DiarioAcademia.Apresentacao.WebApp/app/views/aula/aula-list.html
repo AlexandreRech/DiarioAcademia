@@ -1,15 +1,5 @@
-﻿<div class="container-view">
-    <ndd-head title="Aulas" back-route="aula"></ndd-head>
+﻿<ndd-toolbar state-new="app.aula.create" cb-remove="vm.delete"></ndd-toolbar>
 
-    <div class="col-sm-12 clear-padding">
-        <div class="submit-line pull-right">
-            <input type="text" class="form-control" placeholder="Pesquisar" ng-model="nameFilter" />
-            <button class="submit-lente" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-            <br />
-        </div>
-    </div>
-    <ndd-table columns="['DATA DA AULA', 'TURMA']" attrs="['dataAula', 'anoTurma']" data="vm.aulas" cb-click="vm.onClick" ng-model="nameFilter"></ndd-table>
-</div>
-<ndd-toolbar state-new="aula.create" cb-remove="vm.delete"></ndd-toolbar>
+<ndd-table columns="['DATA DA AULA', 'TURMA']" attrs="['dataAula', 'anoTurma']" data="vm.aulas" 
+           cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>
+

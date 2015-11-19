@@ -2,7 +2,7 @@
 
     'use strict';
     //using
-    sidebarController.$inject = ['authService', '$state'];
+    sidebarController.$inject = ['authService', '$state', '$rootScope'];
 
     //namespace
     angular
@@ -10,17 +10,19 @@
         .controller('sidebarController', sidebarController);
 
     //class
-    function sidebarController(authService, $state) {
+    function sidebarController(authService, $state, $rootScope) {
         var self = this;
 
         //script load
         activate();
         function activate() {
-
+            $rootScope.app = {
+                isSideCollapse: false
+            };
         }
 
         self.editUser = function () {
-            $state.go('manager.useredit', { userId: authService.authentication.userId });
+            $state.go('app.user.edit', { userId: authService.authentication.userId });
         }
 
         self.closeItensOpen = function () {

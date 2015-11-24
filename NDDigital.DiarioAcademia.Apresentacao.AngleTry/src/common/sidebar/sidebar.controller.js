@@ -108,11 +108,6 @@
 
         } // activate
 
-
-        self.redirect = function (route, params) {
-            if (route && route != "#")
-                $state.go(route, params);
-        }
     }
 
 })();

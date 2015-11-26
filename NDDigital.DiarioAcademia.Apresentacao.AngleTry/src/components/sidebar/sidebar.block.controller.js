@@ -1,17 +1,17 @@
 (function () {
     'use strict';
 
-    UserBlockController.$inject = ['$rootScope', 'authService'];
+    UserBlockController.$inject = ['$rootScope', 'autheService'];
 
     angular
         .module('app.sidebar')
         .controller('UserBlockController', UserBlockController);
 
-    function UserBlockController($rootScope, authService) {
+    function UserBlockController($rootScope, autheService) {
         activate();
 
         function activate() {
-            $rootScope.user = authService.authentication;
+            $rootScope.user = autheService.authentication;
 
             $rootScope.user.picture = 'src/images/avatar_login.png'
 

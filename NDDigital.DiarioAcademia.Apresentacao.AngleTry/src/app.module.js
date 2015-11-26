@@ -17,8 +17,17 @@
 
     angular
         .module('diarioacademia', [
-            //common
+            //core
             'app.core',
+            //components
+            'app.nddtable',
+            'app.nddhead',
+            'app.nddtoolbar',
+            'app.modal',
+            'app.checkbox',
+            'app.ndd-confirm',
+            'app.ndd-security',
+            //common
             'app.common',
             'app.routes',
             'app.sidebar',
@@ -34,20 +43,14 @@
             'datatables.directive',
             'datatables.factory',
             'app.cep',
-            //diretives
-            'app.nddtable',
-            'app.nddhead',
-            'app.nddtoolbar',
-            'app.modal',
-            'app.checkbox',
-            'app.ndd-confirm',
-            'app.ndd-security',
-            //features
             'app.layout',
-            'app.auth',
+             //security
+            'app.authorization',
+            'app.authentication',
+            'app.permission',
+            //features
             'app.user',
             'app.group',
-            'app.permission',
             'app.aluno',
             'app.turma',
             'app.chamada',

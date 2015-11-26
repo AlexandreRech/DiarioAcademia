@@ -5,15 +5,15 @@
     signupController.$inject = [
         '$location',
         '$timeout',
-        'authService'];
+        'autheService'];
 
     //signupspace
     angular
-        .module('app.auth')
+        .module('app.authentication')
         .controller('signupController', signupController);
 
     //class
-    function signupController($location, $timeout, authService) {
+    function signupController($location, $timeout, autheService) {
         var vm = this;
         vm.title = "Cadastro";
 
@@ -32,7 +32,7 @@
 
         //public methods
         vm.signUp = function() {
-            authService.saveRegistration(vm.registration)
+            autheService.saveRegistration(vm.registration)
                 .then(successSignup)
                 .catch(errorSignup);
         };

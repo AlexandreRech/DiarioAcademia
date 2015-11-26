@@ -3,19 +3,15 @@
 
     angular
         .module('app.core')
-        .run(appRun)
-        .run(runStateChangeSuccess)
-        .run(runStateNotFound)
-        .run(runStateChangeStart);
+        .run(appRun);
 
 
-    appRun.$inject = ['$rootScope', '$state', '$stateParams', '$window', '$templateCache', 'Colors'];
-    function appRun($rootScope, $state, $stateParams, $window, $templateCache, Colors) {
+    appRun.$inject = ['$rootScope', '$state', '$stateParams', '$window', '$templateCache'];
+    function appRun($rootScope, $state, $stateParams, $window, $templateCache) {
         // Set reference to access them from any scope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         $rootScope.$storage = $window.localStorage;
-        $rootScope.colorByName = Colors.byName;
         // cancel click event easily
         $rootScope.cancel = function ($event) {
             $event.stopPropagation();
@@ -28,83 +24,5 @@
             return title;
         };
     }
-
-    // Hooks 
-    // ----------------------------------- 
-
-    runStateChangeSuccess.$inject = ["$rootScope"];
-    function runStateChangeSuccess($rootScope) {
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            $rootScope.previousState = fromState;
-            $rootScope.state = toState.name;
-            console.log({ Change: "succes: ", fromState: fromState.name, toState: toState.name });
-        });
-    };
-
-
-    runStateNotFound.$inject = ["$rootScope"];
-    function runStateNotFound($rootScope) {
-        $rootScope.$on('$stateNotFound',
-               function (event, unfoundState, fromState, fromParams) {
-                   console.log({ Change: "error: ", fromState: fromState.name, toState: unfoundState.to });
-               });
-    };
-
-
-    runStateChangeStart.$inject = ['$rootScope', '$state', 'authService', 'logger', 'permissions.factory', '$translate'];
-    function runStateChangeStart($rootScope, $state, authService, logger, permissionFactory, $translate) {
-
-
-        $rootScope.$on('$stateChangeStart',
-           function (event, toState, toParams, fromState, fromParams) {
-
-               if (authService.authentication.isAuth && toState.name == 'login') {
-                   event.preventDefault();
-                   return $state.go('app.home');
-               }
-
-               if (!authService.authentication.isAuth && toState.name == 'app.home') {
-                   event.preventDefault();
-                   return $state.go('login');
-               }
-
-               var isAuthorized = checkAuth(authService, toState);
-               if (isAuthorized)
-                   return;
-
-
-               logNoAuthorized(permissionFactory, $translate, logger, toState);
-               event.preventDefault();
-               $state.go('login');
-           });
-    }
-
-
-    // Helpers
-    function getModule(modules, routeTo) {
-        for (var module in modules) {
-            var routes = modules[module].routes; // routes of module  
-            if (routes && routes.contains(routeTo))
-                return modules[module].name;
-        }
-    }
-
-    function checkAuth(authService, toState) {
-        if (toState.allowAnnonymous) return true;
-        if (authService.authorization.isAdmin) return true;
-        if (authService.authentication.isAuth) {
-            return authService.checkAuthorize(toState.name);
-        }
-        return false;
-    }
-
-
-    function logNoAuthorized(permissionFactory, $translate, logger, toState) {
-        var permissionRequired = permissionFactory.getStateByName(toState.name || toState.to);
-        logger.warning($translate.instant('status.NOT_AUTHORIZED', {
-            resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
-        }));
-    }
-
 })();
 

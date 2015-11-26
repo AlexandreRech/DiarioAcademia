@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.auth', ['app.user']);
+        .module('app.authentication', ['app.routes']);
 })();

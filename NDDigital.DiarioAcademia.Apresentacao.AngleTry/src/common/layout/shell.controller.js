@@ -3,7 +3,7 @@
     'use strict';
 
     //using
-    shellController.$inject = ['$rootScope', '$state', 'authService', 'permissions.factory'];
+    shellController.$inject = ['$rootScope', '$state', 'autheService', 'authoFactory', 'permissions.factory'];
 
     //namespace
     angular
@@ -11,17 +11,17 @@
         .controller('shellController', shellController);
 
     //class
-    function shellController($rootScope, $state, authService, permissionFactory) {
+    function shellController($rootScope, $state, autheService, authoFactory, permissionFactory) {
         var self = this;
         self.authentication = {};
 
         //script load
         activate();
         function activate() {
-            self.authentication = authService.authentication;
-            self.authorization = authService.authorization;
+            self.authentication = autheService.authentication;
+            self.authorization = authoFactory.authorization;
             toastr.options.preventDuplicates = true;
-            toastr.options.timeOut = 900;
+            toastr.options.timeOut = 1200;
             var date = new Date();
             self.year = date.getFullYear();
 
@@ -33,7 +33,7 @@
 
         //public methods
         self.logOut = function () {
-            authService.logOut();
+            autheService.logOut();
             $state.go('login');
         };
 

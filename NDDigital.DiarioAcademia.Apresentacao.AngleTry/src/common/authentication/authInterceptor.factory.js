@@ -3,7 +3,7 @@
 
     authInterceptorService.$inject = ['$q', '$location', 'localStorageService','logger'];
     angular
-        .module('app.auth')
+        .module('app.authentication')
         .factory('authInterceptorService', authInterceptorService);
     
     function authInterceptorService($q, $location, localStorageService, logger) {
@@ -13,11 +13,10 @@
 
             config.headers = config.headers || {};
 
-            var authoData = localStorageService.get('authorizationData');
-            if (authoData) {
-                config.headers.Authorization = 'Bearer ' + authoData.token;
+            var autheData = localStorageService.get('authenticationData');
+            if (autheData) {
+                config.headers.Authorization = 'Bearer ' + autheData.token;
             }
-
             return config;
         };
 

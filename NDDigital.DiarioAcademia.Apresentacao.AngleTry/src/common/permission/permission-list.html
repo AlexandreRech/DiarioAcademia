@@ -23,7 +23,7 @@
             <div class="panel panel-primary text-center panel-fixed" ng-class="{'panel-success': vm.verifyPanelSuccess(filter)}">
                 <div class="panel-heading">
                     <input type="checkbox" class="pull-left" ng-model="isAll" ng-click="vm.modifyGroupPermissions(isAll, filter)" ng-checked="vm.verifyPanelSuccess(filter)" />
-                    <b class="text-capitalize">{{filter}}</b>
+                    <b class="text-capitalize">{{ ('filter.permission.' + filter) | translate}}</b>
                 </div>
                 <div class="panel-body">
                     <ndd-group-checkbox array="vm.permission[filter]" compare="vm.showRoutes" 

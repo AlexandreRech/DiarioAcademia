@@ -11,7 +11,7 @@
     function configRoutes(helper, $stateProvider) {
         $stateProvider.state('app.permission', {
             url: '/permission',
-            templateUrl: 'src/features/permission/manager-permission.html',
+            templateUrl: 'src/common/permission/permission-list.html',
             controller: "managerPermissionController as vm",
             resolve: helper.resolveFor('app.permission')
         })

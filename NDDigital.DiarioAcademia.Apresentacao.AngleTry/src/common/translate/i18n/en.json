@@ -34,7 +34,9 @@
         "SETTINGS": "Settings",
         "USER_OPTIONS": "My Account",
         "LANGUAGE": "Language",
-        "THEMES": "Themes"
+        "THEMES": "Themes",
+        "LOGIN":  "Please login to get started."
+
     },
     "topbar": {
         "search": {
@@ -75,7 +77,9 @@
         "SELECT_ALL": "Select All",
         "CANCEL": "Cancel",
         "OK": "Ok",
-        "CREATE_CLASS_REGISTER": "Create Class Register !"
+        "CREATE_CLASS_REGISTER": "Create Class Register !",
+        "REGISTER": "Not Registered ? Join now",
+        "LOGIN": "Login"
     },
     "status": {
         "CLASS_REGISTER_NOT_CREATE": "Class Register not create !",
@@ -92,7 +96,7 @@
         "SUCCESS": "Success",
         "ACTION_CANCELED": "Action Canceled",
         "COMPLETED": "Concluded !",
-        "NOT_AUTHORIZED":  "You do not have permission to access {{ resourceName }}"
+        "NOT_AUTHORIZED": "You do not have permission to access {{ resourceName }}"
     },
     "home": {
         "MESSAGE_START": "This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.",
@@ -170,6 +174,18 @@
         "CONFIRM_EDIT_GROUP": "Save changes made to the group {{groupname}} ?",
 
         "CONFIRM_MODIFY_PERMISSIONS": "Want to modify the permissions of the Daily Academy ?"
+    },
+    "filter": {
+        "permission": {
+            "STUDENT": "Student",
+            "CLASS": "Class",
+            "CUSTOM": "Custom",
+            "USER": "User",
+            "CLASS_REGISTER": "Class Register",
+            "LESSON": "Lesson",
+            "GROUP": "Group",
+            "PERMISSION": "Permission"
+        }
     }
 
 }

@@ -4,7 +4,7 @@
         .directive('nddSecurity', nddSecurity);
 
     function nddSecurity() {
-        controller.$inject = ['authService'];
+        controller.$inject = ['authoFactory'];
         // Usage:
         //  <div ndd-security="route"></div>
         return {
@@ -29,9 +29,9 @@
             return auth ? element.show() : element.hide();
         }
 
-        function controller(authService) {
+        function controller(authoFactory) {
             controller.isAuthorized = function (permission) {
-                return authService.authorization.isAuthorized(permission);
+                return authoFactory.authorization.isAuthorized(permission);
             };
         }
 

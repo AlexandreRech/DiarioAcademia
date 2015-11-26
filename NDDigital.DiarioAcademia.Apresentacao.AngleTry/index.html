@@ -99,34 +99,34 @@
     <script src="/src/app.module.js"></script>
     <script src="/src/common/common.module.js"></script>
     <script src="/src/common/authentication/authentication.module.js"></script>
+    <script src="/src/common/authorization/authorization.module.js"></script>
     <script src="/src/common/automapper/automapper.module.js"></script>
     <script src="/src/common/cep/cep.module.js"></script>
     <script src="/src/common/changes/changes.module.js"></script>
-    <script src="/src/common/colors/colors.module.js"></script>
     <script src="/src/common/core/core.module.js"></script>
     <script src="/src/common/layout/layout.module.js"></script>
     <script src="/src/common/lazyload/lazyload.module.js"></script>
-    <script src="/src/common/loadingbar/loadingbar.module.js"></script>
     <script src="/src/common/logger/logger.module.js"></script>
-    <script src="/src/common/navsearch/navsearch.module.js"></script>
-    <script src="/src/common/ndd-confirm/ndd-confirm.module.js"></script>
-    <script src="/src/common/ndd-group-checkbox/ndd-group-checkbox.module.js"></script>
-    <script src="/src/common/ndd-head/ndd-head.module.js"></script>
-    <script src="/src/common/ndd-modal/ndd-modal.module.js"></script>
     <script src="/src/common/ndd-security/ndd-security.module.js"></script>
-    <script src="/src/common/ndd-table/ndd-table.module.js"></script>
-    <script src="/src/common/ndd-toolbar/ndd-toolbar.module.js"></script>
+    <script src="/src/common/permission/permission.module.js"></script>
     <script src="/src/common/preloader/preloader.module.js"></script>
     <script src="/src/common/routes/routes.module.js"></script>
     <script src="/src/common/settings/settings.module.js"></script>
-    <script src="/src/common/sidebar/sidebar.module.js"></script>
     <script src="/src/common/translate/translate.module.js"></script>
     <script src="/src/common/utils/utils.module.js"></script>
+    <script src="/src/components/loadingbar/loadingbar.module.js"></script>
+    <script src="/src/components/navsearch/navsearch.module.js"></script>
+    <script src="/src/components/ndd-confirm/ndd-confirm.module.js"></script>
+    <script src="/src/components/ndd-group-checkbox/ndd-group-checkbox.module.js"></script>
+    <script src="/src/components/ndd-head/ndd-head.module.js"></script>
+    <script src="/src/components/ndd-modal/ndd-modal.module.js"></script>
+    <script src="/src/components/ndd-table/ndd-table.module.js"></script>
+    <script src="/src/components/ndd-toolbar/ndd-toolbar.module.js"></script>
+    <script src="/src/components/sidebar/sidebar.module.js"></script>
     <script src="/src/features/aluno/aluno.module.js"></script>
     <script src="/src/features/aula/aula.module.js"></script>
     <script src="/src/features/chamada/chamada.module.js"></script>
     <script src="/src/features/group/group.module.js"></script>
-    <script src="/src/features/permission/permission.module.js"></script>
     <script src="/src/features/turma/turma.module.js"></script>
     <script src="/src/features/user/user.module.js"></script>
     <!--endinject-->
@@ -144,12 +144,11 @@
     <!--inject:config-->
     <script src="/src/common/core/core.config.js"></script>
     <script src="/src/common/lazyload/lazyload.config.js"></script>
-    <script src="/src/common/loadingbar/loadingbar.config.js"></script>
     <script src="/src/common/translate/translate.config.js"></script>
+    <script src="/src/components/loadingbar/loadingbar.config.js"></script>
     <!--endinject-->
 
     <!--inject:constant-->
-    <script src="/src/common/colors/colors.constants.js"></script>
     <script src="/src/common/core/core.constants.js"></script>
     <script src="/src/common/lazyload/lazyload.constants.js"></script>
     <script src="/src/common/translate/translate.constants.js"></script>
@@ -157,11 +156,12 @@
 
 
     <!--inject:factory-->
+    <script src="/src/common/authentication/authInterceptor.factory.js"></script>
+    <script src="/src/common/authorization/authorization.factory.js"></script>
     <script src="/src/common/automapper/automapper.factory.js"></script>
     <script src="/src/common/changes/changes.factory.js"></script>
-    <script src="/src/features/permission/compare-state.factory.js"></script>
-    <script src="/src/features/permission/permission-groups.factory.js"></script>
-    <script src="/src/features/permission/permission.factory.js"></script>
+    <script src="/src/common/permission/compare-state.factory.js"></script>
+    <script src="/src/common/permission/permission.factory.js"></script>
     <!--endinject-->
 
     <!--inject:adapter-->
@@ -170,38 +170,44 @@
     <!--endinject-->
 
     <!--inject:service-->
-    <script src="/src/common/authentication/auth.service.js"></script>
-    <script src="/src/common/authentication/authInterceptor.service.js"></script>
+    <script src="/src/common/authentication/authentication.service.js"></script>
     <script src="/src/common/cep/cep.service.js"></script>
-    <script src="/src/common/colors/colors.service.js"></script>
     <script src="/src/common/logger/logger.service.js"></script>
-    <script src="/src/common/navsearch/navsearch.service.js"></script>
-    <script src="/src/common/sidebar/sidebar.service.js"></script>
+    <script src="/src/common/permission/permission.service.js"></script>
     <script src="/src/common/utils/browser.service.js"></script>
     <script src="/src/common/utils/utils.service.js"></script>
+    <script src="/src/components/navsearch/navsearch.service.js"></script>
+    <script src="/src/components/sidebar/sidebar.service.js"></script>
     <script src="/src/features/aluno/aluno.service.js"></script>
     <script src="/src/features/aula/aula.service.js"></script>
     <script src="/src/features/chamada/chamada.service.js"></script>
     <script src="/src/features/group/group.service.js"></script>
-    <script src="/src/features/permission/permission.service.js"></script>
     <script src="/src/features/turma/turma.service.js"></script>
     <script src="/src/features/user/user.service.js"></script>
     <!--endinject-->
     
     <!--inject:controller-->
     <script src="/src/common/layout/shell.controller.js"></script>
-    <script src="/src/common/sidebar/sidebar.block.controller.js"></script>
-    <script src="/src/common/sidebar/sidebar.controller.js"></script>
+    <script src="/src/common/permission/permission.controller.js"></script>
+    <script src="/src/components/sidebar/sidebar.block.controller.js"></script>
+    <script src="/src/components/sidebar/sidebar.controller.js"></script>
+    <script src="/src/features/group/controllers/group-create.controller.js"></script>
+    <script src="/src/features/group/controllers/group-edit.controller.js"></script>
+    <script src="/src/features/group/controllers/group-list.controller.js"></script>
+    <script src="/src/features/group/controllers/group-permission-edit.controller.js"></script>
+    <script src="/src/features/user/controllers/user-edit-group.controller.js"></script>
+    <script src="/src/features/user/controllers/user-edit.controller.js"></script>
+    <script src="/src/features/user/controllers/user-list.controller.js"></script>
     <!--endinject-->
 
     <!--inject:routes-->
     <script src="/src/common/authentication/authentication.routes.js"></script>
     <script src="/src/common/layout/layout.routes.js"></script>
+    <script src="/src/common/permission/permission.routes.js"></script>
     <script src="/src/features/aluno/aluno.routes.js"></script>
     <script src="/src/features/aula/aula.routes.js"></script>
     <script src="/src/features/chamada/chamada.routes.js"></script>
     <script src="/src/features/group/group.routes.js"></script>
-    <script src="/src/features/permission/permission.routes.js"></script>
     <script src="/src/features/turma/turma.routes.js"></script>
     <script src="/src/features/user/user.routes.js"></script>
     <script src="/src/common/routes/routes.config.js"></script>
@@ -209,18 +215,8 @@
 
 
     <!--inject:directive-->
-    <script src="/src/common/navsearch/navsearch.directive.js"></script>
-    <script src="/src/common/ndd-confirm/ndd-confirm.directive.js"></script>
-    <script src="/src/common/ndd-group-checkbox/ndd-group-checkbox.directive.js"></script>
-    <script src="/src/common/ndd-head/ndd-head.directive.js"></script>
-    <script src="/src/common/ndd-modal/ndd-modal.directive.js"></script>
     <script src="/src/common/ndd-security/ndd-security.directive.js"></script>
-    <script src="/src/common/ndd-table/datatable-setup.directive.js"></script>
-    <script src="/src/common/ndd-table/ndd-table.directive.js"></script>
-    <script src="/src/common/ndd-toolbar/ndd-toolbar-option.directive.js"></script>
-    <script src="/src/common/ndd-toolbar/ndd-toolbar.directive.js"></script>
     <script src="/src/common/preloader/preloader.directive.js"></script>
-    <script src="/src/common/sidebar/sidebar.directive.js"></script>
     <script src="/src/common/utils/animate-enabled.directive.js"></script>
     <script src="/src/common/utils/clear-storage.directive.js"></script>
     <script src="/src/common/utils/fullscreen.directive.js"></script>
@@ -228,6 +224,16 @@
     <script src="/src/common/utils/now.directive.js"></script>
     <script src="/src/common/utils/table-checkall.directive.js"></script>
     <script src="/src/common/utils/trigger-resize.directive.js"></script>
+    <script src="/src/components/navsearch/navsearch.directive.js"></script>
+    <script src="/src/components/ndd-confirm/ndd-confirm.directive.js"></script>
+    <script src="/src/components/ndd-group-checkbox/ndd-group-checkbox.directive.js"></script>
+    <script src="/src/components/ndd-head/ndd-head.directive.js"></script>
+    <script src="/src/components/ndd-modal/ndd-modal.directive.js"></script>
+    <script src="/src/components/ndd-table/datatable-setup.directive.js"></script>
+    <script src="/src/components/ndd-table/ndd-table.directive.js"></script>
+    <script src="/src/components/ndd-toolbar/ndd-toolbar-option.directive.js"></script>
+    <script src="/src/components/ndd-toolbar/ndd-toolbar.directive.js"></script>
+    <script src="/src/components/sidebar/sidebar.directive.js"></script>
     <!--endinject-->
 
     <!--inject:templates-->
@@ -235,10 +241,11 @@
     <!--endinject-->
 
     <!--inject:run-->
+    <script src="/src/common/authorization/authorization.run.js"></script>
     <script src="/src/common/core/core.run.js"></script>
-    <script src="/src/common/loadingbar/loadingbar.run.js"></script>
     <script src="/src/common/settings/settings.run.js"></script>
     <script src="/src/common/translate/translate.run.js"></script>
+    <script src="/src/components/loadingbar/loadingbar.run.js"></script>
     <!--endinject-->
 <!--endbuild-->
 </html>

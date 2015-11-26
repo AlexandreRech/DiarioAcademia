@@ -18,7 +18,6 @@
             'ngResource',
             'ui.utils',
             'oitozero.ngSweetAlert'
-
         ])
 
 

@@ -2,7 +2,5 @@
     'use strict';
 
     angular
-        .module('app.utils', [
-          'app.colors'
-          ]);
+        .module('app.utils', []);
 })();

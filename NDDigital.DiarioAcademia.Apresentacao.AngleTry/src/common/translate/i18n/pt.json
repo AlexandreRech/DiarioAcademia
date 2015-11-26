@@ -34,7 +34,8 @@
         "SETTINGS": "Configurações",
         "USER_OPTIONS": "Minha Conta",
         "LANGUAGE": "Idioma",
-        "THEMES": "Temas"
+        "THEMES": "Temas",
+        "LOGIN":  "Por favor faça login para começar."
     },
     "topbar": {
         "search": {
@@ -71,7 +72,10 @@
         "SELECT_ALL": "Selecionar Todos",
         "CANCEL": "Cancelar",
         "OK": "Ok",
-        "CREATE_CLASS_REGISTER": "Realizar Chamada !"
+        "CREATE_CLASS_REGISTER": "Realizar Chamada !",
+        "REGISTER": "Não é registrado? Cadastre-se agora",
+        "LOGIN": "Entrar"
+
     },
     "status": {
         "CLASS_REGISTER_NOT_CREATE": "Chamada não cadastrada !",
@@ -165,6 +169,18 @@
         "CONFIRM_CREATE_GROUP": "Deseja criar o grupo {{groupname}} ?",
         "CONFIRM_EDIT_GROUP": "Salvar alterações realizadas no grupo {{groupname}} ?",
 
-        "CONFIRM_MODIFY_PERMISSIONS":  "Deseja modificar as permissões do DiarioAcademia ?"
+        "CONFIRM_MODIFY_PERMISSIONS": "Deseja modificar as permissões do DiarioAcademia ?"
+    },
+      "filter": {
+        "permission": {
+            "STUDENT": "Aluno",
+            "CLASS": "Turma",
+            "CUSTOM": "Personalizado",
+            "USER": "Usuário",
+            "CLASS_REGISTER": "Chamada",
+            "LESSON": "Aula",
+            "GROUP": "Grupo",
+            "PERMISSION": "Permissões"
+        }
     }
 }

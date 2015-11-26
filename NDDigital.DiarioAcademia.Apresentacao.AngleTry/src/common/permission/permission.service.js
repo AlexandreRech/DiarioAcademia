@@ -13,7 +13,7 @@
 	function permissionsService($http, logger, baseUrl, $state, res) {
 		var self = this;
 		var serviceUrl = baseUrl + "api/permission/";
-		var resource = "src/features/permission/permissions.json";
+		var resourcePermissions = "src/common/permission/permissions.json";
 
 		//public methods
 		self.getPermissions = function () {
@@ -22,8 +22,8 @@
 				 .catch(logger.errorCallback)
 		};
 
-		self.getStates = function () {
-			return $http.get(serviceUrl + 'metadata')
+		self.getMetaDataPermissions = function () {
+			return $http.get(resourcePermissions)
 				 .then(logger.successCallback)
 				 .catch(logger.errorCallback)
 		};
@@ -38,14 +38,13 @@
 			return $http.post(serviceUrl, permission)
 							.then(logger.emptyMessageCallback)
 							.then(function (response) {
-							    logger.success(res.SAVED_SUCCESSFUL, permission, "Create");
-							    return response;
+								logger.success(res.SAVED_SUCCESSFUL, permission, "Create");
+								return response;
 							})
 							.catch(logger.errorCallback);
 		};
 
 		self.delete = function (permission) {
-
 			permission = getPermissionsId(permission);
 			return $http({
 				url: serviceUrl,
@@ -55,7 +54,7 @@
 			})
 				.then(logger.emptyMessageCallback)
 				.then(function () {
-				    logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
+					logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
 
 				})
 				.catch(logger.errorCallback);

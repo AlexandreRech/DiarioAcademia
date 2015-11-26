@@ -2,20 +2,17 @@
 
     'use strict';
     //using
-    loginController.$inject = ['$state', 'authService'];
+    loginController.$inject = ['$state', 'autheService'];
 
     //namespace
     angular
-        .module('app.auth')
+        .module('app.authentication')
         .controller('loginController', loginController);
 
     //class
-    function loginController($state, auth) {
+    function loginController($state, autheService) {
         var vm = this;
-        vm.title = "Entrar";
-        vm.user = "User";
-
-
+   
         //script load
         activate();
         function activate() {
@@ -23,19 +20,14 @@
                 userName: "superadmin",
                 password: "174963"
             };
-            vm.message = "";
-
         }
 
         //public methods
         vm.login = function () {
-            auth.login(vm.loginData).then(function () {
-                $state.go(auth.lastState == "login" || auth.lastState == 'home' ? 'app.home' : auth.lastState);
-            },
-            function (err) {
-                vm.message = "Erro ao logar: " + err.error_description;
+            autheService.login(vm.loginData).then(function () {
+                $state.go('app.home');
             });
-        };
+        }
     }
 
 })();

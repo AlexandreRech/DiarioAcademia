@@ -16,7 +16,7 @@
 				securityProperties: "@",
 				securityRemove: "@"
 			},
-			templateUrl: 'src/common/ndd-toolbar/ndd-toolbar.html'
+			templateUrl: 'src/components/ndd-toolbar/ndd-toolbar.html'
 		}
 		
 		function link(scope, element, attrs){

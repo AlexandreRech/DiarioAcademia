@@ -21,19 +21,19 @@
             })
             .state('app.user.list', {
                 url: '/list',
-                templateUrl: 'src/features/user/views/manager-user-list.html',
+                templateUrl: 'src/features/user/views/user-list.html',
                 controller: "managerUserListController as vm",
                 resolve: helper.resolveFor('app.user')
             })
             .state('app.user.edit', {
                 url: '/edit/:userId',
-                templateUrl: 'src/features/user/views/manager-user-edit.html',
+                templateUrl: 'src/features/user/views/user-edit.html',
                 controller: "managerUserEditController as vm",
                 resolve: helper.resolveFor('app.user')
             })
             .state('app.user.groupEdit', {
                 url: '/edit/group/:userId',
-                templateUrl: 'src/features/user/views/manager-user-edit-group.html',
+                templateUrl: 'src/features/user/views/user-edit-group.html',
                 controller: "managerUserEditGroupController as vm",
                 resolve: helper.resolveFor('app.user')
             });

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-        .module('app.auth')
+        .module('app.authentication')
         .config(configRoutes);
 
 

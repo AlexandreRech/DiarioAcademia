@@ -35,7 +35,9 @@
         "SETTINGS": "Configuración",
         "USER_OPTIONS": "Mi Cuenta",
         "LANGUAGE": "Idioma",
-        "THEMES": "Temas"
+        "THEMES": "Temas",
+        "LOGIN": "Inicia sesión para empezar."
+
     },
     "topbar": {
         "search": {
@@ -76,7 +78,10 @@
         "SELECT_ALL": "Seleccionar todo",
         "CANCEL": "Cancelar",
         "OK": "Ok",
-        "CREATE_CLASS_REGISTER": "Crear clase registro!"
+        "CREATE_CLASS_REGISTER": "Crear clase registro!",
+        "REGISTER": "No registrado ? Únete ahora",
+        "LOGIN": "Iniciar sesión"
+
     },
     "status": {
         "CLASS_REGISTER_NOT_CREATE": "Clase Registro no crea!",
@@ -93,7 +98,7 @@
         "SUCCESS": "Éxito",
         "ACTION_CANCELED": "Acción cancelada",
         "COMPLETED": "Terminado !",
-        "NOT_AUTHORIZED":  "No se le permite el acceso {{ resourceName }}"
+        "NOT_AUTHORIZED": "No se le permite el acceso {{ resourceName }}"
     },
     "home": {
         "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",
@@ -141,7 +146,7 @@
         "GROUP_NOT_EDITED": "No se han guardado los cambios de grupo!",
 
         "PERMISSIONS_NOT_MODIFIED": "Permisos sin cambios!",
-        "PERMISSIONS_MODIFIED":  "Permisos modificados!"
+        "PERMISSIONS_MODIFIED": "Permisos modificados!"
 
     },
     "confirm": {
@@ -171,6 +176,18 @@
         "CONFIRM_CREATE_GROUP": "¿Quieres crear el grupo {{groupname}} ?",
         "CONFIRM_EDIT_GROUP": "Guarde los cambios realizados en el grupo {{groupname}} ?",
 
-        "CONFIRM_MODIFY_PERMISSIONS":  "¿Quieres modificar los permisos de la Academia Daily ?"
+        "CONFIRM_MODIFY_PERMISSIONS": "¿Quieres modificar los permisos de la Academia Daily ?"
+    },
+    "filter": {
+        "permission": {
+            "STUDENT": "Estudiante",
+            "CLASS": "Clase",
+            "CUSTOM": "Personalizado",
+            "USER": "Usuario",
+            "CLASS_REGISTER": "Clase Registro",
+            "LESSON": "Lección",
+            "GROUP": "Grupo",
+            "PERMISSION": "Permisos"
+        }
     }
 }

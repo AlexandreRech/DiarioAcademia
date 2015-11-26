@@ -39,19 +39,19 @@
                            root + 'common/authentication/controllers/signup.controller.js']
                }, {
                    name: 'app.user',
-                   files: [root + 'features/user/controllers/manager-user-list.controller.js',
-                           root + 'features/user/controllers/manager-user-edit.controller.js',
-                           root + 'features/user/controllers/manager-user-edit-group.controller.js']
+                   files: [root + 'features/user/controllers/user-list.controller.js',
+                           root + 'features/user/controllers/user-edit.controller.js',
+                           root + 'features/user/controllers/user-edit-group.controller.js']
                }, {
                    name: 'app.permission',
-                   files: [root + 'features/permission/manager-permission.controller.js']
+                   files: [root + 'common/permission/permission.controller.js']
                }, {
                    name: 'app.group',
-                   files: [root + 'features/group/controllers/manager-group-list.controller.js',
-                           root + 'features/group/controllers/manager-group-create.controller.js',
-                           root + 'features/group/controllers/manager-group-edit.controller.js',
-                           root + 'features/group/controllers/manager-group-permission-edit.controller.js',
-                           root + 'features/group/controllers/manager-group-permission-edit.controller.js']
+                   files: [root + 'features/group/controllers/group-list.controller.js',
+                           root + 'features/group/controllers/group-create.controller.js',
+                           root + 'features/group/controllers/group-edit.controller.js',
+                           root + 'features/group/controllers/group-permission-edit.controller.js',
+                           root + 'features/group/controllers/group-permission-edit.controller.js']
                }]
         });
 })();

@@ -3,8 +3,8 @@
 
     angular
         .module('app.loadingbar')
-        .run(loadingbarRun)
-        ;
+        .run(loadingbarRun);
+
     loadingbarRun.$inject = ['$rootScope', '$timeout', 'cfpLoadingBar'];
     function loadingbarRun($rootScope, $timeout, cfpLoadingBar){
 

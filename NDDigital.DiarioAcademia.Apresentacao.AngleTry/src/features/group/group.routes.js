@@ -20,25 +20,25 @@
             })
             .state('app.group.list', {
                 url: '/list',
-                templateUrl: 'src/features/group/views/manager-group-list.html',
+                templateUrl: 'src/features/group/views/group-list.html',
                 controller: "managerGroupListController as vm",
                 resolve: helper.resolveFor('app.group')
             })
             .state('app.group.create', {
                 url: '/create/:groupId',
-                templateUrl: 'src/features/group/views/manager-group-create.html',
+                templateUrl: 'src/features/group/views/group-create.html',
                 controller: "managerGroupCreateController as vm",
                 resolve: helper.resolveFor('app.group')
             })
             .state('app.group.edit', {
                 url: '/edit/:groupId',
-                templateUrl: 'src/features/group/views/manager-group-edit.html',
+                templateUrl: 'src/features/group/views/group-edit.html',
                 controller: "managerGroupEditController as vm",
                 resolve: helper.resolveFor('app.group')
             })
             .state('app.group.permissionsEdit', {
                 url: '/group/edit/permissions/:groupId',
-                templateUrl: 'src/features/group/views/manager-group-permission-edit.html',
+                templateUrl: 'src/features/group/views/group-permission-edit.html',
                 controller: "managerGroupPermissionEditController as vm",
                 resolve: helper.resolveFor('app.group')
             })

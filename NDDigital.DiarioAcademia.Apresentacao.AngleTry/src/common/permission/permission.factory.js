@@ -2,27 +2,19 @@
     angular.module('app.permission')
         .factory('permissions.factory', permissionFactory);
 
-    permissionFactory.$inject = ['$state', 'compareState', 'permissionGroups', 'permissionsService', '$log'];
+    permissionFactory.$inject = ['$state', 'compareState', 'permissionsService', '$log'];
 
-    function permissionFactory($state, compareState, permissionGroups, permissionsService, $log) {
+    function permissionFactory($state, compareState, permissionsService, $log) {
 
         var permissions = [];
+        var permissionGroups = [];
+
 
         activate();
         function activate() {
             //Get list of permissions
-            permissionsService.getStates().then(function (results) {
-                if (!results) {
-                    return;
-                }
-                for (var i = 0; i < results.length; i++) {
-                    var permission = {
-                        name: results[i].name,
-                        displayName: results[i].displayName,
-                        permissionId: results[i].id
-                    }
-                    permissions.push(permission);
-                }
+            permissionsService.getMetaDataPermissions().then(function (results) {
+                permissions = results;
             });
         }
 
@@ -58,7 +50,7 @@
 
             for (var i in permissions) {
                 permission = permissions[i];
-                filter = getFilter(permission.name);
+                filter = permission.filter;
                 if (!filter)
                     continue;
                 if (!filtered[filter])
@@ -96,14 +88,6 @@
 
         function containsPermissionByName(permissionsCustom, name) {
             return getByName(permissionsCustom, name) != undefined;
-        }
-
-        //private methods
-        function getFilter(name) {
-            if (permissionGroups.contains(name))
-                return name;
-            var filter = name.replace("app.", "").split(".");      
-            return filter[0];
         }
 
     }

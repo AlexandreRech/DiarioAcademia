@@ -42,9 +42,13 @@
                    return $state.go('login');
                }
 
-               var isAuthorized = checkAuth(autheService, authoFactory, toState);
-               if (isAuthorized)
-                   return;
+               //check authorization
+               if (toState.allowAnnonymous)
+                   return true;
+               if (authoFactory.authorization.isAdmin)
+                   return true;
+               var isAuthorized = authoFactory.authorization.isAuthorized(toState.name);
+               if (isAuthorized) return;
                logNoAuthorized(permissionFactory, $translate, logger, toState);
                event.preventDefault();
                $state.go('login');
@@ -59,16 +63,6 @@
             if (routes && routes.contains(routeTo))
                 return modules[module].name;
         }
-    }
-
-    function checkAuth(autheService, authoFactory, toState) {
-        if (toState.allowAnnonymous)
-            return true;
-        if (authoFactory.authorization.isAdmin)
-            return true;
-        if (autheService.authentication.isAuth) 
-            return authoFactory.checkAuthorize(toState.name);      
-        return false;
     }
 
 

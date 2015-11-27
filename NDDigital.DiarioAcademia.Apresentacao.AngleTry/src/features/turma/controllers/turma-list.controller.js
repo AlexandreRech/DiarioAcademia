@@ -62,11 +62,14 @@
                                 $translate.instant('info.CLASS_NOT_DELETED'), 'error');
                 return;
             }
-            turmaService.delete(vm.turma).then(function () {
+            turmaService.delete(vm.turma).then(function (results) {
                 makeRequest();
                 SweetAlert.swal($translate.instant('status.SUCCESS'),
                                 $translate.instant('info.CLASS_DELETED'), "success");
+            }).catch(function () {
+                swal.close();
             });
+
         }
     }
 }(window.angular));

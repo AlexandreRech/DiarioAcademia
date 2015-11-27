@@ -290,7 +290,6 @@
     <Compile Include="Interceptors\StopWatchNinjectInterceptor.cs" />
     <Compile Include="Loggers\WebApiTracerLogger.cs" />
     <Compile Include="Models\ModelFactory.cs" />
-    <Compile Include="Models\PermissionFilterModel.cs" />
     <Compile Include="Models\PermissionModel.cs" />
     <Compile Include="Models\UserModelFactory.cs" />
     <Compile Include="Models\ObjectExtension.cs" />

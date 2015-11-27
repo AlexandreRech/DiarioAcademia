@@ -73,7 +73,7 @@
                 service[infolog.type](infolog.message, info.content, infolog.title);
 
             } else
-                error(response.message, null, res.UNAVAILABLE_SERVER);
+               throw (new Error(response.message, null || res.UNAVAILABLE_SERVER));
         }
         function emptyMessageCallback(response) {
             return response.data.results || response.data;

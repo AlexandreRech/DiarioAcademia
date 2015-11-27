@@ -17,7 +17,6 @@
         };
 
 
-        self.checkAuthorize = checkAuthorize;
         self.authorization = authorization;
         self.clearAuthorize = clearAuthorize;
         self.setAutheData = setAutheData;
@@ -30,15 +29,6 @@
         }
 
         //public methods
-        function checkAuthorize(toState) {
-            if (authorization.isAdmin)
-                return true;
-            if (toState == "app.home")
-                return true;
-            if (authorization.permissions)
-                return permissionFactory.containsPermissionByName(authorization.permissions, toState);
-        };
-
         function isAuthorized(state) {
             var authentication = localStorageService.get(storageKeys.autheData);
             if (!authentication.isAuth)

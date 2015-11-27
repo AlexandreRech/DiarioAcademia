@@ -1,0 +1,28 @@
+﻿<article>
+    <h4>DADOS DO GRUPO</h4>
+    <div class="col-sm-6 clear-padding">
+        <form>
+            <label>Grupo</label>
+            <input type="text" class="form-control" ng-model="vm.group.name" ng-change="vm.hasChange = true" />
+            <br />
+            <label>Adminstrador:</label>
+            <div class="switcher" ng-class="{'on': vm.group.isAdmin}" ng-click="vm.setAdmin()">
+                <div class="switcherHandler"></div>
+                <input type="checkbox" class="switcherInput" ng-model="vm.group.isAdmin" />
+            </div>
+
+        </form>
+        <hr />
+        <div class="text-center col-sm-12 clear-padding">
+            <button class="btn btn-success" ng-click="vm.save()">
+                <i class="fa fa-save"></i>
+                {{'action.SAVE' | translate}}
+            </button>
+
+            <button class="btn btn-danger" ng-click="vm.remove()"ng-disabled="!vm.group">
+                <i class="fa fa-times"></i>
+                {{'action.DELETE' | translate}}
+            </button>
+        </div>
+    </div>
+</article>

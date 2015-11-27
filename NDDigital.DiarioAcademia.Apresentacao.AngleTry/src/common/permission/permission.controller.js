@@ -26,7 +26,7 @@
         function activate() {
             makeRequest();
         }
-
+        
         //public methods
         function onchange(obj, check) {
             vm.hasChange = true;

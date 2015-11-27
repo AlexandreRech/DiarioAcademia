@@ -45,7 +45,7 @@
 
         function edit() {
             if (vm.selectedUser)
-                $state.go('app.user.edit', { userId: vm.selectedUser.id });
+                $state.go('app.user.details', { userId: vm.selectedUser.id });
         }
 
        

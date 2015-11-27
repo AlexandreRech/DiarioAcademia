@@ -79,11 +79,11 @@
   <ItemGroup>
     <Content Include="app\adapters\event.adapter.js" />
     <Content Include="app\controllers\layout\home-app.controller.js" />
-    <Content Include="app\controllers\manager\group\manager-group-permission-edit.controller.js" />
-    <Content Include="app\controllers\manager\group\manager-group-edit.controller.js" />
-    <Content Include="app\controllers\manager\group\manager-group-list.controller.js" />
-    <Content Include="app\controllers\manager\group\manager-group-create.controller.js" />
-    <Content Include="app\controllers\manager\permission\manager-permission.controller.js" />
+    <Content Include="app\controllers\group\group-permission-edit.controller.js" />
+    <Content Include="app\controllers\group\group-edit.controller.js" />
+    <Content Include="app\controllers\group\group-list.controller.js" />
+    <Content Include="app\controllers\group\group-create.controller.js" />
+    <Content Include="app\controllers\permission\permission.controller.js" />
     <Content Include="app\controllers\user\user-edit.controller.js" />
     <Content Include="app\controllers\user\user-edit-group.controller.js" />
     <Content Include="app\controllers\user\user-list.controller.js" />
@@ -111,24 +111,26 @@
     <Content Include="app\directives\ndd-sidemenu-option\ndd-sidemenu-option.html" />
     <Content Include="app\extentions\array.js" />
     <Content Include="app\extentions\string.js" />
+    <Content Include="app\factories\authorization.factory.js" />
     <Content Include="app\factories\changes.factory.js" />
     <Content Include="app\factories\compare-state.factory.js" />
     <Content Include="app\factories\permission.factory.js" />
     <Content Include="app\images\favicon.ico" />
     <Content Include="app\images\icons\Icon_back.png" />
+    <Content Include="app\images\icons\Icon_back_side.png" />
     <Content Include="app\images\icons\menu_icon.svg" />
+    <Content Include="app\images\icons\user.svg" />
     <Content Include="app\images\login.jpg" />
     <Content Include="app\images\logo-single.png" />
     <Content Include="app\images\logo.png" />
     <Content Include="app\images\logo_gray.png" />
-    <Content Include="app\images\slides\slide_one.jpg" />
-    <Content Include="app\images\slides\slide_three.jpg" />
-    <Content Include="app\images\slides\slide_two.jpg" />
     <Content Include="app\modules\translate.module.js" />
     <Content Include="app\routes\group.routes.js" />
     <Content Include="app\routes\manager.routes.js" />
     <Content Include="app\adapters\chamada.adapter.js" />
+    <Content Include="app\routes\permission.routes.js" />
     <Content Include="app\routes\user.routes.js" />
+    <Content Include="app\services\authentication.service.js" />
     <Content Include="app\services\event.service.js" />
     <Content Include="app\services\group.service.js" />
     <Content Include="app\services\overview.service.js" />
@@ -137,17 +139,18 @@
     <Content Include="app\templates\components\user-profile.html" />
     <Content Include="app\templates\layout\top-menu-xs.html" />
     <Content Include="app\templates\layout\top-menu.html" />
+    <Content Include="app\views\group\group-details-summary.html" />
     <Content Include="app\views\layout\app.html" />
     <Content Include="app\views\layout\home-app.html" />
     <Content Include="app\views\group\group-create.html" />
-    <Content Include="app\views\group\group-permission-edit.html" />
-    <Content Include="app\views\group\group-edit.html" />
+    <Content Include="app\views\group\group-details-permission-edit.html" />
+    <Content Include="app\views\group\group-details.html" />
     <Content Include="app\views\group\group-list.html" />
     <Content Include="app\views\manager\manager.html" />
-    <Content Include="app\views\manager\permission\manager-permission.html" />
-    <Content Include="app\views\user\manager-user-edit-group.html" />
-    <Content Include="app\views\user\manager-user-edit.html" />
-    <Content Include="app\views\user\manager-user-list.html" />
+    <Content Include="app\views\permission\permission.html" />
+    <Content Include="app\views\user\user-edit-group.html" />
+    <Content Include="app\views\user\user-details.html" />
+    <Content Include="app\views\user\user-list.html" />
     <Content Include="content\layout\footer.less" />
     <Content Include="content\layout\sidebar.less" />
     <Content Include="content\component\dashboard.less" />
@@ -166,6 +169,7 @@
     <Content Include="app\resources\pt.json" />
     <Content Include="content\component\alert.less" />
     <Content Include="content\component\popover.less" />
+    <Content Include="app\resources\permissions.json" />
     <None Include="content\component\toolbar.less" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
@@ -193,6 +197,7 @@
     <Content Include="content\theme\default\layouts\home.less" />
     <Content Include="content\layout\signup.less" />
     <Content Include="content\theme\default\layouts\signup.less" />
+    <Content Include="content\layout\details.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -230,7 +235,7 @@
     <Content Include="app\adapters\aluno.adapter.js" />
     <Content Include="app\services\aula.service.js" />
     <Content Include="app\services\auth.service.js" />
-    <Content Include="app\services\authInterceptor.services.js" />
+    <Content Include="app\factories\authInterceptor.factory.js" />
     <Content Include="app\services\cep.service.js" />
     <Content Include="app\services\chamada.service.js" />
     <Content Include="app\services\logger.service.js" />

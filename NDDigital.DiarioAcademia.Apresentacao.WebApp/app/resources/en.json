@@ -60,7 +60,7 @@
         "STUDENT": "Student",
         "LESSON": "Lesson",
         "CLASS_REGISTER": "Class Register",
-        "MANAGER": "Manager",
+        "MANAGER": "Settings",
         "USER": "User",
         "GROUP": "Group",
         "PERMISSIONS": "Permissions"

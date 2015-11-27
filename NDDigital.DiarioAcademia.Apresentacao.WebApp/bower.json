@@ -19,7 +19,6 @@
   ],
   "dependencies": {
     "angular": "~1.4.6",
-    "angular-animate": "~1.4.3",
     "angular-bootstrap": "~0.13.1",
     "angular-loading-bar": "~0.8.0",
     "angular-local-storage": "~0.2.2",
@@ -27,7 +26,6 @@
     "jquery-knob": "jquery-knob#~1.2.11",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",
-    "nz-animate": "~1.0.1",
     "toastr": "~2.1.1",
     "angular-translate": "~2.8.1",
     "angular-translate-loader-static-files": "~2.8.1",

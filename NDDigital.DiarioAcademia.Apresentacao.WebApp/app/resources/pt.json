@@ -31,7 +31,7 @@
 
         "LIST_PERMISSIONS": "Lista de Permissões",
         "SIGNUP": "Cadastro na Academia do Programador",
-        "MANAGER":  "Gerenciador da Academia",
+        "MANAGER":  "Configurações",
         "SETTINGS": "Configurações",
         "USER_OPTIONS": "Minha Conta",
         "LANGUAGE": "Idioma",
@@ -56,7 +56,7 @@
         "STUDENT": "Aluno",
         "LESSON": "Aula",
         "CLASS_REGISTER": "Chamada",
-        "MANAGER": "Gerenciador",
+        "MANAGER": "Configurações",
         "USER": "Usuário",
         "GROUP": "Grupo",
         "PERMISSIONS": "Permissões"
@@ -80,7 +80,7 @@
     "status": {
         "CLASS_REGISTER_NOT_CREATE": "Chamada não cadastrada !",
         "CLASS_REGISTER_CREATE": "Chamada cadastrada !",
-        "IS_ADMIN": "É admistrador",
+        "IS_ADMIN": "É administrador",
         "IS_NOT_ADMIN": "Não é administrador",
         "SAVED_SUCCESSFUL": "Salvo com sucesso!",
         "DELETED_SUCCESSFUL": "Excluido com sucesso!",

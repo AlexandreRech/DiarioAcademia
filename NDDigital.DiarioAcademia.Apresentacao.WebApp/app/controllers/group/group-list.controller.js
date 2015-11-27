@@ -40,7 +40,7 @@
 
         // public methods
         function showGroup(group) {
-            $state.go('app.group.edit', { groupId: group.id });
+            $state.go('app.group.details.summary', { groupId: group.id });
             vm.selectedGroup = group;
         }
 
@@ -49,7 +49,7 @@
         function edit() {
             if (!vm.selectedGroup)
                 return;
-            $state.go('app.group.edit', { groupId: vm.selectedGroup.id })
+            $state.go('app.group.details.summary', { groupId: vm.selectedGroup.id })
         }
 
         function onClick(value) {

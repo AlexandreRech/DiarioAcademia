@@ -13,19 +13,7 @@
         function activate() {
             //Get list of permissions
             permissionsService.getStates().then(function (results) {
-                if (!results) {
-                    return;
-                }
-                for (var i = 0; i < results.length; i++) {
-                    var permission = {
-                        name: results[i].name,
-                        displayName: results[i].displayName,
-                        permissionId: results[i].id,
-                        filter: results[i].filter,
-                        dependencies: results[i].dependencies
-                    }
-                    permissions.push(permission);
-                }
+                permissions = results;
             });
         }
 
@@ -60,7 +48,7 @@
 
             for (var i = 0; i < permissions.length; i++) {
                 permission = permissions[i];
-                filter = permission.filter ? permission.filter.name : undefined;
+                filter = permission.filter;
                 if (!filter)
                     continue;
                 if (!filtered[filter])
@@ -68,7 +56,7 @@
                 filtered[filter].push(permission);
                 if (comparePermission(permissionDb, permission) >= 0)
                     filtered[filter].countSelected = filtered[filter].countSelected ? filtered[filter].countSelected + 1 : 1;
-                if (!permissionGroups.any("name", permission.filter.name))
+                if (!permissionGroups.contains(filter))
                     permissionGroups.push(permission.filter);
             }
             return filtered;

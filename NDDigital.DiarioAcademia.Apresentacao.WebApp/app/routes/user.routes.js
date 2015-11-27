@@ -13,23 +13,24 @@
             name: 'app.user',
             url: '/user',
             templateUrl: 'app/templates/components/inner-view.html',
-            controller: "shellController as vm"
+            controller: "shellController as vm",
+            'abstract': true
         },
          {
              name: 'app.user.list',
              url: '/user',
-             templateUrl: 'app/views/user/manager-user-list.html',
+             templateUrl: 'app/views/user/user-list.html',
              controller: "userListController as vm"
          },
         {
-            name: 'app.user.edit',
-            url: '/edit/user/:userId',
-            templateUrl: 'app/views/user/manager-user-edit.html',
+            name: 'app.user.details',
+            url: '/details/user/:userId',
+            templateUrl: 'app/views/user/user-details.html',
             controller: "userEditController as vm"
         }, {
             name: 'app.user.groupEdit',
             url: '/group/edit/user/:userId',
-            templateUrl: 'app/views/user/manager-user-edit-group.html',
+            templateUrl: 'app/views/user/user-edit-group.html',
             controller: "userEditGroupController as vm"
         });
     }

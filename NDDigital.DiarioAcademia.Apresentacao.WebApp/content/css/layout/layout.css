@@ -28,13 +28,6 @@ body {
   float: left;
   position: relative;
 }
-.container-sidebar li span {
-  opacity: 1;
-  -moz-transition: opacity 0.2s 0.4s;
-  -o-transition: opacity 0.2s 0.4s;
-  -webkit-transition: opacity 0.2s 0.4s;
-  transition: opacity 0.2s 0.4s;
-}
 .container-footer {
   width: 100%;
 }
@@ -76,36 +69,35 @@ body {
 .aside-collapse.logged .container-uiview {
   width: calc(100% - 78px);
   margin-left: 65px;
-  -moz-transition: all 0.4s 0.2s;
-  -o-transition: all 0.4s 0.2s;
-  -webkit-transition: all 0.4s 0.2s;
-  transition: all 0.4s 0.2s;
+  -moz-transition: all 0.4s .2s;
+  -o-transition: all 0.4s .2s;
+  -webkit-transition: all 0.4s .2s;
+  transition: all 0.4s .2s;
 }
 .aside-collapse.logged .container-sidebar {
   width: 55px;
-  -moz-transition: width 0.4s 0.2s;
-  -o-transition: width 0.4s 0.2s;
-  -webkit-transition: width 0.4s 0.2s;
-  transition: width 0.4s 0.2s;
-}
-.aside-collapse.logged .container-sidebar li span {
-  opacity: 0;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  -moz-transition: width 0.4s .2s;
+  -o-transition: width 0.4s .2s;
+  -webkit-transition: width 0.4s .2s;
+  transition: width 0.4s .2s;
 }
 .aside-collapse.logged .sidebar-separe {
   width: 55px;
-  -moz-transition: width 0.4s 0.2s;
-  -o-transition: width 0.4s 0.2s;
-  -webkit-transition: width 0.4s 0.2s;
-  transition: width 0.4s 0.2s;
+  -moz-transition: width 0.4s .2s;
+  -o-transition: width 0.4s .2s;
+  -webkit-transition: width 0.4s .2s;
+  transition: width 0.4s .2s;
+}
+.aside-collapse.logged .container-sidebar.details-mode {
+  transition: width 0.4s;
+}
+.aside-collapse.logged .details-mode .sidebar-separe {
+  transition: width 0.4s;
 }
 .aside-collapse.logged .collapse-btn {
   width: 55px;
-  -moz-transition: width 0.4s 0.2s;
-  -o-transition: width 0.4s 0.2s;
-  -webkit-transition: width 0.4s 0.2s;
-  transition: width 0.4s 0.2s;
+  -moz-transition: width 0.4s .2s;
+  -o-transition: width 0.4s .2s;
+  -webkit-transition: width 0.4s .2s;
+  transition: width 0.4s .2s;
 }

@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
+    <Content Include="src\common\authentication\authentication.service.js" />
     <Content Include="src\common\authorization\authorization.factory.js" />
     <Content Include="src\common\authorization\authorization.module.js" />
     <Content Include="src\common\authorization\authorization.run.js" />
@@ -116,6 +117,7 @@
     <Content Include="src\common\templates\components\user-profile.html" />
     <Content Include="src\common\translate\translate.constants.js" />
     <Content Include="src\content\component\ngwig.scss" />
+    <Content Include="src\common\permission\permissions.json" />
     <None Include="src\content\component\switcher.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\features\aluno\aluno.adapter.js" />
@@ -137,7 +139,6 @@
     <Content Include="src\features\aula\views\aula-create.html" />
     <Content Include="src\features\aula\views\aula-list.html" />
     <Content Include="src\common\authentication\authentication.module.js" />
-    <Content Include="src\common\authentication\authentication.service.js" />
     <Content Include="src\common\authentication\authentication.routes.js" />
     <Content Include="src\common\authentication\controllers\login.controller.js" />
     <Content Include="src\common\authentication\controllers\signup.controller.js" />
@@ -187,7 +188,6 @@
     <Content Include="src\features\turma\views\turma-details.html" />
     <Content Include="src\features\turma\views\turma-list.html" />
     <Content Include="src\images\avatar_login.png" />
-    <Content Include="src\images\avatar_plus.gif" />
     <Content Include="src\images\language\en-active.png" />
     <Content Include="src\images\language\en.png" />
     <Content Include="src\images\language\es-active.png" />
@@ -368,7 +368,6 @@
     <Content Include="src\content\theme\theme-g.scss" />
     <Content Include="src\content\theme\theme-h.scss" />
     <Content Include="src\lazy-resources.json" />
-    <Content Include="src\common\permission\permissions.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

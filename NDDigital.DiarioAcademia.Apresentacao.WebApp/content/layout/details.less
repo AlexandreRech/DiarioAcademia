@@ -1,0 +1,118 @@
+﻿.layout-details {
+    margin-left: 10px;
+    margin-top: -5px;
+
+    article {
+        margin-top: 30px;
+    }
+}
+
+.header-details {
+    position: relative;
+    margin: 0;
+
+    .logo-container {
+        width: 50px !important;
+    }
+
+    h3 {
+        line-height: 0;
+        font-weight: 400;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    .info {
+        padding-top: 15px;
+
+        img {
+            vertical-align: text-bottom;
+            width: 20px;
+        }
+    }
+
+    .logo {
+        background-color: #f0f0f0;
+        height: 70px;
+        width: 30px;
+        display: inline-block;
+        position: relative;
+        margin-left: -20px;
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            z-index: -2;
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-left: 20px solid #f0f0f0;
+            position: absolute;
+            left: 30px;
+        }
+    }
+
+    .logo .fa {
+        position: absolute;
+        left: 0;
+        font-size: 35px;
+        color: white;
+        top: 15px;
+    }
+
+    .logo img {
+        position: absolute;
+        left: -18px;
+        width: 70px;
+        height: 75px;
+        -webkit-filter: brightness(5);
+        filter: brightness(5);
+        top: -5px;
+        z-index: 0;
+    }
+
+    span:first-child {
+        margin-left: 0;
+    }
+
+    span {
+        margin-left: 15px;
+    }
+}
+
+.options {
+    height: 30px;
+    background-color: #f1f1f1;
+    margin-left: -20px;
+    margin-right: -10px;
+    margin-top: 10px;
+    padding: 0 25px;
+
+    a {
+        display: block;
+        float: left;
+        color: black;
+        height: 100%;
+        padding: 0 15px;
+        line-height: 30px;
+        text-decoration: none;
+        position: relative;
+        margin-left: 8px;
+    }
+
+    .active {
+        background-color: #E25D41;
+        color: white;
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #E25D41;
+            position: absolute;
+            top: 30px;
+            left: 42%;
+        }
+    }
+}

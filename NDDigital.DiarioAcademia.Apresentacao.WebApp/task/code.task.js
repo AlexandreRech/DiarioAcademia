@@ -44,6 +44,7 @@ gulp.task('templatecache', 'Generate template cache', function () {
 // Compile Tasks
 gulp.task('compile-less', 'Compile less', function () {
     return gulp.src(config.app.less.all)
+              .pipe(loader.plumber())
               .pipe(loader.changed(config.app.less.dist, { extension: '.css' })) // Keep in the pipeline only changed files
               .pipe(compileLess())
               .pipe(gulp.dest(config.app.less.dist))

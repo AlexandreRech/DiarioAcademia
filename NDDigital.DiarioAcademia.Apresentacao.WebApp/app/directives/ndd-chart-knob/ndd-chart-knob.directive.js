@@ -12,8 +12,7 @@
             scope: {
                 name: "@",
                 data: '@',
-                color: '@',
-                security: "@"
+                color: '@'
             },
             templateUrl: 'app/directives/ndd-chart-knob/ndd-chart-knob.html'
         };

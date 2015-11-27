@@ -9,10 +9,8 @@
         vm.group = [];
         vm.hasChange = false;;
 
-        // public methods
         vm.setAdmin = setAdmin;
         vm.remove = remove;
-        vm.modal = modal;
         vm.save = save;
         vm.editPermission = editPermission;
        
@@ -23,17 +21,13 @@
                 log.error('Grupo não informado !!');
                 return;
             }
-            groupService.getGroupById($stateParams.groupId).then(function (results) {
-                vm.group = results;
-                vm.name = results.name;
-            });
+            makeRequest();
         }
 
-
+        //public methods
         function setAdmin() {
             vm.hasChange = true;
             vm.group.isAdmin = !vm.group.isAdmin;
-            $('[data-toggle="tooltip"]').tooltip('hide').tooltip();
         }
 
 
@@ -51,16 +45,18 @@
             });
         }
 
-
-        // helpers
-        function modal(cb) {
-            vm.titleModal = 'Edição';
-            vm.bodyModal = 'Salvar as alterações realizadas no grupo ' + vm.name + ' ?';
-            vm.callback = cb;
+        //private methods
+        function makeRequest() {
+            groupService.getGroupById($stateParams.groupId).then(function (results) {
+                vm.group = results;
+                vm.name = results.name;
+            });
         }
 
+
+        // helpers
         function editPermission() {
-            $state.go('app.group.permissionsEdit', { groupId: vm.group.id });
+            $state.go('app.group.details.permissionsEdit', { groupId: vm.group.id });
         }
     }
 })(window.angular);

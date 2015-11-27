@@ -1,8 +1,7 @@
-﻿<li class="li side-option" ng-show="verifyDisplay(state)"
-    ng-class="{'actived': state.contains(routeActived || route)}" ndd-security="{{route}}">
+﻿<li class="side-option" ng-class="{'actived': state.contains(routeActived || route), 'li-hidden': !verifyDisplay(state)}" ndd-security="{{route}}">
     <a class="cursor-pointer" ng-click="redirect(route)">
         <i class="fa icon-option icon-font" ng-class="icon" ng-show="icon"></i>
         <span class="align-middle">{{name}}</span>
     </a>
-    <div class="seta-direita" ng-show="state.contains(routeActived || route)"></div>
+    <div class="seta-direita" ></div>
 </li>

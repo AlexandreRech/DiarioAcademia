@@ -23,7 +23,9 @@
                 </option>
             </select><br />
 
-            <span class="btn alert-success notify-status" ng-class="{'alert-success': vm.chamadaDto.chamadaRealizada, 'alert-danger': !vm.chamadaDto.chamadaRealizada}" ng-show="vm.aulaSelected">
+            <span class="btn alert-success notify-status" 
+                  ng-class="{'alert-success': vm.chamadaDto.chamadaRealizada, 'alert-danger': !vm.chamadaDto.chamadaRealizada}"
+                  ng-show="vm.aulaSelected">
                 <i class="fa fa-check"></i>
                 <span>{{ vm.chamadaDto.chamadaRealizada ? ('status.CLASS_REGISTER_CREATE' | translate) : ('status.CLASS_REGISTER_NOT_CREATE' | translate)}}</span>
             </span>

@@ -39,19 +39,29 @@
         };
 
         self.save = function (aluno) {
-            logger.success(res.saved_successful, aluno);
-            return $http.post(serviceUrl, convertToDto(aluno));
+            return $http.post(serviceUrl, convertToDto(aluno)).then(function (results) {
+                logger.success(res.saved_successful, aluno);
+                return results
+            })
+               .catch(logger.errorCallback);;
         };
 
         self.delete = function (aluno) {
-            logger.error(res.deleted_successful, aluno, "Delete");
-            return $http.delete(serviceUrl + aluno.id);
+            return $http.delete(serviceUrl + aluno.id)
+                            .then(function (results) {
+                                logger.error(res.deleted_successful, aluno, "Delete");
+                                return results;
+                            });
         };
 
         self.edit = function (aluno) {
-            return $http.put(serviceUrl + aluno.id, aluno).then(function (results) {
-                logger.success(res.student_edited + aluno.descricao);
-            });
+            return $http.put(serviceUrl + aluno.id, convertToDto(aluno))
+                            .then(function (results) {
+                               logger.success(res.student_edited + aluno.descricao);
+                               return results
+                            })
+                            .catch(logger.errorCallback);;
+
         };
 
         function convertToObj(data) {

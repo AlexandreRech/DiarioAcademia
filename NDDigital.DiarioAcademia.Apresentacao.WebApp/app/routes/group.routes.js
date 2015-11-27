@@ -9,7 +9,7 @@
     configRoutes.$inject = [KEYS.APP_ROUTES];
 
     function configRoutes(routes) {
-        routes.push( {
+        routes.push({
             name: 'app.group',
             url: '/group',
             templateUrl: 'app/templates/components/inner-view.html',
@@ -28,14 +28,19 @@
             controller: "groupCreateController as vm"
         },
         {
-            name: 'app.group.edit',
-            url: '/edit/:groupId',
-            templateUrl: 'app/views/group/group-edit.html',
+            name: 'app.group.details',
+            url: '/details/:groupId',
+            templateUrl: 'app/views/group/group-details.html',
             controller: "groupEditController as vm"
+        },
+        {
+            name: 'app.group.details.summary',
+            url: '/summary/:groupId',
+            templateUrl: 'app/views/group/group-details-summary.html'
         }, {
-            name: 'app.group.permissionsEdit',
-            url: '/group/edit/permissions/:groupId',
-            templateUrl: 'app/views/group/group-permission-edit.html',
+            name: 'app.group.details.permissionsEdit',
+            url: '/permissionsEdit/:groupId',
+            templateUrl: 'app/views/group/group-details-permission-edit.html',
             controller: "groupPermissionEditController as vm"
         });
     }

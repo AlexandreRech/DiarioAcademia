@@ -41,6 +41,16 @@
   position: relative;
   bottom: 5px;
 }
+.profile-ava img {
+  -webkit-filter: brightness(4);
+  filter: brightness(4);
+  position: relative;
+  top: -5px;
+  left: 10px;
+}
+.dropdown-toggle {
+  padding: 10px 19px 0 0 !important;
+}
 .navbar-brand img {
   position: relative;
   bottom: 12px;

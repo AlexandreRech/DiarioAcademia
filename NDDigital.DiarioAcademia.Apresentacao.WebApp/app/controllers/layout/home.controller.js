@@ -2,7 +2,7 @@
 
     'use strict';
     //using
-    homeController.$inject = ['$state', '$timeout', 'authService'];
+    homeController.$inject = ['$state', '$timeout', 'autheService'];
 
     //namespace
     angular
@@ -10,7 +10,7 @@
         .controller('homeController', homeController);
 
     //class
-    function homeController($state, $timeout, authService) {
+    function homeController($state, $timeout, autheService) {
         var vm = this;
 
         //script load
@@ -33,7 +33,7 @@
 
         //public methods
         vm.login = function () {
-            authService.login(vm.loginData).then(function () {
+            autheService.login(vm.loginData).then(function () {
                 $state.go('app.homeapp');
             },
             function (err) {
@@ -42,7 +42,7 @@
         };
 
         vm.signUp = function () {
-            authService.saveRegistration(vm.registration)
+            autheService.saveRegistration(vm.registration)
                 .then(successSignup)
                 .catch(errorSignup);
         };

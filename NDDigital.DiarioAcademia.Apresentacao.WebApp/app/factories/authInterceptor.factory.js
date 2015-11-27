@@ -17,9 +17,9 @@
             if (config.ignoreAuth)
                 return config;
 
-            var authoData = localStorageService.get('authorizationData');
-            if (authoData) {
-                config.headers.Authorization = 'Bearer ' + authoData.token;
+            var autheData = localStorageService.get('authenticationData');
+            if (autheData) {
+                config.headers.Authorization = 'Bearer ' + autheData.token;
             }
 
             return config;

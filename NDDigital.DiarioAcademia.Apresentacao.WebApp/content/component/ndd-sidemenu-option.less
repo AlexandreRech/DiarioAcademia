@@ -2,7 +2,6 @@
 .side-option {
     width: 200px;
     height: 50px;
-    border-right: solid 5px rgba(204, 204, 204, 0.2);
     -moz-transition: width 0.4s;
     -o-transition: width 0.4s;
     -webkit-transition: width 0.4s;
@@ -16,21 +15,14 @@
         position: absolute;
         width: 100%;
     }
-}
 
-.side-option.ng-hide {
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    -webkit-transition: none !important;
-    transition: none !important;
-}
-
-.aside-collapse.logged .side-option {
-    width: 55px;
-    -moz-transition: width 0.4s 0.2s;
-    -o-transition: width 0.4s 0.2s;
-    -webkit-transition: width 0.4s 0.2s;
-    transition: width 0.4s 0.2s;
+    span {
+        opacity: 1;
+        -moz-transition: opacity 0.2s 0.4s;
+        -o-transition: opacity 0.2s 0.4s;
+        -webkit-transition: opacity 0.2s 0.4s;
+        transition: opacity 0.2s 0.4s;
+    }
 }
 
 
@@ -46,30 +38,53 @@
     bottom: 4px;
 }
 
-
 .seta-direita {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     margin-top: 16px;
     position: absolute;
-    z-index: 9999999;
+    z-index: 2;
     float: right;
     margin-left: 200px;
     display: none;
     transition: margin-left .4s;
 }
 
+.aside-collapse.logged {
+    .side-option {
+        width: 55px;
+        transition: width 0.4s .2s;
 
+        span {
+            opacity: 0;
+            -moz-transition: opacity 0.2s;
+            -o-transition: opacity 0.2s;
+            -webkit-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+        }
+    }
 
-.aside-collapse.logged .seta-direita {
-    margin-left: 55px;
-    transition: margin-left .4s .2s;
+    .seta-direita {
+        margin-left: 55px;
+        transition: margin-left .4s .2s;
+    }
 }
+
 
 .actived .seta-direita {
-    display:block !important;
-
+    display: block !important;
 }
+
+
+.li-hidden {
+    opacity: 0;
+    height: 0;
+
+    a{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     .seta-direita {

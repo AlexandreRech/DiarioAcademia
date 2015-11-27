@@ -23,7 +23,7 @@
 		};
 
 		self.getMetaDataPermissions = function () {
-			return $http.get(resourcePermissions)
+		    return $http.get(resourcePermissions)
 				 .then(logger.successCallback)
 				 .catch(logger.errorCallback)
 		};
@@ -46,24 +46,21 @@
 
 		self.delete = function (permission) {
 			permission = getPermissionsId(permission);
-			return $http({
-				url: serviceUrl,
-				method: 'DELETE',
-				data: permission,
-				headers: { "Content-Type": "application/json;charset=utf-8" }
-			})
-				.then(logger.emptyMessageCallback)
-				.then(function () {
-					logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
-
-				})
-				.catch(logger.errorCallback);
+			return $http({ url: serviceUrl,
+			               method: 'DELETE',
+			               data: permission,
+			               headers: { "Content-Type": "application/json;charset=utf-8" }
+			            }).then(logger.emptyMessageCallback)
+				          .then(function () {
+				          	logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
+				          })
+				          .catch(logger.errorCallback);
 		};
 
 		function getPermissionsId(array) {
 			var permissionsIds = [];
 			for (var i = 0; i < array.length; i++) {
-				permissionsIds.push(array[i].permissionId);
+			    permissionsIds.push(array[i].permissionId);
 			}
 			return permissionsIds;
 		}

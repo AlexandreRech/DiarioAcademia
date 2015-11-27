@@ -1,0 +1,20 @@
+﻿<article>
+    <h4>{{'entities.PERMISSIONS' | translate}}: {{vm.group.name}}</h4>
+    <br />
+    <div class="col-sm-6 clear-padding" ng-class="{'disabled': vm.group.isAdmin}">
+        <ndd-group-checkbox array="vm.permissions" compare="vm.group.permissions" method="vm.comparePermissions" callback="vm.onchange"></ndd-group-checkbox>
+        <div class="col-xs-12 text-center">
+            <h3 ng-hide="vm.permissions && vm.permissions.length > 0">Não há permissões cadastradas.</h3>
+        </div>
+
+        <div class="col-xs-12 text-center">
+            <hr />
+            <div class="text-center col-sm-12 clear-padding">
+                <button class="btn btn-success" ng-click="vm.saveChanges()" ng-disabled="!vm.hasChange">
+                    <i class="fa fa-save"></i>
+                    <span>{{'action.SAVE' | translate}}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</article>

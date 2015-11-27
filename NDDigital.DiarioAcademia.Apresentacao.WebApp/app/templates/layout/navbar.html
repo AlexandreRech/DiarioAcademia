@@ -23,23 +23,22 @@
     <div ng-include="'app/templates/layout/top-menu-xs.html'" ></div> 
 </nav>
 
-
 <nav class="navbar navbar-fixed-top nav-options-custom hidden-xs text-uppercase" role="navigation" ng-show="shell.authentication.isAuth">
     <div class="option-nav" ui-sref="app.homeapp" ng-class="{'actived-option': state.contains('home')}">HOME</div>
 
     <div class="option-nav" ui-sref="app.turma.list"
-         ng-class="{'actived-option': state.contains('turma.list')}" ndd-security="turma.list">{{'entities.CLASS' | translate}}</div>
+         ng-class="{'actived-option': state.contains('turma')}" ndd-security="app.turma.list">{{'entities.CLASS' | translate}}</div>
 
     <div class="option-nav" ui-sref="app.aluno.list"
-         ng-class="{'actived-option': state.contains('aluno.list')}" ndd-security="aluno.list">{{'entities.STUDENT' | translate}}</div>
+         ng-class="{'actived-option': state.contains('aluno')}" ndd-security="app.aluno.list">{{'entities.STUDENT' | translate}}</div>
 
     <div class="option-nav" ui-sref="app.aula.list"
-         ng-class="{'actived-option': state.contains('aula.list')}" ndd-security="aula.list">{{'entities.LESSON' | translate}}</div>
+         ng-class="{'actived-option': state.contains('aula')}" ndd-security="app.aula.list">{{'entities.LESSON' | translate}}</div>
 
     <div class="option-nav" ui-sref="app.chamada.create"
-         ng-class="{'actived-option': state.contains('chamada')}" ndd-security="chamada">{{'entities.CLASS_REGISTER' | translate}}</div>
+         ng-class="{'actived-option': state.contains('chamada')}" ndd-security="app.chamada">{{'entities.CLASS_REGISTER' | translate}}</div>
 
     <div class="option-nav" ui-sref="app.manager"
-         ng-class="{'actived-option': state.contains('app.user') || state.contains('app.group') || state.contains('app.permission') }"
-         ndd-security="manager">{{'entities.MANAGER' | translate}}</div>
+         ng-class="{'actived-option': state.contains('app.user') || state.contains('app.group') || state.contains('app.permission') || state.contains('app.manager')}"
+         ndd-security="app.manager">{{'entities.MANAGER' | translate}}</div>
 </nav>

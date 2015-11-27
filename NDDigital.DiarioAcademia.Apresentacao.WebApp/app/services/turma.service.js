@@ -19,30 +19,39 @@
         };
 
         self.save = function (turma) {
-            logger.success(res.saved_successful, turma);
-            return $http.post(serviceUrl, turma);
+            return $http.post(serviceUrl, turma).then(function () {
+                logger.success(res.saved_successful, turma);
+            });
         };
 
         self.delete = function (turma) {
-            logger.error(res.deleted_successful, turma, "Delete");
 
             return $http.delete(serviceUrl + turma.id)
+                           .then(function (results) {
+                               logger.error(res.deleted_successful, turma, "Delete");
+                               return results;
+                           })
                           .then(logger.emptyMessageCallback)
                           .catch(logger.errorCallback);
 
         };
 
         self.getTurmaById = function (id) {
-            logger.success("Turma com id " + id + " encontrada", null, "Busca");
 
             return $http.get(serviceUrl + id)
+                            .then(function (results) {
+                                logger.success("Turma com id " + id + " encontrada", null, "Busca");
+                                return results;
+                            })
                             .then(logger.emptyMessageCallback);
         };
 
         self.edit = function (turma) {
-            logger.success("Turma " + turma.descricao + " editada", null, "Edição");
 
-            $http.put(serviceUrl +  turma.id, turma);
+            return $http.put(serviceUrl + turma.id, turma).then(function () {
+                logger.success("Turma " + turma.descricao + " editada", null, "Edição");
+
+            });
         };
     }
 })(window.angular);

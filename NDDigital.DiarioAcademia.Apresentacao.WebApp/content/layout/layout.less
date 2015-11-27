@@ -35,16 +35,6 @@
     width: 200px;
     float: left;
     position: relative;
-
-    li {
-        span {
-            opacity: 1;
-            -moz-transition: opacity 0.2s 0.4s;
-            -o-transition: opacity 0.2s 0.4s;
-            -webkit-transition: opacity 0.2s 0.4s;
-            transition: opacity 0.2s 0.4s;
-        }
-    }
 }
 
 .container-footer {
@@ -104,43 +94,41 @@
     .container-uiview {
         width: ~"calc(100% - 78px)";
         margin-left: 65px;
-        -moz-transition: all 0.4s 0.2s;
-        -o-transition: all 0.4s 0.2s;
-        -webkit-transition: all 0.4s 0.2s;
-        transition: all 0.4s 0.2s;
+        -moz-transition: all 0.4s .2s;
+        -o-transition: all 0.4s .2s;
+        -webkit-transition: all 0.4s .2s;
+        transition: all 0.4s .2s;
     }
 
     .container-sidebar {
         width: 55px;
-        -moz-transition: width 0.4s 0.2s;
-        -o-transition: width 0.4s 0.2s;
-        -webkit-transition: width 0.4s 0.2s;
-        transition: width 0.4s 0.2s;
-
-        li {
-            span {
-                opacity: 0;
-                -moz-transition: opacity 0.2s;
-                -o-transition: opacity 0.2s;
-                -webkit-transition: opacity 0.2s;
-                transition: opacity 0.2s;
-            }
-        }
+        -moz-transition: width 0.4s .2s;
+        -o-transition: width 0.4s .2s;
+        -webkit-transition: width 0.4s .2s;
+        transition: width 0.4s .2s;
     }
 
     .sidebar-separe {
         width: 55px;
-        -moz-transition: width 0.4s 0.2s;
-        -o-transition: width 0.4s 0.2s;
-        -webkit-transition: width 0.4s 0.2s;
-        transition: width 0.4s 0.2s;
+        -moz-transition: width 0.4s .2s;
+        -o-transition: width 0.4s .2s;
+        -webkit-transition: width 0.4s .2s;
+        transition: width 0.4s .2s;
+    }
+
+    .container-sidebar.details-mode {
+        transition: width 0.4s;
+    }
+
+    .details-mode .sidebar-separe {
+        transition: width 0.4s;
     }
 
     .collapse-btn {
         width: 55px;
-        -moz-transition: width 0.4s 0.2s;
-        -o-transition: width 0.4s 0.2s;
-        -webkit-transition: width 0.4s 0.2s;
-        transition: width 0.4s 0.2s;
+        -moz-transition: width 0.4s .2s;
+        -o-transition: width 0.4s .2s;
+        -webkit-transition: width 0.4s .2s;
+        transition: width 0.4s .2s;
     }
 }

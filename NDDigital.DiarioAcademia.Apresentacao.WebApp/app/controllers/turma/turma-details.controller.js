@@ -20,18 +20,19 @@
             turmaService.getTurmaById(params.turmaId)
                 .then(function (results) {
                     vm.turma = results;
+                    vm.turmaShow = $.extend({}, vm.turma);
                 });     
         }
 
         //public methods
         vm.save = function () {
-            turmaService.edit(vm.turma);
-            vm.clearFields();
+            turmaService.edit(vm.turma).then(function () {
+                $state.go("app.turma.list");
+            });
         };
 
         vm.clearFields = function () {
-            vm.turma = {};
-            vm.turmaForm.$setPristine();
+            vm.turma.ano = undefined;
         }
     }
 })();

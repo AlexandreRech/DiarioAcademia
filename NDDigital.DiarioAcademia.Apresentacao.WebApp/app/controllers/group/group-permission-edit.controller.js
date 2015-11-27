@@ -13,7 +13,6 @@
         //public functions
         vm.comparePermissions = comparePermission;
         vm.permissions = [];
-        vm.modal = modal;
         vm.saveChanges = saveChanges;
         vm.onchange = onchange;
         vm.changes = [];
@@ -59,11 +58,8 @@
 
                 var needInclude = include.length > 0;
                 var needExclude = exclude.length > 0;
-
                 if (needInclude) {
-
                     save(include).then(function () {
-
                         if (needExclude) {
                             remove(exclude);
                         }
@@ -72,26 +68,19 @@
                 } else if (needExclude) {
                     remove(exclude);
                 }
-
-
             }
         }
 
         function save(permission) {
-            groupService.addPermission(vm.group, permission).then(function (results) { });
+            return groupService.addPermission(vm.group, permission);
         }
 
         function remove(permission) {
-            groupService.removePermission(vm.group, permission).then(function (results) { });
-        }
-
-        function modal() {
-            vm.titleModalEdit = 'Edição';
-            vm.bodyModalEdit = 'Editar ' + vm.group.name + ' ?';
+            return groupService.removePermission(vm.group, permission);
         }
 
         function redirect() {
-            $state.go('app.group.edit', { groupId: vm.group.id });
+            $state.go('app.group.details', { groupId: vm.group.id });
         }
     }
 })(window.angular);

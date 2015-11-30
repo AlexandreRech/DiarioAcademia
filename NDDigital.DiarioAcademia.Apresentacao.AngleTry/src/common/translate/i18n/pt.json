@@ -92,7 +92,9 @@
         "WELCOME": "Bem vindo",
         "SUCCESS": "Sucesso",
         "ACTION_CANCELED": "Ação cancelada",
-        "NOT_AUTHORIZED":  "Você não tem permissão para acessar {{ resourceName }}"
+        "NOT_AUTHORIZED": "Você não tem permissão para acessar {{ resourceName }}",
+        "NOT_AVAILABLE":  "Servidor não disponível - Tente novamente",
+        "UNAUTHORIZED": "Operação não Autorizada! Você não tem permissão."
     },
     "home": {
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",

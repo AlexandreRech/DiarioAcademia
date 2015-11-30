@@ -135,6 +135,8 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
                     .Select(x => new ChamadaAlunoDTO
                         (x.Id, x.Nome, "C")).ToList();
             }
+            chamada.AulaId = aula.Id;
+            chamada.AnoTurma = aula.Turma.Ano;
 
             return chamada;
         }

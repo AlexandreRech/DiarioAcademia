@@ -28,6 +28,8 @@
                         .then(function (result) {
                             vm.turmas = dataTurmas;
                             vm.aluno = result;
+                            if (result)
+                                vm.aluno.turma = getTurmaById(vm.aluno.turma.id);
                         });
                 });
         }

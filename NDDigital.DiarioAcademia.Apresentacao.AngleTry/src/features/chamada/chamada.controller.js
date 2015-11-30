@@ -62,12 +62,11 @@
                 chamadaService.getChamadaByAula(vm.chamada.aula.id).then(function (data) {
                     vm.chamadaDto = data;
                     if (vm.chamadaDto)
-                        vm.alunos = checkStatus(vm.chamadaDto, vm.chamadaDto.alunos);
+                        vm.alunos = vm.chamadaDto.alunos;
                 });
             }
             vm.aulaSelected = true;
         }
-
 
         vm.getAulaByTurma = function (turma) {
             vm.aulas = [];
@@ -81,16 +80,7 @@
         }
 
         //private methods
-        function checkStatus(chamadaDto, alunos) {
-            var index;
-            for (var j = 0; j < alunos.length; j++) {
-                alunos[j].status = alunos[j].status != "F";
-            }
-            return alunos;
-        }
-
-
-        function clearFields() {
+       function clearFields() {
             vm.chamada = {};
             vm.alunos = [];
             vm.aulas = [];

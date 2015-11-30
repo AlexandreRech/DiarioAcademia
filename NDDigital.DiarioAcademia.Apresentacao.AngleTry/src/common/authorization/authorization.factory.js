@@ -21,8 +21,6 @@
         self.clearAuthorize = clearAuthorize;
         self.setAutheData = setAutheData;
 
-
-
         activate();
         function activate() {
             fillAuthoData();
@@ -59,6 +57,7 @@
             authorization.isAdmin = false;
             authorization.permissions = undefined;
         };
+
 
         //private methods
         function getPermissions(permissions) {

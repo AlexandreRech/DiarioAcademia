@@ -80,7 +80,9 @@
         "OK": "Ok",
         "CREATE_CLASS_REGISTER": "Crear clase registro!",
         "REGISTER": "No registrado ? Únete ahora",
-        "LOGIN": "Iniciar sesión"
+        "LOGIN": "Iniciar sesión",
+        "NOT_AVAILABLE":  "Servidor no está disponible ! Inténtalo de nuevo"
+
 
     },
     "status": {
@@ -98,7 +100,8 @@
         "SUCCESS": "Éxito",
         "ACTION_CANCELED": "Acción cancelada",
         "COMPLETED": "Terminado !",
-        "NOT_AUTHORIZED": "No se le permite el acceso {{ resourceName }}"
+        "NOT_AUTHORIZED": "No se le permite el acceso {{ resourceName }}",
+        "UNAUTHORIZED":  "Operación No Autorizada! No se le permite."
     },
     "home": {
         "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",

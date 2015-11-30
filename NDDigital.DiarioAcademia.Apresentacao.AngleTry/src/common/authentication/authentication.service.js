@@ -6,7 +6,7 @@
        .service('autheService', autheService);
 
     autheService.$inject = ['$http', '$q', 'localStorageService', 'logger', 'BASEURL', 'storageKeys',
-        'resource', 'userService',  "$rootScope", 'authoFactory'];
+        'resource', 'userService', "$rootScope", 'authoFactory'];
 
 
 

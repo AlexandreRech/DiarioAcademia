@@ -21,7 +21,7 @@
             self.authentication = autheService.authentication;
             self.authorization = authoFactory.authorization;
             toastr.options.preventDuplicates = true;
-            toastr.options.timeOut = 1200;
+            toastr.options.timeOut = 2000;
             var date = new Date();
             self.year = date.getFullYear();
 

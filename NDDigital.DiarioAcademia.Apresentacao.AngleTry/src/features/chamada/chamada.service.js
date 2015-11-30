@@ -28,22 +28,17 @@
         self.getChamadaByAula = function (id) {
             return $http.get(serviceUrl + id)
                 .then(logger.successCallback)
+                .then(convertToChamada)
                 .catch(logger.errorCallback);
         };
 
         //private methods
-        function convertToChamadaDto(data) {
-            return chamadaAdapter.toChamadaDto(data);
+        function convertToChamada(chamada) {
+            return chamadaAdapter.toChamada(chamada);
         };
 
-        function convertToAlunoChamadaDto(data) {
-            if ($.isArray(data)) {
-                return $.map(data, function (item) {
-                    return chamadaAdapter.toAlunoChamadaDto(item);
-                });
-            }
-            return chamadaAdapter.toAlunoChamadaDto(data);
+        function convertToChamadaDto(chamada) {
+            return chamadaAdapter.toChamadaDto(chamada);
         };
-
     }
 })();

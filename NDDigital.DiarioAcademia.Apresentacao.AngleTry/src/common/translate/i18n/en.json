@@ -96,7 +96,9 @@
         "SUCCESS": "Success",
         "ACTION_CANCELED": "Action Canceled",
         "COMPLETED": "Concluded !",
-        "NOT_AUTHORIZED": "You do not have permission to access {{ resourceName }}"
+        "NOT_AUTHORIZED": "You do not have permission to access {{ resourceName }}",
+        "NOT_AVAILABLE": "Server is not available ! Try again",
+        "UNAUTHORIZED":  "Unauthorized Operation! You do not have permission."
     },
     "home": {
         "MESSAGE_START": "This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.",

@@ -185,7 +185,7 @@
         "CONFIRM_MODIFY_PERMISSIONS": "Want to modify the permissions of the Daily Academy ?"
     },
     "filter": {
-        "permission": {
+        "permissions": {
             "STUDENT": "Student",
             "CLASS": "Class",
             "CUSTOM": "Custom",

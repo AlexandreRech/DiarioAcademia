@@ -4,7 +4,7 @@
     eventAdapter.$inject = ["automapper"];
 
     angular
-      .module('services.module')
+      .module('factories.module')
       .factory('eventAdapter', eventAdapter);
 
 

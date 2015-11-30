@@ -2,16 +2,14 @@
 
     'use strict';
     //using
-    chamadaCtrl.$inject = ["chamadaService", "aulaService", "turmaService"];
+    chamadaController.$inject = ["chamadaService", "aulaService", "turmaService", "$translate"];
 
     //namespace
-    angular.module("controllers.module").controller("chamadaCtrl", chamadaCtrl);
+    angular.module("controllers.module").controller("chamadaController", chamadaController);
 
     //class
-    function chamadaCtrl(chamadaService, aulaService, turmaService, $scope) {
+    function chamadaController(chamadaService, aulaService, turmaService, $translate) {
         var vm = this;
-
-        vm.title = "Realizar chamada";
 
         vm.alunos = [];
         vm.turmas = [];
@@ -34,8 +32,10 @@
         //public methods
         vm.save = function () {
             vm.chamada.alunos = vm.alunos;
-            chamadaService.realizarChamada(vm.chamada);
-            clearFields();
+
+            chamadaService.realizarChamada(vm.chamada).then(function () {
+                clearFields();
+            });
         };
 
         vm.populateAulas = function (turma) {
@@ -51,12 +51,12 @@
             if (vm.chamada.aula) {
                 chamadaService.getChamadaByAula(vm.chamada.aula.id).then(function (data) {
                     vm.chamadaDto = data;
-                    vm.alunos = checkStatus(vm.chamadaDto, vm.chamadaDto.alunos);
+                    if (vm.chamadaDto)
+                        vm.alunos = vm.chamadaDto.alunos;
                 });
             }
             vm.aulaSelected = true;
         }
-
 
         vm.getAulaByTurma = function (turma) {
             vm.aulas = [];
@@ -70,15 +70,6 @@
         }
 
         //private methods
-        function checkStatus(chamadaDto, alunos) {
-            var index;
-            for (var j = 0; j < alunos.length; j++) {
-                alunos[j].status = alunos[j].status != "F";
-            }
-            return alunos;
-        }
-
-
         function clearFields() {
             vm.chamada = {};
             vm.alunos = [];

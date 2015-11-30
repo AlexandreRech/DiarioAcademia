@@ -15,10 +15,9 @@
 
         //public methods
         self.realizarChamada = function (chamada) {
-            chamada = convertToChamadaDto(chamada);
-            $http.post(serviceUrl, chamada).then(function (result) {
-                logger.success(res.saved_successful, chamada);
-            });
+            chamada = convertToChamadaDto($.extend(true, {}, chamada));
+            return $http.post(serviceUrl, chamada)
+                            .then(logger.emptyMessageCallback)
         };
         self.getChamadas = function () {
             return $http.get(serviceUrl)
@@ -29,22 +28,17 @@
         self.getChamadaByAula = function (id) {
             return $http.get(serviceUrl + id)
                 .then(logger.successCallback)
+                .then(convertToChamada)
                 .catch(logger.errorCallback);
         };
 
         //private methods
-        function convertToChamadaDto(data) {
-            return chamadaAdapter.toChamadaDto(data);
+        function convertToChamada(chamada) {
+            return chamadaAdapter.toChamada(chamada);
         };
 
-        function convertToAlunoChamadaDto(data) {
-            if ($.isArray(data)) {
-                return $.map(data, function (item) {
-                    return chamadaAdapter.toAlunoChamadaDto(item);
-                });
-            }
-            return chamadaAdapter.toAlunoChamadaDto(data);
+        function convertToChamadaDto(chamada) {
+            return chamadaAdapter.toChamadaDto(chamada);
         };
-
     }
 })();

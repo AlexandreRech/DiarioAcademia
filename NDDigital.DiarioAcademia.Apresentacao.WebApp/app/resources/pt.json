@@ -181,7 +181,7 @@
         "CONFIRM_MODIFY_PERMISSIONS": "Deseja modificar as permissões do DiarioAcademia ?"
     },
     "filter": {
-        "permission": {
+        "permissions": {
             "STUDENT": "Aluno",
             "CLASS": "Turma",
             "CUSTOM": "Personalizado",

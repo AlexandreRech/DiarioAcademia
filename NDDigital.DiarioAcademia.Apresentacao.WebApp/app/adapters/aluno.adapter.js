@@ -6,7 +6,7 @@
 
     //namespace
     angular
-        .module('services.module')
+        .module('factories.module')
         .factory('alunoAdapter', adapter);
 
     //class

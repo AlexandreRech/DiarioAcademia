@@ -19,7 +19,7 @@
         }, {
             name: 'app.chamada.create',
             url: '/create',
-            controller: 'chamadaCtrl as vm',
+            controller: 'chamadaController as vm',
             templateUrl: 'app/views/chamada/chamada.html',
             displayName: 'Realizar Chamada',
             displayIcon: 'fa-plus',

@@ -186,7 +186,7 @@
         "CONFIRM_MODIFY_PERMISSIONS": "¿Quieres modificar los permisos de la Academia Daily ?"
     },
     "filter": {
-        "permission": {
+        "permissions": {
             "STUDENT": "Estudiante",
             "CLASS": "Clase",
             "CUSTOM": "Personalizado",

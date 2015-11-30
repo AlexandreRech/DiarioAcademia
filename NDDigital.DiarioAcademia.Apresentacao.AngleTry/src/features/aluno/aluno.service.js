@@ -26,8 +26,7 @@
             return $http.get(serviceUrl)
                  .then(logger.successCallback)
                  .then(convertToObj)
-                 .catch(logger.errorCallback)
-            ;
+                 .catch(logger.errorCallback);
         };
 
         function getAlunoById(id) {

@@ -46,6 +46,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Entities
         }
 
         // DELETE: api/Turma/5
+        [GrouperAuthorize(Claim.Custon_Delete_Turma)]
         public IHttpActionResult Delete(int id)
         {
             _turmaService.Delete(id);

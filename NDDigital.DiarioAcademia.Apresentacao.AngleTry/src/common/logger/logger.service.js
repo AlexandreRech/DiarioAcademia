@@ -1,13 +1,13 @@
 ﻿(function (angular) {
     'use strict';
 
-    logger.$inject = ['$log', 'resource'];
+    logger.$inject = ['$log', 'resource', '$q'];
     angular
         .module('app.logger')
         .factory('logger', logger);
 
 
-    function logger($log, res) {
+    function logger($log, res, $q) {
         var service = {
             showToasts: true,
 
@@ -54,7 +54,7 @@
 
 
         ///////////////////// callback functions
-        
+
         function successCallback(response) {
             success(res.SUCCESS_REQUEST);
             return response.data.results || response.data;
@@ -69,25 +69,24 @@
                     title: response.status + " - " + response.statusText,
                     type: "error"
                 };
-
                 service[infolog.type](infolog.message, info.content, infolog.title);
+            }
 
-            } else
-               throw (new Error(response.message, null || res.UNAVAILABLE_SERVER));
+            return $q.reject(infolog.message)
         }
         function emptyMessageCallback(response) {
             return response.data.results || response.data;
         }
 
         function formatMessageLog(data) {
-           if (!data)
+            if (!data)
                 return "";
 
             var message = (typeof data === 'string') ? "" :
             data.message || data.errors[0].errorMessage;
 
-            if (data.errors && data.errors.length> 1)
-            message += " +(" + data.errors.length - 1 + ")";
+            if (data.errors && data.errors.length > 1)
+                message += " +(" + data.errors.length - 1 + ")";
 
             return message;
 

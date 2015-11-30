@@ -61,13 +61,8 @@
                              deferred.resolve(response);
                          });               
             }).error(function (err, status) {
-                if (!status || status == -1)
-                    logger.error(res.UNAVAILABLE_SERVER);
-                else
-                    logger.error(err ? err.error_description : status);
                 logOut();
                 deferred.reject(err);
-
             });
             return deferred.promise;
         };

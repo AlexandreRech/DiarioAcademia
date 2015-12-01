@@ -1,6 +1,5 @@
 ﻿using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
-using NDDigital.DiarioAcademia.WebApi.Models;
 using NDDigital.DiarioAcademia.WebApiFull.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApiFull.Filters;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ using System.Web.Http;
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
 {
     [RoutePrefix("api/permission")]
-    [GrouperAuthorize(Claim.Manager_Permission, Claim.Manager_Group_Permission_Edit)]
+    [GrouperAuthorize(Claim.Permission)]
     public class PermissionController : BaseSecurityController
     {
         private IPermissionService _permissionService;
@@ -63,12 +62,6 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             return Ok();
         }
 
-        // GET: api/Permission/byuser/username
-        [AllowAnonymous]
-        [Route("metadata")]
-        public IHttpActionResult getPermissionMetadata()
-        {
-            return Ok(PermissionModel.Get());
-        }
+       
     }
 }

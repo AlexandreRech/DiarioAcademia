@@ -27,14 +27,14 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         }
 
         [Route("user")]
-        [GrouperAuthorize(Claim.Manager_User_List)]
+        [GrouperAuthorize(Claim.Account_Get)]
         public IHttpActionResult GetUsers()
         {
             var users = UserRepository.GetUsers();
             return Ok(users.Select(u => TheModelFactory.Create(u)));
         }
 
-        [GrouperAuthorize(Claim.Manager_User_Edit)]
+        [GrouperAuthorize(Claim.Account_Get)]
         [Route("user/{id:guid}", Name = "GetUserById")]
         public async Task<IHttpActionResult> GetUser(string Id)
         {
@@ -110,7 +110,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         }
 
         [Route("user/{id:guid}")]
-        [GrouperAuthorize(Claim.Manager_User_List)]
+        [GrouperAuthorize(Claim.Account_Delete)]
         public async Task<IHttpActionResult> DeleteUser(string id)
         {
             //Only SuperAdmin or Admin can delete users (Later when implement roles)

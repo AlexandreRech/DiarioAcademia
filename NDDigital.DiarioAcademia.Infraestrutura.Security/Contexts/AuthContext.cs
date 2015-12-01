@@ -64,11 +64,16 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Contexts
 
         private void Seed()
         {
-            Group group = new Group { Name = "Administration", IsAdmin = true };
+            Group group;
             if (Groups.Count() == 0)
             {
+                group = new Group { Name = "Administration", IsAdmin = true };
                 Groups.Add(group);
                 TrySave();
+            }
+            else
+            {
+                group = (from c in Groups where c.Name == "Administration" select c).FirstOrDefault(); 
             }
 
             if (Accounts.Count() == 0)

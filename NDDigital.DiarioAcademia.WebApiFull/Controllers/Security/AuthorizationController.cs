@@ -16,6 +16,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, Uow);
         }
 
+        [GrouperAuthorize(Claim.Authorize_Permissions_Group)]
         [Route("addpermission/{groupId:int}")]
         public IHttpActionResult AddPermissionsToGroup(int groupId, [FromBody]string[] permissions)
         {
@@ -23,6 +24,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             return Ok();
         }
 
+        [GrouperAuthorize(Claim.Authorize_Permissions_Group)]
         [Route("removepermission/{groupId:int}")]
         public IHttpActionResult RemovePermissionsToGroup(int groupId, [FromBody]string[] permissions)
         {
@@ -30,6 +32,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             return Ok();
         }
 
+        [GrouperAuthorize(Claim.Authorize_Groups_User)]
         [Route("addgroup/{username}")]
         public IHttpActionResult AddGroupToUser(string username, [FromBody]int[] groups)
         {
@@ -37,6 +40,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             return Ok();
         }
 
+        [GrouperAuthorize(Claim.Authorize_Groups_User)]
         [Route("removegroup/{username}")]
         public IHttpActionResult removeGroupToUser(string username, [FromBody]int[] groups)
         {

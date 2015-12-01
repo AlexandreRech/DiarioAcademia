@@ -4,105 +4,133 @@
     {
         #region Aluno
 
-        public const string Aluno = ".02"
-            +  Aluno_List
-            + Aluno_Details
-            + Aluno_Create;
+        public const string Aluno = ".ALUNO"
+            + Aluno_Get
+            + Aluno_Post
+            + Aluno_Put
+            + Aluno_Delete;
 
-        public const string Aluno_List = ".03";
-        public const string Aluno_Details = ".04";
-        public const string Aluno_Create = ".05";
+        public const string Aluno_Get= ".ALUNO_GET";
+        public const string Aluno_Post= ".ALUNO_POST";
+        public const string Aluno_Put = ".ALUNO_PUT";
+        public const string Aluno_Delete = ".ALUNO_DELETE";
 
         #endregion Aluno
 
         #region Aula
 
-        public const string Aula = ".06"
-            + Aula_List
-            + Aula_Create;
 
-        public const string Aula_List = ".07";
-        public const string Aula_Create = ".08";
+        public const string Aula = ".AULA"
+            + Aula_Get
+            + Aula_Post
+            + Aula_Put
+            + Aula_Delete;
+
+        public const string Aula_Get = ".AULA_GET";
+        public const string Aula_Post = ".AULA_POST";
+        public const string Aula_Put = ".AULA_PUT";
+        public const string Aula_Delete = ".AULA_DELETE";
 
         #endregion Aula
 
         #region Chamada
+        
 
-        public const string Chamada =
-              Chamada_Create;
+        public const string Chamada = ".CHAMADA"
+            + Chamada_Get
+            + Chamada_Post
+            + Chamada_Put
+            + Chamada_Delete;
 
-        public const string Chamada_Create = ".11";
+        public const string Chamada_Get = ".CHAMADA_GET";
+        public const string Chamada_Post = ".CHAMADA_POST";
+        public const string Chamada_Put = ".CHAMADA_PUT";
+        public const string Chamada_Delete = ".CHAMADA_DELETE";
+
 
         #endregion Chamada
 
+        #region Turma
+
+        public const string Turma = ".TURMA"
+            + Turma_Get
+            + Turma_Post
+            + Turma_Put
+            + Turma_Delete;
+
+        public const string Turma_Get = ".TURMA_GET";
+        public const string Turma_Post = ".TURMA_POST";
+        public const string Turma_Put = ".TURMA_PUT";
+        public const string Turma_Delete = ".TURMA_DELETE";
+
+        #endregion Turma
+
         #region Manager
 
-        public const string Manager = ".12"
-            + Manager_User
-            + Manager_Group
-            + Manager_Permission;
+        public const string Manager = ".MANAGER"
+            + Account
+            + Group
+            + Permission;
 
-        #region User
+        #region Account
 
-        public const string Manager_User = ".13"
-            + Manager_User_List
-            + Manager_User_Edit
-            + Manager_User_Group_Edit;
+        public const string Account = ".ACCOUNT"
+            + Account_Get
+            + Account_Create
+            + Account_Edit
+            + Account_Delete;
 
-        public const string Manager_User_List = ".14";
-        public const string Manager_User_Edit = ".15";
-        public const string Manager_User_Group_Edit = ".16";
+        public const string Account_Get = ".ACCOUNT_GET";
+        public const string Account_Create = ".ACCOUNT_CREATE";
+        public const string Account_Edit = ".ACCOUNT_EDIT";
+        public const string Account_Delete= ".ACCOUNT_DELETE";
 
         #endregion User
 
         #region Group
 
-        public const string Manager_Group = ".17"
-            + Manager_Group_List
-            + Manager_Group_Create
-            + Manager_Group_Edit
-            + Manager_Group_Permission_Edit;
+        public const string Group = ".GROUP"
+        + Group_Get
+        + Group_Post
+        + Group_Put
+        + Group_Delete;
 
-        public const string Manager_Group_List = ".18";
-        public const string Manager_Group_Create = ".19";
-        public const string Manager_Group_Edit = ".20";
-        public const string Manager_Group_Permission_Edit = ".21";
+        public const string Group_Get = ".GROUP_GET";
+        public const string Group_Post = ".GROUP_POST";
+        public const string Group_Put = ".GROUP_PUT";
+        public const string Group_Delete = ".GROUP_DELETE";
 
         #endregion Group
 
         #region Permissions
 
-        public const string Manager_Permission =
-            Manager_Permission_List;
+        public const string Permission = ".PERMISSION"
+         + Permission_Get
+         + Permission_Post
+         + Permission_Put
+         + Permission_Delete;
 
-        public const string Manager_Permission_List = ".22";
+        public const string Permission_Get = ".PERMISSION_GET";
+        public const string Permission_Post = ".PERMISSION_POST";
+        public const string Permission_Put = ".PERMISSION_PUT";
+        public const string Permission_Delete = ".PERMISSION_DELETE";
 
-        #endregion Group
+        #endregion Permission
+
+        #region Authorize
+
+        public const string Authorize = ".AUTHORIZE"
+           + Authorize_Groups_User
+            + Authorize_Groups_User;
+
+        public const string Authorize_Permissions_Group = ".AUTHORIZE_PERMISSIONs_GROUP";//add/remove permission from groups 
+        public const string Authorize_Groups_User= ".AUTHORIZE_GROUPs_USER";//add/remove groups from user
+
+
+
+        #endregion
 
         #endregion Manager
 
-        #region Turma
-
-        public const string Turma = ".23"
-            + Turma_List
-            + Turma_Details
-            + Turma_Create;
-
-        public const string Turma_List = ".24";
-        public const string Turma_Details = ".25";
-        public const string Turma_Create = ".26";
-
-        #endregion Turma
-
-        #region Custom
-
-        public const string Custom =
-              Custon_Excluir_Aluno
-            + Custon_Delete_Turma;
-
-        public const string Custon_Excluir_Aluno = ".27";
-        public const string Custon_Delete_Turma = ".28";
-
-        #endregion Custom
     }
 }

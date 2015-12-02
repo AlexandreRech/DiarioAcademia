@@ -57,17 +57,8 @@
 
 
     // Helpers
-    function getModule(modules, routeTo) {
-        for (var module in modules) {
-            var routes = modules[module].routes; // routes of module  
-            if (routes && routes.contains(routeTo))
-                return modules[module].name;
-        }
-    }
-
-
     function logNoAuthorized(permissionFactory, $translate, logger, toState) {
-        var permissionRequired = permissionFactory.getStateByName(toState.name || toState.to);
+        var permissionRequired = permissionFactory.getByName(toState.name || toState.to);
         logger.warning($translate.instant('status.NOT_AUTHORIZED', {
             resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
         }));

@@ -27,15 +27,15 @@
         }
 
         //public methods
-        function isAuthorized(state) {
+        function isAuthorized(namePermission) {
             var authentication = localStorageService.get(storageKeys.autheData);
             if (!authentication.isAuth)
                 return false;
             if (authorization.isAdmin)
                 return true;
-            if (state == "app.home")
+            if (namePermission == "app.home")
                 return true;
-            return permissionFactory.containsPermissionByName(authorization.permissions, state);
+            return permissionFactory.containsByName(authorization.permissions, namePermission);
         }
 
         function fillAuthoData() {
@@ -48,8 +48,8 @@
 
         function setAutheData(isAdmin, permissions) {
             authorization.isAdmin = isAdmin;
-            authorization.permissions = getPermissions(permissions);
-            localStorageService.set(storageKeys.authoData, authorization);  //criptografar isto
+            authorization.permissions = permissions;
+            localStorageService.set(storageKeys.authoData, authorization);  
         }
 
         function clearAuthorize() {
@@ -57,17 +57,6 @@
             authorization.isAdmin = false;
             authorization.permissions = undefined;
         };
-
-
-        //private methods
-        function getPermissions(permissions) {
-            var permission, result = [];
-            for (var i = 0; i < permissions.length; i++) {
-                permission = permissionFactory.getPermissionById(permissions[i].permissionId);
-                result.push(permission.name);
-            }
-            return result;
-        }
     }
 
 })();

@@ -2,14 +2,14 @@
 	'use strict';
 
 	//using
-	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource', '$state'];
+	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource', '$state', 'permissionAdapter'];
 
 	//namespace
 	angular.module('app.group')
 	   .service('groupService', groupService);
 
 	//class
-	function groupService($http, logger, baseUrl, res, $state) {
+	function groupService($http, logger, baseUrl, res, $state, permissionAdapter) {
 		var self = this;
 		var serviceUrl = baseUrl + "api/group/";
 		var serviceAuthenticationUrl = baseUrl + "api/authentication/";
@@ -18,12 +18,14 @@
 		self.getGroups = function () {
 			return $http.get(serviceUrl)
 				 .then(logger.successCallback)
+				 .then(convertPermissions)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getGroupById = function (id) {
 			return $http.get(serviceUrl + id)
 				 .then(logger.successCallback)
+				 .then(convertPermissions)
 				 .catch(logger.errorCallback);
 		};
 
@@ -88,13 +90,28 @@
 		}
 
 		//private methods
+		function convertPermissions(response) {
+			if ($.isArray(response)) {
+				response.map(function (group) {
+					group.permissions = permissionAdapter.toPermission(group.permissions);
+				});
+			} else
+				response.permissions = permissionAdapter.toPermission(response.permissions);
+			return response;
+		}
+
 		function getPermissionId(array) {
-			var pemissionsIds = [];
+			var permissionsIds = [];
 			for (var i = 0; i < array.length; i++) {
-				if (array[i].permissionId)
-					pemissionsIds.push(array[i].permissionId);
+				if ($.isArray(array[i].permissionId)) {
+					array[i].permissionId.map(function (permissionId) {
+						permissionsIds.push(permissionId);
+					})
+				}
+				else
+					permissionsIds.push(array[i].permissionId);
 			}
-			return pemissionsIds;
+			return permissionsIds;
 		}
 	}
 })();

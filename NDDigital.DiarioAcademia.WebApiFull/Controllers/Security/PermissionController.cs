@@ -39,18 +39,18 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             return Ok(_permissionService.GetByUser(username));
         }
 
-        [Route("byuser/{groupId:int}")]
+        [Route("bygroup/{groupId:int}")]
         // GET: api/Permission/bygroup/groupId
         public IHttpActionResult GetByGroup(int groupId)
         {
             return Ok(_permissionService.GetByGroup(groupId));
         }
 
-        public IHttpActionResult Post([FromBody]List<Permission> values)
+        public IHttpActionResult Post([FromBody]string[] ids)
         {
-            _permissionService.Add(values.Select(p => p.PermissionId).ToArray());
+            _permissionService.Add(ids);
 
-            return Ok(values);
+            return Ok(ids);
         }
 
         // DELETE: api/Permission/

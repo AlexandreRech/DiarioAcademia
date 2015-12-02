@@ -39,7 +39,7 @@
         }
 
         function check(obj, compare, method) {
-            return method && compare ? method(compare, obj) >= 0 :
+            return method && compare ? method(compare, obj) >= 0:
                              compare ? compare.containsObject(obj) : false;
 
         }

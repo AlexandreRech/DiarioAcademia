@@ -2,15 +2,15 @@
     angular.module('app.group')
         .controller('managerGroupPermissionEditController', managerGroupPermissionEditController);
 
-    managerGroupPermissionEditController.$inject = ['groupService', 'permissionsService', 'permissions.factory', 'compareState',
+    managerGroupPermissionEditController.$inject = ['groupService', 'permissionsService', 'permissions.factory',
         '$state', '$stateParams', 'changes.factory', "$translate", "SweetAlert"];
 
     function managerGroupPermissionEditController(groupService, permissionsService, permissionsFactory,
-        compareState, $state, params, changesFactory, $translate, SweetAlert) {
+        $state, params, changesFactory, $translate, SweetAlert) {
 
         var vm = this;
 
-        vm.comparePermissions = compareState;
+        vm.comparePermissions = permissionsFactory.indexOfPermission;
         vm.onchange = onchange;
         vm.save = save;
 
@@ -26,23 +26,15 @@
                 vm.group = results;
 
                 permissionsService.getPermissions().then(function (results) {
-                    var permissionsDb = results;
-                    for (var i = 0; i < permissionsDb.length; i++) {
-                        var permission = permissionsFactory.getPermissionById(permissionsDb[i].permissionId);
-                        if (!permission)
-                            continue;
-                        permission.id = permissionsDb[i].id;
-                        vm.permissions.push(permission);
-                    }
+                    vm.permissions = results;
                 });
-
             });
         }
 
         //public methods
         function onchange(obj, check) {
             vm.hasChange = true;
-            if (compareState(vm.changes, obj) < 0)
+            if (!permissionsFactory.containsByName(vm.changes, obj.name))
                 vm.changes.push(obj);
             obj.action = check;
         }

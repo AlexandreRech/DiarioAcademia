@@ -3,38 +3,29 @@
 
 	//using
 
-	permissionsService.$inject = ['$http', 'logger', 'BASEURL', '$state', 'resource'];
+	permissionsService.$inject = ['$http', 'logger', 'BASEURL', '$q', 'resource', 'permissionAdapter'];
 
 	//namespace
 	angular.module('app.permission')
 	   .service('permissionsService', permissionsService);
 
 	//class
-	function permissionsService($http, logger, baseUrl, $state, res) {
+	function permissionsService($http, logger, baseUrl, $q, res, permissionAdapter) {
 		var self = this;
 		var serviceUrl = baseUrl + "api/permission/";
-		var resourcePermissions = "src/common/permission/permissions.json";
+
+
 
 		//public methods
 		self.getPermissions = function () {
 			return $http.get(serviceUrl)
 				 .then(logger.emptyMessageCallback)
-				 .catch(logger.errorCallback)
-		};
-
-		self.getMetaDataPermissions = function () {
-		    return $http.get(resourcePermissions)
-				 .then(logger.successCallback)
-				 .catch(logger.errorCallback)
-		};
-
-		self.getPermissionById = function (id) {
-			return $http.get(serviceUrl + id)
-				 .then(logger.successCallback)
-				 .catch(logger.errorCallback)
+				 .then(convertPermissions)
+				 .catch(logger.errorCallback);
 		};
 
 		self.save = function (permission) {
+			permission = getPermissionsId(permission);
 			return $http.post(serviceUrl, permission)
 							.then(logger.emptyMessageCallback)
 							.then(function (response) {
@@ -42,25 +33,37 @@
 								return response;
 							})
 							.catch(logger.errorCallback);
-		};
+		}
 
 		self.delete = function (permission) {
 			permission = getPermissionsId(permission);
-			return $http({ url: serviceUrl,
-			               method: 'DELETE',
-			               data: permission,
-			               headers: { "Content-Type": "application/json;charset=utf-8" }
-			            }).then(logger.emptyMessageCallback)
-				          .then(function () {
-				          	logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
-				          })
-				          .catch(logger.errorCallback);
+			return $http({
+				url: serviceUrl,
+				method: 'DELETE',
+				data: permission,
+				headers: { "Content-Type": "application/json;charset=utf-8" }
+			}).then(logger.emptyMessageCallback)
+						  .then(function () {
+							  logger.success(res.DELETED_SUCCESSFUL, permission, "Delete");
+						  })
+						  .catch(logger.errorCallback);
 		};
+
+		//private methods
+		function convertPermissions(response) {
+			return permissionAdapter.toPermission(response);
+		}
 
 		function getPermissionsId(array) {
 			var permissionsIds = [];
 			for (var i = 0; i < array.length; i++) {
-			    permissionsIds.push(array[i].permissionId);
+				if ($.isArray(array[i].permissionId)) {
+					array[i].permissionId.map(function (permissionId) {
+						permissionsIds.push(permissionId);
+					})
+				}
+				else
+					permissionsIds.push(array[i].permissionId);
 			}
 			return permissionsIds;
 		}

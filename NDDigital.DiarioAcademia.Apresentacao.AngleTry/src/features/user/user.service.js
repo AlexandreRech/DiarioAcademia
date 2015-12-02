@@ -2,14 +2,14 @@
 	'use strict';
 
 	//using
-	userService.$inject = ['$http', 'logger', 'BASEURL', 'resource'];
+	userService.$inject = ['$http', 'logger', 'BASEURL', 'resource', 'permissionAdapter'];
 
 	//namespace
 	angular.module('app.user')
 	   .service('userService', userService);
 
 	//class
-	function userService($http, logger, baseUrl, res) {
+	function userService($http, logger, baseUrl, res, permissionAdapter) {
 		var self = this;
 
 		var serviceUrl = baseUrl + "api/accounts/";
@@ -19,21 +19,27 @@
 		self.getUsers = function () {
 			return $http.get(serviceUrl + "user")
 				 .then(logger.successCallback)
+				 .then(convertPermissions)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getUserById = function (id) {
 			return $http.get(serviceUrl + "user/" + id)
-				 .then(logger.successCallback);
+				 .then(logger.successCallback)
+				 .then(convertPermissions)
+				 .catch(logger.errorCallback);
+
 		};
 
 		self.getUserByUsername = function (username) {
 			return $http.get(serviceUrl + "user/username/" + username)
-				 .then(logger.emptyMessageCallback);
+				 .then(logger.emptyMessageCallback)
+				 .then(convertPermissions)
+				 .catch(logger.errorCallback);
 		}
 
 		self.delete = function (user) {
-		    return $http.delete(serviceUrl + "user/" + user.id)
+			return $http.delete(serviceUrl + "user/" + user.id)
 					.then(logger.emptyMessageCallback);
 		};
 
@@ -55,6 +61,17 @@
 			 .then(logger.successCallback)
 			 .catch(logger.errorCallback);
 		};
+
+		//private methods
+		function convertPermissions(response) {
+		    if ($.isArray(response)) {
+		        response.map(function (group) {
+		            group.permissions = permissionAdapter.toPermission(group.permissions);
+		        });
+		    } else
+		        response.permissions = permissionAdapter.toPermission(response.permissions);
+		    return response;
+		}
 
 	}
 })(window.angular);

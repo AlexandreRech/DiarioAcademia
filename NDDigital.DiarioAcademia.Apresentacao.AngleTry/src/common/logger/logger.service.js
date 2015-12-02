@@ -62,7 +62,7 @@
 
 
         function errorCallback(response) {
-            if (response.status && response.status != -1) {
+            if (response && response.status && response.status != -1) {
                 var infolog = {
                     message: formatMessageLog(response.data),
                     content: response.data,
@@ -72,7 +72,7 @@
                 service[infolog.type](infolog.message, info.content, infolog.title);
             }
 
-            return $q.reject(infolog.message)
+            return $q.reject();
         }
         function emptyMessageCallback(response) {
             return response.data.results || response.data;

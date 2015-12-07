@@ -21,7 +21,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         // protected IdentityUserStore IdentityUserStore;
         protected UserStore<User> IdentityUserStore;
 
-        protected IAuthorizationService AuthorizationService;
+        protected IClaimService AuthorizationService;
 
         #endregion Constructor Utilities
 

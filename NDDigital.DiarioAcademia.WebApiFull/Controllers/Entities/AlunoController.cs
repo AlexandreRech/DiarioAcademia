@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Entities
 {
-    [GrouperAuthorize(Claim.Aluno)]
+    [GrouperAuthorize(PermissionSpec.Aluno)]
     [RoutePrefix("api/aluno")]
     public class AlunoController : BaseEntityController
     {

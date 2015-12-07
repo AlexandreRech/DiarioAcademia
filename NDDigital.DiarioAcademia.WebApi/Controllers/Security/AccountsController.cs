@@ -15,13 +15,13 @@ namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
     [RoutePrefix("api/accounts")]
     public class AccountsController : BaseSecurityController
     {
-        private IAuthorizationService _authservice;
+        private IClaimService _authservice;
         private IPermissionService _permissionService;
         private IGroupService _groupService;
 
         public AccountsController()
         {
-            _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, Uow);
+            _authservice = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
             _permissionService = new PermissionService(PermissionRepository, Uow);
             _groupService = new GroupService(GroupRepository, Uow);
         }

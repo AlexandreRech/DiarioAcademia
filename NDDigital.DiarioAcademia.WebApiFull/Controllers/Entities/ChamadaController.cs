@@ -6,7 +6,7 @@ using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Entities
 {
-    [GrouperAuthorize(Claim.Chamada)]
+    [GrouperAuthorize(PermissionSpec.Chamada)]
     public class ChamadaController : BaseEntityController
     {
         private AulaService _aulaService;

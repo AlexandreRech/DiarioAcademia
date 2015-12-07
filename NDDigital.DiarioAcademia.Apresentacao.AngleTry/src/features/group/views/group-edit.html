@@ -13,7 +13,7 @@
         </button>
         <br /><br />
         <label>Permissões:</label>
-        <button class="btn btn-default" ng-click="vm.editPermission()" ng-disabled="vm.group.isAdmin">Gerenciar Permissões</button>
+        <button class="btn btn-default" ng-click="vm.editPermission()" ng-disabled="vm.group.isAdmin">{{'action.MANAGER_AUTHORIZE' | translate}}</button>
         <span class="msgAllPermission" ng-show="vm.group.isAdmin">
             <i class="fa fa-star"></i> Possui todas as permissões
         </span>

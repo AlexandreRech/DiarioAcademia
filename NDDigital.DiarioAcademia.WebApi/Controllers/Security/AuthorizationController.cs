@@ -1,4 +1,5 @@
-﻿using NDDigital.DiarioAcademia.Aplicacao.Services;
+﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
+using NDDigital.DiarioAcademia.Aplicacao.Services;
 using NDDigital.DiarioAcademia.WebApi.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApi.Filters;
 using System.Web.Http;
@@ -9,24 +10,24 @@ namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
     [GrouperAuthorize(Claim.Manager)]
     public class AuthorizationController : BaseSecurityController
     {
-        private IAuthorizationService _authservice;
+        private IClaimService _authservice;
 
         public AuthorizationController()
         {
-            _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, Uow);
+            _authservice = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
         }
 
         [Route("addpermission/{groupId:int}")]
-        public IHttpActionResult AddPermissionsToGroup(int groupId, [FromBody]string[] permissions)
+        public IHttpActionResult AddPermissionsToGroup(int groupId, [FromBody]ClaimDTO[] permissions)
         {
-            _authservice.AddPermissionsToGroup(groupId, permissions);
+            _authservice.AddAuthorizationToGroup(groupId, permissions);
             return Ok();
         }
 
         [Route("removepermission/{groupId:int}")]
-        public IHttpActionResult RemovePermissionsToGroup(int groupId, [FromBody]string[] permissions)
+        public IHttpActionResult RemovePermissionsToGroup(int groupId, [FromBody]ClaimDTO[] permissions)
         {
-            _authservice.RemovePermissionsFromGroup(groupId, permissions);
+            _authservice.RemoveAuthorizationFromGroup(groupId, permissions);
             return Ok();
         }
 

@@ -9,7 +9,7 @@ using System.Web.Http;
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
 {
     [RoutePrefix("api/permission")]
-    [GrouperAuthorize(Claim.Permission)]
+    [GrouperAuthorize(PermissionSpec.Permission)]
     public class PermissionController : BaseSecurityController
     {
         private IPermissionService _permissionService;

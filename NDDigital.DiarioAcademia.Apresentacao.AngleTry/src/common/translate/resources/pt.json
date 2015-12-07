@@ -27,9 +27,9 @@
         "LIST_GROUPS": "Lista de Grupos",
         "CREATE_GROUPS": "Cadastro de Grupo",
         "EDIT_GROUPS": "Edição de grupo",
-        "EDIT_GROUPS_PERMISSIONS": "Edição de Permissões de Grupos",
+        "EDIT_GROUPS_AUTHORIZATIONS": "Edição de Autorizações de Grupos",
 
-        "LIST_PERMISSIONS": "Lista de Permissões",
+        "LIST_AUTHORIZATIONS": "Lista de autorizações",
 
         "SETTINGS": "Configurações",
         "USER_OPTIONS": "Minha Conta",
@@ -58,8 +58,8 @@
         "CLASS_REGISTER": "Chamada",
         "MANAGER": "Gerenciador",
         "USER": "Usuário",
-        "GROUP": "Grupo",
-        "PERMISSIONS": "Permissões"
+        "GROUP": "Grupo",        
+        "AUTHORIZATION": "Autorização"
     },
     "action": {
         "CREATE": "Criar",
@@ -74,7 +74,8 @@
         "OK": "Ok",
         "CREATE_CLASS_REGISTER": "Realizar Chamada !",
         "REGISTER": "Não é registrado? Cadastre-se agora",
-        "LOGIN": "Entrar"
+        "LOGIN": "Entrar",
+        "MANAGER_AUTHORIZE": "Gerenciar Autorizações"
 
     },
     "status": {
@@ -92,9 +93,9 @@
         "WELCOME": "Bem vindo",
         "SUCCESS": "Sucesso",
         "ACTION_CANCELED": "Ação cancelada",
-        "NOT_AUTHORIZED": "Você não tem permissão para acessar {{ resourceName }}",
-        "NOT_AVAILABLE":  "Servidor não disponível - Tente novamente",
-        "UNAUTHORIZED": "Operação não Autorizada! Você não tem permissão."
+        "NOT_AUTHORIZED": "Você não tem autorização para acessar {{ resourceName }}",
+        "NOT_AVAILABLE":  "Servidor não disponível !!",
+        "UNAUTHORIZED": "Operação não Autorizada! Você não tem autorização."
     },
     "home": {
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",
@@ -140,8 +141,8 @@
         "GROUP_EDITED": "Grupo atualizado com sucesso !",
         "GROUP_NOT_EDITED": "Alterações do grupo não foram salvas !",
 
-        "PERMISSIONS_NOT_MODIFIED": "Permissões não modificadas !",
-        "PERMISSIONS_MODIFIED":  "Permissões modificadas !"
+        "AUTHORIZATION_NOT_MODIFIED": "Autorizações não modificadas !",
+        "AUTHORIZATION_MODIFIED":  "Autorizações modificadas !"
 
     },
     "confirm": {
@@ -171,7 +172,7 @@
         "CONFIRM_CREATE_GROUP": "Deseja criar o grupo {{groupname}} ?",
         "CONFIRM_EDIT_GROUP": "Salvar alterações realizadas no grupo {{groupname}} ?",
 
-        "CONFIRM_MODIFY_PERMISSIONS": "Deseja modificar as permissões do DiarioAcademia ?"
+        "CONFIRM_MODIFY_AUTHORIZATION": "Deseja modificar as autorizações do DiarioAcademia ?"
     },
       "filter": {
         "permission": {
@@ -182,7 +183,7 @@
             "CLASS_REGISTER": "Chamada",
             "LESSON": "Aula",
             "GROUP": "Grupo",
-            "PERMISSION": "Permissões"
+            "AUTHORIZE": "Autorização"
         }
     }
 }

@@ -5,15 +5,15 @@
     angular.module('app.authorization')
        .service('authoFactory', authoFactory);
 
-    authoFactory.$inject = ['storageKeys', 'localStorageService', 'permissions.factory'];
+    authoFactory.$inject = ['storageKeys', 'localStorageService', 'authoUtilFactory'];
 
-    function authoFactory(storageKeys, localStorageService, permissionFactory) {
+    function authoFactory(storageKeys, localStorageService, authoUtilFactory) {
         var self = this;
 
         var authorization = {
             isAuthorized: isAuthorized,
             role: null,
-            permissions: []
+            authorizations: []
         };
 
 
@@ -35,27 +35,27 @@
                 return true;
             if (namePermission == "app.home")
                 return true;
-            return permissionFactory.containsByName(authorization.permissions, namePermission);
+            return authoUtilFactory.containsByName(authorization.authorizations, namePermission);
         }
 
         function fillAuthoData() {
             var authoData = localStorageService.get(storageKeys.authoData);
             if (authoData) {
                 authorization.isAdmin = authoData.isAdmin;
-                authorization.permissions = authoData.permissions;
+                authorization.authorizations = authoData.authorizations;
             }
         };
 
-        function setAutheData(isAdmin, permissions) {
+        function setAutheData(isAdmin, authorizations) {
             authorization.isAdmin = isAdmin;
-            authorization.permissions = permissions;
+            authorization.authorizations = authorizations;
             localStorageService.set(storageKeys.authoData, authorization);  
         }
 
         function clearAuthorize() {
             localStorageService.remove(storageKeys.authoData);
             authorization.isAdmin = false;
-            authorization.permissions = undefined;
+            authorization.authorizations = undefined;
         };
     }
 

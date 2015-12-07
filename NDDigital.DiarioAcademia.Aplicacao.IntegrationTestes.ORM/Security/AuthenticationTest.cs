@@ -1,6 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
 using NDDigital.DiarioAcademia.IntegrationTests.Base;
 using System.Linq;
+using System.Data.Entity;
+using System.Collections.Generic;
+
 
 namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 {
@@ -12,42 +16,49 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
         [TestMethod]
         [TestCategory(TestCategory)]
-        public void Deveria_Adicionar_Permissao_ao_Grupo()
+        public void Deveria_Adicionar_Autorizacao_ao_Grupo()
         {
-            var grupo = GroupRepository.GetByIdIncluding(2, g => g.Permissions);
+            var grupo = GroupRepository.GetByIdIncluding(2, g => g.Authorizations);
 
-            var permissions = new[] { "9" };
+            var authorizations = ObjectBuilder.CreateListAuthorizations();
+            var authorizationsDTO = new List<ClaimDTO>();
+            authorizations.ForEach((autho) =>
+            {
+                authorizationsDTO.Add(new ClaimDTO(autho));
+            });
 
-            AuthorizationService.AddPermissionsToGroup(grupo.Id, permissions);
+            AuthorizationService.AddAuthorizationToGroup(grupo.Id, authorizationsDTO.ToArray());
 
-            var permission = PermissionRepository.GetByPermissionId("9");
+            //Test authorization in group
+            var authorize = AuthorizationRepository.GetByGroup(2);
+            grupo = GroupRepository.GetByIdIncluding(2, g => g.Authorizations);
 
-            Assert.IsNotNull(permission);
-            Assert.AreEqual("9", permission.PermissionId);
-
-            Assert.AreEqual(3, grupo.Permissions.Count);
+            Assert.IsNotNull(authorize);
+            Assert.AreEqual(1, grupo.Authorizations.Count);
         }
 
         [TestMethod]
         [TestCategory(TestCategory)]
-        public void Deveria_Excluir_Permissoes_do_Grupo()
+        public void Deveria_Excluir_Autorizacao_do_Grupo()
         {
-            var grupo = GroupRepository.GetByIdIncluding(2, g => g.Permissions);
+            var grupo = GroupRepository.GetByIdIncluding(2, g => g.Authorizations);
 
-            var id = grupo.Permissions.First().PermissionId;
+            var id = grupo.Authorizations.First().Permissions.First().PermissionId;
 
-            var permissions = new[] { id };
+            var authorizationsDTO = new List<ClaimDTO>()
+            {
+                new ClaimDTO(grupo.Authorizations.First())
+            };
 
-            AuthorizationService.RemovePermissionsFromGroup(grupo.Id, permissions);
+            AuthorizationService.RemoveAuthorizationFromGroup(grupo.Id, authorizationsDTO.ToArray());
 
             var permission = PermissionRepository.GetByPermissionId(id);
+            grupo = GroupRepository.GetByIdIncluding(2, g => g.Authorizations);
+            var permissionsGroup = PermissionRepository.GetByGroup(grupo.Id);
 
-            Assert.IsNotNull(permission);
-
-            grupo = GroupRepository.GetByIdIncluding(2, g => g.Permissions);
-
-            Assert.AreEqual(1, grupo.Permissions.Count);
-            Assert.IsFalse(grupo.Permissions.Contains(permission));
+            Assert.IsNull(permission);
+            Assert.AreEqual(0, grupo.Authorizations.Count);
+            Assert.IsFalse(permissionsGroup.Contains(permission));
         }
 
         [TestMethod]
@@ -91,9 +102,9 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
         {
             var acc = AccountRepository.GetAllIncluding(x => x.Groups).First();
 
-            var group = GroupRepository.GetByIdIncluding(acc.Groups[0].Id, x => x.Permissions);
+            var group = GroupRepository.GetByIdIncluding(acc.Groups[0].Id, x => x.Authorizations);
 
-            var permissionId = group.Permissions.First().PermissionId;
+            var permissionId = group.Authorizations.First().Permissions.First().PermissionId;
 
             Assert.IsTrue(AuthorizationService.IsAuthorized(acc.Username, permissionId));
         }

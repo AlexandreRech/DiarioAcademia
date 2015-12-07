@@ -1,14 +1,14 @@
-﻿using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
+﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
+using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Http;
-
 using System.Web.Http.Routing;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Models
 {
-    
+
 
     public class UserReturnModel
     {
@@ -19,7 +19,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Models
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
 
-        public IList<Permission> Permissions { get; set; }
+        public IList<ClaimDTO> Authorizations { get; set; }
     }
 
     public class CreateUserBindingModel

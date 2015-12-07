@@ -2,19 +2,19 @@
     angular.module('app.group')
         .controller('managerGroupPermissionEditController', managerGroupPermissionEditController);
 
-    managerGroupPermissionEditController.$inject = ['groupService', 'permissionsService', 'permissions.factory',
+    managerGroupPermissionEditController.$inject = ['groupService', 'authoService', 'authoUtilFactory',
         '$state', '$stateParams', 'changes.factory', "$translate", "SweetAlert"];
 
-    function managerGroupPermissionEditController(groupService, permissionsService, permissionsFactory,
+    function managerGroupPermissionEditController(groupService, authoService, authoUtilFactory,
         $state, params, changesFactory, $translate, SweetAlert) {
 
         var vm = this;
 
-        vm.comparePermissions = permissionsFactory.indexOfPermission;
+        vm.compareAuthorizations = authoUtilFactory.indexOfAuthorization;
         vm.onchange = onchange;
         vm.save = save;
 
-        vm.permissions = [];
+        vm.authorizations = [];
         vm.hasChange = false;
         vm.changes = [];
 
@@ -25,8 +25,8 @@
                     $state.go('app.group.list');
                 vm.group = results;
 
-                permissionsService.getPermissions().then(function (results) {
-                    vm.permissions = results;
+                authoService.getAuthorizations().then(function (results) {
+                    vm.authorizations = results;
                 });
             });
         }
@@ -34,7 +34,7 @@
         //public methods
         function onchange(obj, check) {
             vm.hasChange = true;
-            if (!permissionsFactory.containsByName(vm.changes, obj.name))
+            if (!authoUtilFactory.containsByName(vm.changes, obj.name))
                 vm.changes.push(obj);
             obj.action = check;
         }
@@ -65,14 +65,14 @@
 
                 if (needInclude) {
 
-                    return groupService.addPermission(vm.group, include).then(function () {
+                    return authoService.addAuthorize(vm.group, include).then(function () {
                         if (needExclude) {
-                            return groupService.removePermission(vm.group, exclude);
+                            return authoService.removePermission(vm.group, exclude);
                         }
                     })
 
                 } else if (needExclude) {
-                    return groupService.removePermission(vm.group, exclude);
+                    return authoService.removeAuthorize(vm.group, exclude);
                 }
             }
         }

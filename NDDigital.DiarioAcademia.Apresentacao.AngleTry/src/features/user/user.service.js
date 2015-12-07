@@ -2,7 +2,7 @@
 	'use strict';
 
 	//using
-	userService.$inject = ['$http', 'logger', 'BASEURL', 'resource', 'permissionAdapter'];
+	userService.$inject = ['$http', 'logger', 'BASEURL', 'resource'];
 
 	//namespace
 	angular.module('app.user')
@@ -13,20 +13,18 @@
 		var self = this;
 
 		var serviceUrl = baseUrl + "api/accounts/";
-		var serviceAuthenticationUrl = baseUrl + "api/authentication/";
+		var serviceAuthenticationUrl = baseUrl + "api/authorization/";
 
 		//public methods
 		self.getUsers = function () {
 			return $http.get(serviceUrl + "user")
 				 .then(logger.successCallback)
-				 .then(convertPermissions)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getUserById = function (id) {
 			return $http.get(serviceUrl + "user/" + id)
 				 .then(logger.successCallback)
-				 .then(convertPermissions)
 				 .catch(logger.errorCallback);
 
 		};
@@ -34,7 +32,6 @@
 		self.getUserByUsername = function (username) {
 			return $http.get(serviceUrl + "user/username/" + username)
 				 .then(logger.emptyMessageCallback)
-				 .then(convertPermissions)
 				 .catch(logger.errorCallback);
 		}
 
@@ -61,17 +58,6 @@
 			 .then(logger.successCallback)
 			 .catch(logger.errorCallback);
 		};
-
-		//private methods
-		function convertPermissions(response) {
-		    if ($.isArray(response)) {
-		        response.map(function (group) {
-		            group.permissions = permissionAdapter.toPermission(group.permissions);
-		        });
-		    } else
-		        response.permissions = permissionAdapter.toPermission(response.permissions);
-		    return response;
-		}
 
 	}
 })(window.angular);

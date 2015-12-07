@@ -14,17 +14,18 @@ namespace NDDigital.DiarioAcademia.WebApi.Filters
 {
     public class GrouperAuthorizeAttribute : AuthorizeAttribute
     {
-        private IAuthorizationService _authservice;
+        private IClaimService _authservice;
 
         private List<string> Permissions { get; set; }
         public bool Basic { get; set; }
 
         public GrouperAuthorizeAttribute()
         {
-            _authservice = new AuthorizationService(
+            _authservice = new ClaimService(
                 Injection.Get<IGroupRepository>(),
                 Injection.Get<IPermissionRepository>(),
                 Injection.Get<IAccountRepository>(),
+                Injection.Get<IAuthorizationRepository>(),
                 Injection.Get<IAuthUnitOfWork>()
                 );
         }

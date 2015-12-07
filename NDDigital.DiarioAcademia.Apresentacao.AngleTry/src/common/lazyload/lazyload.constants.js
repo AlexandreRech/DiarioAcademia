@@ -45,6 +45,10 @@
                }, {
                    name: 'app.permission',
                    files: [root + 'common/permission/permission.controller.js']
+               },
+               {
+                   name: 'app.authorization',
+                   files: [root + 'common/authorization/controllers/authorization-list.controller.js']
                }, {
                    name: 'app.group',
                    files: [root + 'features/group/controllers/group-list.controller.js',

@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Entities
 {
-    [GrouperAuthorize(Claim.Turma)]
+    [GrouperAuthorize(PermissionSpec.Turma)]
     public class TurmaController : BaseEntityController
     {
         private  readonly ITurmaService _turmaService;
@@ -46,7 +46,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Entities
         }
 
         // DELETE: api/Turma/5
-        [GrouperAuthorize(Claim.Turma_Delete)]
+        [GrouperAuthorize(PermissionSpec.Turma_Delete)]
         public IHttpActionResult Delete(int id)
         {
             _turmaService.Delete(id);

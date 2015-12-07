@@ -6,6 +6,8 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Contracts
 {
     public interface IPermissionRepository : IRepository<Permission>
     {
+        void checkPermissions(string[] permissions);
+
         IList<Permission> GetByGroup(int groupId);
 
         IList<Permission> GetAllSpecific(string[] permissions);

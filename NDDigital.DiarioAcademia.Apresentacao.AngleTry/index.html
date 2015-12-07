@@ -107,8 +107,8 @@
     <script src="/src/common/layout/layout.module.js"></script>
     <script src="/src/common/lazyload/lazyload.module.js"></script>
     <script src="/src/common/logger/logger.module.js"></script>
+    <script src="/src/common/metadata/metadata.module.js"></script>
     <script src="/src/common/ndd-security/ndd-security.module.js"></script>
-    <script src="/src/common/permission/permission.module.js"></script>
     <script src="/src/common/preloader/preloader.module.js"></script>
     <script src="/src/common/routes/routes.module.js"></script>
     <script src="/src/common/settings/settings.module.js"></script>
@@ -158,23 +158,23 @@
     <!--inject:factory-->
     <script src="/src/common/authentication/authInterceptor.factory.js"></script>
     <script src="/src/common/authorization/authorization.factory.js"></script>
+    <script src="/src/common/authorization/authoutil.factory.js"></script>
     <script src="/src/common/automapper/automapper.factory.js"></script>
     <script src="/src/common/changes/changes.factory.js"></script>
-    <script src="/src/common/permission/permission.factory.js"></script>
     <!--endinject-->
 
     <!--inject:adapter-->
-    <script src="/src/common/permission/permission.adapter.js"></script>
+    <script src="/src/common/authorization/authorization.adapter.js"></script>
     <script src="/src/features/aluno/aluno.adapter.js"></script>
     <script src="/src/features/chamada/chamada.adapter.js"></script>
     <!--endinject-->
 
     <!--inject:service-->
     <script src="/src/common/authentication/authentication.service.js"></script>
+    <script src="/src/common/authorization/authorization.service.js"></script>
     <script src="/src/common/cep/cep.service.js"></script>
     <script src="/src/common/logger/logger.service.js"></script>
-    <script src="/src/common/permission/metadata.service.js"></script>
-    <script src="/src/common/permission/permission.service.js"></script>
+    <script src="/src/common/metadata/metadata.service.js"></script>
     <script src="/src/common/utils/browser.service.js"></script>
     <script src="/src/common/utils/utils.service.js"></script>
     <script src="/src/components/navsearch/navsearch.service.js"></script>
@@ -189,9 +189,9 @@
     
     <!--inject:controller-->
     <script src="/src/common/layout/shell.controller.js"></script>
-    <script src="/src/common/permission/permission.controller.js"></script>
     <script src="/src/components/sidebar/sidebar.block.controller.js"></script>
     <script src="/src/components/sidebar/sidebar.controller.js"></script>
+    <script src="/src/common/authorization/controllers/authorization-list.controller.js"></script>
     <script src="/src/features/group/controllers/group-create.controller.js"></script>
     <script src="/src/features/group/controllers/group-edit.controller.js"></script>
     <script src="/src/features/group/controllers/group-list.controller.js"></script>
@@ -203,8 +203,8 @@
 
     <!--inject:routes-->
     <script src="/src/common/authentication/authentication.routes.js"></script>
+    <script src="/src/common/authorization/authorization.routes.js"></script>
     <script src="/src/common/layout/layout.routes.js"></script>
-    <script src="/src/common/permission/permission.routes.js"></script>
     <script src="/src/features/aluno/aluno.routes.js"></script>
     <script src="/src/features/aula/aula.routes.js"></script>
     <script src="/src/features/chamada/chamada.routes.js"></script>

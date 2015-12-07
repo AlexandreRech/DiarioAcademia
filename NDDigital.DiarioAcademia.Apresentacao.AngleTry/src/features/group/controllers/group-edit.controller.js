@@ -2,9 +2,9 @@
     angular.module('app.group')
         .controller('managerGroupEditController', managerGroupEditController);
 
-    managerGroupEditController.$inject = ['groupService', 'permissionsService', '$state', '$stateParams', 'logger',  "$translate", "SweetAlert"];
+    managerGroupEditController.$inject = ['groupService', '$state', '$stateParams', 'logger',  "$translate", "SweetAlert"];
 
-    function managerGroupEditController(groupService, permissionsService, $state, $stateParams, log, $translate, SweetAlert) {
+    function managerGroupEditController(groupService, $state, $stateParams, log, $translate, SweetAlert) {
         var vm = this;
         vm.group = [];
         vm.hasChange = false;;

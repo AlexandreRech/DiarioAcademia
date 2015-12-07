@@ -9,12 +9,12 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Configurations
         {
             ToTable("TBGroup");
 
-            HasMany(x => x.Permissions)
+            HasMany(x => x.Authorizations)
                 .WithMany().Map(x =>
                 {
                     x.MapLeftKey("Group_Id");
-                    x.MapRightKey("Permission_Id");
-                    x.ToTable("TBGroupPermission");
+                    x.MapRightKey("Authorization_Id");
+                    x.ToTable("TBGroupAuthorization");
                 });
         }
     }

@@ -12,6 +12,8 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         protected IGroupRepository GroupRepository;
         protected IAccountRepository AccountRepository;
         protected IUserRepository UserRepository;
+        protected IAuthorizationRepository AuthorizationRepository;
+
 
         [TestInitialize]
         public override void Initialize()
@@ -26,8 +28,9 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
             GroupRepository = new GroupRepository(Factory);
             AccountRepository = new AccountRepository(Factory);
             UserRepository = new UserRepository(IdentityUserStore, Factory);
+            AuthorizationRepository = new AuthorizationRepository(Factory);
 
-            AuthorizationService = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, Uow);
+            AuthorizationService = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
         }
     }
 }

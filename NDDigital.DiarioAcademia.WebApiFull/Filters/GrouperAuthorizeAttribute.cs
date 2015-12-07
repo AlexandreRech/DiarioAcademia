@@ -14,17 +14,18 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Filters
 {
     public class GrouperAuthorizeAttribute : AuthorizeAttribute
     {
-        private IAuthorizationService _authservice;
+        private IClaimService _authservice;
 
         private List<string> Permissions { get; set; }
         public bool Basic { get; set; }
 
         public GrouperAuthorizeAttribute()
         {
-            _authservice = new AuthorizationService(
+            _authservice = new ClaimService(
                 Injection.Get<IGroupRepository>(),
                 Injection.Get<IPermissionRepository>(),
                 Injection.Get<IAccountRepository>(),
+                Injection.Get<IAuthorizationRepository>(),
                 Injection.Get<IAuthUnitOfWork>()
                 );
         }
@@ -50,29 +51,21 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Filters
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
            // var xml = actionContext.Serialize();
-
             var result = base.IsAuthorized(actionContext);
             if (result)
             {
                 if (Basic)
                     return true;
-
                 ClaimsIdentity claimsIdentity;
                 var httpContext = HttpContext.Current;
                 if (!(httpContext.User.Identity is ClaimsIdentity))
                     return false;
-
                 claimsIdentity = httpContext.User.Identity as ClaimsIdentity;
-
                 var subIdClaims = claimsIdentity.FindFirst("user");
-
                 if (subIdClaims == null) return false;
-
                 var userSubId = subIdClaims.Value;
-
                 result = _authservice.IsAuthorized(userSubId, Permissions.ToArray());
             }
-
             return result;
         }
     }

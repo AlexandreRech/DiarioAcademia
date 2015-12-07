@@ -71,7 +71,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
             var permissao = ObjectBuilder.CreatePermission();
 
-            administrador.Permissions.Add(permissao);
+            administrador.Authorizations.First().Permissions.Add(permissao);
 
             Uow.Commit();
 

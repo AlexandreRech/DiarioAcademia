@@ -34,6 +34,8 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Orm.Modules
             Bind<IAccountRepository>().To<AccountRepository>().WithConstructorArgument(typeAuth, authFactory);
             Bind<IGroupRepository>().To<GroupRepository>().WithConstructorArgument(typeAuth, authFactory);
             Bind<IPermissionRepository>().To<PermissionRepository>().WithConstructorArgument(typeAuth, authFactory);
+            Bind<IAuthorizationRepository>().To<AuthorizationRepository>().WithConstructorArgument(typeAuth, authFactory);            
+
         }
     }
 }

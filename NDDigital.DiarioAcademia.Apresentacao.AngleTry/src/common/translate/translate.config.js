@@ -10,7 +10,7 @@
     function translateConfig($translateProvider) {
   
       $translateProvider.useStaticFilesLoader({
-          prefix : 'src/common/translate/i18n/',
+          prefix : 'src/common/translate/resources/',
           suffix : '.json'
       });
       $translateProvider.preferredLanguage('en');

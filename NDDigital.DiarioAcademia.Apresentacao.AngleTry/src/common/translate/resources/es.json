@@ -28,9 +28,9 @@
         "LIST_GROUPS": "Lista de grupos",
         "CREATE_GROUPS": "Crear grupo",
         "EDIT_GROUPS": "Edición de grupo",
-        "EDIT_GROUPS_PERMISSIONS": "Editar los permisos de los grupos",
+        "EDIT_GROUPS_AUTHORIZATIONS": "Editar las autorizaciones de los grupos",
 
-        "LIST_PERMISSIONS": "Lista de permisos",
+        "LIST_AUTHORIZATIONS": "Lista de Autorizaciones",
 
         "SETTINGS": "Configuración",
         "USER_OPTIONS": "Mi Cuenta",
@@ -64,8 +64,9 @@
         "CLASS_REGISTER": "Clase Registro",
         "MANAGER": "Gerente",
         "USER": "Usuario",
-        "GROUP": "Grupo",
-        "PERMISSIONS": "Permisos"
+        "GROUP": "Grupo",        
+        "AUTHORIZATION": "Autorización"
+
     },
     "action": {
         "CREATE": "Crear",
@@ -81,9 +82,7 @@
         "CREATE_CLASS_REGISTER": "Crear clase registro!",
         "REGISTER": "No registrado ? Únete ahora",
         "LOGIN": "Iniciar sesión",
-        "NOT_AVAILABLE":  "Servidor no está disponible ! Inténtalo de nuevo"
-
-
+        "MANAGER_AUTHORIZE": "Administrar autorizaciones"
     },
     "status": {
         "CLASS_REGISTER_NOT_CREATE": "Clase Registro no crea!",
@@ -101,7 +100,10 @@
         "ACTION_CANCELED": "Acción cancelada",
         "COMPLETED": "Terminado !",
         "NOT_AUTHORIZED": "No se le permite el acceso {{ resourceName }}",
-        "UNAUTHORIZED":  "Operación No Autorizada! No se le permite."
+        "UNAUTHORIZED": "Operación No Autorizada! No se le permite.",
+        "NOT_AVAILABLE": "Servidor no está disponible !",
+        "ERROR_LOGIN":  "Error de inicio de sesion !"
+
     },
     "home": {
         "MESSAGE_START": "Este proyecto es un esqueleto de la aplicación. Se puede utilizar para arrancar rápidamente turísticos proyectos webapp angulares y entorno de desarrollo para estos proyectos.",
@@ -148,8 +150,8 @@
         "GROUP_EDITED": "Con éxito actualizada grupo!",
         "GROUP_NOT_EDITED": "No se han guardado los cambios de grupo!",
 
-        "PERMISSIONS_NOT_MODIFIED": "Permisos sin cambios!",
-        "PERMISSIONS_MODIFIED": "Permisos modificados!"
+        "AUTHORIZATION_NOT_MODIFIED": "Autorización sin cambios!",
+        "AUTHORIZATION_MODIFIED": "Autorización modificados!"
 
     },
     "confirm": {
@@ -179,7 +181,7 @@
         "CONFIRM_CREATE_GROUP": "¿Quieres crear el grupo {{groupname}} ?",
         "CONFIRM_EDIT_GROUP": "Guarde los cambios realizados en el grupo {{groupname}} ?",
 
-        "CONFIRM_MODIFY_PERMISSIONS": "¿Quieres modificar los permisos de la Academia Daily ?"
+        "CONFIRM_MODIFY_AUTHORIZATION": "¿Quieres modificar los autorizaciones de la Academia Daily ?"
     },
     "filter": {
         "permission": {
@@ -190,7 +192,7 @@
             "CLASS_REGISTER": "Clase Registro",
             "LESSON": "Lección",
             "GROUP": "Grupo",
-            "PERMISSION": "Permisos"
+            "AUTHORIZE": "Autorización"
         }
     }
 }

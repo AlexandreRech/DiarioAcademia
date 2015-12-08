@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using NDDigital.Extensions;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 
 namespace NDDigital.DiarioAcademia.WebApi.Filters
 {
@@ -25,6 +26,7 @@ namespace NDDigital.DiarioAcademia.WebApi.Filters
                 Injection.Get<IGroupRepository>(),
                 Injection.Get<IPermissionRepository>(),
                 Injection.Get<IAccountRepository>(),
+                Injection.Get<IClaimRepository>(),
                 Injection.Get<IAuthUnitOfWork>()
                 );
         }

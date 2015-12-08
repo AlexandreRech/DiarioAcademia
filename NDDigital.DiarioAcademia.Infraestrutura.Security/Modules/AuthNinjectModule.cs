@@ -19,6 +19,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Modules
             Bind<IAccountRepository>().To<AccountRepository>().WithConstructorArgument("factory", factory);
             Bind<IGroupRepository>().To<GroupRepository>().WithConstructorArgument("factory", factory);
             Bind<IPermissionRepository>().To<PermissionRepository>().WithConstructorArgument("factory", factory);
+            Bind<IClaimRepository>().To<ClaimRepository>().WithConstructorArgument("factory", factory);            
             Bind<IUserStore<User>>().To<UserStore<User>>();
         }
     }

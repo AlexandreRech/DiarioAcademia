@@ -1,8 +1,8 @@
-﻿<ndd-head title="{{'header.LIST_PERMISSIONS' | translate}}"></ndd-head>
+﻿<ndd-head title="{{'header.LIST_AUTHORIZATIONS' | translate}}"></ndd-head>
 <div class="container-user">
     <div class="row clear-padding">
         <div class="col-xs-12"><br /></div>
-      
+
         <button class="btn btn-danger" ng-click="vm.modifyAll(false)" ng-disabled="vm.showRoutes.length <= 0">
             <i class="fa fa-minus-square-o"></i>
             <span>{{'action.CLEAN_ALL' | translate}}</span>
@@ -17,7 +17,7 @@
         </button>
     </div>
     <br />
-   <div class="row">
+    <div class="row">
         <hr />
         <div class="col-md-4 clear-padding col-grid" ng-repeat="filter in vm.filters" ng-show="vm.permission[filter].length">
             <div class="panel panel-primary text-center panel-fixed" ng-class="{'panel-success': vm.verifyPanelSuccess(filter)}">
@@ -26,7 +26,7 @@
                     <b class="text-capitalize">{{ ('filter.permission.' + filter) | translate}}</b>
                 </div>
                 <div class="panel-body">
-                    <ndd-group-checkbox array="vm.permission[filter]" compare="vm.showRoutes" 
+                    <ndd-group-checkbox array="vm.permission[filter]" compare="vm.showRoutes"
                                         method="vm.compareState" callback="vm.onchange"></ndd-group-checkbox>
                 </div>
             </div>

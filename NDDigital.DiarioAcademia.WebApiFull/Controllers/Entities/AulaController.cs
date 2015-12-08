@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Entities
 {
-    [GrouperAuthorize(Claim.Aula)]
+    [GrouperAuthorize(PermissionSpec.Aula)]
     public class AulaController : BaseEntityController
     {
         private AulaService _aulaService;

@@ -19,7 +19,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         protected EntityFrameworkFactory Factory;
         protected IdentityUserStore IdentityUserStore;
 
-        protected IAuthorizationService AuthorizationService;
+        protected IClaimService AuthorizationService;
 
         #endregion Constructor Utilities
 

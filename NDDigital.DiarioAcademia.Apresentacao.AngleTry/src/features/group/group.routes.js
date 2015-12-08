@@ -37,7 +37,7 @@
                 resolve: helper.resolveFor('app.group')
             })
             .state('app.group.permissionsEdit', {
-                url: '/group/edit/permissions/:groupId',
+                url: '/edit/permissions/:groupId',
                 templateUrl: 'src/features/group/views/group-permission-edit.html',
                 controller: "managerGroupPermissionEditController as vm",
                 resolve: helper.resolveFor('app.group')

@@ -3,7 +3,7 @@
     'use strict';
 
     //using
-    shellController.$inject = ['$rootScope', '$state', 'autheService', 'authoFactory', 'permissions.factory'];
+    shellController.$inject = ['$rootScope', '$state', 'autheService', 'authoFactory'];
 
     //namespace
     angular
@@ -11,7 +11,7 @@
         .controller('shellController', shellController);
 
     //class
-    function shellController($rootScope, $state, autheService, authoFactory, permissionFactory) {
+    function shellController($rootScope, $state, autheService, authoFactory) {
         var self = this;
         self.authentication = {};
 
@@ -42,7 +42,7 @@
         };
 
         self.goToParentState = function (state) {
-            var toState = permissionFactory.getByName(self.authorization.permissions, state);
+            var toState = authoFactory.getByName(self.authorization.permissions, state);
             if (toState)
                 $state.go(toState);
         }

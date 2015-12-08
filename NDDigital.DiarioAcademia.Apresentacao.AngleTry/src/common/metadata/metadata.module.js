@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.permission', []);
+        .module('app.metadata', []);
 })();

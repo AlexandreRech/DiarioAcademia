@@ -71,9 +71,18 @@
   <ItemGroup>
     <Content Include="gulpfile.js" />
     <Content Include="src\common\authentication\authentication.service.js" />
+    <Content Include="src\common\authorization\authorization.adapter.js" />
     <Content Include="src\common\authorization\authorization.factory.js" />
     <Content Include="src\common\authorization\authorization.module.js" />
     <Content Include="src\common\authorization\authorization.run.js" />
+    <Content Include="src\common\authorization\services\authorization.service.js" />
+    <Content Include="src\common\authorization\authoutil.factory.js" />
+    <Content Include="src\common\authorization\services\claim.service.js" />
+    <Content Include="src\common\authorization\controllers\claim-list.controller.js" />
+    <Content Include="src\common\authorization\authorization.routes.js" />
+    <Content Include="src\common\metadata\metadata.module.js" />
+    <Content Include="src\common\metadata\metadata.service.js" />
+    <Content Include="src\common\authorization\views\claim-list.html" />
     <Content Include="src\common\automapper\automapper.module.js" />
     <Content Include="src\common\automapper\automapper.factory.js" />
     <Content Include="src\common\cep\cep.module.js" />
@@ -117,7 +126,7 @@
     <Content Include="src\common\templates\components\user-profile.html" />
     <Content Include="src\common\translate\translate.constants.js" />
     <Content Include="src\content\component\ngwig.scss" />
-    <Content Include="src\common\permission\permissions.json" />
+    <Content Include="src\common\authorization\claims.json" />
     <None Include="src\content\component\switcher.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\features\aluno\aluno.adapter.js" />
@@ -162,13 +171,6 @@
     <Content Include="src\features\group\views\group-edit.html" />
     <Content Include="src\features\group\views\group-list.html" />
     <Content Include="src\features\group\views\group-permission-edit.html" />
-    <Content Include="src\common\permission\compare-state.factory.js" />
-    <Content Include="src\common\permission\permission.controller.js" />
-    <Content Include="src\common\permission\permission-list.html" />
-    <Content Include="src\common\permission\permission.routes.js" />
-    <Content Include="src\common\permission\permission.factory.js" />
-    <Content Include="src\common\permission\permission.module.js" />
-    <Content Include="src\common\permission\permission.service.js" />
     <Content Include="src\features\user\controllers\user-edit-group.controller.js" />
     <Content Include="src\features\user\controllers\user-edit.controller.js" />
     <Content Include="src\features\user\controllers\user-list.controller.js" />
@@ -206,8 +208,8 @@
     <Content Include="src\images\language\pt-active.png" />
     <Content Include="src\images\language\pt.png" />
     <Content Include="src\vendor.json" />
-    <Content Include="src\common\translate\i18n\en.json" />
-    <Content Include="src\common\translate\i18n\es.json" />
+    <Content Include="src\common\translate\resources\en.json" />
+    <Content Include="src\common\translate\resources\es.json" />
     <None Include="src\content\component\dashboard.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.ttf" />
@@ -217,7 +219,7 @@
     <None Include="src\content\component\table.scss" />
     <None Include="src\content\component\panel.scss" />
     <None Include="src\content\component\language-button.scss" />
-    <Content Include="src\common\translate\i18n\pt.json" />
+    <Content Include="src\common\translate\resources\pt.json" />
     <Content Include="src\content\layout\layout-app.scss" />
     <Content Include="src\content\component\tables\table.scss" />
     <None Include="src\content\layout\manager.scss" />

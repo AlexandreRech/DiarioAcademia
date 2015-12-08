@@ -3,10 +3,10 @@
 	angular.module('app.user')
 		.controller('managerUserEditGroupController', managerUserEditGroupController);
 
-	managerUserEditGroupController.$inject = ['userService', 'groupService', "$stateParams", '$translate', 'SweetAlert'];
+	managerUserEditGroupController.$inject = ['userService', 'groupService', "$stateParams", '$translate', 'SweetAlert', '$state'];
 
 
-	function managerUserEditGroupController(userService, groupService, $stateParams, $translate, SweetAlert) {
+	function managerUserEditGroupController(userService, groupService, $stateParams, $translate, SweetAlert, $state) {
 		var vm = this;
 		vm.hasChange = false;
 		vm.changes = [];
@@ -62,6 +62,7 @@
 			saveChanges().then(function () {
 				SweetAlert.swal($translate.instant('status.SUCCESS'),
 							  $translate.instant('info.USER_EDITED'), "success");
+				$state.go('app.user.list');
 			});
 		}
 

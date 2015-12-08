@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using NDDigital.Extensions;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Filters
 {
@@ -25,6 +26,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Filters
                 Injection.Get<IGroupRepository>(),
                 Injection.Get<IPermissionRepository>(),
                 Injection.Get<IAccountRepository>(),
+                Injection.Get<IClaimRepository>(),
                 Injection.Get<IAuthUnitOfWork>()
                 );
         }
@@ -50,29 +52,21 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Filters
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
            // var xml = actionContext.Serialize();
-
             var result = base.IsAuthorized(actionContext);
             if (result)
             {
                 if (Basic)
                     return true;
-
                 ClaimsIdentity claimsIdentity;
                 var httpContext = HttpContext.Current;
                 if (!(httpContext.User.Identity is ClaimsIdentity))
                     return false;
-
                 claimsIdentity = httpContext.User.Identity as ClaimsIdentity;
-
                 var subIdClaims = claimsIdentity.FindFirst("user");
-
                 if (subIdClaims == null) return false;
-
                 var userSubId = subIdClaims.Value;
-
                 result = _authservice.IsAuthorized(userSubId, Permissions.ToArray());
             }
-
             return result;
         }
     }

@@ -1,16 +1,16 @@
 ﻿
-<ndd-head title="{{'entities.PERMISSIONS' | translate}} de {{vm.group.name}}"></ndd-head>
+<ndd-head title="{{'entities.AUTHORIZATION' | translate}}: {{vm.group.name}}"></ndd-head>
 
 
 <div ng-class="{'disabled': vm.group.isAdmin}">
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6 clear-padding">
-            <ndd-group-checkbox array="vm.permissions" compare="vm.group.permissions" method="vm.comparePermissions" callback="vm.onchange"></ndd-group-checkbox>
+            <ndd-group-checkbox array="vm.claims" compare="vm.group.claims" method="vm.compareAuthorizations" callback="vm.onchange"></ndd-group-checkbox>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 text-center clear-padding">
-            <h3 ng-hide="vm.permissions && vm.permissions.length > 0">Não há permissões cadastradas.</h3>
+            <h3 ng-hide="vm.claims && vm.claims.length > 0">Não há autorizações cadastradas.</h3>
         </div>
     </div>
     <div class="row">

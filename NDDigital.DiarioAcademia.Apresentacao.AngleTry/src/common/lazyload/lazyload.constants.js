@@ -34,7 +34,7 @@
                    name: 'app.chamada',
                    files: [root + 'features/chamada/chamada.controller.js']
                }, {
-                   name: 'app.auth',
+                   name: 'app.authentication',
                    files: [root + 'common/authentication/controllers/login.controller.js',
                            root + 'common/authentication/controllers/signup.controller.js']
                }, {
@@ -45,6 +45,10 @@
                }, {
                    name: 'app.permission',
                    files: [root + 'common/permission/permission.controller.js']
+               },
+               {
+                   name: 'app.authorization',
+                   files: [root + 'common/authorization/controllers/claim-list.controller.js']
                }, {
                    name: 'app.group',
                    files: [root + 'features/group/controllers/group-list.controller.js',

@@ -7,11 +7,11 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Entities
     {
         public string Name { get; set; }
         public bool IsAdmin { get; set; }
-        public List<Permission> Permissions { get; set; }
+        public List<Claim> Claims { get; set; }
 
         public Group()
         {
-            Permissions = new List<Permission>();
+            Claims = new List<Claim>();
         }
 
         public override string ToString()

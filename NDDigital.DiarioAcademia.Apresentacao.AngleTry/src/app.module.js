@@ -29,6 +29,7 @@
             'app.ndd-security',
             //common
             'app.common',
+            'app.metadata',
             'app.routes',
             'app.sidebar',
             'app.navsearch',
@@ -47,7 +48,6 @@
              //security
             'app.authorization',
             'app.authentication',
-            'app.permission',
             //features
             'app.user',
             'app.group',

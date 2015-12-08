@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NDDigital.DiarioAcademia.Aplicacao.Services;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Common;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Contracts;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories;
@@ -12,6 +13,8 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         protected IGroupRepository GroupRepository;
         protected IAccountRepository AccountRepository;
         protected IUserRepository UserRepository;
+        protected IClaimRepository ClaimRepository;
+
 
         [TestInitialize]
         public override void Initialize()
@@ -27,7 +30,8 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
             AccountRepository = new AccountRepository(Factory);
             UserRepository = new UserRepository(IdentityUserStore, Factory);
 
-            AuthorizationService = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, Uow);
+            ClaimRepository = new ClaimRepository(Factory);
+            AuthorizationService = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, ClaimRepository, Uow);
         }
     }
 }

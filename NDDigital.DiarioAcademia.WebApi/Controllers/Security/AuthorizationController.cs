@@ -1,4 +1,6 @@
-﻿using NDDigital.DiarioAcademia.Aplicacao.Services;
+﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
+using NDDigital.DiarioAcademia.Aplicacao.Services;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 using NDDigital.DiarioAcademia.WebApi.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApi.Filters;
 using System.Web.Http;
@@ -6,27 +8,31 @@ using System.Web.Http;
 namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
 {
     [RoutePrefix("api/authentication")]
-    [GrouperAuthorize(Claim.Manager)]
+    [GrouperAuthorize(PermissionSpec.Manager)]
     public class AuthorizationController : BaseSecurityController
     {
+        private IClaimService _claimservice;
         private IAuthorizationService _authservice;
+
 
         public AuthorizationController()
         {
-            _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, Uow);
+            _claimservice = new ClaimService(PermissionRepository, AuthorizationRepository, Uow);
+            _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
+        
         }
 
         [Route("addpermission/{groupId:int}")]
-        public IHttpActionResult AddPermissionsToGroup(int groupId, [FromBody]string[] permissions)
+        public IHttpActionResult AddPermissionsToGroup(int groupId, [FromBody]ClaimDTO[] permissions)
         {
-            _authservice.AddPermissionsToGroup(groupId, permissions);
+            _authservice.AddAuthorizationToGroup(groupId, permissions);
             return Ok();
         }
 
         [Route("removepermission/{groupId:int}")]
-        public IHttpActionResult RemovePermissionsToGroup(int groupId, [FromBody]string[] permissions)
+        public IHttpActionResult RemovePermissionsToGroup(int groupId, [FromBody]ClaimDTO[] permissions)
         {
-            _authservice.RemovePermissionsFromGroup(groupId, permissions);
+            _authservice.RemoveAuthorizationFromGroup(groupId, permissions);
             return Ok();
         }
 

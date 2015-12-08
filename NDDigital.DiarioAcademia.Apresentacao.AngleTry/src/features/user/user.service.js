@@ -9,11 +9,11 @@
 	   .service('userService', userService);
 
 	//class
-	function userService($http, logger, baseUrl, res) {
+	function userService($http, logger, baseUrl, res, permissionAdapter) {
 		var self = this;
 
 		var serviceUrl = baseUrl + "api/accounts/";
-		var serviceAuthenticationUrl = baseUrl + "api/authentication/";
+		var serviceAuthenticationUrl = baseUrl + "api/authorization/";
 
 		//public methods
 		self.getUsers = function () {
@@ -24,16 +24,19 @@
 
 		self.getUserById = function (id) {
 			return $http.get(serviceUrl + "user/" + id)
-				 .then(logger.successCallback);
+				 .then(logger.successCallback)
+				 .catch(logger.errorCallback);
+
 		};
 
 		self.getUserByUsername = function (username) {
 			return $http.get(serviceUrl + "user/username/" + username)
-				 .then(logger.emptyMessageCallback);
+				 .then(logger.emptyMessageCallback)
+				 .catch(logger.errorCallback);
 		}
 
 		self.delete = function (user) {
-		    return $http.delete(serviceUrl + "user/" + user.id)
+			return $http.delete(serviceUrl + "user/" + user.id)
 					.then(logger.emptyMessageCallback);
 		};
 

@@ -11,6 +11,13 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Entities
             return PermissionId;
         }
 
+        public override bool Equals(object obj)
+        {
+            Permission permission = obj as Permission;
+            if (permission != null && permission.PermissionId == this.PermissionId)
+                return true;
+            return base.Equals(obj);
+        }
         public Permission()
         {
         }

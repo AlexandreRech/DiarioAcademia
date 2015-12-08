@@ -5,9 +5,7 @@
     adapter.$inject = ["automapper"];
 
     //namespace
-    angular
-        .module('app.aluno')
-        .factory('alunoAdapter', adapter);
+    angular.module('app.aluno').factory('alunoAdapter', adapter);
 
     //class
     function adapter(automapper) {

@@ -27,8 +27,8 @@
     };
 
 
-    runStateChangeStart.$inject = ['$rootScope', '$state', 'autheService', 'authoFactory', 'logger', 'permissions.factory', '$translate'];
-    function runStateChangeStart($rootScope, $state, autheService, authoFactory, logger, permissionFactory, $translate) {
+    runStateChangeStart.$inject = ['$rootScope', '$state', 'autheService', 'authoFactory', 'logger', 'authoUtilFactory', '$translate'];
+    function runStateChangeStart($rootScope, $state, autheService, authoFactory, logger, authoUtilFactory, $translate) {
         $rootScope.$on('$stateChangeStart',
            function (event, toState, toParams, fromState, fromParams) {
 
@@ -48,8 +48,8 @@
                if (authoFactory.authorization.isAdmin)
                    return true;
                var isAuthorized = authoFactory.authorization.isAuthorized(toState.name);
-               if (isAuthorized) return;
-               logNoAuthorized(permissionFactory, $translate, logger, toState);
+               if ( isAuthorized) return;
+               logNoAuthorized(authoUtilFactory, $translate, logger, toState);
                event.preventDefault();
                $state.go('login');
            });
@@ -57,17 +57,8 @@
 
 
     // Helpers
-    function getModule(modules, routeTo) {
-        for (var module in modules) {
-            var routes = modules[module].routes; // routes of module  
-            if (routes && routes.contains(routeTo))
-                return modules[module].name;
-        }
-    }
-
-
-    function logNoAuthorized(permissionFactory, $translate, logger, toState) {
-        var permissionRequired = permissionFactory.getStateByName(toState.name || toState.to);
+    function logNoAuthorized(authoUtilFactory, $translate, logger, toState) {
+        var permissionRequired = authoUtilFactory.getByName(toState.name || toState.to);
         logger.warning($translate.instant('status.NOT_AUTHORIZED', {
             resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
         }));

@@ -3,8 +3,9 @@ using Microsoft.Owin.Security.OAuth;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Common;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories;
-using System.Security.Claims;
+using Claim = System.Security.Claims.Claim;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace NDDigital.DiarioAcademia.WebApi.Providers
 {

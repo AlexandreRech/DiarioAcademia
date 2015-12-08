@@ -2,34 +2,36 @@
 	'use strict';
 
 	//using
-	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource', '$state'];
+	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource', 'authoAdapter'];
 
 	//namespace
 	angular.module('app.group')
 	   .service('groupService', groupService);
 
 	//class
-	function groupService($http, logger, baseUrl, res, $state) {
+	function groupService($http, logger, baseUrl, res, authoAdapter) {
 		var self = this;
 		var serviceUrl = baseUrl + "api/group/";
-		var serviceAuthenticationUrl = baseUrl + "api/authentication/";
 
 		//public methods
 		self.getGroups = function () {
 			return $http.get(serviceUrl)
 				 .then(logger.successCallback)
+				 .then(convertClaims)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getGroupById = function (id) {
 			return $http.get(serviceUrl + id)
 				 .then(logger.successCallback)
+				 .then(convertClaims)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getGroupByUsername = function (username) {
 			return $http.get(serviceUrl + '?username=' + username)
 				 .then(logger.emptyMessageCallback)
+				 .then(convertClaims)
 				 .catch(logger.errorCallback)
 		};
 
@@ -47,54 +49,30 @@
 		};
 
 		self.delete = function (group) {
-			logger.danger(res.deleted_successful, group, "Delete");
 			return $http.delete(serviceUrl + group.id)
 			   .then(logger.emptyMessageCallback)
+			   .then(function (response) {
+				   logger.danger(res.deleted_successful, group, "Delete");
+				   return response;
+			   })
 			   .catch(logger.errorCallback);
 		};
 
-		//permissions
-		self.addPermission = function (group, permissions) {
-			var permissionsIds = getPermissionId(permissions);
-			return $http.post(serviceAuthenticationUrl + "addPermission/" + group.id, permissionsIds)
-			 .then(logger.successCallback)
-			 .catch(logger.errorCallback);;
-		};
-
-		self.removePermission = function (group, permissions) {
-			var permissionsIds = getPermissionId(permissions);
-			return $http.post(serviceAuthenticationUrl + "removePermission/" + group.id, permissionsIds)
-			 .then(logger.successCallback)
-			 .catch(logger.errorCallback);;
-		};
-
-		self.checkPermission = function (username, state) {
-			return $http.get(serviceUrl + "?username=" + username + "&state=" + state)
-				.then(logger.successCallback)
-				.catch(logger.errorCallback);
-		};
-
-		self.extractPermissions = function (groups) {
-			var permissions = [];
-			for (var i in groups) {
-				var group = groups[i];
-				for (var j in group.permissions) {
-					var name = group.permissions[j].name;
-					if (name)
-						if (permissions.indexOf(name) < 0) permissions.push(name);
+		//private metthods
+		function convertClaims(data) {
+			if ($.isArray(data)) {
+				for (var i = 0; i < data.length; i++) {
+					convertClaim(data[i]);
 				}
-			}
-			return permissions;
-		}
+			} else
+			    convertClaim(data);
+			return data;
+		};
 
-		//private methods
-		function getPermissionId(array) {
-			var pemissionsIds = [];
-			for (var i = 0; i < array.length; i++) {
-				if (array[i].permissionId)
-					pemissionsIds.push(array[i].permissionId);
+		function convertClaim(group) {
+			for (var i = 0; i < group.claims.length; i++) {
+				group.claims[i] = authoAdapter.toAuthorization(group.claims[i]);
 			}
-			return pemissionsIds;
 		}
 	}
 })();

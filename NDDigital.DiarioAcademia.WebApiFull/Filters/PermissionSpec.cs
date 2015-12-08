@@ -1,6 +1,7 @@
 ﻿namespace NDDigital.DiarioAcademia.WebApiFull.Filters
 {
-    public static class Claim
+
+    public static class PermissionSpec
     {
         #region Aluno
 
@@ -82,7 +83,7 @@
 
         public const string Account_Get = ".ACCOUNT_GET";
         public const string Account_Create = ".ACCOUNT_CREATE";
-        public const string Account_Edit = ".ACCOUNT_EDIT";
+        public const string Account_Edit = ".ACCOUNT_PUT";
         public const string Account_Delete= ".ACCOUNT_DELETE";
 
         #endregion User

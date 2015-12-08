@@ -3,11 +3,12 @@ using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using NDDigital.DiarioAcademia.WebApiFull.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApiFull.Filters;
 using System;
+using System.Linq;
 using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
 {
-    [GrouperAuthorize(Claim.Group)]
+    [GrouperAuthorize(PermissionSpec.Group)]
     public class GroupController : BaseSecurityController
     {
         private IGroupService _groupService;
@@ -23,7 +24,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         {
             var list = _groupService.GetAll();
 
-            return Ok(list);
+            return Ok(list.Select(g => TheModelFactory.Create(g)).ToList());      
         }
 
         // GET: api/Group/1
@@ -31,7 +32,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         {
             var group = _groupService.GetById(id);
 
-            return Ok(group);
+            return Ok(TheModelFactory.Create(group));
         }
 
         // GET: api/Group?username=username
@@ -40,14 +41,15 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         {
             var list = _groupService.GetByUser(username);
 
-            return Ok(list);
+            return Ok(list.Select(g => TheModelFactory.Create(g)));      
         }
 
         // POST: api/Group
         public IHttpActionResult Post([FromBody]Group value)
         {
             _groupService.Add(value);
-            return Ok(value);
+            return Ok(TheModelFactory.Create(value));
+
         }
 
         // PUT: api/Group/5
@@ -57,7 +59,6 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
             Group group =  _groupService.GetById(id);
             group.Name = value.Name;
             group.IsAdmin = value.IsAdmin;
-            //group.Permissions = value.Permissions;
             try
             {
                 _groupService.Update(group);
@@ -68,7 +69,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
                 throw ex;
             }
 
-            return Ok(value);
+            return Ok(TheModelFactory.Create(value));
         }
 
         // DELETE: api/Group/5

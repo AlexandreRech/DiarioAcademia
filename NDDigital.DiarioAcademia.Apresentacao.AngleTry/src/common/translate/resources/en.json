@@ -27,15 +27,15 @@
         "LIST_GROUPS": "List of Groups",
         "CREATE_GROUPS": "Create Group",
         "EDIT_GROUPS": "Edit Group",
-        "EDIT_GROUPS_PERMISSIONS": "Change Permissions of Group",
+        "EDIT_GROUPS_AUTHORIZATIONS": "Change Authorizations of Group",
 
-        "LIST_PERMISSIONS": "List of Permissions",
+        "LIST_AUTHORIZATIONS": "List of Authorizations",
 
         "SETTINGS": "Settings",
         "USER_OPTIONS": "My Account",
         "LANGUAGE": "Language",
         "THEMES": "Themes",
-        "LOGIN":  "Please login to get started."
+        "LOGIN": "Please login to get started."
 
     },
     "topbar": {
@@ -64,7 +64,7 @@
         "MANAGER": "Manager",
         "USER": "User",
         "GROUP": "Group",
-        "PERMISSIONS": "Permissions"
+        "AUTHORIZATION": "Authorization"
     },
     "action": {
         "CREATE": "Create",
@@ -79,7 +79,9 @@
         "OK": "Ok",
         "CREATE_CLASS_REGISTER": "Create Class Register !",
         "REGISTER": "Not Registered ? Join now",
-        "LOGIN": "Login"
+        "LOGIN": "Login",
+        "MANAGER_AUTHORIZE": "Manage Authorizations"
+
     },
     "status": {
         "CLASS_REGISTER_NOT_CREATE": "Class Register not create !",
@@ -96,9 +98,10 @@
         "SUCCESS": "Success",
         "ACTION_CANCELED": "Action Canceled",
         "COMPLETED": "Concluded !",
-        "NOT_AUTHORIZED": "You do not have permission to access {{ resourceName }}",
-        "NOT_AVAILABLE": "Server is not available ! Try again",
-        "UNAUTHORIZED":  "Unauthorized Operation! You do not have permission."
+        "NOT_AUTHORIZED": "You do not have authorization to access {{ resourceName }}",
+        "NOT_AVAILABLE": "Server is not available !",
+        "UNAUTHORIZED": "Unauthorized Operation! You do not have authorization.",
+        "ERROR_LOGIN":  "Login Failed !"
     },
     "home": {
         "MESSAGE_START": "This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.",
@@ -144,8 +147,8 @@
         "GROUP_EDITED": "Successfully updated group !",
         "GROUP_NOT_EDITED": "Group changes were not saved !",
 
-        "PERMISSIONS_NOT_MODIFIED": "Permissions unchanged !",
-        "PERMISSIONS_MODIFIED": "Permissions modified !"
+        "AUTHORIZATION_NOT_MODIFIED": "Authorization unchanged !",
+        "AUTHORIZATION_MODIFIED": "Authorization modified !"
 
     },
     "confirm": {
@@ -175,7 +178,7 @@
         "CONFIRM_CREATE_GROUP": "Want to create the group {{groupname}} ?",
         "CONFIRM_EDIT_GROUP": "Save changes made to the group {{groupname}} ?",
 
-        "CONFIRM_MODIFY_PERMISSIONS": "Want to modify the permissions of the Daily Academy ?"
+        "CONFIRM_MODIFY_AUTHORIZATION": "Want to modify the authorizations of the Daily Academy ?"
     },
     "filter": {
         "permission": {
@@ -186,7 +189,7 @@
             "CLASS_REGISTER": "Class Register",
             "LESSON": "Lesson",
             "GROUP": "Group",
-            "PERMISSION": "Permission"
+            "AUTHORIZE": "Authorization"
         }
     }
 

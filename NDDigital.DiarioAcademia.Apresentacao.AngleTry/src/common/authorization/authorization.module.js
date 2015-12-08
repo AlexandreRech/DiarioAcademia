@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.authorization', ['app.permission']);
+        .module('app.authorization', ['app.metadata']);
 })();

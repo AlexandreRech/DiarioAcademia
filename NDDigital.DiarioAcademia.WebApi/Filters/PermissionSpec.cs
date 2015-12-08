@@ -1,6 +1,6 @@
 ﻿namespace NDDigital.DiarioAcademia.WebApi.Filters
 {
-    public static class Claim
+    public static class PermissionSpec
     {
         #region Aluno
 

@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Profiles\AulaProfiles.cs" />
+    <Compile Include="Profiles\ClaimProfiles.cs" />
     <Compile Include="Profiles\TurmaProfiles.cs" />
     <Compile Include="Profiles\AlunoProfiles.cs" />
     <Compile Include="Profiles\AutoMapperConfig.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Services\Entities\AulaService.cs" />
     <Compile Include="Services\Overview\OverviewService.cs" />
     <Compile Include="Services\Security\IAuthorizationService.cs" />
+    <Compile Include="Services\Security\IClaimService.cs" />
     <Compile Include="Services\Security\IAccountService.cs" />
     <Compile Include="Services\Security\IPermissionService.cs" />
     <Compile Include="Services\Security\IUserService.cs" />

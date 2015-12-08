@@ -1,7 +1,10 @@
-﻿using NDDigital.DiarioAcademia.Infraestrutura.DAO.Common.Uow;
+﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
+using NDDigital.DiarioAcademia.Infraestrutura.DAO.Common.Uow;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Contracts;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace NDDigital.DiarioAcademia.Aplicacao.Services
 {
@@ -15,50 +18,50 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
     public class GroupService : IGroupService
     {
         private IUnitOfWork _uow;
-        private IGroupRepository _repo;
+        private IGroupRepository _groupRepository;
 
         public GroupService(IGroupRepository repo, IUnitOfWork uow)
         {
-            _repo = repo;
+            _groupRepository = repo;
             _uow = uow;
         }
 
         public void Add(Group obj)
         {
-            _repo.Add(obj);
+            _groupRepository.Add(obj);
             _uow.Commit();
         }
 
         public void Delete(int id)
         {
-            _repo.Delete(id);
+            _groupRepository.Delete(id);
             _uow.Commit();
         }
 
         public void Update(Group obj)
         {
-            _repo.Update(obj);
+            _groupRepository.Update(obj);
             _uow.Commit();
         }
 
         IList<Group> IService<Group>.GetAll()
         {
-            return _repo.GetAllIncluding(g => g.Permissions);
+            return _groupRepository.GetAllIncluding(g => g.Claims);
         }
 
         Group IService<Group>.GetById(int id)
         {
-            return _repo.GetByIdIncluding(id, g => g.Permissions);
+            return _groupRepository.GetByIdIncluding(id, g => g.Claims);
         }
 
         public IList<Group> GetByUser(string username)
         {
-            return _repo.GetByUser(username);
+            return _groupRepository.GetByUser(username);
         }
 
         public bool isAdmin(string username)
         {
-            return _repo.IsAdmin(username);
+            return _groupRepository.IsAdmin(username);
         }
     }
 }

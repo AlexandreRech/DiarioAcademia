@@ -12,6 +12,7 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Profiles
                 map.AddProfile(new TurmaProfiles());
                 map.AddProfile(new AlunoProfiles());
                 map.AddProfile(new AulaProfiles());
+                map.AddProfile(new ClaimProfiles());
             });
         }
     }

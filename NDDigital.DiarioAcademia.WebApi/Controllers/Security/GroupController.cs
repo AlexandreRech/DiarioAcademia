@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
 {
-    [GrouperAuthorize(Claim.Manager_Group)]
+    [GrouperAuthorize(PermissionSpec.Manager_Group)]
     public class GroupController : BaseSecurityController
     {
         private IGroupService _groupService;

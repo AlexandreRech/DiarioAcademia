@@ -244,7 +244,7 @@
     <Compile Include="Controllers\Entities\ChamadaController.cs" />
     <Compile Include="Controllers\Entities\TurmaController.cs" />
     <Compile Include="Controllers\Translate\LanguageController.cs" />
-    <Compile Include="Filters\Claim.cs" />
+    <Compile Include="Filters\PermissionSpec.cs" />
     <Compile Include="Filters\GrouperAuthorizeAttribute.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\ModelFactory.cs" />

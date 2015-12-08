@@ -7,7 +7,7 @@ using System.Web.Http;
 namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
 {
     [RoutePrefix("api/authentication")]
-    [GrouperAuthorize(Claim.Manager)]
+    [GrouperAuthorize(PermissionSpec.Manager)]
     public class AuthorizationController : BaseSecurityController
     {
         private IClaimService _authservice;

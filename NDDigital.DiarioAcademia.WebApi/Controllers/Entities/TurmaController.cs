@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace NDDigital.DiarioAcademia.WebApi.Controllers.Entities
 {
-    [GrouperAuthorize(Claim.Turma)]
+    [GrouperAuthorize(PermissionSpec.Turma)]
     public class TurmaController : BaseEntityController
     {
         private TurmaService _turmaService;

@@ -19,7 +19,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Models
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
 
-        public IList<ClaimDTO> Authorizations { get; set; }
+        public IList<ClaimDTO> Claims { get; set; }
     }
 
     public class CreateUserBindingModel

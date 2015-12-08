@@ -100,7 +100,8 @@
         "COMPLETED": "Concluded !",
         "NOT_AUTHORIZED": "You do not have authorization to access {{ resourceName }}",
         "NOT_AVAILABLE": "Server is not available !",
-        "UNAUTHORIZED": "Unauthorized Operation! You do not have authorization."
+        "UNAUTHORIZED": "Unauthorized Operation! You do not have authorization.",
+        "ERROR_LOGIN":  "Login Failed !"
     },
     "home": {
         "MESSAGE_START": "This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.",

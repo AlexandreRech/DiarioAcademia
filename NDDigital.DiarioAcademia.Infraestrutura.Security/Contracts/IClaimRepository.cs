@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Contracts
 {
-    public interface IAuthorizationRepository : IRepository<Claim>
+    public interface IClaimRepository : IRepository<Claim>
     {
         List<Claim> GetByGroup(int groupId);
 

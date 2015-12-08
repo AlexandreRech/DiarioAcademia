@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NDDigital.DiarioAcademia.Aplicacao.Services;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Common;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using NDDigital.DiarioAcademia.IntegrationTests.Common;
@@ -21,7 +22,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         // protected IdentityUserStore IdentityUserStore;
         protected UserStore<User> IdentityUserStore;
 
-        protected IClaimService AuthorizationService;
+        protected IAuthorizationService AuthorizationService;
 
         #endregion Constructor Utilities
 

@@ -31,5 +31,16 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Models
                 Email = appUser.Email,
             };
         }
+
+        public GroupReturnModel Create(Group appGroup)
+        {
+            return new GroupReturnModel()
+            {
+                Id = appGroup.Id,
+                Name = appGroup.Name,
+                IsAdmin = appGroup.IsAdmin,
+                Claims = appGroup.Claims.Select(a => a.Name).Distinct().ToArray()
+            };
+        }
     }
 }

@@ -46,12 +46,12 @@ namespace NDDigital.DiarioAcademia.Aplicacao.Services
 
         IList<Group> IService<Group>.GetAll()
         {
-            return _groupRepository.GetAllIncluding(g => g.Authorizations);
+            return _groupRepository.GetAllIncluding(g => g.Claims);
         }
 
         Group IService<Group>.GetById(int id)
         {
-            return _groupRepository.GetByIdIncluding(id, g => g.Authorizations);
+            return _groupRepository.GetByIdIncluding(id, g => g.Claims);
         }
 
         public IList<Group> GetByUser(string username)

@@ -23,7 +23,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Contexts
 
         public DbSet<Group> Groups { get; set; }
 
-        public DbSet<Claim> Authorizations { get; set; }
+        public DbSet<Claim> Claims { get; set; }
 
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Account> Accounts { get; set; }
@@ -41,7 +41,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Contexts
 
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new GroupConfiguration());
-            modelBuilder.Configurations.Add(new AuthorizationConfiguration());
+            modelBuilder.Configurations.Add(new ClaimConfiguration());
             modelBuilder.Configurations.Add(new PermissionConfiguration());
             modelBuilder.Configurations.Add(new AccountConfiguration());
         }

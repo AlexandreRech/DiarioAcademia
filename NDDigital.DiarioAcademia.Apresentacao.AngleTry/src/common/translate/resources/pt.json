@@ -95,7 +95,8 @@
         "ACTION_CANCELED": "Ação cancelada",
         "NOT_AUTHORIZED": "Você não tem autorização para acessar {{ resourceName }}",
         "NOT_AVAILABLE":  "Servidor não disponível !!",
-        "UNAUTHORIZED": "Operação não Autorizada! Você não tem autorização."
+        "UNAUTHORIZED": "Operação não Autorizada! Você não tem autorização.",
+        "ERROR_LOGIN":  "Login não realizado !"
     },
     "home": {
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",

@@ -16,7 +16,7 @@
         activate();
         function activate() {
             //Get list of authorizations
-            metadataService.getMetaDataAuthorization().then(function (results) {
+            metadataService.getMetaDataClaims().then(function (results) {
                 authorizations = results;
             });
         }

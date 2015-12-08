@@ -19,7 +19,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
             var list = PermissionRepository.GetAll();
 
-            Assert.AreEqual(5, list.Count);
+            Assert.AreEqual(9, list.Count);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
             var list = PermissionRepository.GetAll();
 
-            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(7, list.Count);
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
             var list = PermissionRepository.GetAll();
 
             Assert.IsNotNull(list);
-            Assert.AreEqual(4, list.Count);
+            Assert.AreEqual(8, list.Count);
         }
 
         [TestMethod]
@@ -71,7 +71,10 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
             var permissao = ObjectBuilder.CreatePermission();
 
-            administrador.Authorizations.First().Permissions.Add(permissao);
+            if (administrador.Claims.FirstOrDefault() == null)
+                administrador.Claims.Add(ObjectBuilder.CreateClaim());
+
+            administrador.Claims.First().Permissions.Add(permissao);
 
             Uow.Commit();
 
@@ -81,7 +84,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
             var allPermissions = PermissionRepository.GetAll();
 
-            Assert.AreEqual(5, allPermissions.Count);
+            Assert.AreEqual(11, allPermissions.Count);
         }
 
         [TestMethod]
@@ -92,7 +95,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Security
 
             var list = PermissionRepository.GetByUser(acc.Username);
 
-            Assert.AreEqual(4, list.Count);
+            Assert.AreEqual(8, list.Count);
         }
     }
 }

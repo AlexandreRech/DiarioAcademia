@@ -29,7 +29,7 @@
         };
 
         factory.toAuthorization = function (obj) {
-            var result = authoUtilFactory.getByName(obj.name);
+            var result = authoUtilFactory.getByName(obj.name || obj);
             if (obj.id)
                 result.id = obj.id;
             return result;

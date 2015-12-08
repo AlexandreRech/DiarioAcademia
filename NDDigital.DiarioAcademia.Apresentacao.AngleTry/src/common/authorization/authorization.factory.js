@@ -13,7 +13,7 @@
         var authorization = {
             isAuthorized: isAuthorized,
             role: null,
-            authorizations: []
+            claims: []
         };
 
 
@@ -35,27 +35,27 @@
                 return true;
             if (namePermission == "app.home")
                 return true;
-            return authoUtilFactory.containsByName(authorization.authorizations, namePermission);
+            return authoUtilFactory.containsByName(authorization.claims, namePermission);
         }
 
         function fillAuthoData() {
             var authoData = localStorageService.get(storageKeys.authoData);
             if (authoData) {
                 authorization.isAdmin = authoData.isAdmin;
-                authorization.authorizations = authoData.authorizations;
+                authorization.claims = authoData.claims;
             }
         };
 
-        function setAutheData(isAdmin, authorizations) {
+        function setAutheData(isAdmin, claims) {
             authorization.isAdmin = isAdmin;
-            authorization.authorizations = authorizations;
+            authorization.claims = claims;
             localStorageService.set(storageKeys.authoData, authorization);  
         }
 
         function clearAuthorize() {
             localStorageService.remove(storageKeys.authoData);
             authorization.isAdmin = false;
-            authorization.authorizations = undefined;
+            authorization.claims = undefined;
         };
     }
 

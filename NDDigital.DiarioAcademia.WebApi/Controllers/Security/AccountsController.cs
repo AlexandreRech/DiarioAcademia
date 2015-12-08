@@ -21,7 +21,7 @@ namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
 
         public AccountsController()
         {
-            _authservice = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
+            _authservice = new ClaimService(PermissionRepository, AuthorizationRepository, Uow);
             _permissionService = new PermissionService(PermissionRepository, Uow);
             _groupService = new GroupService(GroupRepository, Uow);
         }

@@ -1,5 +1,6 @@
 ﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
 using NDDigital.DiarioAcademia.Aplicacao.Services;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 using NDDigital.DiarioAcademia.Infraestrutura.Security.Entities;
 using NDDigital.DiarioAcademia.WebApiFull.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApiFull.Filters;
@@ -12,24 +13,28 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
     [GrouperAuthorize(PermissionSpec.Manager)]
     public class AuthorizationController : BaseSecurityController
     {
-        private IClaimService _authservice;
+        private IClaimService _claimservice;
+        private IAuthorizationService _authservice;
+
 
         public AuthorizationController()
         {
-            _authservice = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
+            _claimservice = new ClaimService(PermissionRepository, ClaimRepository, Uow);
+            _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, ClaimRepository, Uow);
+
         }
 
         // GET: api/authorization
         public IHttpActionResult Get()
         {
-            var list = _authservice.GetAll();
+            var list = _claimservice.GetAll();
             return Ok(list);
         }
 
         // GET: api/authorization/1
         public IHttpActionResult Get(int id)
         {
-            var group = _authservice.GetById(id);
+            var group = _claimservice.GetById(id);
 
             return Ok(group);
         }
@@ -39,7 +44,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         {
             foreach (var item in value)
             {
-                _authservice.Add(item);
+                _claimservice.Add(item);
                 
             }
             return Ok();
@@ -48,7 +53,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         // DELETE: api/authorization/5
         public IHttpActionResult Delete(int id)
         {
-            _authservice.Delete(id);
+            _claimservice.Delete(id);
             return Ok();
         }
 
@@ -58,7 +63,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
         {
             foreach (ClaimDTO item in authorizations)
             {
-                _authservice.Delete(item.Id);
+                _claimservice.Delete(item.Id);
             }
             return Ok();
         }

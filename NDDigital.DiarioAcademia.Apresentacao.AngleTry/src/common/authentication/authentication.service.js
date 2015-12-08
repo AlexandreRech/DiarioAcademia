@@ -55,7 +55,7 @@
                              //set authentication
                              localStorageService.set(storageKeys.autheData, authentication); 
                              //set authorization
-                             authoFactory.setAutheData(result.isAdmin, result.authorizations);
+                             authoFactory.setAutheData(result.isAdmin, result.claims);
                              $rootScope.$broadcast('login');
                              logger.success(res.WELCOME + " " + (authentication.userName));
                              deferred.resolve(response);

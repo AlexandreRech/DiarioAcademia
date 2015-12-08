@@ -75,13 +75,14 @@
     <Content Include="src\common\authorization\authorization.factory.js" />
     <Content Include="src\common\authorization\authorization.module.js" />
     <Content Include="src\common\authorization\authorization.run.js" />
-    <Content Include="src\common\authorization\authorization.service.js" />
+    <Content Include="src\common\authorization\services\authorization.service.js" />
     <Content Include="src\common\authorization\authoutil.factory.js" />
-    <Content Include="src\common\authorization\controllers\authorization-list.controller.js" />
+    <Content Include="src\common\authorization\services\claim.service.js" />
+    <Content Include="src\common\authorization\controllers\claim-list.controller.js" />
     <Content Include="src\common\authorization\authorization.routes.js" />
     <Content Include="src\common\metadata\metadata.module.js" />
     <Content Include="src\common\metadata\metadata.service.js" />
-    <Content Include="src\common\authorization\views\authorization-list.html" />
+    <Content Include="src\common\authorization\views\claim-list.html" />
     <Content Include="src\common\automapper\automapper.module.js" />
     <Content Include="src\common\automapper\automapper.factory.js" />
     <Content Include="src\common\cep\cep.module.js" />
@@ -125,7 +126,7 @@
     <Content Include="src\common\templates\components\user-profile.html" />
     <Content Include="src\common\translate\translate.constants.js" />
     <Content Include="src\content\component\ngwig.scss" />
-    <Content Include="src\common\authorization\authorizations.json" />
+    <Content Include="src\common\authorization\claims.json" />
     <None Include="src\content\component\switcher.scss" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\features\aluno\aluno.adapter.js" />

@@ -38,13 +38,13 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
         public IList<Permission> GetByGroup(int groupId)
         {
             var group = DataContext.Groups
-                .Include("Authorization")
+                .Include(g => g.Claims)
                 .Where(g => g.Id == groupId)
                 .FirstOrDefault();
             var permissions = new List<Permission>();
             if (group == null)
                 return permissions;
-            foreach (var autho in group.Authorizations)
+            foreach (var autho in group.Claims)
             {
                 foreach (var permission in autho.Permissions)
                 {
@@ -52,7 +52,6 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
                         permissions.Add(permission);
                 }
             }
-            //return group?.Permissions;  todo: c# 6
             return permissions;
         }
 
@@ -74,12 +73,12 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
 
                 foreach (var group in acc.Groups)
                 {
-                    var listAuthorizarion = DataContext.Groups.Include("Authorizations")
-                                        .Where(g => g.Id == group.Id).FirstOrDefault().Authorizations;
+                    var listAuthorizarion = DataContext.Groups.Include(g => g.Claims)
+                                        .Where(g => g.Id == group.Id).FirstOrDefault().Claims;
 
                     listAuthorizarion.ForEach((autho) =>
                     {
-                        var authorize = DataContext.Authorizations.Include("Permissions").Where(a => a.Id == autho.Id).FirstOrDefault();
+                        var authorize = DataContext.Claims.Include(a => a.Permissions).Where(a => a.Id == autho.Id).FirstOrDefault();
                         if (authorize != null)
                         {
                             list.AddRange(autho.Permissions);
@@ -101,7 +100,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
         {
             foreach (var permission in permissions)
             {
-                var listAutho = DataContext.Authorizations.Include(a => a.Permissions)
+                var listAutho = DataContext.Claims.Include(a => a.Permissions)
                     .Where(a => a.Permissions.Where(p => p.PermissionId == permission).ToList().Count > 0).ToList();
                 if (!listAutho.Any()) {
                     var perm = GetByPermissionId(permission);
@@ -110,6 +109,7 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
                 }
             }
         }
+
 
     }
 }

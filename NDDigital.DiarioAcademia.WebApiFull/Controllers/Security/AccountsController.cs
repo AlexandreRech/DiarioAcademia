@@ -15,14 +15,14 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
     [RoutePrefix("api/accounts")]
     public class AccountsController : BaseSecurityController
     {
-        private IClaimService _authservice;
+        private IClaimService _claimservice;
         private IPermissionService _permissionService;
         private IGroupService _groupService;
 
 
         public AccountsController()
         {
-            _authservice = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
+            _claimservice = new ClaimService(PermissionRepository, ClaimRepository, Uow);
             _permissionService = new PermissionService(PermissionRepository, Uow);
             _groupService = new GroupService(GroupRepository, Uow);
         }
@@ -56,7 +56,7 @@ namespace NDDigital.DiarioAcademia.WebApiFull.Controllers.Security
                 return NotFound();
             var model = TheModelFactory.Create(user);
             model.IsAdmin = _groupService.isAdmin(username);
-            model.Authorizations = _authservice.GetByUser(username);
+            model.Claims = _claimservice.GetByUser(username);
             return Ok(model);
         }
 

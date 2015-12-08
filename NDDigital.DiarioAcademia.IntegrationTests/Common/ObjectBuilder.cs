@@ -95,7 +95,7 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         {
             var group = new Group { Name = "Grupo " + Index, IsAdmin = _admin = !_admin };
 
-            if (full) group.Authorizations = CreateListAuthorizations();
+            if (full) group.Claims = CreateListClaim();
 
             return group;
         }
@@ -115,17 +115,17 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
             return new Permission(Index);
         }
 
-        public static Claim CreateAuthorization()
+        public static Claim CreateClaim()
         {
             return new Claim("app.autho" + Index, CreateListPermissions(2));
         }
 
-        public static List<Claim> CreateListAuthorizations(int count = 2)
+        public static List<Claim> CreateListClaim(int count = 2)
         {
             var list = new List<Claim>();
 
             for (int i = 0; i < count; i += 1)
-                list.Add(CreateAuthorization());
+                list.Add(CreateClaim());
 
             return list;
         }

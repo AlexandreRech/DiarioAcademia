@@ -9,7 +9,7 @@ namespace NDDigital.DiarioAcademia.WebApi.Controllers.Base
         protected IPermissionRepository PermissionRepository;
         protected IGroupRepository GroupRepository;
         protected IAccountRepository AccountRepository;
-        protected IAuthorizationRepository AuthorizationRepository;
+        protected IClaimRepository AuthorizationRepository;
 
 
         public BaseSecurityController()
@@ -17,7 +17,7 @@ namespace NDDigital.DiarioAcademia.WebApi.Controllers.Base
             PermissionRepository = Injection.Get<IPermissionRepository>();
             GroupRepository = Injection.Get<IGroupRepository>();
             AccountRepository = Injection.Get<IAccountRepository>();
-            AuthorizationRepository = Injection.Get<IAuthorizationRepository>();
+            AuthorizationRepository = Injection.Get<IClaimRepository>();
 
             Uow = Injection.Get<IAuthUnitOfWork>();
         }

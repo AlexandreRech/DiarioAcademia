@@ -84,7 +84,7 @@
     <Compile Include="Features\TurmaEFTest.cs" />
     <Compile Include="IoC\IoCNinjectEntityFrameworkTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\AuthenticationTest.cs" />
+    <Compile Include="Security\AuthorizationTest.cs" />
     <Compile Include="Base\BaseSecurityTest.cs" />
     <Compile Include="Security\GroupRepositoryTest.cs" />
     <Compile Include="Security\PermissionRepositoryTest.cs" />

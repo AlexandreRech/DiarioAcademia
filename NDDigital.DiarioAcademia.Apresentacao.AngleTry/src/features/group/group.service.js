@@ -2,14 +2,14 @@
 	'use strict';
 
 	//using
-	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource'];
+	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource', 'authoAdapter'];
 
 	//namespace
 	angular.module('app.group')
 	   .service('groupService', groupService);
 
 	//class
-	function groupService($http, logger, baseUrl, res) {
+	function groupService($http, logger, baseUrl, res, authoAdapter) {
 		var self = this;
 		var serviceUrl = baseUrl + "api/group/";
 
@@ -17,18 +17,21 @@
 		self.getGroups = function () {
 			return $http.get(serviceUrl)
 				 .then(logger.successCallback)
+				 .then(convertClaims)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getGroupById = function (id) {
 			return $http.get(serviceUrl + id)
 				 .then(logger.successCallback)
+				 .then(convertClaims)
 				 .catch(logger.errorCallback);
 		};
 
 		self.getGroupByUsername = function (username) {
 			return $http.get(serviceUrl + '?username=' + username)
 				 .then(logger.emptyMessageCallback)
+				 .then(convertClaims)
 				 .catch(logger.errorCallback)
 		};
 
@@ -54,5 +57,22 @@
 			   })
 			   .catch(logger.errorCallback);
 		};
+
+		//private metthods
+		function convertClaims(data) {
+			if ($.isArray(data)) {
+				for (var i = 0; i < data.length; i++) {
+					convertClaim(data[i]);
+				}
+			} else
+			    convertClaim(data);
+			return data;
+		};
+
+		function convertClaim(group) {
+			for (var i = 0; i < group.claims.length; i++) {
+				group.claims[i] = authoAdapter.toAuthorization(group.claims[i]);
+			}
+		}
 	}
 })();

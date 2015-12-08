@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Configurations
 {
-    public class AuthorizationConfiguration : EntityTypeConfiguration<Claim>
+    public class ClaimConfiguration : EntityTypeConfiguration<Claim>
     {
-        public AuthorizationConfiguration()
+        public ClaimConfiguration()
         {
-           ToTable("TBAuthorization");
+           ToTable("TBClaim");
 
             HasMany(x => x.Permissions)
                 .WithMany().Map(x =>
                 {
-                    x.MapLeftKey("Authorization_Id");
+                    x.MapLeftKey("Claim_Id");
                     x.MapRightKey("Permission_Id");
-                    x.ToTable("TBAuthorizationPermission");
+                    x.ToTable("TBClaimPermission");
                 });
 
 

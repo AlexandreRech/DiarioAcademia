@@ -11,28 +11,28 @@ using System.Data.Entity;
 
 namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
 {
-    public class AuthorizationRepository : RepositoryBaseAuth<Claim>, IAuthorizationRepository
+    public class ClaimRepository : RepositoryBaseAuth<Claim>, IClaimRepository
     {
         private IUnitOfWork uow;
 
-        public AuthorizationRepository(AuthFactory dbFactory)
+        public ClaimRepository(AuthFactory dbFactory)
             : base(dbFactory)
         {
         }
 
         public override Claim GetById(int id)
         {
-            return dataContext.Authorizations.Include(a => a.Permissions).Where(g => g.Id == id).FirstOrDefault();
+            return dataContext.Claims.Include(a => a.Permissions).Where(g => g.Id == id).FirstOrDefault();
         }
 
 
         public List<Claim> GetByGroup(int groupId)
         {
             var list = new List<Claim>();
-            Group group = dataContext.Groups.Include(g => g.Authorizations).Where(g => g.Id == groupId).FirstOrDefault();
+            Group group = dataContext.Groups.Include(g => g.Claims).Where(g => g.Id == groupId).FirstOrDefault();
             if (group == null)
                 return list;
-            return group.Authorizations;
+            return group.Claims;
         }
 
         public List<Claim> GetByUser(string username)
@@ -42,20 +42,20 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
             if (acc == null)
                 return list;    
             acc.Groups.ForEach((group) => {
-                list.AddRange(group.Authorizations);
+                list.AddRange(group.Claims);
                 list = list.Distinct().ToList();
             });
             return list;
         }
 
-        public List<Claim> GetAllSpecific(string[] authorizations)
+        public List<Claim> GetAllSpecific(string[] claims)
         {
             var list = new List<Claim>();
-            foreach (var name in authorizations)
+            foreach (var name in claims)
             {
-                var authorization = GetByName(name);
+                var claim = GetByName(name);
 
-                list.Add(authorization ?? new Claim(name));
+                list.Add(claim ?? new Claim(name));
             }
             list.RemoveAll(x => x == null);
             return list;
@@ -64,12 +64,12 @@ namespace NDDigital.DiarioAcademia.Infraestrutura.Security.Repositories
 
         public Claim GetByName(string name)
         {
-            return dataContext.Authorizations.Include(a => a.Permissions).Where(a => a.Name == name).FirstOrDefault();
+            return dataContext.Claims.Include(a => a.Permissions).Where(a => a.Name == name).FirstOrDefault();
         }
 
         public List<Claim> GetByPermissionId(string permissionId)
         {
-            return dataContext.Authorizations.Include(a => a.Permissions)
+            return dataContext.Claims.Include(a => a.Permissions)
                 .Where(a => a.Permissions.Where(p => p.PermissionId == permissionId).ToList().Count > 0).ToList();
 
         }

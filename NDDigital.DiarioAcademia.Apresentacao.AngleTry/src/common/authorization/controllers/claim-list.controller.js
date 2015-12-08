@@ -1,11 +1,11 @@
 ﻿(function (angular) {
     angular.module('app.authorization')
-        .controller('authorizationListController', authorizationListController);
+        .controller('claimListController', authorizationListController);
 
-    authorizationListController.$inject = ['authoService', 'authoUtilFactory', 'metadataService',
+    authorizationListController.$inject = ['claimService', 'authoUtilFactory', 'metadataService',
         'changes.factory', "$translate", "SweetAlert"];
 
-    function authorizationListController(authoService, authoUtilFactory, metadataService, 
+    function authorizationListController(claimService, authoUtilFactory, metadataService,
         changesFactory, $translate, SweetAlert) {
 
         var vm = this;
@@ -69,14 +69,14 @@
 
         // private methods
         function makeRequest() {
-            authoService.getAuthorizations().then(function (results) {
+            claimService.getClaims().then(function (results) {
                 if (!results)
                     return;
                 vm.routes = results;
                 vm.showRoutes = vm.routes.slice();
                 vm.permission = authoUtilFactory.filterAuthorizations(vm.showRoutes);
 
-                metadataService.getMetaDataAuthorization().then(function (results) {
+                metadataService.getMetaDataClaims().then(function (results) {
                     vm.allPermissions = results;
 
                 });
@@ -105,7 +105,7 @@
             cleanRepeatedPermissions(array, true);
             if (array.length == 0)
                 return;
-            authoService.save(array).then(function () {
+            claimService.save(array).then(function () {
                 exclude = changesFactory.getExclude(vm.changes);
                 if (exclude.length != 0)
                     remove(exclude);
@@ -119,7 +119,7 @@
             cleanRepeatedPermissions(array, false);
             if (array.length == 0)
                 return;
-            authoService.delete(array).then(makeRequest);
+            claimService.delete(array).then(makeRequest);
         }
 
         function cleanRepeatedPermissions(array, isSaved) {

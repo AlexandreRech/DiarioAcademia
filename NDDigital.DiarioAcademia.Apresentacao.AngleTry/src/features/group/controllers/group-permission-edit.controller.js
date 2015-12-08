@@ -2,10 +2,10 @@
     angular.module('app.group')
         .controller('managerGroupPermissionEditController', managerGroupPermissionEditController);
 
-    managerGroupPermissionEditController.$inject = ['groupService', 'authoService', 'authoUtilFactory',
+    managerGroupPermissionEditController.$inject = ['groupService', 'authoService', 'claimService','authoUtilFactory',
         '$state', '$stateParams', 'changes.factory', "$translate", "SweetAlert"];
 
-    function managerGroupPermissionEditController(groupService, authoService, authoUtilFactory,
+    function managerGroupPermissionEditController(groupService, authoService, claimService, authoUtilFactory,
         $state, params, changesFactory, $translate, SweetAlert) {
 
         var vm = this;
@@ -14,7 +14,7 @@
         vm.onchange = onchange;
         vm.save = save;
 
-        vm.authorizations = [];
+        vm.claims = [];
         vm.hasChange = false;
         vm.changes = [];
 
@@ -25,8 +25,8 @@
                     $state.go('app.group.list');
                 vm.group = results;
 
-                authoService.getAuthorizations().then(function (results) {
-                    vm.authorizations = results;
+                claimService.getClaims().then(function (results) {
+                    vm.claims = results;
                 });
             });
         }
@@ -67,7 +67,7 @@
 
                     return authoService.addAuthorize(vm.group, include).then(function () {
                         if (needExclude) {
-                            return authoService.removePermission(vm.group, exclude);
+                            return authoService.removeAuthorize(vm.group, exclude);
                         }
                     })
 

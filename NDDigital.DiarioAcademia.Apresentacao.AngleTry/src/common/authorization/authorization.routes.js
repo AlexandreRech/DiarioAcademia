@@ -10,9 +10,9 @@
 
     function configRoutes(helper, $stateProvider) {
         $stateProvider.state('app.authorization', {
-            url: '/authorization',
-            templateUrl: 'src/common/authorization/views/authorization-list.html',
-            controller: "authorizationListController as vm",
+            url: '/authorization/claims',
+            templateUrl: 'src/common/authorization/views/claim-list.html',
+            controller: "claimListController as vm",
             resolve: helper.resolveFor('app.authorization')
         })
     }

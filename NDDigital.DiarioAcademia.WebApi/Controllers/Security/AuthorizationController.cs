@@ -1,5 +1,6 @@
 ﻿using NDDigital.DiarioAcademia.Aplicacao.DTOs.Security;
 using NDDigital.DiarioAcademia.Aplicacao.Services;
+using NDDigital.DiarioAcademia.Aplicacao.Services.Security;
 using NDDigital.DiarioAcademia.WebApi.Controllers.Base;
 using NDDigital.DiarioAcademia.WebApi.Filters;
 using System.Web.Http;
@@ -10,11 +11,15 @@ namespace NDDigital.DiarioAcademia.WebApi.Controllers.Authentication
     [GrouperAuthorize(PermissionSpec.Manager)]
     public class AuthorizationController : BaseSecurityController
     {
-        private IClaimService _authservice;
+        private IClaimService _claimservice;
+        private IAuthorizationService _authservice;
+
 
         public AuthorizationController()
         {
-            _authservice = new ClaimService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
+            _claimservice = new ClaimService(PermissionRepository, AuthorizationRepository, Uow);
+            _authservice = new AuthorizationService(GroupRepository, PermissionRepository, AccountRepository, AuthorizationRepository, Uow);
+        
         }
 
         [Route("addpermission/{groupId:int}")]

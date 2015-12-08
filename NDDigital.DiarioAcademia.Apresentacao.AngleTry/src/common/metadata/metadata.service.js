@@ -13,11 +13,11 @@
 	function metadataService($http, logger, baseUrl) {
 		var self = this;
 
-		var resourceAuthorization = "src/common/authorization/authorizations.json";
+		var resourceClaims = "src/common/authorization/claims.json";
 
 		//public methods
-		self.getMetaDataAuthorization = function () {
-		    return $http.get(resourceAuthorization)
+		self.getMetaDataClaims = function () {
+		    return $http.get(resourceClaims)
 				 .then(logger.successCallback)
 				 .catch(logger.errorCallback);
 		};

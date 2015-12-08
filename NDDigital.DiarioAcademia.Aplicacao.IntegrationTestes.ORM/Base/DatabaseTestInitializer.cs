@@ -19,8 +19,8 @@ namespace NDDigital.DiarioAcademia.IntegrationTests.Base
         public DatabaseTestInitializer()
         {
             var entityTables = new[] { "TBPresenca", "TBAula", "TBAluno", "TBTurma" };
-            var authTables = new[] { "TBGroup", "TBAccount", "TBAccount", "TBAuthorization", "TBPermission" };
-            var authNoReseed = new[] { "TBAccountGroups", "TBGroupAuthorization", "TBAuthorizationPermission", "TBUser" };
+            var authTables = new[] { "TBGroup", "TBAccount", "TBAccount", "TBClaim", "TBPermission" };
+            var authNoReseed = new[] { "TBAccountGroups", "TBGroupClaim", "TBClaimPermission", "TBUser" };
 
             _userRepository = new Mock<UserRepository>();
 

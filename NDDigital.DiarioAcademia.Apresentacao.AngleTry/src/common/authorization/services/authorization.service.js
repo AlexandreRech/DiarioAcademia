@@ -14,38 +14,6 @@
 
 
 		//public methods
-		self.getAuthorizations = function () {
-			return $http.get(serviceUrl)
-				 .then(logger.successCallback)
-				 .then(convertToObj)
-				 .catch(logger.errorCallback);
-		};
-
-		self.getAuthorizationById = function (id) {
-			return $http.get(serviceUrl + id)
-				 .then(logger.successCallback)
-				 .then(convertToObj)
-				 .catch(logger.errorCallback);
-		};
-
-		self.save = function (autho) {
-			autho = convertToDto(autho);
-			return $http.post(serviceUrl, autho)
-							.then(logger.successCallback)
-							.catch(logger.errorCallback);;
-		};
-
-		self.delete = function (autho) {
-		    autho = convertToDto(autho);
-		    return $http({
-		        url: serviceUrl + "deletemany",
-		        method: 'DELETE',
-		        data: autho,
-		        headers: { "Content-Type": "application/json;charset=utf-8" }
-		    }).then(logger.empyMessageCallback)
-		      .catch(logger.errorCallback);
-		};
-
 		self.addAuthorize = function (group, authorizations) {
 			authorizations = convertToDto(authorizations);
 			return $http.post(serviceUrl + "addauthorize/" + group.id, authorizations)

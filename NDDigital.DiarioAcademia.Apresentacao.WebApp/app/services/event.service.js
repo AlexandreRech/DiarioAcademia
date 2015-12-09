@@ -12,7 +12,7 @@
     //class
     function eventService($http, logger, eventAdapter) {
         var self = this;
-        var serviceUrl = "https://api.github.com/repos/AlexandreRech/DiarioAcademia/events?per_page=";
+        var serviceUrl = "https://api.github.com/repos/AlexandreRech/DiarioAcademia/commits?per_page=";
 
         //public methods
         self.getLatestActivities = function (per_page) {
@@ -31,11 +31,11 @@
             if ($.isArray(data)) {
                 var result = [];
                 $.map(data, function (item) {
-                    result = result.concat(eventAdapter.toEvent(item));
+                    result.push(eventAdapter.toEvent(item));
                 });
                 return result;
             } else {
-                 return eventAdapter.toEvent(data);
+                return eventAdapter.toEvent(data);
             }
         };
     }

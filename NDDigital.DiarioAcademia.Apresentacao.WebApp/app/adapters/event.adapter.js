@@ -3,7 +3,8 @@
 
     eventAdapter.$inject = ["automapper"];
 
-    angular.module('factories.module').factory('eventAdapter', eventAdapter);
+    angular.module('factories.module') .factory('eventAdapter', eventAdapter);
+
 
     function eventAdapter(automapper) {
 
@@ -26,7 +27,9 @@
 
         //public methods
         factory.toEvent = function (obj) {
-            return automapper.map("dataJSON", "event", obj, result);
+            var result = {};
+            automapper.map("dataJSON", "event", obj, result);
+            return result;
         };
 
         return factory;

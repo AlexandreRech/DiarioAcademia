@@ -30,14 +30,16 @@
         factory.toEvent = function (obj) {
             var results = [];
             var result = {};
-            obj.payload.commits.map(function (commit) {
+            if (!obj.payload.commits)
+                return results;
+           obj.payload.commits.map(function (commit) {
                 commit.actor = obj.actor;
                 commit.created_at = obj.created_at;
                 automapper.map("dataJSON", "event", commit, result);
                 results.push(result);
                 result = {};
             });
-           
+
             return results;
         };
 

@@ -2,16 +2,16 @@
     angular.module('controllers.module')
         .controller('groupPermissionEditController', groupPermissionEditController);
 
-    groupPermissionEditController.$inject = ['groupService', 'permissionsService', 'permissions.factory', 'comparePermission',
-        '$state', '$stateParams', 'changes.factory'];
+    groupPermissionEditController.$inject = ['groupService', '$state', '$stateParams', 'changes.factory',
+        'authoUtilFactory', 'claimService', 'authoService'];
 
-    function groupPermissionEditController(groupService, permissionsService, permissionsFactory,
-        comparePermission, $state, params, changesFactory) {
+    function groupPermissionEditController(groupService, $state, params, changesFactory,
+        authoUtilFactory, claimService, authoService) {
 
         var vm = this;
 
         //public functions
-        vm.comparePermissions = comparePermission;
+        vm.compareAuthorizations = authoUtilFactory.indexOfAuthorization;
         vm.permissions = [];
         vm.saveChanges = saveChanges;
         vm.onchange = onchange;
@@ -30,53 +30,44 @@
                     $state.go('app.group.list');
                 vm.group = results;
 
-                permissionsService.getPermissions().then(function (results) {
-                    var permissionsDb = results;
-                    for (var i = 0; i < permissionsDb.length; i++) {
-                        var permission = permissionsFactory.getPermissionById(permissionsDb[i].permissionId);
-                        permission.id = permissionsDb[i].id;
-                        vm.permissions.push(permission);
-                    }
+                claimService.getClaims().then(function (results) {
+                    vm.claims = results;
                 });
-
             });
         }
 
         function onchange(obj, check) {
             vm.hasChange = true;
-            if (comparePermission(vm.changes, obj) < 0)
+            if (!authoUtilFactory.compareAuthorizations(vm.changes, obj))
                 vm.changes.push(obj);
             obj.action = check;
         }
 
         function saveChanges() {
             vm.hasChange = false;
-
             if (vm.changes.length != 0) {
                 var include = changesFactory.getInclude(vm.changes);
                 var exclude = changesFactory.getExclude(vm.changes);
-
                 var needInclude = include.length > 0;
                 var needExclude = exclude.length > 0;
                 if (needInclude) {
-                    save(include).then(function () {
-                        if (needExclude) {
-                            remove(exclude);
-                        }
-                    })
-
+                    save(include, exclude)
                 } else if (needExclude) {
                     remove(exclude);
                 }
             }
         }
 
-        function save(permission) {
-            return groupService.addPermission(vm.group, permission);
+        function save(authorizations, exclude) {
+            authoService.addAuthorize(vm.group, authorizations).then(function () {
+                if (exclude.length > 0) {
+                    remove(exclude);
+                }
+            });
         }
 
-        function remove(permission) {
-            return groupService.removePermission(vm.group, permission);
+        function remove(authorizations) {
+            return authoService.removeAuthorize(vm.group, authorizations);
         }
 
         function redirect() {

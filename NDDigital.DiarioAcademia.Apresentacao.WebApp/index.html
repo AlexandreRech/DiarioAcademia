@@ -98,6 +98,7 @@
     <script src="/app/models/turma.model.js"></script>
     <!--endinject-->
     <!--inject:module-->
+    <script src="/app/modules/authorization.module.js"></script>
     <script src="/app/modules/common.module.js"></script>
     <script src="/app/modules/core.module.js"></script>
     <script src="/app/modules/other.module.js"></script>
@@ -107,25 +108,25 @@
     <!--endinject-->
     <!--inject:adapters-->
     <script src="/app/adapters/aluno.adapter.js"></script>
+    <script src="/app/adapters/authorization.adapter.js"></script>
     <script src="/app/adapters/chamada.adapter.js"></script>
     <script src="/app/adapters/event.adapter.js"></script>
     <!--endinject-->
     <!--inject:factories-->
     <script src="/app/factories/authInterceptor.factory.js"></script>
     <script src="/app/factories/authorization.factory.js"></script>
+    <script src="/app/factories/authoutil.factory.js"></script>
     <script src="/app/factories/changes.factory.js"></script>
-    <script src="/app/factories/compare-state.factory.js"></script>
     <script src="/app/factories/ng-automapper.factory.js"></script>
-    <script src="/app/factories/permission.factory.js"></script>
     <!--endinject-->
     <!--inject:routes-->
     <script src="/app/routes/aluno.routes.js"></script>
     <script src="/app/routes/aula.routes.js"></script>
+    <script src="/app/routes/authorization.routes.js"></script>
     <script src="/app/routes/chamada.routes.js"></script>
     <script src="/app/routes/group.routes.js"></script>
     <script src="/app/routes/layout.routes.js"></script>
     <script src="/app/routes/manager.routes.js"></script>
-    <script src="/app/routes/permission.routes.js"></script>
     <script src="/app/routes/turma.routes.js"></script>
     <script src="/app/routes/user.routes.js"></script>
     <!--endinject-->
@@ -135,15 +136,16 @@
     <!--inject:service-->
     <script src="/app/services/aluno.service.js"></script>
     <script src="/app/services/aula.service.js"></script>
-    <script src="/app/services/auth.service.js"></script>
     <script src="/app/services/authentication.service.js"></script>
+    <script src="/app/services/authorization.service.js"></script>
     <script src="/app/services/cep.service.js"></script>
     <script src="/app/services/chamada.service.js"></script>
+    <script src="/app/services/claim.service.js"></script>
     <script src="/app/services/event.service.js"></script>
     <script src="/app/services/group.service.js"></script>
     <script src="/app/services/logger.service.js"></script>
+    <script src="/app/services/metadata.service.js"></script>
     <script src="/app/services/overview.service.js"></script>
-    <script src="/app/services/permission.service.js"></script>
     <script src="/app/services/turma.service.js"></script>
     <script src="/app/services/user.service.js"></script>
     <!--endinject-->
@@ -153,6 +155,7 @@
     <script src="/app/controllers/aluno/aluno-list.controller.js"></script>
     <script src="/app/controllers/aula/aula-create.controller.js"></script>
     <script src="/app/controllers/aula/aula-list.controller.js"></script>
+    <script src="/app/controllers/authorization/claim-list.controller.js"></script>
     <script src="/app/controllers/chamada/chamada.controller.js"></script>
     <script src="/app/controllers/group/group-create.controller.js"></script>
     <script src="/app/controllers/group/group-edit.controller.js"></script>

@@ -112,7 +112,11 @@
   height: 98px;
   position: fixed;
   width: 100%;
-  bottom: 5px;
+  bottom: 20px;
+}
+.login-footer span {
+  padding-right: 10px;
+  font-size: small;
 }
 .login {
   margin-top: 150px;

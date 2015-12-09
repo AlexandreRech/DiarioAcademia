@@ -77,7 +77,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\adapters\authorization.adapter.js" />
     <Content Include="app\adapters\event.adapter.js" />
+    <Content Include="app\controllers\authorization\claim-list.controller.js" />
     <Content Include="app\controllers\layout\home-app.controller.js" />
     <Content Include="app\controllers\group\group-permission-edit.controller.js" />
     <Content Include="app\controllers\group\group-edit.controller.js" />
@@ -112,9 +114,8 @@
     <Content Include="app\extentions\array.js" />
     <Content Include="app\extentions\string.js" />
     <Content Include="app\factories\authorization.factory.js" />
+    <Content Include="app\factories\authoutil.factory.js" />
     <Content Include="app\factories\changes.factory.js" />
-    <Content Include="app\factories\compare-state.factory.js" />
-    <Content Include="app\factories\permission.factory.js" />
     <Content Include="app\images\favicon.ico" />
     <Content Include="app\images\icons\Icon_back.png" />
     <Content Include="app\images\icons\Icon_back_side.png" />
@@ -124,17 +125,20 @@
     <Content Include="app\images\logo-single.png" />
     <Content Include="app\images\logo.png" />
     <Content Include="app\images\logo_gray.png" />
+    <Content Include="app\modules\authorization.module.js" />
     <Content Include="app\modules\translate.module.js" />
     <Content Include="app\routes\group.routes.js" />
     <Content Include="app\routes\manager.routes.js" />
     <Content Include="app\adapters\chamada.adapter.js" />
-    <Content Include="app\routes\permission.routes.js" />
+    <Content Include="app\routes\authorization.routes.js" />
     <Content Include="app\routes\user.routes.js" />
+    <Content Include="app\services\authorization.service.js" />
     <Content Include="app\services\authentication.service.js" />
+    <Content Include="app\services\claim.service.js" />
     <Content Include="app\services\event.service.js" />
     <Content Include="app\services\group.service.js" />
+    <Content Include="app\services\metadata.service.js" />
     <Content Include="app\services\overview.service.js" />
-    <Content Include="app\services\permission.service.js" />
     <Content Include="app\services\user.service.js" />
     <Content Include="app\templates\components\user-profile.html" />
     <Content Include="app\templates\layout\top-menu-xs.html" />
@@ -147,7 +151,7 @@
     <Content Include="app\views\group\group-details.html" />
     <Content Include="app\views\group\group-list.html" />
     <Content Include="app\views\manager\manager.html" />
-    <Content Include="app\views\permission\permission.html" />
+    <Content Include="app\views\authorization\claims-list.html" />
     <Content Include="app\views\user\user-edit-group.html" />
     <Content Include="app\views\user\user-details.html" />
     <Content Include="app\views\user\user-list.html" />
@@ -160,7 +164,6 @@
     <Content Include="content\component\panel.less" />
     <Content Include="content\component\jumbotron.less" />
     <Content Include="content\component\input-search.less" />
-    <Content Include="content\component\ndd-head.less" />
     <Content Include="content\component\ndd-sidemenu-option.less" />
     <Content Include="content\component\ndd-chart-knob.less" />
     <Content Include="content\component\spinner.less" />
@@ -169,7 +172,7 @@
     <Content Include="app\resources\pt.json" />
     <Content Include="content\component\alert.less" />
     <Content Include="content\component\popover.less" />
-    <Content Include="app\resources\permissions.json" />
+    <Content Include="app\resources\claims.json" />
     <None Include="content\component\toolbar.less" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
@@ -234,7 +237,6 @@
     <Content Include="app\services\aluno.service.js" />
     <Content Include="app\adapters\aluno.adapter.js" />
     <Content Include="app\services\aula.service.js" />
-    <Content Include="app\services\auth.service.js" />
     <Content Include="app\factories\authInterceptor.factory.js" />
     <Content Include="app\services\cep.service.js" />
     <Content Include="app\services\chamada.service.js" />

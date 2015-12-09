@@ -27,11 +27,11 @@
         "LIST_GROUPS": "Lista de Grupos",
         "CREATE_GROUPS": "Cadastro de Grupo",
         "EDIT_GROUPS": "Edição de grupo",
-        "EDIT_GROUPS_PERMISSIONS": "Edição de Permissões de Grupos",
+        "EDIT_GROUPS_PERMISSIONS": "Edição de Autorizações de Grupos",
 
-        "LIST_PERMISSIONS": "Lista de Permissões",
+        "LIST_AUTHORIZATIONS": "Lista de Autorizações",
         "SIGNUP": "Cadastro na Academia do Programador",
-        "MANAGER":  "Configurações",
+        "MANAGER": "Configurações",
         "SETTINGS": "Configurações",
         "USER_OPTIONS": "Minha Conta",
         "LANGUAGE": "Idioma",
@@ -59,7 +59,7 @@
         "MANAGER": "Configurações",
         "USER": "Usuário",
         "GROUP": "Grupo",
-        "PERMISSIONS": "Permissões"
+        "AUTHORIZATION": "Autorização"
     },
     "action": {
         "CREATE": "Novo",
@@ -98,8 +98,8 @@
         "TITLE": "PORTAL DE GERENCIAMENTO DA ACADEMIA DO PROGRAMADOR",
         "ABOUT_TITLE": "Sobre o projeto",
         "MESSAGE_START": "Este projeto é um esqueleto de aplicação. Você pode usá-lo para se basear projetos webapp angulares e ambiente dev para esses projetos.",
-        "MESSAGE_DESCRIPTION": "O aplicativo semente não faz muito e tem a maior parte do recurso removido para que você possa adicionar tema como por suas necessidades apenas seguindo os exemplos de aplicativos de demonstração.",       
-        "UPDATES_ACADEMY":  "Ultimas Atualizações do Diario da Academia",
+        "MESSAGE_DESCRIPTION": "O aplicativo semente não faz muito e tem a maior parte do recurso removido para que você possa adicionar tema como por suas necessidades apenas seguindo os exemplos de aplicativos de demonstração.",
+        "UPDATES_ACADEMY": "Ultimas Atualizações do Diario da Academia",
         "subtitles": {
             "STUDENT": "Gerenciamento de Alunos",
             "CLASS": "Coordenação de Turmas",
@@ -189,7 +189,8 @@
             "CLASS_REGISTER": "Chamada",
             "LESSON": "Aula",
             "GROUP": "Grupo",
-            "PERMISSION": "Permissões"
+            "AUTHORIZE": "Autorização"
+
         }
     }
 }

@@ -5,16 +5,17 @@
     angular.module('factories.module')
        .service('authoFactory', authoFactory);
 
-    authoFactory.$inject = ['storageKeys', 'localStorageService', 'permissions.factory'];
+    authoFactory.$inject = ['storageKeys', 'localStorageService', 'authoUtilFactory'];
 
-    function authoFactory(storageKeys, localStorageService, permissionFactory) {
+    function authoFactory(storageKeys, localStorageService, authoUtilFactory) {
         var self = this;
 
         var authorization = {
             isAuthorized: isAuthorized,
             role: null,
-            permissions: []
+            claims: []
         };
+
 
         self.authorization = authorization;
         self.clearAuthorize = clearAuthorize;
@@ -26,50 +27,36 @@
         }
 
         //public methods
-        function isAuthorized(state) {
+        function isAuthorized(namePermission) {
             var authentication = localStorageService.get(storageKeys.autheData);
             if (!authentication.isAuth)
                 return false;
             if (authorization.isAdmin)
                 return true;
-            if (state == "app.homeapp")
+            if (namePermission == "app.homeapp")
                 return true;
-            if (state == "app.manager")
-                return true;
-            return permissionFactory.containsPermissionByName(authorization.permissions, state);
+            return authoUtilFactory.containsByName(authorization.claims, namePermission);
         }
 
         function fillAuthoData() {
             var authoData = localStorageService.get(storageKeys.authoData);
             if (authoData) {
                 authorization.isAdmin = authoData.isAdmin;
-                authorization.permissions = authoData.permissions;
+                authorization.claims = authoData.claims;
             }
         };
 
-        function setAutheData(isAdmin, permissions) {
+        function setAutheData(isAdmin, claims) {
             authorization.isAdmin = isAdmin;
-            authorization.permissions = getPermissions(permissions);
-            localStorageService.set(storageKeys.authoData, authorization);  //criptografar isto
+            authorization.claims = claims;
+            localStorageService.set(storageKeys.authoData, authorization);  
         }
 
         function clearAuthorize() {
             localStorageService.remove(storageKeys.authoData);
             authorization.isAdmin = false;
-            authorization.permissions = undefined;
+            authorization.claims = undefined;
         };
-
-        //private methods
-        function getPermissions(permissions) {
-            var permission, result = [];
-            for (var i = 0; i < permissions.length; i++) {
-                permission = permissionFactory.getPermissionById(permissions[i].permissionId);
-                result.push(permission.name);
-            }
-            return result;
-        }
-
-
     }
 
 })();

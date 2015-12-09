@@ -18,7 +18,7 @@
         self.getLatestActivities = function (per_page) {
             return $http({
                 method: 'GET',
-                url: serviceUrl + (per_page || "4"),
+                url: serviceUrl + (per_page || "10"),
                 ignoreAuth: true
             })
               .then(logger.emptyMessageCallback)

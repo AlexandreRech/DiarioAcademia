@@ -1,116 +1,120 @@
 ﻿[
     {
-        "permissionId": "03",
         "name": "app.aluno.list",
         "displayName": "header.LIST_STUDENT",
-        "filter": "STUDENT"
+        "filter": "STUDENT",
+        "permissions": [ "ALUNO_GET" ]
     },
     {
-        "permissionId": "04",
         "name": "app.aluno.details",
         "displayName": "header.EDIT_STUDENT",
-        "filter": "STUDENT"
+        "filter": "STUDENT",
+        "permissions": [ "ALUNO_PUT" ]
     },
     {
-        "permissionId": "05",
         "name": "app.aluno.create",
         "displayName": "header.CREATE_STUDENT",
-        "filter": "STUDENT"
+        "filter": "STUDENT",
+        "permissions": [ "ALUNO_POST", "TURMA_GET" ]
     },
     {
-        "permissionId": "07",
         "name": "app.aula.list",
         "displayName": "header.LIST_LESSON",
-        "filter": "LESSON"
+        "filter": "LESSON",
+        "permissions": [ "AULA_GET" ]
     },
     {
-        "permissionId": "08",
         "name": "app.aula.create",
         "displayName": "header.CREATE_LESSON",
-        "filter": "LESSON"
+        "filter": "LESSON",
+        "permissions": [ "AULA_POST" ]
     },
     {
-        "permissionId": "11",
         "name": "app.chamada",
         "displayName": "header.CLASS_REGISTER",
-        "filter": "CLASS_REGISTER"
+        "filter": "CLASS_REGISTER",
+        "permissions": [ "CHAMADA_GET", "CHAMADA_POST", "CHAMADA_PUT", "CHAMADA_DELETE", "AULA_GET", "TURMA_GET" ]
     },
     {
-        "permissionId": "14",
         "name": "app.user.list",
         "displayName": "header.LIST_USERS",
-        "filter": "USER"
+        "filter": "USER",
+        "permissions": [ "ACCOUNT_GET" ]
     },
     {
-        "permissionId": "15",
         "name": "app.user.edit",
         "displayName": "header.CREATE_USERS",
-        "filter": "USER"
+        "filter": "USER",
+        "permissions": [ "ACCOUNT_PUT" ]
     },
     {
-        "permissionId": "16",
         "name": "app.user.groupEdit",
         "displayName": "header.EDIT_USERS_GROUP",
-        "filter": "USER"
+        "filter": "USER",
+        "permissions": [ "AUTHORIZE_GROUPs_USER" ]
     },
     {
-        "permissionId": "18",
         "name": "app.group.list",
         "displayName": "header.LIST_GROUPS",
-        "filter": "GROUP"
+        "filter": "GROUP",
+        "permissions": [ "GROUP_GET" ]
     },
     {
-        "permissionId": "19",
         "name": "app.group.create",
         "displayName": "header.CREATE_GROUPS",
-        "filter": "GROUP"
+        "filter": "GROUP",
+        "permissions": [ "GROUP_CREATE" ]
     },
     {
-        "permissionId": "20",
         "name": "app.group.details.summary",
         "displayName": "header.EDIT_GROUPS",
-        "filter": "GROUP"
+        "filter": "GROUP",
+        "permissions": [ "GROUP_PUT" ]
     },
     {
-        "permissionId": "21",
         "name": "app.group.details.permissionsEdit",
         "displayName": "header.EDIT_GROUPS_PERMISSIONS",
-        "filter": "GROUP"
+        "filter": "GROUP",
+        "permissions": [ "AUTHORIZE_PERMISSIONs_GROUP" ]
     },
     {
-        "permissionId": "22",
-        "name": "app.permission",
-        "displayName": "header.LIST_PERMISSIONS",
-        "filter": "PERMISSION"
+        "name": "app.authorization",
+        "displayName": "header.LIST_AUTHORIZATIONS",
+        "filter": "AUTHORIZE",
+        "permissions": [ "PERMISSION_GET", "PERMISSION_POST", "PERMISSION_PUT", "PERMISSION_DELETE" ]
+
     },
     {
-        "permissionId": "24",
         "name": "app.turma.list",
         "displayName": "header.LIST_CLASS",
-        "filter": "CLASS"
+        "filter": "CLASS",
+        "permissions": [ "TURMA_GET" ]
     },
     {
-        "permissionId": "25",
         "name": "app.turma.create",
         "displayName": "header.CREATE_CLASS",
-        "filter": "CLASS"
+        "filter": "CLASS",
+        "permissions": [ "TURMA_POST" ]
     },
     {
-        "permissionId": "26",
         "name": "app.turma.details",
         "displayName": "header.EDIT_CLASS",
-        "filter": "CLASS"
+        "filter": "CLASS",
+        "permissions": [ "TURMA_PUT" ]
+
     },
     {
-        "permissionId": "27",
         "name": "action.deleteAluno",
         "displayName": "header.REMOVE_STUDENT",
-        "filter": "CUSTOM"
+        "filter": "CUSTOM",
+        "permissions": [ "ALUNO_DELETE" ]
+
     },
     {
-        "permissionId": "28",
         "name": "action.deleteTurma",
         "displayName": "header.REMOVE_CLASS",
-        "filter": "CUSTOM"
+        "filter": "CUSTOM",
+        "permissions": [ "TURMA_DELETE" ]
+
     }
 ]

@@ -6,9 +6,7 @@
        .service('autheService', autheService);
 
     autheService.$inject = ['$http', '$q', 'localStorageService', 'logger', 'BASEURL', 'storageKeys',
-        'resource', 'userService',  "$rootScope", 'authoFactory'];
-
-
+         'resource', 'userService', "$rootScope", 'authoFactory'];
 
     function autheService($http, $q, localStorageService, logger, baseURL,
                             storageKeys, res, userService, $rootScope, authoFactory) {
@@ -39,7 +37,7 @@
         };
 
         function login(loginData) {
-            var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
+            var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password; //criptografar isto
             var deferred = $q.defer();
             var header = { 'Content-Type': 'application/x-www-form-urlencoded' };
             $http.post(baseURL + 'oauth/token', data, { headers: header }).success(function (response) {
@@ -55,19 +53,14 @@
                              //set authentication
                              localStorageService.set(storageKeys.autheData, authentication);
                              //set authorization
-                             authoFactory.setAutheData(result.isAdmin, result.permissions);
+                             authoFactory.setAutheData(result.isAdmin, result.claims);
                              $rootScope.$broadcast('login');
                              logger.success(res.WELCOME + " " + (authentication.userName));
                              deferred.resolve(response);
-                         });               
+                         });
             }).error(function (err, status) {
-                if (!status)
-                    logger.error(res.UNAVAILABLE_SERVER);
-                else
-                    logger.error(err ? err.error_description : status);
                 logOut();
                 deferred.reject(err);
-
             });
             return deferred.promise;
         };

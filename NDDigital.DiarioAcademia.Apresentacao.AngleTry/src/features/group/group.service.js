@@ -5,8 +5,7 @@
 	groupService.$inject = ['$http', 'logger', 'BASEURL', 'resource', 'authoAdapter'];
 
 	//namespace
-	angular.module('app.group')
-	   .service('groupService', groupService);
+	angular.module('app.group').service('groupService', groupService);
 
 	//class
 	function groupService($http, logger, baseUrl, res, authoAdapter) {

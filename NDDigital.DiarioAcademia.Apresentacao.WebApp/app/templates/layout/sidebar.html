@@ -26,17 +26,17 @@
         <ndd-sidemenu-option route-show="['app.chamada']" name="{{'header.CLASS_REGISTER' | translate}}" icon="fa-check"
                              route="app.chamada.create" state="{{state}}"></ndd-sidemenu-option>
         <!--User -->
-        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.permission', 'app.group']" 
+        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.authorization', 'app.group']"
                              name="{{'entities.USER' | translate}}" route-actived="app.user"
                              route="app.user.list" state="{{state}}" icon="fa-user"></ndd-sidemenu-option>
        <!--Groups -->
-        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.permission', 'app.group']"
-                              name="{{'entities.GROUP' | translate}}" route-actived="app.group"
+        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.authorization', 'app.group']"
+                             name="{{'entities.GROUP' | translate}}" route-actived="app.group"
                              route="app.group.list" state="{{state}}" icon="fa-users"></ndd-sidemenu-option>
         <!--Permissions -->
-        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.permission', 'app.group']" 
-                             name="{{'entities.PERMISSIONS' | translate}}"
-                             route="app.permissions" state="{{state}}" icon="fa-user-times"></ndd-sidemenu-option>
+        <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.authorization', 'app.group']"
+                             name="{{'entities.AUTHORIZATION' | translate}}"
+                             route="app.authorization" state="{{state}}" icon="fa-user-times"></ndd-sidemenu-option>
     </ul>
     <img src="app/images/icons/Icon_back_side.png" ng-click="vm.redirect(state)" class="back-details">
 

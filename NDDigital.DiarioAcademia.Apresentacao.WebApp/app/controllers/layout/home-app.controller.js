@@ -12,7 +12,7 @@
     //class
     function homeAppController(overviewService, eventService, $rootScope) {
         var vm = this;
-        var numLoad = 5;
+        var numLoad = 10;
         vm.loadMore = loadMore;
 
 

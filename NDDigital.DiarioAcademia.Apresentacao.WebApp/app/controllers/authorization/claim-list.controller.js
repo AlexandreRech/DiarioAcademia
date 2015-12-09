@@ -1,12 +1,12 @@
 ﻿(function (angular) {
-    angular.module('app.authorization')
+    angular.module('controllers.module')
         .controller('claimListController', claimListController);
 
     claimListController.$inject = ['claimService', 'authoUtilFactory', 'metadataService',
-        'changes.factory', "$translate", "SweetAlert"];
+        'changes.factory', "$translate"];
 
     function claimListController(claimService, authoUtilFactory, metadataService,
-        changesFactory, $translate, SweetAlert) {
+        changesFactory, $translate) {
 
         var vm = this;
 
@@ -14,9 +14,9 @@
         vm.hasChange = false;
         vm.changes = [];
 
-        vm.compareState = authoUtilFactory.indexOfAuthorization;
+        vm.compareAuthorization = authoUtilFactory.indexOfAuthorization;
         vm.onchange = onchange;
-        vm.save = save;
+        vm.saveChanges = saveChanges
         vm.modifyGroupPermissions = modifyGroupPermissions;
         vm.verifyPanelSuccess = verifyPanelSuccess;
         vm.modifyAll = modifyAll;
@@ -36,21 +36,22 @@
             vm.permission = authoUtilFactory.filterAuthorizations(vm.showRoutes);
         }
 
-        function save() {
-            SweetAlert.swal({
-                title: $translate.instant('confirm.CONFIRM_CREATE'),
-                text: $translate.instant('confirm.CONFIRM_MODIFY_AUTHORIZATION'),
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#DD6B55',
-                confirmButtonText: $translate.instant('action.OK').toUpperCase(),
-                cancelButtonText: $translate.instant('action.CANCEL').toUpperCase(),
-                closeOnConfirm: true,
-                closeOnCancel: true
-            }, saveChanges);
+
+        function saveChanges() {
+            vm.hasChange = false;
+            if (vm.changes.length == 0)
+                return;
+            var include = changesFactory.getInclude(vm.changes);
+            if (include.length != 0)
+                saveClaims(include);
+            else {
+                var exclude = changesFactory.getExclude(vm.changes);
+                if (exclude.length != 0)
+                    removeClaims(exclude);
+                vm.changes = [];
+
+            }
         }
-
-
         function modifyGroupPermissions(isAll, filter) {
             var isShow, index, array = vm.permission[filter];
             for (var i = 0; i < array.length; i++) {
@@ -78,30 +79,11 @@
 
                 metadataService.getMetaDataClaims().then(function (results) {
                     vm.allPermissions = results;
-
                 });
             });
         }
 
-        function saveChanges(isConfirm) {
-            if (!isConfirm)
-                return;
-            vm.hasChange = false;
-            if (vm.changes.length == 0)
-                return;
-            var include = changesFactory.getInclude(vm.changes);
-            if (include.length != 0)
-                savePermission(include);
-            else {
-                var exclude = changesFactory.getExclude(vm.changes);
-                if (exclude.length != 0)
-                    remove(exclude);
-                vm.changes = [];
-
-            }
-        }
-
-        function savePermission(array) {
+        function saveClaims(array) {
             cleanRepeatedPermissions(array, true);
             if (array.length == 0)
                 return;
@@ -115,7 +97,7 @@
             });
         }
 
-        function remove(array) {
+        function removeClaims(array) {
             cleanRepeatedPermissions(array, false);
             if (array.length == 0)
                 return;
@@ -156,8 +138,8 @@
                     onchange(permission, action);
                 }
             }
-
         }
+
 
     }
 })(window.angular);

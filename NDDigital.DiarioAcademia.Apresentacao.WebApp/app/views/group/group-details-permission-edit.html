@@ -1,10 +1,10 @@
 ﻿<article>
-    <h4>{{'entities.PERMISSIONS' | translate}}: {{vm.group.name}}</h4>
+    <h4>{{'entities.AUTHORIZATION' | translate}}: {{vm.group.name}}</h4>
     <br />
     <div class="col-sm-6 clear-padding" ng-class="{'disabled': vm.group.isAdmin}">
-        <ndd-group-checkbox array="vm.permissions" compare="vm.group.permissions" method="vm.comparePermissions" callback="vm.onchange"></ndd-group-checkbox>
+        <ndd-group-checkbox array="vm.claims" compare="vm.group.claims" method="vm.compareAuthorizations" callback="vm.onchange"></ndd-group-checkbox>
         <div class="col-xs-12 text-center">
-            <h3 ng-hide="vm.permissions && vm.permissions.length > 0">Não há permissões cadastradas.</h3>
+            <h3 ng-show="vm.claims.length == 0">Não há autorizações cadastradas.</h3>
         </div>
 
         <div class="col-xs-12 text-center">

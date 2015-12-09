@@ -8,31 +8,24 @@
         "EDIT_CLASS": "Clase Editar",
         "CREATE_CLASS": "Crear clase",
         "REMOVE_CLASS": "Retire Clase",
-
-
         "LIST_STUDENT": "Lista de Estudiante",
         "CREATE_STUDENT": "Crear Estudiante",
         "EDIT_STUDENT": "Editar Estudiante",
         "REMOVE_STUDENT": "Retire Estudiante",
-
         "LIST_LESSON": "Lista de la lección",
         "CREATE_LESSON": "Crear la lección",
-
         "CLASS_REGISTER": "Clase Registro",
-
         "LIST_USERS": "Lista de Usuarios",
         "CREATE_USERS": "Crear usuario",
         "EDIT_USERS": "Editar Usuarios",
         "EDIT_USERS_GROUP": "Editar grupos de usuarios",
-
         "LIST_GROUPS": "Lista de grupos",
         "CREATE_GROUPS": "Crear grupo",
         "EDIT_GROUPS": "Edición de grupo",
-        "EDIT_GROUPS_PERMISSIONS": "Editar los permisos de los grupos",
-
-        "LIST_PERMISSIONS": "Lista de permisos",
-        "SIGNUP":  "Inscríbete en la Academia Programador",
+        "EDIT_GROUPS_PERMISSIONS": "Editar las autorizações de los grupos",
         "MANAGER":  "Gerente de Academia Programador",
+        "LIST_AUTHORIZATIONS": "Lista de autorizaciones",
+        "SIGNUP":  "Inscríbete en la Academia Programador",
         "SETTINGS": "Configuración",
         "USER_OPTIONS": "Mi Cuenta",
         "LANGUAGE": "Idioma",
@@ -64,7 +57,7 @@
         "MANAGER": "Configuración",
         "USER": "Usuario",
         "GROUP": "Grupo",
-        "PERMISSIONS": "Permisos"
+        "AUTHORIZATION": "Autorización"
     },
     "action": {
         "CREATE": "Crear",
@@ -194,8 +187,7 @@
             "CLASS_REGISTER":  "Clase Registro",
             "LESSON":  "Lección",
             "GROUP": "Grupo",
-            "PERMISSION":  "Permisos"
-
+            "AUTHORIZE":  "Autorización"
         }
     }
 }

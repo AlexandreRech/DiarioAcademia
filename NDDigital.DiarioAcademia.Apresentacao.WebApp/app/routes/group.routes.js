@@ -38,10 +38,10 @@
             url: '/summary/:groupId',
             templateUrl: 'app/views/group/group-details-summary.html'
         }, {
-            name: 'app.group.details.permissionsEdit',
-            url: '/permissionsEdit/:groupId',
-            templateUrl: 'app/views/group/group-details-permission-edit.html',
-            controller: "groupPermissionEditController as vm"
+            name: 'app.group.details.authoedit',
+            url: '/authoedit/:groupId',
+            templateUrl: 'app/views/group/group-details-authorize-edit.html',
+            controller: "groupAuthoEditController as vm"
         });
     }
 

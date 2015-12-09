@@ -1,11 +1,11 @@
 ﻿<ndd-head title="{{'header.LIST_AUTHORIZATIONS' | translate}}" back-route="app.manager"></ndd-head>
 
 <div class="col-xs-12">
-    <button class="btn btn-danger" ng-click="vm.modifyAll(false)" ng-disabled="vm.showRoutes.length <= 0">
+    <button class="btn btn-danger" ng-click="vm.modifyAll(false)" ng-disabled="vm.showClaims.length <= 0">
         <i class="fa fa-minus-square-o"></i>
         <span>{{'action.CLEAN_ALL' | translate}}</span>
     </button>
-    <button class="btn btn-info" ng-click="vm.modifyAll(true)" ng-disabled="vm.showRoutes.length == vm.allPermissions.length">
+    <button class="btn btn-info" ng-click="vm.modifyAll(true)" ng-disabled="vm.showClaims.length == vm.allClaims.length">
         <i class="fa fa-check-square-o"></i>
         <span>{{'action.SELECT_ALL' | translate}}</span>
     </button>
@@ -15,14 +15,14 @@
     </button>
     <hr />
 </div>
-<div class="col-lg-4 col-md-6 col-xs-12 col-grid" ng-repeat="filter in vm.filters" ng-show="vm.permission[filter].length">
+<div class="col-lg-4 col-md-6 col-xs-12 col-grid" ng-repeat="filter in vm.filters" ng-show="vm.claims[filter].length">
     <div class="panel panel-primary text-center panel-fixed" ng-class="{'panel-success': vm.verifyPanelSuccess(filter)}">
         <div class="panel-heading">
-            <input type="checkbox" class="pull-left" ng-model="isAll" ng-click="vm.modifyGroupPermissions(isAll, filter)" ng-checked="vm.verifyPanelSuccess(filter)" />
+            <input type="checkbox" class="pull-left" ng-model="isAll" ng-click="vm.changeClaims(isAll, filter)" ng-checked="vm.verifyPanelSuccess(filter)" />
             <b class="text-capitalize">{{ ('filter.permissions.' + filter) | translate}}</b>
         </div>
         <div class="panel-body">
-            <ndd-group-checkbox array="vm.permission[filter]" compare="vm.showRoutes" method="vm.compareAuthorization" callback="vm.onchange"></ndd-group-checkbox>
+            <ndd-group-checkbox array="vm.claims[filter]" compare="vm.showClaims" method="vm.compareAuthorization" callback="vm.onchange"></ndd-group-checkbox>
         </div>
     </div>
 </div>

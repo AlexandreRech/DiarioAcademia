@@ -32,10 +32,6 @@
             $state.go('home');
         };
 
-        self.isAuthorized = function (permission) {
-            return self.authorization.isAuthorized(permission);
-        };
-
         self.goToParentState = function (state) {
             var toState = authoUtilFactory.getByName(self.authorization.permissions, state);
             if (toState)

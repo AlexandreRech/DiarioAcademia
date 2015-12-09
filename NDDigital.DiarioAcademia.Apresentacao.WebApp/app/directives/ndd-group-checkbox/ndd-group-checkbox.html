@@ -15,4 +15,4 @@
     </span>
 
 </div>
-<pager total-items="countElements" ng-model="currentPage" ng-hide="array.length == 0 || array.length <= numPerPage"></pager>
+<pager total-items="countElements" ng-model="currentPage" ng-show="array.length > 0 && array.length > numPerPage"></pager>

@@ -10,14 +10,14 @@
 
         var vm = this;
 
-        vm.showRoutes = [];
+        vm.showClaims = [];
         vm.hasChange = false;
         vm.changes = [];
 
         vm.compareAuthorization = authoUtilFactory.indexOfAuthorization;
         vm.onchange = onchange;
         vm.saveChanges = saveChanges
-        vm.modifyGroupPermissions = modifyGroupPermissions;
+        vm.changeClaims = changeClaims;
         vm.verifyPanelSuccess = verifyPanelSuccess;
         vm.modifyAll = modifyAll;
 
@@ -33,7 +33,7 @@
             if (!authoUtilFactory.containsByName(vm.changes, obj.name))
                 vm.changes.push(obj);
             obj.action = check;
-            vm.permission = authoUtilFactory.filterAuthorizations(vm.showRoutes);
+            vm.claims = authoUtilFactory.filterAuthorizations(vm.showClaims);
         }
 
 
@@ -52,17 +52,16 @@
 
             }
         }
-        function modifyGroupPermissions(isAll, filter) {
-            var isShow, index, array = vm.permission[filter];
+        function changeClaims(isAll, filter) {
+            var isShow, index, array = vm.claims[filter];
             for (var i = 0; i < array.length; i++) {
-                index = authoUtilFactory.indexOfAuthorization(vm.showRoutes, array[i]);
+                index = authoUtilFactory.indexOfAuthorization(vm.showClaims, array[i]);
                 isShow = index >= 0;
                 if (isAll && !isShow) {
-                    vm.showRoutes.push(array[i]);
+                    vm.showClaims.push(array[i]);
                     onchange(array[i], isAll);
-
                 } else if (!isAll && isShow) {
-                    vm.showRoutes.splice(index, 1);
+                    vm.showClaims.splice(index, 1);
                     onchange(array[i], isAll);
                 }
             }
@@ -74,17 +73,17 @@
                 if (!results)
                     return;
                 vm.routes = results;
-                vm.showRoutes = vm.routes.slice();
-                vm.permission = authoUtilFactory.filterAuthorizations(vm.showRoutes);
+                vm.showClaims = vm.routes.slice();
+                vm.claims = authoUtilFactory.filterAuthorizations(vm.showClaims);
 
                 metadataService.getMetaDataClaims().then(function (results) {
-                    vm.allPermissions = results;
+                    vm.allClaims = results;
                 });
             });
         }
 
         function saveClaims(array) {
-            cleanRepeatedPermissions(array, true);
+            cleanRepeatedClaims(array, true);
             if (array.length == 0)
                 return;
             claimService.save(array).then(function () {
@@ -98,13 +97,13 @@
         }
 
         function removeClaims(array) {
-            cleanRepeatedPermissions(array, false);
+            cleanRepeatedClaims(array, false);
             if (array.length == 0)
                 return;
             claimService.delete(array).then(makeRequest);
         }
 
-        function cleanRepeatedPermissions(array, isSaved) {
+        function cleanRepeatedClaims(array, isSaved) {
             var index;
             for (var i = 0; i < array.length; i++) {
                 index = authoUtilFactory.indexOfAuthorization(vm.routes, array[i]);
@@ -117,25 +116,25 @@
 
         //GUI Helpers 
         function verifyPanelSuccess(filter) {
-            if (vm.permission && vm.permission[filter])
-                return vm.permission[filter].countSelected == vm.permission[filter].length;
+            if (vm.claims && vm.claims[filter])
+                return vm.claims[filter].countSelected == vm.claims[filter].length;
         }
 
         function modifyAll(action) {
-            if (action && vm.showRoutes.length == vm.allPermissions.length)
+            if (action && vm.showClaims.length == vm.allClaims.length)
                 return;
-            if (!action && vm.showRoutes.length <= 0)
+            if (!action && vm.showClaims.length <= 0)
                 return;
-            var permission, index = 0;
-            for (var i = 0; i < vm.allPermissions.length; i++) {
-                permission = vm.allPermissions[i];
-                index = authoUtilFactory.indexOfAuthorization(vm.showRoutes, permission);
+            var claims, index = 0;
+            for (var i = 0; i < vm.allClaims.length; i++) {
+                claims = vm.allClaims[i];
+                index = authoUtilFactory.indexOfAuthorization(vm.showClaims, claims);
                 if (action && index < 0) {
-                    vm.showRoutes.push(permission);
-                    onchange(permission, action);
+                    vm.showClaims.push(claims);
+                    onchange(claims, action);
                 } else if (!action && index >= 0) {
-                    vm.showRoutes.splice(index, 1);
-                    onchange(permission, action);
+                    vm.showClaims.splice(index, 1);
+                    onchange(claims, action);
                 }
             }
         }

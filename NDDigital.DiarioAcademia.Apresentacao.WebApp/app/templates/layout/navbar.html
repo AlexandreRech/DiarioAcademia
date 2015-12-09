@@ -39,6 +39,6 @@
          ng-class="{'actived-option': state.contains('chamada')}" ndd-security="app.chamada">{{'entities.CLASS_REGISTER' | translate}}</div>
 
     <div class="option-nav" ui-sref="app.manager"
-         ng-class="{'actived-option': state.contains('app.user') || state.contains('app.group') || state.contains('app.permission') || state.contains('app.manager')}"
-         ndd-security="app.manager">{{'entities.MANAGER' | translate}}</div>
+         ng-class="{'actived-option': state.contains('app.user') || state.contains('app.group') || state.contains('app.authorization') || state.contains('app.manager')}"
+         ndd-security="['app.user.list', 'app.group.list', 'app.authorization']">{{'entities.MANAGER' | translate}}</div>
 </nav>

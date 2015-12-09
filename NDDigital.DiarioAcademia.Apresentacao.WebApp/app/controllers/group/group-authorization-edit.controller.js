@@ -1,11 +1,11 @@
 ﻿(function (angular) {
     angular.module('controllers.module')
-        .controller('groupPermissionEditController', groupPermissionEditController);
+        .controller('groupAuthoEditController', groupAuthoEditController);
 
-    groupPermissionEditController.$inject = ['groupService', '$state', '$stateParams', 'changes.factory',
+    groupAuthoEditController.$inject = ['groupService', '$state', '$stateParams', 'changes.factory',
         'authoUtilFactory', 'claimService', 'authoService'];
 
-    function groupPermissionEditController(groupService, $state, params, changesFactory,
+    function groupAuthoEditController(groupService, $state, params, changesFactory,
         authoUtilFactory, claimService, authoService) {
 
         var vm = this;

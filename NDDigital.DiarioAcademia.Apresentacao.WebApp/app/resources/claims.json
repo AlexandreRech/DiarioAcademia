@@ -72,7 +72,7 @@
         "permissions": [ "GROUP_PUT" ]
     },
     {
-        "name": "app.group.details.permissionsEdit",
+        "name": "app.group.details.authoedit",
         "displayName": "header.EDIT_GROUPS_PERMISSIONS",
         "filter": "GROUP",
         "permissions": [ "AUTHORIZE_PERMISSIONs_GROUP" ]

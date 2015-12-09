@@ -56,7 +56,7 @@
 
         // helpers
         function editPermission() {
-            $state.go('app.group.details.permissionsEdit', { groupId: vm.group.id });
+            $state.go('app.group.details.authoedit', { groupId: vm.group.id });
         }
     }
 })(window.angular);

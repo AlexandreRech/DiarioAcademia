@@ -25,9 +25,8 @@
             return config;
         };
 
-        var responseError = function (rejection) {
-            
-            if (!rejection.status) {
+        var responseError = function (rejection) {         
+            if (!rejection.status || rejection.status == -1) {
                 logger.error("Servidor indisponível");
                 $location.path('/');
             }

@@ -2,7 +2,7 @@
 
     'use strict';
     //using
-    homeController.$inject = ['$state', '$timeout', 'autheService'];
+    homeController.$inject = ['$state', '$timeout', 'autheService', 'logger'];
 
     //namespace
     angular
@@ -10,7 +10,7 @@
         .controller('homeController', homeController);
 
     //class
-    function homeController($state, $timeout, autheService) {
+    function homeController($state, $timeout, autheService, logger) {
         var vm = this;
 
         //script load
@@ -35,9 +35,9 @@
         vm.login = function () {
             autheService.login(vm.loginData).then(function () {
                 $state.go('app.homeapp');
-            },
-            function (err) {
-                vm.message = "Erro ao logar: " + err.error_description;
+            }).catch(function (err) {
+                if (err)
+                    logger.danger(err.error_description, err.message);
             });
         };
 

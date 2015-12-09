@@ -24,7 +24,16 @@
         }
 
         function verify(scope, element) {
-            var auth = controller.isAuthorized(scope.nddSecurity);
+            var value = scope.$eval(scope.nddSecurity);
+            var auth = false;
+            if (value && $.isArray(value)) {
+                for (var i in value) {
+                    auth = controller.isAuthorized(value[i]);
+                    if (auth)
+                        break;
+                }
+            } else
+                auth = controller.isAuthorized(scope.nddSecurity);
             element = $(element);
             return auth ? element.show() : element.hide();
         }

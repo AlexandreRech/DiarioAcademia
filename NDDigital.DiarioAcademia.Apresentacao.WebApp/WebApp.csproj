@@ -81,11 +81,10 @@
     <Content Include="app\adapters\event.adapter.js" />
     <Content Include="app\controllers\authorization\claim-list.controller.js" />
     <Content Include="app\controllers\layout\home-app.controller.js" />
-    <Content Include="app\controllers\group\group-permission-edit.controller.js" />
+    <Content Include="app\controllers\group\group-authorization-edit.controller.js" />
     <Content Include="app\controllers\group\group-edit.controller.js" />
     <Content Include="app\controllers\group\group-list.controller.js" />
     <Content Include="app\controllers\group\group-create.controller.js" />
-    <Content Include="app\controllers\permission\permission.controller.js" />
     <Content Include="app\controllers\user\user-edit.controller.js" />
     <Content Include="app\controllers\user\user-edit-group.controller.js" />
     <Content Include="app\controllers\user\user-list.controller.js" />
@@ -147,7 +146,7 @@
     <Content Include="app\views\layout\app.html" />
     <Content Include="app\views\layout\home-app.html" />
     <Content Include="app\views\group\group-create.html" />
-    <Content Include="app\views\group\group-details-permission-edit.html" />
+    <Content Include="app\views\group\group-details-authorize-edit.html" />
     <Content Include="app\views\group\group-details.html" />
     <Content Include="app\views\group\group-list.html" />
     <Content Include="app\views\manager\manager.html" />

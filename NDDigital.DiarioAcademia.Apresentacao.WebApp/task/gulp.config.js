@@ -46,7 +46,7 @@
 
             css: ["./content/css/**/**/*.css"],
 
-            images: [app + '/**/**/*.png', app + '/**/**/*.gif', app + '/**/**/*.jpg'],
+            images: [app + '/**/**/*.*'],
 
             json: app + "/**/*.json"
 

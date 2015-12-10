@@ -21,6 +21,9 @@
   -webkit-transition: opacity 0.2s 0.4s;
   transition: opacity 0.2s 0.4s;
 }
+.side-nav li {
+  border-right: solid 5px rgba(204, 204, 204, 0.4);
+}
 @media screen and (max-width: 768px) {
   .side-option {
     width: 100%;

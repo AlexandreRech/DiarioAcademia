@@ -26,13 +26,24 @@
             name: 'app.user.details',
             url: '/details/user/:userId',
             templateUrl: 'app/views/user/user-details.html',
-            controller: "userEditController as vm"
-        }, {
-            name: 'app.user.groupEdit',
-            url: '/group/edit/user/:userId',
-            templateUrl: 'app/views/user/user-edit-group.html',
-            controller: "userEditGroupController as vm"
+            controller: "userDetailsController as vm"
+        },
+         {
+             name: 'app.user.details.summary',
+             url: '/summary/:userId',
+             templateUrl: 'app/views/user/user-details-summary.html',
+             controller: "userDetailsController as vm"
+         },
+        {
+            name: 'app.user.details.groupedit',
+            url: '/groupedit/:userId',
+            templateUrl: 'app/views/user/user-details-edit-group.html',
+            controller: "userDetailsGroupController as vm"
         });
+
+
+
+
     }
 
 })(window.angular);

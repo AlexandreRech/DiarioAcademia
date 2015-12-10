@@ -85,8 +85,8 @@
     <Content Include="app\controllers\group\group-edit.controller.js" />
     <Content Include="app\controllers\group\group-list.controller.js" />
     <Content Include="app\controllers\group\group-create.controller.js" />
-    <Content Include="app\controllers\user\user-edit.controller.js" />
-    <Content Include="app\controllers\user\user-edit-group.controller.js" />
+    <Content Include="app\controllers\user\user-details.controller.js" />
+    <Content Include="app\controllers\user\user-details-group.controller.js" />
     <Content Include="app\controllers\user\user-list.controller.js" />
     <Content Include="app\directives\ndd-chart-knob\ndd-chart-knob.directive.js" />
     <Content Include="app\directives\ndd-chart-knob\ndd-chart-knob.html" />
@@ -151,7 +151,8 @@
     <Content Include="app\views\group\group-list.html" />
     <Content Include="app\views\manager\manager.html" />
     <Content Include="app\views\authorization\claims-list.html" />
-    <Content Include="app\views\user\user-edit-group.html" />
+    <Content Include="app\views\user\user-details-edit-group.html" />
+    <Content Include="app\views\user\user-details-summary.html" />
     <Content Include="app\views\user\user-details.html" />
     <Content Include="app\views\user\user-list.html" />
     <Content Include="content\layout\footer.less" />

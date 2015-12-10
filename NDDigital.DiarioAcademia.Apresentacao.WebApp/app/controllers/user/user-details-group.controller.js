@@ -1,12 +1,12 @@
 ﻿(function (angular) {
 
     angular.module('controllers.module')
-        .controller('userEditGroupController', userEditGroupController);
+        .controller('userDetailsGroupController', userDetailsGroupController);
 
-    userEditGroupController.$inject = ['userService', 'groupService', "$stateParams"];
+    userDetailsGroupController.$inject = ['userService', 'groupService', "$stateParams"];
 
 
-    function userEditGroupController(userService, groupService, $stateParams) {
+    function userDetailsGroupController(userService, groupService, $stateParams) {
         var vm = this;
         vm.hasChange = false;
         vm.changes = [];

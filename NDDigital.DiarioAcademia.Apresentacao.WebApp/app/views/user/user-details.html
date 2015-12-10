@@ -1,43 +1,28 @@
-﻿
-<ndd-head title="Edição de Usuário"></ndd-head>
-   
-<div class="col-sm-offset-2 col-sm-8">
-    <div style="padding-right: 2%;">
-        <div ng-include="'app/templates/components/user-profile.html'"></div>
+﻿<section class="layout-details">
+    <header class="header-details">
+        <div class="logo-container col-xs-1 clear-padding">
+            <div class="logo">
+                <img src="/app/images/icons/user.svg" alt="" />
+            </div>
+        </div>
+        <div class="col-xs-11 clear-padding">
+            <h3 class="text-capitalize">{{vm.user.firstName + " " + vm.user.lastName }}</h3>
+            <div class="info">
+                <i class="fa fa-user"></i>
+                {{vm.user.userName}}
+                <span>
+                    <i class="fa fa-envelope-o"></i>
+                    {{vm.user.email}}
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="options">
+        <a ng-class="{'active': state.contains('summary')}" ui-sref="app.user.details.summary({userId: vm.user.id})">RESUMO</a>
+        <a ng-class="{'active': state.contains('groupedit')}" ui-sref="app.user.details.groupedit({userId: vm.user.id})">GRUPOS</a>
     </div>
 
-    <div class="col-sm-12 clear-padding">
-        <br />
-        <div class="col-xs-12 clear-padding">
-            <h3 style="margin-top: 0;">Configurações</h3>
-            <hr style="margin-top: 2%" />
-            <br />
-        </div>    
-        <label for="groups">Grupos:</label>
-        <button class="btn btn-info" ng-click="vm.editGroups()">
-            <i class="fa fa-users"></i>
-            <span>Editar Grupos</span>
-        </button>
-    </div>
-</div>
-
-<div class="col-sm-12 clear-padding text-center">
-    <div class="footer">
-        <br /><br />
-        <hr />
-        <button class="btn btn-success" data-toggle="modal" data-target="#modelEditUser" ng-disabled="vm.formUser.$pristine">
-            <i class="fa fa-check-square-o"></i>
-            <span>Salvar Alterações</span>
-
-        </button>
-        <button class="btn btn-info" ng-click="vm.clear()">
-            <i class="fa fa-history"></i>
-            <span>Desfazer Alterações</span>
-        </button>
-    </div>
-</div>
-
-
-<ndd-modal target="modelEditUser" label="{{vm.titleModelEdit}}" callback="vm.editUser">
-    {{vm.bodyModelEdit}}
-</ndd-modal>
+    <article>
+        <div ui-view></div>
+    </article>
+</section>

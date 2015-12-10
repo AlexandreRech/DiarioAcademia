@@ -1,0 +1,23 @@
+﻿<article>
+    <div ng-include="'app/templates/components/user-profile.html'" class="col-sm-6 clear-padding"></div>
+
+    <div class="col-sm-12 clear-padding text-center">
+        <div class="footer">
+            <br /><br />
+            <hr />
+            <button class="btn btn-success" data-toggle="modal" data-target="#modelEditUser" ng-disabled="vm.formUser.$pristine">
+                <i class="fa fa-check-square-o"></i>
+                <span>Salvar Alterações</span>
+
+            </button>
+            <button class="btn btn-info" ng-click="vm.clear()">
+                <i class="fa fa-history"></i>
+                <span>Desfazer Alterações</span>
+            </button>
+        </div>
+    </div>
+</article>
+
+<ndd-modal target="modelEditUser" label="{{vm.titleModelEdit}}" callback="vm.editUser">
+    {{vm.bodyModelEdit}}
+</ndd-modal>

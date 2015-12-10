@@ -50,16 +50,9 @@
         if (toState.name.contains("details")) {
             if (!$rootScope.app)
                 $rootScope.app = {};
-            $rootScope.lastState = $rootScope.lastState != undefined ? $rootScope.lastState :
-                ($rootScope.app.isSideCollapse != undefined ? $rootScope.app.isSideCollapse : false);
-            $rootScope.app.isSideCollapse = true;
             $rootScope.details = true;
         } else {
             $rootScope.details = false;
-            if ($rootScope.lastState != undefined) {
-                $rootScope.app.isSideCollapse = $rootScope.lastState;
-                $rootScope.lastState = undefined;
-            }
         }
     }
 

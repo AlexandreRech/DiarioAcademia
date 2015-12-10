@@ -1,11 +1,11 @@
 ﻿(function (angular) {
 	angular
 		.module('controllers.module')
-		.controller('userEditController', userEditController);
+		.controller('userDetailsController', userDetailsController);
 
-	userEditController.$inject = ['userService', 'groupService', "$stateParams", '$scope', '$state'];
+	userDetailsController.$inject = ['userService', 'groupService', "$stateParams", '$scope', '$state'];
 
-	function userEditController(userService, groupService, params, $scope, $state) {
+	function userDetailsController(userService, groupService, params, $scope, $state) {
 		var vm = this;
 
 		vm.user = {};
@@ -38,7 +38,7 @@
 		}
 
 		function editGroups() {
-			$state.go('app.user.groupEdit', { userId: vm.user.id });
+		    $state.go('app.user.details.groupedit', { userId: vm.user.id });
 		}
 
 		function saveChanges() {

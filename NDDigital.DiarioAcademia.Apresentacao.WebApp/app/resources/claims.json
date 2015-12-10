@@ -48,7 +48,7 @@
         "permissions": [ "ACCOUNT_PUT" ]
     },
     {
-        "name": "app.user.groupEdit",
+        "name": "app.user.details.groupedit",
         "displayName": "header.EDIT_USERS_GROUP",
         "filter": "USER",
         "permissions": [ "AUTHORIZE_GROUPs_USER" ]

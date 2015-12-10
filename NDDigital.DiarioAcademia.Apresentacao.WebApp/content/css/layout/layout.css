@@ -88,12 +88,6 @@ body {
   -webkit-transition: width 0.4s .2s;
   transition: width 0.4s .2s;
 }
-.aside-collapse.logged .container-sidebar.details-mode {
-  transition: width 0.4s;
-}
-.aside-collapse.logged .details-mode .sidebar-separe {
-  transition: width 0.4s;
-}
 .aside-collapse.logged .collapse-btn {
   width: 55px;
   -moz-transition: width 0.4s .2s;

@@ -8,8 +8,7 @@
         .constant('APP_REQUIRES', {
             // jQuery based and standalone scripts
             scripts: {
-                'modernizr': [root + 'vendor/modernizr/modernizr.js'],
-                'icons': [root + 'vendor/fontawesome/css/font-awesome.min.css',
+                'icons': [root + 'vendor/font-awesome/css/font-awesome.min.css',
                           root + 'vendor/simple-line-icons/css/simple-line-icons.css']
             },
             // Angular based script

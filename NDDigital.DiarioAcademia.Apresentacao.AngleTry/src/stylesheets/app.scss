@@ -1,0 +1,57 @@
+﻿/*!
+ * 
+ * DiarioAcademia - Main CSS
+ * 
+ * Version: 3.0.0
+ * Author: NDDigital (based on template purchased that was developed by @themicon_co)
+ * Website: https://github.com/AlexandreRech/DiarioAcademia
+ * 
+
+[Table of contents]
+
+1. Base
+  1.1 Variables 
+  1.2 Bootstrap and bootstrap-reset
+
+2. Layout
+  2.1 Application layout settings
+
+3. Components
+  3.1 Application's components
+
+ */
+
+/*  Base   */
+@import "../stylesheets/base/variables";
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";  // Bootstrap
+@import "../stylesheets/base/media-queries";
+@import "../stylesheets/base/utils-definitions";
+@import "../stylesheets/base/bootstrap-reset";
+@import "../stylesheets/base/typo"; // Typography
+@import "../stylesheets/base/utils";
+
+/*  Layout   */
+@import "../stylesheets/layout/layout";
+@import "../stylesheets/layout/layout-animation";
+@import "../stylesheets/layout/layout-app";
+@import "../stylesheets/layout/top-navbar";
+@import "../stylesheets/layout/sidebar";
+@import "../stylesheets/layout/offsidebar";
+@import "../stylesheets/layout/grid-system";
+
+/*  Components   */
+@import "../stylesheets/component/circles";
+@import "../stylesheets/component/input";
+@import "../stylesheets/component/jumbotron";
+@import "../stylesheets/component/language-button";
+@import "../stylesheets/component/loading-bar";
+@import "../stylesheets/component/panels";
+@import "../stylesheets/component/preloader";
+@import "../stylesheets/component/progress-extra";
+@import "../stylesheets/component/color-settings";
+@import "../stylesheets/component/switcher";
+@import "../stylesheets/component/user-block";
+@import "../stylesheets/component/table/datatable";
+@import "../stylesheets/component/table/table";
+@import "../stylesheets/component/table/table-extras";
+

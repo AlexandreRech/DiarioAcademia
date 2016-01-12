@@ -1,6 +1,5 @@
 module.exports = function () {
 
-    // MAIN PATHS
     var paths = {
         app: './src/',
         dist: "./dist/"
@@ -8,11 +7,8 @@ module.exports = function () {
     var bower = "./bower_components/";
 
     var config = {
-
         root: "./",
-
         index: "./index.html",
-
         app: {
             html: [paths.app + "**/**/*.html"],
 
@@ -32,31 +28,27 @@ module.exports = function () {
             },
 
             css: {
-                'static': [paths.app + "content/**/**/*.css",
-                           paths.app + "content/css/**/app.css",
-                           "!" + paths.app + "content/css/theme/theme*.css",
-                           "!" + paths.app + "content/**/**/bootstrap*.css"
-                ],
-
+                'static': [paths.app + "stylesheets/css/**/app.css",
+                           "!" + paths.app + "stylesheets/css/theme/theme*.css"],
                 lazy: {
                     theme: {
-                        src: [paths.app + "content/css/theme/theme*.css"],
-                        dist: paths.dist + "src/content/css/theme/"
+                        src: [paths.app + "stylesheets/css/theme/theme*.css"],
+                        dist: paths.dist + "src/stylesheets/css/theme/"
                     }
                 },
             },
             sass: {
-                all: paths.app + "content/**/**/**/*.scss",
-                bootstrap: paths.app + "content/libs/bootstrap/bootstrap.scss",
-                angle: paths.app + "content/app.scss",
-                themes: paths.app + "content/**/theme*.scss"
+                all: paths.app + "stylesheets/**/**/*.scss",
+                app: paths.app + "stylesheets/app.scss",
+                libs: paths.app + "stylesheets/libs.scss",
+                themes: paths.app + "stylesheets/**/theme*.scss"
             },
 
             json: [paths.app + '**/**/*.json'],
 
             fonts: {
-                all: [paths.app + "**/**/fonts/*.*", "!" + paths.app + "content/fonts/*.*"],
-                bootstrap: [paths.app + "content/fonts/*.*"]
+                all: [paths.app + "**/**/fonts/*.*", "!" + paths.app + "stylesheets/fonts/*.*"],
+                bootstrap: [bower + "bootstrap-sass/assets/fonts/bootstrap/*.*"]
             },
 
             images: [paths.app + "images/**/**/*.*"],
@@ -68,7 +60,8 @@ module.exports = function () {
         },
 
         libs: {
-            css: getLibsCss()
+            js: require("../src/custom-libs.json"),
+            css: paths.app + "stylesheets/css/**/libs.css"
         },
 
         bower: {
@@ -85,14 +78,14 @@ module.exports = function () {
                 fonts: paths.dist + "/fonts/",
                 vendor: paths.dist + "src/vendor/"
             },
-            css: paths.app + "content/css/",
+            css: paths.app + "stylesheets/css/",
             images: paths.dist + "images/"
         },
 
         clean: {
             dist: {
                 all: "./dist",
-                css: paths.app + "content/css/**/**/*.css",
+                css: paths.app + "stylesheets/css/**/**/*.css",
             },
             vendor: [paths.app + "vendor/*.*"]
 
@@ -163,7 +156,7 @@ module.exports = function () {
             },
             //watcher for restart
             files: [
-               'src/content/theme/*.css',
+               'src/stylesheets/theme/*.css',
                'src/**/**/**/**/*.js',
                '**/**/**/*.html'
             ],
@@ -173,35 +166,13 @@ module.exports = function () {
                 forms: true,
                 scroll: true
             },
-            injectChanges: true, // injetar modificações
+            injectChanges: true,  
             logFilesChanges: true,
             logLevel: 'debug',
             log: 'gulp-patterns',
             notify: true,
             reloadDelay: 0
         };
-    }
-
-    //Helpers
-    function getLibsCss() {
-        var resources = [bower + "/**/**/**/*.css",
-                         paths.app + "content/css/**/bootstrap.css",
-                         "!" + bower + "**/**/**/*.min.css",
-                         "!" + bower + "**/**/**/font-awesome*.css",
-                         "!" + bower + "**/**/**/bootstrap*.css",
-                         "!" + bower + "**/examples/**/*.css",
-                         "!" + bower + "**/**/**/example*.css",
-                         "!" + bower + "modernizr/**/**/*.css",
-                         "!" + bower + "/ng-table/docs/**/*.css",
-                         "!" + bower + "/**/sweetalert/themes/**/*.css",
-                         "!" + bower + "/**/sweetalert/dev/**/*.css"];
-
-        var vendors = require("../src/vendor.json");
-        vendors.map(function (vendor) {
-            resources.push("!" + vendor);
-        });
-
-        return resources;
     }
     return config;
 

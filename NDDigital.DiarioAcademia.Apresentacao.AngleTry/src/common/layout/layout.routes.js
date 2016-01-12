@@ -16,7 +16,7 @@
                 abstract: true,
                 redirect: "app.home",
                 templateUrl: 'src/common/layout/views/app.html',
-                resolve: helper.resolveFor('modernizr', 'icons')
+                resolve: helper.resolveFor('icons')
             })
             .state('app.home', {
                 name: 'app.home',

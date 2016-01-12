@@ -106,7 +106,7 @@ gulp.task('build-fonts', 'Deploy of fonts', function () {
                 .pipe(gulp.dest(config.dist.src.root));
 
     gulp.src(config.app.fonts.bootstrap)
-             .pipe(gulp.dest(config.dist.src.fonts));
+             .pipe(gulp.dest(config.dist.src.fonts + "bootstrap/"));
 });
 
 gulp.task('build-json', 'Deploy of json', function () {

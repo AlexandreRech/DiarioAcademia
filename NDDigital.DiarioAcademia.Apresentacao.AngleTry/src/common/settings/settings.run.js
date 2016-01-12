@@ -23,7 +23,7 @@
           horizontal: false,
           isFloat: false,
           asideHover: false,
-          theme: "src/content/css/theme/theme-b.css"
+          theme: "src/stylesheets/css/theme/theme-b.css"
         },
         useFullLayout: false,
         hiddenFooter: false,
@@ -35,15 +35,16 @@
       // Setup the layout mode
       $rootScope.app.layout.horizontal = ( $rootScope.$stateParams.layout === 'app-h') ;
 
+
       // Restore layout settings [*** UNCOMMENT TO ENABLE ***]
-      // if( angular.isDefined($localStorage.layout) )
-      //   $rootScope.app.layout = $localStorage.layout;
-      // else
-      //   $localStorage.layout = $rootScope.app.layout;
-      //
-      // $rootScope.$watch('app.layout', function () {
-      //   $localStorage.layout = $rootScope.app.layout;
-      // }, true);
+       if( angular.isDefined($localStorage.layout) )
+         $rootScope.app.layout = $localStorage.layout;
+       else
+         $localStorage.layout = $rootScope.app.layout;
+      
+       $rootScope.$watch('app.layout', function () {
+         $localStorage.layout = $rootScope.app.layout;
+       }, true);
 
       // Close submenu when sidebar change from collapsed to normal
       $rootScope.$watch('app.layout.isCollapsed', function(newValue) {

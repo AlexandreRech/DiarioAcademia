@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-ng-app="diarioacademia">
 
 <head>
@@ -32,8 +32,8 @@
     <link rel="stylesheet" ng-href="{{app.layout.theme}}" ng-if="app.layout.theme">
 
     <!-- Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic' rel='stylesheet' type='text/css'>
+    <link async href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
+    <link async href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-controller="shellController as shell"
@@ -46,24 +46,14 @@
     <div ui-view data-autoscroll="false" class="wrapper"></div>
 
 <!--build:js js/libs.js-->
-    <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- bower:js -->
     <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/datatables/media/js/jquery.dataTables.js"></script>
     <script src="/bower_components/angular-datatables/dist/angular-datatables.js"></script>
     <script src="/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/light-columnfilter/angular-datatables.light-columnfilter.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/buttons/angular-datatables.buttons.js"></script>
-    <script src="/bower_components/angular-datatables/dist/plugins/select/angular-datatables.select.js"></script>
     <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
@@ -76,7 +66,6 @@
     <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
     <script src="/bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/angular-ui-utils/ui-utils.js"></script>
     <script src="/bower_components/jquery.browser/dist/jquery.browser.js"></script>
     <script src="/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
     <script src="/bower_components/ngstorage/ngStorage.js"></script>
@@ -87,6 +76,13 @@
     <!-- endbower -->
 
     <!--inject:js-->
+    <script src="/node_modules/angular-ui-bootstrap/src/collapse/collapse.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/src/paging/paging.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/src/pager/pager.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/template/pager/pager.html.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/src/tabs/tabs.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/template/tabs/tabset.html.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/template/tabs/tab.html.js"></script>
     <!--endinject -->
 <!--endbuild-->
 

@@ -4,21 +4,25 @@
     angular
         .module('app.core', [
             'ngRoute',
-            'ngResource',
             'LocalStorageModule',
             'ngAnimate',
             'ngStorage',
             'ngCookies',
             'pascalprecht.translate',
-            'ui.bootstrap',
             'ui.router',
             'oc.lazyLoad',
             'cfp.loadingBar',
             'ngSanitize',
             'ngResource',
-            'ui.utils',
-            'oitozero.ngSweetAlert'
+            'oitozero.ngSweetAlert',
+            //ui-bootstrap
+            'ui.bootstrap.collapse',
+            'ui.bootstrap.paging',
+            'ui.bootstrap.pager',
+            'ui.bootstrap.tabs',
+            //ui-bootstrap templates
+            "uib/template/pager/pager.html",
+            "uib/template/tabs/tab.html",
+            "uib/template/tabs/tabset.html"
         ])
-
-
 })();

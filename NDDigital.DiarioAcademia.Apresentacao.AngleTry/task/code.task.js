@@ -62,7 +62,7 @@ gulp.task('templatecache', 'Generate template cache', function () {
 });
 
 //Deploy of lazy load resources describes in vendor.json
-gulp.task('vendor-lazy', 'Put in paste vendor lazy dependencies define in vendor.json', function (done) {
+gulp.task('vendor-lazy', 'Put in paste vendor lazy dependencies define in vendor.json', ['clean-vendor'], function (done) {
     var vendors = require("../src/vendor.json");
     gulp.src(vendors, { base: 'bower_components' })
         .pipe(gulp.dest(config.app.vendor.root).on('end', done));

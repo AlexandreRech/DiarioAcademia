@@ -102,8 +102,8 @@ gulp.task('build-images', 'Publish Optimized Images', function (done) {
 });
 
 gulp.task('build-fonts', 'Deploy of fonts', function () {
-    gulp.src(config.app.fonts.all)
-                .pipe(gulp.dest(config.dist.src.root));
+    gulp.src(config.app.fonts.fontawesome)
+                .pipe(gulp.dest(config.dist.src.fonts + "font-awesome/"));
 
     gulp.src(config.app.fonts.bootstrap)
              .pipe(gulp.dest(config.dist.src.fonts + "bootstrap/"));

@@ -1,0 +1,15 @@
+﻿{
+  "exclude": [
+    "jquery.js",
+    "angular-datatables.colreorder.js",
+    "angular-datatables.columnfilter.js",
+    "angular-datatables.light-columnfilter.js",
+    "angular-datatables.colvis.js",
+    "angular-datatables.fixedcolumns.js",
+    "angular-datatables.fixedheader.js",
+    "angular-datatables.scroller.js",
+    "angular-datatables.tabletools.js",
+    "angular-datatables.buttons.js",
+    "angular-datatables.select.js"
+  ]
+}

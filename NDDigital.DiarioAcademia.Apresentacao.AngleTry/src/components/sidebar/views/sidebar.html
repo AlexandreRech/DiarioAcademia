@@ -6,7 +6,7 @@
         <div ng-if="item.alert" ng-class="item.label || 'label label-success'" class="pull-right">{{item.alert}}</div>
         <em ng-if="item.icon" class="{{item.icon}}"></em><span>{{(item.translate | translate) || item.text}}</span>
     </a>
-    <ul ng-if="item.submenu" collapse="isCollapse(pIndex)" ng-init="addCollapse(pIndex, item)" class="nav sidebar-subnav">
+    <ul ng-if="item.submenu" uib-collapse="isCollapse(pIndex)" ng-init="addCollapse(pIndex, item)" class="nav sidebar-subnav">
         <li class="sidebar-subnav-header">{{(item.translate | translate) || item.text}}</li>
 
         <li ng-repeat="item in item.submenu" ng-include="'sidebar-renderer.html'" ng-class="getMenuItemPropClasses(item)"
@@ -20,7 +20,7 @@
         <!-- START sidebar nav-->
         <ul class="nav" ng-controller="UserBlockController">
             <li class="has-user-block">
-                <div collapse="userBlockVisible">
+                <div uib-collapse="userBlockVisible">
                     <div class="item user-block">
                         <!-- User picture-->
                         <div class="user-block-picture">

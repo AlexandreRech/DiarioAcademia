@@ -1,3 +1,12 @@
 ﻿{
-  "bootstrap": []
+  "_comment": "Neste arquivo estão refernciadas as partes utilizadas [utilização parcial] das bibliotecas javascripts.",
+  "ui-bootstrap": [
+    "./node_modules/angular-ui-bootstrap/src/collapse/collapse.js",
+    "./node_modules/angular-ui-bootstrap/src/paging/paging.js",
+    "./node_modules/angular-ui-bootstrap/src/pager/pager.js",
+    "./node_modules/angular-ui-bootstrap/template/pager/pager.html.js",
+    "./node_modules/angular-ui-bootstrap/src/tabs/tabs.js",
+    "./node_modules/angular-ui-bootstrap/template/tabs/tabset.html.js",
+    "./node_modules/angular-ui-bootstrap/template/tabs/tab.html.js"
+  ]
 }

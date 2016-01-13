@@ -8,8 +8,7 @@
         .constant('APP_REQUIRES', {
             // jQuery based and standalone scripts
             scripts: {
-                'icons': [root + 'vendor/font-awesome/css/font-awesome.min.css',
-                          root + 'vendor/simple-line-icons/css/simple-line-icons.css']
+                'icons': [root + 'vendor/simple-line-icons/css/simple-line-icons.css']
             },
             // Angular based script
             modules: [

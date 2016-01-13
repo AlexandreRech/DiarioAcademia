@@ -8,7 +8,8 @@
  * 
  */
 
-// Bootstrap
+
+/* Bootstrap */
 
 // Core variables and mixins
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
@@ -32,13 +33,29 @@
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navs";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navs";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/labels";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pager";
 
 // Utility classes
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+
+/* Angular UI Bootstrap */
+
+// Components
+@import "./node_modules/angular-ui-bootstrap/src/tabs/tabs";
+
+
+/* Font-Awesome */
+
+// Variables
+$fa-font-path: "../fonts/font-awesome";
+
+// Components
+@import "./bower_components/font-awesome/scss/font-awesome";

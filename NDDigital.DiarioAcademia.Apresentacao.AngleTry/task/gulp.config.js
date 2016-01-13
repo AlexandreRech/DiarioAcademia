@@ -44,11 +44,12 @@ module.exports = function () {
                 themes: paths.app + "stylesheets/**/theme*.scss"
             },
 
-            json: [paths.app + '**/**/*.json'],
+            json: [paths.app + 'common/translate/resources/*.json'],
 
             fonts: {
                 all: [paths.app + "**/**/fonts/*.*", "!" + paths.app + "stylesheets/fonts/*.*"],
-                bootstrap: [bower + "bootstrap-sass/assets/fonts/bootstrap/*.*"]
+                bootstrap: [paths.app + "stylesheets/fonts/bootstrap/*.*"],
+                fontawesome: [paths.app + "stylesheets/fonts/font-awesome/*.*"]
             },
 
             images: [paths.app + "images/**/**/*.*"],
@@ -144,7 +145,7 @@ module.exports = function () {
                     }
                 }
             },
-            exclude: require("../src/vendor.json")
+            exclude: require("../src/vendor.json").concat(require("./settings/wiredep-exclude.json").exclude)
         };
     }
 
@@ -158,7 +159,8 @@ module.exports = function () {
             files: [
                'src/stylesheets/theme/*.css',
                'src/**/**/**/**/*.js',
-               '**/**/**/*.html'
+               'src/**/**/**/**/*.html',
+               'index.html'
             ],
             ghostMode: {
                 clicks: true,

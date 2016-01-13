@@ -128,9 +128,9 @@
     <Content Include="src\common\authorization\claims.json" />
     <Content Include="src\stylesheets\app.scss" />
     <None Include="src\stylesheets\component\input.scss" />
+    <Content Include="src\stylesheets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="src\stylesheets\libs.scss" />
     <None Include="src\stylesheets\component\switcher.scss" />
-    <Content Include="src\stylesheets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\features\aluno\aluno.adapter.js" />
     <Content Include="src\features\aluno\aluno.routes.js" />
     <Content Include="src\features\aluno\aluno.service.js" />
@@ -212,10 +212,6 @@
     <Content Include="src\vendor.json" />
     <Content Include="src\common\translate\resources\en.json" />
     <Content Include="src\common\translate\resources\es.json" />
-    <Content Include="src\stylesheets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="src\stylesheets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="src\stylesheets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="src\stylesheets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="src\stylesheets\component\jumbotron.scss" />
     <None Include="src\stylesheets\component\language-button.scss" />
     <Content Include="src\common\translate\resources\pt.json" />
@@ -252,6 +248,10 @@
     <Content Include="src\stylesheets\theme\theme-h.scss" />
     <Content Include="src\lazy-resources.json" />
     <Content Include="src\custom-libs.json" />
+    <Content Include="src\stylesheets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="src\stylesheets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="src\stylesheets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="src\stylesheets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -318,6 +318,7 @@
   <ItemGroup>
     <Folder Include="dist\" />
     <Folder Include="src\stylesheets\css\" />
+    <Folder Include="src\stylesheets\fonts\font-awesome\" />
     <Folder Include="src\vendor\" />
   </ItemGroup>
   <ItemGroup>

@@ -101,7 +101,7 @@ gulp.task('build-images', 'Publish Optimized Images', function (done) {
                 .pipe(gulp.dest(config.dist.src.images).on('end', done));
 });
 
-gulp.task('build-fonts', 'Deploy of fonts', function () {
+gulp.task('build-fonts', 'Deploy of fonts', ["build-fonts-dev"], function () {
     gulp.src(config.app.fonts.fontawesome)
                 .pipe(gulp.dest(config.dist.src.fonts + "font-awesome/"));
 
@@ -112,4 +112,12 @@ gulp.task('build-fonts', 'Deploy of fonts', function () {
 gulp.task('build-json', 'Deploy of json', function () {
     gulp.src(config.app.json)
                 .pipe(gulp.dest(config.dist.src.root));
+});
+
+gulp.task('build-fonts-dev', 'Deploy of fonts in dev', ["clean-fonts"], function (callback) {
+    gulp.src(config.libs.fonts.bootstrap)
+                .pipe(gulp.dest(config.app.fonts.all + "bootstrap/"));
+
+    gulp.src(config.libs.fonts.fontawesome)
+               .pipe(gulp.dest(config.app.fonts.all + "font-awesome/").on('end', callback));
 });

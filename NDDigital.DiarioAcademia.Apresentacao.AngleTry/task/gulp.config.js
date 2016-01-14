@@ -44,10 +44,14 @@ module.exports = function () {
                 themes: paths.app + "stylesheets/**/theme*.scss"
             },
 
-            json: [paths.app + 'common/translate/resources/*.json'],
+            json: [paths.app + '**/**/**/*.json',
+                   "!" + paths.app + '**/**/**/custom-libs.json',
+                   "!" + paths.app + '**/**/**/lazy-resources.json',
+                   "!" + paths.app + '**/**/**/vendor.json'
+            ],
 
             fonts: {
-                all: [paths.app + "**/**/fonts/*.*", "!" + paths.app + "stylesheets/fonts/*.*"],
+                all: paths.app + "stylesheets/fonts/",
                 bootstrap: [paths.app + "stylesheets/fonts/bootstrap/*.*"],
                 fontawesome: [paths.app + "stylesheets/fonts/font-awesome/*.*"]
             },
@@ -62,7 +66,11 @@ module.exports = function () {
 
         libs: {
             js: require("../src/custom-libs.json"),
-            css: paths.app + "stylesheets/css/**/libs.css"
+            css: paths.app + "stylesheets/css/**/libs.css",
+            fonts: {
+                fontawesome:  ["./bower_components/font-awesome/fonts/*.*"],
+                bootstrap: ["./bower_components/bootstrap-sass/assets/fonts/bootstrap/*.*"]    
+            }
         },
 
         bower: {
@@ -168,7 +176,7 @@ module.exports = function () {
                 forms: true,
                 scroll: true
             },
-            injectChanges: true,  
+            injectChanges: true,
             logFilesChanges: true,
             logLevel: 'debug',
             log: 'gulp-patterns',

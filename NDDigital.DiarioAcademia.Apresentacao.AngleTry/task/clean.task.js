@@ -18,3 +18,7 @@ gulp.task('clean-css', 'Clean all css of paste css', function (callback) {
 gulp.task('clean-vendor', 'Clean all css of paste css', function (callback) {
     del(config.clean.vendor, { force: true }, callback);
 });
+
+gulp.task('clean-fonts', 'Clean all fonts of paste fonts', function (callback) {
+    del(config.app.fonts.all, { force: true }, callback);
+});

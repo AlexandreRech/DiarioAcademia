@@ -7,7 +7,7 @@
  */
 
 //Injects
-gulp.task('inject', 'Inject the files in the index.html', ['inject-css', 'templatecache'], function (callback) {
+gulp.task('inject', 'Inject the files in the index.html', ['inject-css', 'templatecache', 'build-fonts-dev'], function (callback) {
     var resources = config.getResourcesInjected();
     var source = gulp.src(config.index);
     for (var resource in resources) {

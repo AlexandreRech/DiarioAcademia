@@ -173,6 +173,7 @@ NDDigital.DiarioAcademia.Apresentacao.AngleTry/dist/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/stylesheets/css/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/stylesheets/fonts/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/vendor/*
+NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/common/templatecache/*
 packages/FluentAssertions.3.2.1/lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml
 packages/FluentAssertions.3.2.1/lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml
 .vs/config/applicationhost.config

@@ -9,7 +9,7 @@
                     ng-disabled="!vm.turmas.length"
                     ng-required="true"
                     ng-selected="vm.selected == true">
-                <option value="">Selecione a Turma</option>
+                <option label="Selecione a Turma"></option>
             </select>
             <br />
 
@@ -19,9 +19,7 @@
                     ng-change="vm.getChamada()"
                     ng-required="true">
 
-                <option value="">
-                    Selecione a aula
-                </option>
+                <option label="Selecione a aula"></option>
             </select><br />
 
             <span class="btn alert-success notify-status" ng-class="{'alert-success': vm.chamadaDto.chamadaRealizada, 'alert-danger': !vm.chamadaDto.chamadaRealizada}" ng-show="vm.aulaSelected">

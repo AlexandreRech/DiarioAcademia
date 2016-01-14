@@ -17,7 +17,6 @@
         vm.turmaSelected = false;
         vm.aulaSelected = false;
 
-
         activate();
         function activate() {
             turmaService.getTurmas().then(function (data) {

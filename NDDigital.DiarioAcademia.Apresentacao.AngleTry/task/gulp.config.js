@@ -85,7 +85,9 @@ module.exports = function () {
                 root: paths.dist + "src/",
                 images: paths.dist + "src/images/",
                 fonts: paths.dist + "/fonts/",
-                vendor: paths.dist + "src/vendor/"
+                vendor: paths.dist + "src/vendor/",
+                js: paths.dist + "**/**/*.js",
+                css: paths.dist + "**/**/*.css",
             },
             css: paths.app + "stylesheets/css/",
             images: paths.dist + "images/"

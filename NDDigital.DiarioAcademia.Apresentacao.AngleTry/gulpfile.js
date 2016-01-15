@@ -16,6 +16,7 @@ addsrc = require('gulp-add-src');
 gulpsync = require('gulp-sync')(gulp);
 del = require('del');
 changed = require('gulp-changed');
+compress = require('compression');
 
 // TASKS
 requireDir('./task/');

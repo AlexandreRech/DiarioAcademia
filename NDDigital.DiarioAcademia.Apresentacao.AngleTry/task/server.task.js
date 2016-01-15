@@ -19,7 +19,11 @@ gulp.task('start-publish', 'Start publish version of app optimized', ['build'], 
     //start application
     browserSync.init({
         server: {
-            baseDir: "./dist/"   //publish version
+            baseDir: "./dist/",   //publish version
+            middleware: function (req, res, next) { // gzip compress
+                var gzip = compress();
+                gzip(req, res, next);
+            }
         }
     });
 });

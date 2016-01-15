@@ -89,6 +89,7 @@
     <Content Include="src\common\changes\changes.factory.js" />
     <Content Include="src\common\changes\changes.module.js" />
     <Content Include="src\common\common.module.js" />
+    <Content Include="src\common\routes\routes.run.js" />
     <Content Include="src\components\ndd-confirm\ndd-confirm.directive.js" />
     <Content Include="src\components\ndd-confirm\ndd-confirm.module.js" />
     <Content Include="src\components\ndd-group-checkbox\ndd-group-checkbox.directive.js" />

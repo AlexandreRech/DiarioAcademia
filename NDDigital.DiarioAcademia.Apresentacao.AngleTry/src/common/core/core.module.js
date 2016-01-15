@@ -12,7 +12,6 @@
             'ui.router',
             'oc.lazyLoad',
             'cfp.loadingBar',
-            'ngSanitize',
             'ngResource',
             'oitozero.ngSweetAlert',
             //ui-bootstrap

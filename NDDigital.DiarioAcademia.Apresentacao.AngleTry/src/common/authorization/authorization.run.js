@@ -1,30 +1,8 @@
 ﻿(function () {
     'use strict';
 
-    angular
-        .module('app.authorization')
-        .run(runStateChangeSuccess)
-        .run(runStateNotFound)
-        .run(runStateChangeStart);
-
-
-    runStateChangeSuccess.$inject = ["$rootScope"];
-    function runStateChangeSuccess($rootScope) {
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            $rootScope.previousState = fromState;
-            $rootScope.state = toState.name;
-            console.log({ Change: "succes: ", fromState: fromState.name, toState: toState.name });
-        });
-    };
-
-
-    runStateNotFound.$inject = ["$rootScope"];
-    function runStateNotFound($rootScope) {
-        $rootScope.$on('$stateNotFound',
-               function (event, unfoundState, fromState, fromParams) {
-                   console.log({ Change: "error: ", fromState: fromState.name, toState: unfoundState.to });
-               });
-    };
+    angular.module('app.authorization')
+                .run(runStateChangeStart);
 
 
     runStateChangeStart.$inject = ['$rootScope', '$state', 'autheService', 'authoFactory', 'logger', 'authoUtilFactory', '$translate'];
@@ -43,12 +21,12 @@
                }
 
                //check authorization
-               if (toState.allowAnnonymous)
+               if (toState.allowAnnonymous || !toState.authorization)
                    return true;
                if (authoFactory.authorization.isAdmin)
                    return true;
-               var isAuthorized = authoFactory.authorization.isAuthorized(toState.name);
-               if ( isAuthorized) return;
+               var isAuthorized = authoFactory.authorization.isAuthorized(toState.authorization);
+               if (isAuthorized) return;
                logNoAuthorized(authoUtilFactory, $translate, logger, toState);
                event.preventDefault();
                $state.go('login');
@@ -58,7 +36,7 @@
 
     // Helpers
     function logNoAuthorized(authoUtilFactory, $translate, logger, toState) {
-        var permissionRequired = authoUtilFactory.getByName(toState.name || toState.to);
+        var permissionRequired = authoUtilFactory.getByName(toState.authorization || toState.to);
         logger.warning($translate.instant('status.NOT_AUTHORIZED', {
             resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
         }));

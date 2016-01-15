@@ -13,7 +13,8 @@
             url: '/authorization/claims',
             templateUrl: 'src/common/authorization/views/claim-list.html',
             controller: "claimListController as vm",
-            resolve: helper.resolveFor('app.authorization')
+            resolve: helper.resolveFor('app.authorization'),
+            authorization: "authorization"
         })
     }
 

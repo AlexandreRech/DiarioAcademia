@@ -12,7 +12,8 @@
             url: '/create',
             controller: 'chamadaController as vm',
             templateUrl: 'src/features/chamada/chamada.html',
-            resolve: helper.resolveFor('app.chamada')
+            resolve: helper.resolveFor('app.chamada'),
+            authorization: "chamada"
         });
     }
 })();

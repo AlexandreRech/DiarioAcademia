@@ -26,7 +26,7 @@ $offsidebar-wd: $aside-wd + 15px; // match the width with the main aside compone
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     @include transition(all .3s ease);
-
+    padding-left: 3px;
     > nav {
         min-height: 100%;
         overflow: hidden;
@@ -105,4 +105,8 @@ $offsidebar-wd: $aside-wd + 15px; // match the width with the main aside compone
             @include translate3d(0, 0, 0);
         }
     }
+}
+
+.nav-tabs > .uib-tab.active > div, .nav-tabs > .uib-tab.active > div:hover {
+        border-color: #ddd #ddd #ddd #ddd;
 }

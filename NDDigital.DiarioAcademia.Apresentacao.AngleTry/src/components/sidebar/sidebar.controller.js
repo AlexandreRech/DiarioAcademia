@@ -87,10 +87,11 @@
                     angular.forEach(item.submenu, function (value) {
                         if (isActive(value)) foundActive = true;
                     });
-                    return foundActive;
+
+                    return foundActive ? foundActive : $state.includes(item.srefActive);
                 }
                 else
-                    return $state.is(item.sref) || $state.includes(item.sref);
+                    return $state.is(item.sref) || $state.includes(item.sref) || $state.includes(item.srefActive);
             }
 
             function closeAllBut(index) {

@@ -40,9 +40,9 @@
     }
 
     function logNoAuthorized(authoUtilFactory, $translate, logger, toState) {
-        var permissionRequired = authoUtilFactory.getByName(toState.authorization || toState.to);
+        var permissionRequired = authoUtilFactory.getByName(toState.authorization || toState.name);
         logger.warning($translate.instant('status.NOT_AUTHORIZED', {
-            resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
+            resourceName: " \"" + permissionRequired ? $translate.instant(permissionRequired.displayName) : "" + "\""
         }));
     }
 

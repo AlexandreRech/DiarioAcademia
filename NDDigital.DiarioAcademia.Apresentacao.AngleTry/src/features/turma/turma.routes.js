@@ -20,17 +20,20 @@
            .state('app.turma.list', {
                url: '/list',
                controller: 'turmaListController as vm',
-               templateUrl: 'src/features/turma/views/turma-list.html'
+               templateUrl: 'src/features/turma/views/turma-list.html',
+               authorization: "turma_list"
            })
            .state('app.turma.create', {
                url: '/create',
                controller: 'turmaCreateController as vm',
-               templateUrl: 'src/features/turma/views/turma-create.html'
+               templateUrl: 'src/features/turma/views/turma-create.html',
+               authorization: "turma_create"
            })
            .state('app.turma.details', {
                url: '/details/:turmaId',
                controller: 'turmaDetailsController as vm',
-               templateUrl: 'src/features/turma/views/turma-details.html'
+               templateUrl: 'src/features/turma/views/turma-details.html',
+               authorization: "turma_edit"
            });
     }
 })();

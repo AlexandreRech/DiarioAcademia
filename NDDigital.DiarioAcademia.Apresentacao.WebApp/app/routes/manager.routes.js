@@ -1,19 +1,16 @@
 ﻿(function (angular) {
     'use strict';
-    var KEYS = angular.injector(['common.module']).get('CONSTANT_KEYS');
 
-    angular
-        .module('routes.module')
-        .config(configRoutes);
+    angular.module('routes.module').config(configRoutes);
 
-    configRoutes.$inject = [KEYS.APP_ROUTES];
+    configRoutes.$inject = ['$stateProvider'];
 
-    function configRoutes(routes) {
-        routes.push({
+
+    function configRoutes($stateProvider) {
+        $stateProvider.state({
             name: 'app.manager',
             url: '/manager',
-            templateUrl: 'app/views/manager/manager.html',
-            redirect: '/manager/user'
+            templateUrl: 'app/views/manager/manager.html'
         });
     }
 

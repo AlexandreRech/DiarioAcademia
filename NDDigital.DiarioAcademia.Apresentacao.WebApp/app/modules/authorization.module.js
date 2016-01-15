@@ -32,15 +32,15 @@
 
     // Helpers
     function checkAuth(authoFactory, toState) {
-        if (toState.data.allowAnnonymous)
+        if (toState.allowAnnonymous || !toState.authorization)
             return true;
         if (authoFactory.authorization.isAdmin)
             return true;
-        return authoFactory.authorization.isAuthorized(toState.name);
+        return authoFactory.authorization.isAuthorized(toState.authorization);
     }
 
     function logNoAuthorized(authoUtilFactory, $translate, logger, toState) {
-        var permissionRequired = authoUtilFactory.getByName(toState.name || toState.to);
+        var permissionRequired = authoUtilFactory.getByName(toState.authorization || toState.to);
         logger.warning($translate.instant('status.NOT_AUTHORIZED', {
             resourceName: " \"" + $translate.instant(permissionRequired.displayName) + "\""
         }));

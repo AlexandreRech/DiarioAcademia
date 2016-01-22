@@ -293,9 +293,6 @@
     <Content Include="src\images\preloader\preloader.full.png" />
     <Content Include="src\images\preloader\preloader.full_.png" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="package.json" />
     <Content Include="src\common\authorization\claims.json" />
     <Content Include="src\common\translate\resources\en.json" />

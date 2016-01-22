@@ -1,0 +1,7 @@
+<ndd-toolbar cb-properties="vm.edit" security-properties="app.aluno.details"
+             cb-remove="vm.remove" security-remove="action.deleteAluno"
+             state-new="app.aluno.create"></ndd-toolbar>
+
+<ndd-table columns="['ALUNOS', 'PRESENÇAS', 'FALTAS']" attrs="['nome', 'presencas', 'faltas']" data="vm.alunos" 
+           cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>
+

@@ -9,7 +9,7 @@
 	   .service('userService', userService);
 
 	//class
-	function userService($http, logger, baseUrl, res, permissionAdapter) {
+	function userService($http, logger, baseUrl, res) {
 		var self = this;
 
 		var serviceUrl = baseUrl + "api/accounts/";

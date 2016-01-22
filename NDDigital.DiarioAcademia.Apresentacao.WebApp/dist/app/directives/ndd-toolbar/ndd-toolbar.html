@@ -1,0 +1,22 @@
+<div class="row container-toolbar">
+
+    <div class="col-md-6 col-xs-12">
+        <div class="submit-line">
+            <input type="text" class="form-control" placeholder="{{'topbar.search.PLACEHOLDER' | translate}}" ng-model="filter" />
+            <button class="submit-lente" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md-6  col-xs-12  clear-padding">
+        <ul class="nav navbar-nav toolbar">
+            <ndd-toolbar-option name="{{'action.EDIT' | translate}}" icon="fa-cog" ng-click="cbProperties()" ng-show="cbProperties" security="{{securityProperties}}"></ndd-toolbar-option>
+
+            <ndd-toolbar-option name="{{'action.CREATE' | translate}}" icon="fa-plus" ng-click="cbNew()" route="{{stateNew}}" ng-show="cbNew || stateNew" security="{{stateNew}}"></ndd-toolbar-option>
+
+            <ndd-toolbar-option name="{{'action.DELETE' | translate}}" icon="fa-trash-o" ng-click="cbRemove()" security="{{securityRemove}}"></ndd-toolbar-option>
+        </ul>
+    </div>
+</div>
+

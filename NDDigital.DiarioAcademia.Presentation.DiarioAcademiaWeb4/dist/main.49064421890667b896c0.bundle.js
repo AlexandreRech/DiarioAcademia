@@ -1,0 +1,2 @@
+!function(e){function o(r){if(t[r])return t[r].exports;var a=t[r]={exports:{},id:r,loaded:!1};return e[r].call(a.exports,a,a.exports,o),a.loaded=!0,a.exports}var t={};return o.m=e,o.c=t,o.p="",o(0)}([function(e,o){document.write("Welcome to Big Hair Concerts teste aaaaaaa eee !!!"),console.log("App loaded")}]);
+//# sourceMappingURL=main.49064421890667b896c0.bundle.js.map

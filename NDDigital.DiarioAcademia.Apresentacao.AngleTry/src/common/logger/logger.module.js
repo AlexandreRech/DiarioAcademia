@@ -4,4 +4,3 @@
     angular
         .module('app.logger', []);
 })();
-

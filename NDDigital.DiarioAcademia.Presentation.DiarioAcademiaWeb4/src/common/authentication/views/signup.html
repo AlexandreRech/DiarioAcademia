@@ -1,0 +1,84 @@
+﻿<div class="block-center mt-xl wd-xl">
+    <!-- START panel-->
+    <div class="panel panel-dark panel-flat">
+        <div class="panel-heading text-center">
+            <a href="#">
+                <img ng-src="images/logo.svg" alt="Image" class="block-center img-rounded" style="width: 121px;height: 34px;" />
+            </a>
+        </div>
+        <div class="panel-body">
+            <p class="text-center">SIGNUP TO GET INSTANT ACCESS.</p>
+            <form role="form" name="reg.registerForm" novalidate="" ng-submit="reg.register()" class="form-validate mb-lg">
+                <div class="form-group has-feedback">
+                    <label class="text-muted">First Name</label>
+                    <input type="text" name="first_name" class="form-control" placeholder="First Name" ng-model="vm.registration.firstName" autocomplete="off" required autofocus>
+                    <span class="fa fa-user form-control-feedback text-muted"></span>
+                    <span ng-show="reg.registerForm.first_name.$dirty &amp;&amp; reg.registerForm.first_name.$error.required" class="text-danger">This field is required</span>
+                    <span ng-show="reg.registerForm.first_name.$dirty &amp;&amp; reg.registerForm.first_name.$error.email" class="text-danger">This field must be a valid  first name</span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="text-muted">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" ng-model="vm.registration.lastName" autocomplete="off" required>
+                    <span class="fa fa-user form-control-feedback text-muted"></span>
+                    <span ng-show="reg.registerForm.last_name.$dirty &amp;&amp; reg.registerForm.last_name.$error.required" class="text-danger">This field is required</span>
+                    <span ng-show="reg.registerForm.last_name.$dirty &amp;&amp; reg.registerForm.last_name.$error.email" class="text-danger">This field must be a valid last name</span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="text-muted">Usermame</label>
+                    <input type="text" name="username" class="form-control" placeholder="Username" ng-model="vm.registration.userName" required>
+                    <span class="fa fa-user form-control-feedback text-muted"></span>
+                    <span ng-show="reg.registerForm.username.$dirty &amp;&amp; reg.registerForm.username.$error.required" class="text-danger">This field is required</span>
+                    <span ng-show="reg.registerForm.username.$dirty &amp;&amp; reg.registerForm.username.$error.email" class="text-danger">This field must be a valid username</span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="text-muted">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Email" ng-model="vm.registration.email" required>
+                    <span class="fa fa-user form-control-feedback text-muted"></span>
+                    <span ng-show="reg.registerForm.email.$dirty &amp;&amp; reg.registerForm.email.$error.required" class="text-danger">This field is required</span>
+                    <span ng-show="reg.registerForm.email.$dirty &amp;&amp; reg.registerForm.email.$error.email" class="text-danger">This field must be a valid email</span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="text-muted">Password</label>
+                    <input id="id-password" type="password" name="account_password" ng-model="vm.registration.password" ng-pattern="/^[a-zA-Z0-9]{6,10}$/" required="" class="form-control" />
+                    <span class="fa fa-lock form-control-feedback text-muted"></span>
+                    <span ng-show="reg.registerForm.account_password.$dirty &amp;&amp; reg.registerForm.account_password.$error.required" class="text-danger">This field is required</span>
+                    <span ng-show="reg.registerForm.account_password.$dirty &amp;&amp; reg.registerForm.account_password.$error.pattern" class="text-danger">Input should match 'a-zA-Z0-9' and 6-10 length</span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="text-muted">Retype Password</label>
+                    <input type="password" name="account_password_confirm" ng-model="vm.registration.confirmPassword" ui-validate="'$value==vm.registration.password'" ui-validate-watch="'password'" class="form-control" />
+                    <span class="fa fa-lock form-control-feedback text-muted"></span>
+                    <span ng-show="reg.registerForm.account_password_confirm.$dirty &amp;&amp; reg.registerForm.account_password_confirm.$error.validator" class="text-danger">Password does Not match</span>
+                </div>
+                <div class="clearfix">
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input type="checkbox" required name="account_agreed" ng-model="reg.account.agreed" />
+                            <span class="fa fa-check"></span>I agree with the <a href="#">terms</a>
+                        </label>
+                    </div>
+                </div>
+                <div ng-show="reg.registerForm.account_agreed.$dirty &amp;&amp; reg.registerForm.account_agreed.$error.required" class="text-danger">You must agree the terms</div>
+                <button class="btn btn-block btn-primary mt-lg" type="submit" ng-click="vm.signUp()" ng-disabled="reg.registerForm.$error.required || reg.registerForm.account_agreed.$error.required">Create account</button>
+            </form>
+            <div data-ng-hide="vm.message == ''" ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                {{vm.message}}  
+                <br />
+            </div>
+            <div ng-show="reg.authMsg" class="alert alert-danger text-center">
+                {{reg.authMsg}}
+                <br />
+            </div>
+            <p class="pt-lg text-center">Have an account?</p><a ui-sref="login" class="btn btn-block btn-default">Signup</a>
+        </div>
+    </div>
+    <!-- END panel-->
+    <div class="p-lg text-center">
+        <span>&copy;</span>
+        <span ng-bind="vm.app.year"></span>
+        <span>-</span> 
+        <span ng-bind="vm.app.name"></span>
+        <br />         
+        <span ng-bind="vm.app.description"></span>
+    </div>
+</div>

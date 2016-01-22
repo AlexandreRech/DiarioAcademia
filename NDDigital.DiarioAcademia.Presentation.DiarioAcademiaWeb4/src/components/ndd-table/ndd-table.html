@@ -1,0 +1,43 @@
+﻿
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{title}}
+    </div>
+    <div class="panel-body">
+        <div class="container-table">
+            <table ng-if="data.length" datatable="ng" class="table row-border  hover" datatable-setup>
+                <thead>
+                    <tr>
+                        <th ng-repeat="column in columns"></th>
+                        <th>&nbsp;</th>
+
+                    </tr>
+                    <tr>
+                        <th ng-repeat="column in columns">{{column}}</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="entity in data" ng-class="{'actived-row':selectedEntity == entity}">
+                        <td ng-repeat="attribute in attrs">
+                            <div ng-hide="isBool(entity[attribute])">
+                                <span ng-hide="isNumber(entity[attribute])">{{entity[attribute]  | date: 'dd/MM/yyyy' }}</span>
+                                <span ng-show="isNumber(entity[attribute])">{{entity[attribute]}}</span>
+                            </div>
+                            <span class="glyphicon glyphicon-ok text-warning" ng-show="isBool(entity[attribute]) && entity[attribute]"></span>
+                            <span class="glyphicon glyphicon-minus" ng-show="isBool(entity[attribute]) && !entity[attribute]"></span>
+                        </td>
+                        <td class="text-center">
+                            <button type="button" ng-click="cbEdit(entity)" ng-if="cbEdit" ndd-security="{{securityEdit}}" class="btn btn-sm btn-warning">
+                                <em class="fa fa-edit"></em>
+                            </button>
+                            <button type="button" ng-click="cbRemove(entity)" ng-if="cbRemove" ndd-security="{{securityRemove}}" class="btn btn-sm btn-danger">
+                                <em class="fa fa-trash-o"></em>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

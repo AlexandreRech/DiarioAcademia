@@ -1,0 +1,65 @@
+﻿<ndd-head title="{{'entities.CLASS_REGISTER' | translate}}" ></ndd-head>
+
+<div class="row">
+    <div class="col-xs-offset-1 col-xs-10">
+        <form name="vm.chamadaForm" class="jumbotron">
+            <select class="form-control" ng-model="vm.chamada.turma"
+                    ng-options="turma.descricao for turma in vm.turmas"
+                    ng-change="vm.populateAulas(vm.chamada.turma)"
+                    ng-disabled="!vm.turmas.length"
+                    ng-required="true"
+                    ng-selected="vm.selected == true">
+                <option label="Selecione a Turma"></option>
+            </select>
+            <br />
+
+            <select class="form-control" ng-model="vm.chamada.aula"
+                    ng-options="aula.dataAula | date: 'dd/MM/yyyy' for aula in vm.aulas"
+                    ng-disabled="!vm.aulas.length"
+                    ng-change="vm.getChamada()"
+                    ng-required="true">
+
+                <option label="Selecione a aula"></option>
+            </select><br />
+
+            <span class="btn alert-success notify-status" ng-class="{'alert-success': vm.chamadaDto.chamadaRealizada, 'alert-danger': !vm.chamadaDto.chamadaRealizada}" ng-show="vm.aulaSelected">
+                <i class="fa fa-check"></i>
+                <span>{{ vm.chamadaDto.chamadaRealizada ? ('status.CLASS_REGISTER_CREATE' | translate) : ('status.CLASS_REGISTER_NOT_CREATE' | translate)}}</span>
+            </span>
+
+            <button class="btn btn-success pull-right" ng-click="vm.save()" ng-disabled="vm.chamadaForm.$invalid">{{'action.CREATE_CLASS_REGISTER' | translate}}</button>
+        </form>
+    </div>
+    <div class="col-xs-offset-1 col-xs-10">
+        <div ng-show="vm.chamadaForm.aula.$error.required && vm.chamadaForm.aula.$dirty" class=" alert alert-danger">
+            Por favor, selecione aula de hoje!
+        </div>
+
+        <div ng-show="vm.turmaSelected && vm.aulas.length == 0" class="alert alert-danger">
+            Essa turma não possui aulas cadastradas!
+        </div>
+
+        <div ng-show="vm.turmaSelected && vm.aulaSelected && vm.talunos.length == 0" class="alert alert-danger">
+            Essa turma não possui alunos cadastrados!
+        </div>
+    </div>
+    <table class="table table-hover table-responsive table-condensed">
+        <thead>
+            <tr>
+                <th>Presença</th>
+                <th>Alunos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="aluno in vm.alunos">
+                <td style="padding-left: 0; width: 150px">
+                    <div class="switcher" ng-class="{'on': aluno.status}" ng-click="aluno.status = !aluno.status">
+                        <div class="switcherHandler"></div>
+                        <input type="checkbox" class="switcherInput" ng-model="aluno.status" />
+                    </div>
+                </td>
+                <td><h4>{{aluno.nome}}</h4></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

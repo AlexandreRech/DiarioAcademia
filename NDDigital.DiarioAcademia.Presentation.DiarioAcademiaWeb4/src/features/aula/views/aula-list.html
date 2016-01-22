@@ -1,0 +1,5 @@
+﻿
+<ndd-head title="{{'header.LIST_LESSON' | translate}}"></ndd-head>
+
+<ndd-table title="{{'header.LIST_LESSON'  | translate}}" columns="['ID', 'DATA DA AULA', 'TURMA']" attrs="[ 'id','dataAula', 'anoTurma']" data="vm.aulas"
+           cb-click="vm.onClick" cb-remove="vm.remove"></ndd-table>

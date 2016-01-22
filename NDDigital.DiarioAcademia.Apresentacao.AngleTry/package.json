@@ -4,6 +4,7 @@
   "description": "DiarioAcademia - Template of web applications",
   "author": "PD&I - NDDigital",
   "dependencies": {
+    "angular-ui-bootstrap": "^1.1.0",
     "browser-sync": "^2.10.0",
     "gulp": "^3.8.10"
   },

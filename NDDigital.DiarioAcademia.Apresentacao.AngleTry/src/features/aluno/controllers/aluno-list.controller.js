@@ -62,7 +62,7 @@
                                 $translate.instant('info.STUDENT_NOT_DELETED'), 'error');
                 return;
             }
-           alunoService.delete(vm.aluno).then(function () {
+            alunoService.remove(vm.aluno).then(function () {
                 makeRequest();
                 SweetAlert.swal($translate.instant('status.SUCCESS'),
                                 $translate.instant('info.STUDENT_DELETED'), "success");

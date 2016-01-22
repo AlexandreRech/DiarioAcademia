@@ -1,0 +1,44 @@
+<!-- Navigation Layout -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top nav-custom" role="navigation">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse" ng-click="app.isSideCollapse = !app.isSideCollapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand hidden-xs" ui-sref="home">
+            <img ng-src="app/images/logo.png">
+        </a>
+        <a class="navbar-brand visible-xs" ui-sref="home">
+            <img ng-src="app/images/logo-single.png">
+        </a>
+
+        <div ng-include="'app/templates/layout/top-menu.html'" class="pull-right"></div>
+    </div>
+
+    <div ng-include="'app/templates/layout/top-menu-xs.html'" ></div> 
+</nav>
+
+<nav class="navbar navbar-fixed-top nav-options-custom hidden-xs text-uppercase" role="navigation" ng-show="shell.authentication.isAuth">
+    <div class="option-nav" ui-sref="app.homeapp" ng-class="{'actived-option': state.contains('home')}">HOME</div>
+
+    <div class="option-nav" ui-sref="app.turma.list"
+         ng-class="{'actived-option': state.contains('turma')}" ndd-security="app.turma.list">{{'entities.CLASS' | translate}}</div>
+
+    <div class="option-nav" ui-sref="app.aluno.list"
+         ng-class="{'actived-option': state.contains('aluno')}" ndd-security="app.aluno.list">{{'entities.STUDENT' | translate}}</div>
+
+    <div class="option-nav" ui-sref="app.aula.list"
+         ng-class="{'actived-option': state.contains('aula')}" ndd-security="app.aula.list">{{'entities.LESSON' | translate}}</div>
+
+    <div class="option-nav" ui-sref="app.chamada"
+         ng-class="{'actived-option': state.contains('chamada')}" ndd-security="app.chamada">{{'entities.CLASS_REGISTER' | translate}}</div>
+
+    <div class="option-nav" ui-sref="app.manager"
+         ng-class="{'actived-option': state.contains('app.user') || state.contains('app.group') || state.contains('app.authorization') || state.contains('app.manager')}"
+         ndd-security="['app.user.list', 'app.group.list', 'app.authorization']">{{'entities.MANAGER' | translate}}</div>
+</nav>

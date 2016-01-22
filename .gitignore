@@ -160,22 +160,23 @@ $RECYCLE.BIN/
 
 # Package files
 packages/*
+node_modules/*
 NDDigital.DiarioAcademia.Apresentacao.WebApp/bower_components/*
 NDDigital.DiarioAcademia.Apresentacao.WebApp/node_modules/*
-NDDigital.DiarioAcademia.Apresentacao.WebApp/dist/*
 NDDigital.DiarioAcademia.Apresentacao.WebApp/index.html
 NDDigital.DiarioAcademia.Apresentacao.WebApp/task/temp/templates.js
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/bower_components/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/node_modules/*
-NDDigital.DiarioAcademia.Apresentacao.AngleTry/bower_components/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/node_modules/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/dist/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/stylesheets/css/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/stylesheets/fonts/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/vendor/*
 NDDigital.DiarioAcademia.Apresentacao.AngleTry/src/common/templatecache/*
+NDDigital.DiarioAcademia.Presentation.DiarioAcademiaWeb4/node_modules/*
 packages/FluentAssertions.3.2.1/lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml
 packages/FluentAssertions.3.2.1/lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml
 .vs/config/applicationhost.config
 NDDigital.DiarioAcademia.WebApi/App_Data/DefaultConnection_log.ldf
 *.ldf
+NDDigital.DiarioAcademia.Presentation.DiarioAcademiaWeb4/node_modules/.bin/cssesc

@@ -1,0 +1,11 @@
+﻿<div class="input-group space-bottom" ng-repeat="obj in elements">
+    <span class="input-group-addon" ng-class="{'border-success': check(obj, compare, method)}">
+        <input type="checkbox" ng-checked="check(obj, compare, method)" ng-click="onclick(obj, compare, callback, method)">
+    </span>
+
+    <input type="text" class="cursor-pointer form-control " value="{{ (obj.displayName | translate) || obj.name}}" readonly
+           ng-click="onclick(obj, compare, callback, method);"
+           ng-class="{'border-success': check(obj, compare, method), 'clear-border': !!obj.permissionId}">
+
+</div>
+<uib-pager  total-items="countElements" ng-model="currentPage" ng-hide="array.length == 0 || array.length <= numPerPage"></uib-pager>

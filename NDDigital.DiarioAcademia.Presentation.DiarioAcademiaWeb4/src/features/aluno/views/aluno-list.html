@@ -1,0 +1,4 @@
+﻿<ndd-head title="{{'header.LIST_STUDENT' | translate}}"></ndd-head>
+
+<ndd-table columns="['ID','ALUNOS', 'PRESENÇAS', 'FALTAS']" attrs="['id', 'nome', 'presencas', 'faltas']" data="vm.alunos"
+           cb-edit="vm.edit" cb-remove="vm.remove" security-edit="app.aluno.details" security-remove="action.deleteAluno"></ndd-table>

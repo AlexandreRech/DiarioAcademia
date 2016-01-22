@@ -1,0 +1,25 @@
+﻿
+<!-- Modal -->
+<div class="modal fade" id="{{target}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 5%">
+        <div class="modal-content">
+            <!-- header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{label}}</h4>
+            </div>
+            <!-- body -->
+            <div class="modal-body">
+                <div ng-transclude></div>
+            </div>
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-hide="info" >{{'action.CANCEL' | translate}}</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="callback()">{{'action.OK' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

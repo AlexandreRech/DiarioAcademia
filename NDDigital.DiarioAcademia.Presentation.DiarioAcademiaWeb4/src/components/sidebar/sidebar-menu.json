@@ -1,0 +1,122 @@
+[
+  {
+    "text": "Menu Heading",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Home",
+    "sref": "app.home",
+    "icon": "fa fa-home",
+    "translate": "sidebar.nav.HOME"
+  },
+  {
+    "_comment": "Option for Class",
+    "text": "Class",
+    "sref": "#",
+    "icon": "fa fa-group",
+    "srefActive": "app.turma",
+    "submenu": [
+      {
+        "text": "List Class",
+        "sref": "app.turma.list",
+        "translate": "action.LIST"
+      },
+      {
+        "text": "Create Class",
+        "sref": "app.turma.create",
+        "translate": "action.CREATE"
+      }
+    ],
+    "translate": "entities.CLASS"
+  },
+  {
+    "_comment": "Option for Student",
+    "text": "Student",
+    "sref": "#",
+    "icon": "fa fa-graduation-cap",
+    "srefActive": "app.aluno",
+    "submenu": [
+      {
+        "text": "List Student",
+        "sref": "app.aluno.list",
+        "translate": "action.LIST"
+      },
+      {
+        "text": "Create Student",
+        "sref": "app.aluno.create",
+        "translate": "action.CREATE"
+      }
+    ],
+    "translate": "entities.STUDENT"
+  },
+  {
+    "_comment": "Option for Lesson",
+    "text": "Lesson",
+    "sref": "#",
+    "srefActive": "app.aula",
+    "icon": "fa fa-calendar",
+    "submenu": [
+      {
+        "text": "List Lessons",
+        "sref": "app.aula.list",
+        "translate": "action.LIST"
+      },
+      {
+        "text": "Create Lessons",
+        "sref": "app.aula.create",
+        "translate": "action.CREATE"
+      }
+    ],
+    "translate": "entities.LESSON"
+  },
+  {
+    "_comment": "Option for Class Register",
+    "text": "Class Register",
+    "sref": "app.chamada",
+    "icon": "fa fa-check-square-o",
+    "translate": "entities.CLASS_REGISTER"
+  },
+
+  {
+    "_comment": "Option for Class Register",
+    "text": "Manager",
+    "icon": "fa fa-cog",
+    "translate": "entities.MANAGER",
+    "sref": "#",
+    "submenu": [
+      {
+        "text": "Users",
+        "icon": "fa fa-user",
+        "sref": "app.user.list",
+        "srefActive": "app.user",
+        "translate": "entities.USER"
+      },
+      {
+        "text": "Groups",
+        "sref": "#",
+        "srefActive": "app.group",
+        "icon": "fa fa-users",
+        "translate": "entities.GROUP",
+        "submenu": [
+          {
+            "text": "Groups List",
+            "sref": "app.group.list",
+            "translate": "action.LIST"
+          },
+          {
+            "text": "Groups Create",
+            "sref": "app.group.create",
+            "translate": "action.CREATE"
+          }
+        ]
+      },
+      {
+        "text": "Authorizations",
+        "icon": "fa fa-check",
+        "sref": "app.authorization",
+        "translate": "entities.AUTHORIZATION"
+      }
+    ]
+  }
+]

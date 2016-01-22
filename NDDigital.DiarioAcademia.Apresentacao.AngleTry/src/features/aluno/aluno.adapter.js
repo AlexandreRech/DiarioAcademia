@@ -42,8 +42,8 @@
         }
 
         //public methods
-        factory.makeTurmaDto = function (obj) {         
-            return { ano: turma.ano };        
+        factory.makeTurmaDto = function (obj) {
+            return { ano: turma.ano };
         };
 
         factory.toAlunoDto = function (obj) {

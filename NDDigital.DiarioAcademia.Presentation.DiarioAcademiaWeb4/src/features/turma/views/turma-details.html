@@ -1,0 +1,18 @@
+﻿<ndd-head title="{{ 'header.EDIT_CLASS' | translate }}"></ndd-head>
+
+
+<div class="col-sm-offset-1 col-sm-10">
+    <form name="vm.turmaForm" class="jumbotron">
+        <input class="form-control" type="text" value="Academia do Programador" name="descricao" ng-required="true" ng-disabled="true" /><br>
+        <input class="form-control" type="number" value="2000" ng-model="vm.turma.ano" name="ano" ng-required="true" ng-disabled="false" /><br>
+        <div ng-show="vm.turmaForm.ano.$error.required && vm.turmaForm.ano.$dirty" class="alert alert-danger">
+            Por favor, preencha o campo ano!
+        </div>
+        <div ng-show="vm.turmaForm.ano.minlength && vm.alunoForm.ano.$error.$dirty" class="alert alert-danger">
+            O campo ano deve ter 4 digitos!
+        </div>
+
+        <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.turmaForm.$invalid">{{ 'action.SAVE' | translate }}</button>
+        <button class="btn btn-success" ng-click="vm.clearFields()">{{ 'action.CLEAN' | translate }}</button>
+    </form>
+</div>

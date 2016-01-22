@@ -1,0 +1,22 @@
+<table class="table table-hover table-responsive table-condensed">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th ng-repeat="column in columns">{{column}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="entity in data | filter: dataFilter" ng-click="cbClick(entity); onClick(entity);" class="cursor-pointer"
+            ng-class="{'actived-row':selectedEntity == entity}">
+            <td><input type="radio" name="rdGroup" ng-click="selectedEntity == entity" ng-checked="selectedEntity == entity" /></td>
+            <td ng-repeat="attribute in attrs">
+                <div ng-hide="isBool(entity[attribute])" >
+                    <span ng-hide="isNumber(entity[attribute])">{{entity[attribute]  | date: 'dd/MM/yyyy' }}</span>
+                    <span ng-show="isNumber(entity[attribute])">{{entity[attribute]}}</span>
+                </div>
+                <span class="glyphicon glyphicon-star" ng-show="isBool(entity[attribute]) && entity[attribute]"></span>
+                <span class="glyphicon glyphicon-minus" ng-show="isBool(entity[attribute]) && !entity[attribute]"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

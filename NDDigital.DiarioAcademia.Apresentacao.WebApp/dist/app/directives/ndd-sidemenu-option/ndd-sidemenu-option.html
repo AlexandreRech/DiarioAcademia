@@ -1,0 +1,7 @@
+<li class="side-option" ng-class="{'actived': state.contains(routeActived || route), 'li-hidden': !verifyDisplay(state)}" ndd-security="{{route}}">
+    <a class="cursor-pointer" ng-click="redirect(route)">
+        <i class="fa icon-option icon-font" ng-class="icon" ng-show="icon"></i>
+        <span class="align-middle">{{name}}</span>
+    </a>
+    <div class="seta-direita" ></div>
+</li>

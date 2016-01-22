@@ -1,0 +1,28 @@
+﻿<ndd-head title="{{'header.CREATE_STUDENT' | translate}}"></ndd-head>
+
+<div class="container-view padding-left">
+    <div class="col-sm-12 clear-padding">
+        <form name="vm.alunoForm" class="jumbotron">
+            <input class="form-control" type="text" ng-model="vm.aluno.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10" /><br>
+            <input class="form-control" type="text" ng-model="vm.aluno.endereco.cep" name="cep" placeholder="CEP" ng-required="true" ng-minlength="8" /><br>
+            <input class="form-control" type="text" ng-model="vm.aluno.endereco.bairro" name="bairro" placeholder="Bairro" ng-required="true" /><br>
+            <input class="form-control" type="text" ng-model="vm.aluno.endereco.localidade" name="localidade" placeholder="Localidade" ng-required="true" /><br>
+            <input class="form-control" type="text" ng-model="vm.aluno.endereco.uf" name="uf" placeholder="UF" ng-required="true" /><br>
+            <input class="form-control" type="text" ng-model="vm.aluno.turma" name="turma" ng-hide="true" ng-required="true" />
+            <select class="form-control" ng-model="vm.aluno.turma" ng-options="turma.descricao for turma in vm.turmas">
+                <option>Selecione a Turma</option>
+            </select><br>
+            <div ng-show="vm.alunoForm.nome.$error.required && vm.alunoForm.nome.$dirty" class="alert alert-danger">
+                Por favor, preencha o campo nome!
+            </div>
+            <div ng-show="vm.alunoForm.nome.$error.minlength && vm.alunoForm.nome.$dirty" class="alert alert-danger">
+                O campo nome deve ter mais de 10 caractéres!
+            </div>
+            <div ng-show="vm.alunoForm.turma.$error.required && vm.alunoForm.uf.$dirty" class="alert alert-danger">
+                Selecione uma turma válida!
+            </div>
+            <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.alunoForm.$invalid">{{'action.SAVE' | translate}}</button>
+            <button class="btn btn-success" ng-click="vm.clearFields()">{{'action.CLEAN' | translate}}</button>
+        </form>
+    </div>
+</div>

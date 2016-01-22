@@ -1,0 +1,28 @@
+<section class="layout-details">
+    <header class="header-details">
+        <div class="logo-container col-xs-1 clear-padding">
+            <div class="logo">
+                <img src="/app/images/icons/user.svg" alt="" />
+            </div>
+        </div>
+        <div class="col-xs-11 clear-padding">
+            <h3 class="text-capitalize">{{vm.user.firstName + " " + vm.user.lastName }}</h3>
+            <div class="info">
+                <i class="fa fa-user"></i>
+                {{vm.user.userName}}
+                <span>
+                    <i class="fa fa-envelope-o"></i>
+                    {{vm.user.email}}
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="options">
+        <a ng-class="{'active': state.contains('summary')}" ui-sref="app.user.details.summary({userId: vm.user.id})">RESUMO</a>
+        <a ng-class="{'active': state.contains('groupedit')}" ui-sref="app.user.details.groupedit({userId: vm.user.id})">GRUPOS</a>
+    </div>
+
+    <article>
+        <div ui-view></div>
+    </article>
+</section>

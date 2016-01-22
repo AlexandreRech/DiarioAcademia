@@ -1,0 +1,29 @@
+<ul class="nav navbar-right top-nav pull-right" ng-show="shell.authentication.isAuth">
+    <li class="dropdown nav-option">
+        <span class="container-help"><i class="fa fa-2x fa-question help"></i></span>        
+    </li>
+</ul>
+<ul class="nav navbar-right top-nav pull-right" ng-show="shell.authentication.isAuth">
+    <li class="dropdown nav-option">
+        <a data-toggle="dropdown" class="dropdown-toggle" style="cursor: pointer; color:white">
+            <span class="profile-ava">
+                <img src="/app/images/icons/user.svg" alt="" height="40" />
+            </span>
+            <span class="menu-log">
+                <span class="username hidden-xs">{{shell.authentication.userName || 'User'}}</span>
+                <b class="caret"></b>
+            </span>
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-hide="shell.authentication.isAuth">
+                <a ui-sref="home" href="#"><i class="fa fa-fw fa-sign-in"></i>Entrar</a>
+            </li>
+            <li ng-hide="shell.authentication.isAuth">
+                <a ui-sref="signup" class="text">Registrar-se</a>
+            </li>
+            <li data-ng-show="shell.authentication.isAuth">
+                <a href="" class="text" ng-click="shell.logOut()"><i class="fa fa-fw fa-sign-out"></i>Sair</a>
+            </li>
+        </ul>
+    </li>
+</ul>

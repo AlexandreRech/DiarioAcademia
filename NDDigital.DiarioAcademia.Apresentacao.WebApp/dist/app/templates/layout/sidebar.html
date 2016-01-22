@@ -1,0 +1,54 @@
+<div ng-controller="sidebarController as vm" class="collapse navbar-collapse">
+    <section ng-hide="details">
+        <ul class="nav navbar-nav side-nav sidemenu-custom"
+            ng-class="{'slider-enter': shell.authentication.isAuth, 'slider-leave': !shell.authentication.isAuth }">
+            <!--Button Collapse-->
+            <li class="li cursor-pointer collapse-btn" ng-click="app.isSideCollapse = !app.isSideCollapse">
+                <a>
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar middle"></i>
+                    <i class="icon-bar"></i>
+                </a>
+            </li>
+
+            <!--Home -->
+            <ndd-sidemenu-option route-show="['app.homeapp']" name="Home" icon="fa-home" class="home-li"
+                                 route="app.homeapp" state="{{state}}"></ndd-sidemenu-option>
+            <!--Turma -->
+            <ndd-sidemenu-option route-show="['app.turma']" name="{{'header.LIST_CLASS' | translate}}" i icon="fa-university"
+                                 route="app.turma.list" state="{{state}}"></ndd-sidemenu-option>
+            <!--Aluno -->
+            <ndd-sidemenu-option route-show="['app.aluno']" name="{{'header.LIST_STUDENT' | translate}}" icon="fa-graduation-cap "
+                                 route="app.aluno.list" state="{{state}}"></ndd-sidemenu-option>
+            <!--Aula -->
+            <ndd-sidemenu-option route-show="['app.aula']" name="{{'header.LIST_LESSON' | translate}}" icon="fa-calendar"
+                                 route="app.aula.list" state="{{state}}"></ndd-sidemenu-option>
+            <!--Chamada -->
+            <ndd-sidemenu-option route-show="['app.chamada']" name="{{'header.CLASS_REGISTER' | translate}}" icon="fa-check"
+                                 route="app.chamada" state="{{state}}"></ndd-sidemenu-option>
+            <!--User -->
+            <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.authorization', 'app.group']"
+                                 name="{{'entities.USER' | translate}}" route-actived="app.user"
+                                 route="app.user.list" state="{{state}}" icon="fa-user"></ndd-sidemenu-option>
+            <!--Groups -->
+            <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.authorization', 'app.group']"
+                                 name="{{'entities.GROUP' | translate}}" route-actived="app.group"
+                                 route="app.group.list" state="{{state}}" icon="fa-users"></ndd-sidemenu-option>
+            <!--Permissions -->
+            <ndd-sidemenu-option route-show="['app.manager', 'app.user', 'app.authorization', 'app.group']"
+                                 name="{{'entities.AUTHORIZATION' | translate}}"
+                                 route="app.authorization" state="{{state}}" icon="fa-user-times"></ndd-sidemenu-option>
+            <div class="li sidebar-separe text-center"></div>
+        </ul>
+    </section>
+    <section>
+        <ul class="nav navbar-nav side-nav sidemenu-custom" ng-show="shell.authentication.isAuth" ng-class="{'slider-enter': shell.authentication.isAuth, 'slider-leave': !shell.authentication.isAuth }">
+
+            <img src="app/images/icons/Icon_back_side.png" ng-click="vm.redirect(state)" class="back-details">
+            <li>
+                <div class="li sidebar-separe-details text-center"></div>
+            </li>
+        </ul>
+    </section>
+
+</div>

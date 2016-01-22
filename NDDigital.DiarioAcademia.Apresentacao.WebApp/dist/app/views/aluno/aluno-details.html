@@ -1,0 +1,51 @@
+<section class="layout-details">
+    <header class="header-details row">
+        <div class="logo-container col-xs-1 clear-padding">
+            <div class="logo">
+                <i class="fa fa-graduation-cap"></i>
+            </div>
+        </div>
+        <div class="col-xs-11 clear-padding">
+            <h3 class="text-capitalize">{{vm.title}}</h3>
+            <div class="info">
+                <span>
+                    <i class="fa fa-calendar-o"></i>
+                    Faltas: {{vm.aluno.faltas}}
+                </span>
+                <span>
+                    <i class="fa fa-check"></i>
+                    Presenças: {{vm.aluno.presencas}}
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="options">
+        <a class="active">RESUMO</a>
+    </div>
+    <article>
+        <h4>DADOS DO ALUNO</h4>
+        <div class="col-sm-6 clear-padding">
+            <form name="vm.alunoForm">
+                <input class="form-control" type="text" ng-model="vm.aluno.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10" /><br>
+                <input class="form-control" type="text" ng-model="vm.aluno.endereco.cep" name="cep" placeholder="CEP" ng-required="true" ng-minlength="8" /><br>
+                <input class="form-control" type="text" ng-model="vm.aluno.endereco.bairro" name="bairro" placeholder="Bairro" ng-required="true" /><br>
+                <input class="form-control" type="text" ng-model="vm.aluno.endereco.localidade" name="localidade" placeholder="Localidade" ng-required="true" /><br>
+                <input class="form-control" type="text" ng-model="vm.aluno.endereco.uf" name="uf" placeholder="UF" ng-required="true" /><br>
+                <select class="form-control" ng-model="vm.aluno.turma" ng-options="turma.descricao for turma in vm.turmas" ng-disabled="true">
+                    <option value="">Selecione a Turma</option>
+                </select><br>
+
+                <div ng-show="vm.alunoForm.nome.$error.required && vm.alunoForm.nome.$dirty" class="alert alert-danger">
+                    Por favor, preencha o campo nome!
+                </div>
+                <div ng-show="vm.alunoForm.nome.$error.minlength && vm.alunoForm.nome.$dirty" class="alert alert-danger">
+                    O campo nome deve ter mais de 10 caractéres!
+                </div>
+                <div ng-show="vm.alunoForm.turma.$error.selected && vm.alunoForm.nome.$dirty" class="alert alert-danger">
+                    Selecione uma turma válida!
+                </div>
+                <button class="btn btn-primary" ng-click="vm.save()" ng-disabled="vm.alunoForm.$invalid">{{'action.SAVE' | translate}}</button>
+            </form>
+        </div>
+    </article>
+</section>

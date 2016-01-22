@@ -1,0 +1,41 @@
+﻿.switcher {
+  padding: 5px 22px;
+  background-color: #da4d39;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+
+  border: 1px solid white;
+  border-radius: 15px;
+
+}
+
+.switcher.on {
+  background-color: #009c58;
+}
+
+.switcherHandler{
+  width: 22px;
+  position: absolute;
+  display: inline-block;
+  top: -4px;
+  bottom: -4px;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;  
+  cursor: pointer;
+
+  background-color: #FFF;
+  border: 1px solid #dfdfdf;
+  border-radius: 15px;
+
+}
+
+.switcher.on .switcherHandler{
+  transform: translateX(100%);
+}
+
+.switcherInput{
+  opacity: 0;
+  pointer-events: none;
+}

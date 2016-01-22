@@ -1,0 +1,8 @@
+<ul class="nav navbar-nav toolbar">
+
+    <ndd-toolbar-option name="Propriedades" icon="fa-cog" ng-click="cbProperties()" ng-show="cbProperties" security="{{securityProperties}}" ></ndd-toolbar-option>
+                                                                                 
+    <ndd-toolbar-option name="Novo" icon="fa-plus" ng-click="cbNew()" route="{{stateNew}}" ng-show="cbNew || stateNew" security="{{stateNew}}"></ndd-toolbar-option> 
+
+    <ndd-toolbar-option name="Remover" icon="fa-times" ng-click="cbRemove()" security="{{securityRemove}}" ></ndd-toolbar-option>
+</ul>

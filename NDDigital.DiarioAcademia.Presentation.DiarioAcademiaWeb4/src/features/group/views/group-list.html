@@ -1,0 +1,4 @@
+﻿<ndd-head title="{{'header.LIST_GROUPS' | translate}}" ></ndd-head>
+
+<ndd-table columns="['ID', 'NOME', 'ADMINISTRADOR']" attrs="['id','name', 'isAdmin']" data="vm.groups"
+           cb-edit="vm.edit" cb-remove="vm.remove" security-edit="app.group.edit"></ndd-table>

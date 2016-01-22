@@ -1,0 +1,21 @@
+﻿ <ndd-head title="{{'entities.GROUP' | translate}}: {{vm.user.firstName + ' ' + vm.user.lastName }}" ></ndd-head>
+
+
+<div class="container-user fadeIn enter-fadeIn">
+    <div class="row">
+        <h3 ng-show="vm.groups.length <= 0" class="text-center">Não há grupos cadastrados</h3>
+        <div class="col-sm-offset-3 col-sm-6 clear-padding">
+            <ndd-group-checkbox array="vm.groups" compare="vm.user.groups" callback="vm.onchange"></ndd-group-checkbox>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 text-center clear-padding">
+            <hr />
+            <button class="btn btn-success" ng-click="vm.save()" ng-disabled="!vm.hasChange">
+                <i class="fa fa-save"></i>
+                <span>{{'action.SAVE' | translate}}</span>
+            </button>
+        </div>
+    </div>
+</div>

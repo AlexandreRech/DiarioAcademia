@@ -1,0 +1,18 @@
+
+<header>
+    <h3 class="text-center text-thin">{{'header.USER_OPTIONS' | translate}}</h3>
+</header>
+<article>
+    <div class="item user-block">
+        <!-- User picture-->
+        <div class="user-block-picture">
+            <div class="user-block-status">
+                <img ng-src="images/avatar_login.png" alt="Avatar" class="img-thumbnail img-circle">
+                <div class="circle circle-success circle-lg"></div>
+            </div>
+        </div>
+    </div>
+    <h4 class="text-thin">{{'entities.USER' | translate}}: {{vm.user.fullName}}</h4>
+    <h4 class="text-thin">ID: {{vm.user.userId}}</h4>
+</article>
+

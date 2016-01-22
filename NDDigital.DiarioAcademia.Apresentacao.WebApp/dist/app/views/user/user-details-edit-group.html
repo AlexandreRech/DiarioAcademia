@@ -1,0 +1,25 @@
+<article>
+
+    <h4 class="text-uppercase">{{'entities.GROUP' | translate}}: {{vm.user.firstName + ' ' + vm.user.lastName }}</h4>
+
+    <h3 ng-show="vm.groups.length <= 0" class="text-center">Não há grupos cadastrados</h3>
+    <br />
+    <div class="col-sm-6 clear-padding">
+        <ndd-group-checkbox array="vm.groups" compare="vm.user.groups" callback="vm.onchange"></ndd-group-checkbox>
+    </div>
+    <div class="col-sm-12">
+        <hr />
+        <button class="btn btn-success" ng-click="vm.modal()"
+                data-toggle="modal" data-target="#modelEditUser" ng-disabled="!vm.hasChange">
+            <i class="fa fa-save"></i>
+            <span>Salvar</span>
+        </button>
+    </div>
+
+
+    <ndd-modal target="modelEditUser" label="{{vm.titleModelEdit}}" callback="vm.saveChanges">
+        {{vm.bodyModelEdit}}
+    </ndd-modal>
+
+    <ndd-confirm-exit controller="vm"><ndd-confirm-exit>
+</article>

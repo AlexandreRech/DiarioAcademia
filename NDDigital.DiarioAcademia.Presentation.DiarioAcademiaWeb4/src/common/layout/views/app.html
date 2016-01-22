@@ -1,0 +1,23 @@
+<!-- top navbar-->
+<header class="topnavbar-wrapper">
+    <navbar toggle-userblock="shell.toggleUserBlock"></navbar>
+</header>
+
+<!-- sidebar-->
+<aside class="aside">
+    <sidebar toggle-userblock="shell.toggleUserBlock" user-blockvisible="shell.userBlockVisible"></sidebar>
+</aside>
+
+<!-- offsidebar-->
+<aside class="offsidebar">
+    <offsidebar></offsidebar>
+</aside>
+
+<!-- Main section-->
+<section class="page-content">
+    <!-- Page content-->
+    <div ui-view="" autoscroll="false" ng-class="app.viewAnimation" class="content-wrapper"></div>
+</section>
+
+<!-- Page footer-->
+<footer ng-include="'/common/layout/views/partials/footer.html'">

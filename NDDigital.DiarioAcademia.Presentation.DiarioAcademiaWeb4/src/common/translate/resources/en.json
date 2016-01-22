@@ -1,0 +1,197 @@
+{
+  "dashboard": {
+    "APP_NAME": "Programmer's Academy",
+    "WELCOME": "Welcome to {{appName}}"
+  },
+  "header": {
+    "LIST_CLASS": "List of Class",
+    "EDIT_CLASS": "Edit Class",
+    "CREATE_CLASS": "Create Class",
+    "REMOVE_CLASS": "Remove Class",
+
+    "LIST_STUDENT": "List of Student",
+    "CREATE_STUDENT": "Create Student",
+    "EDIT_STUDENT": "Edit Student",
+    "REMOVE_STUDENT": "Remove Student",
+
+    "LIST_LESSON": "List of Lesson",
+    "CREATE_LESSON": "Create Lesson",
+
+    "CLASS_REGISTER": "Class Register",
+
+    "LIST_USERS": "List of Users",
+    "CREATE_USERS": "Create Users",
+    "EDIT_USERS": "Edit Users",
+    "EDIT_USERS_GROUP": "Change User groups",
+
+    "LIST_GROUPS": "List of Groups",
+    "CREATE_GROUPS": "Create Group",
+    "EDIT_GROUPS": "Edit Group",
+    "EDIT_GROUPS_AUTHORIZATIONS": "Change Authorizations of Group",
+
+    "LIST_AUTHORIZATIONS": "List of Authorizations",
+
+    "SETTINGS": "Settings",
+    "USER_OPTIONS": "My Account",
+    "LANGUAGE": "Language",
+    "THEMES": "Themes",
+    "LOGIN": "Please login to get started."
+
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Type and hit enter.."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "Welcome",
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "HOME": "Home",
+      "menu": {
+        "MENU": "Menu",
+        "SUBMENU": "Sub Menu"
+      }
+    }
+  },
+  "entities": {
+    "CLASS": "Class",
+    "STUDENT": "Student",
+    "LESSON": "Lesson",
+    "CLASS_REGISTER": "Class Register",
+    "MANAGER": "Manager",
+    "USER": "User",
+    "GROUP": "Group",
+    "AUTHORIZATION": "Authorization"
+  },
+  "action": {
+    "CREATE": "Create",
+    "LIST": "List",
+    "EDIT": "Edit",
+    "SAVE": "Save",
+    "DELETE": "Exclude",
+    "CLEAN": "Clean",
+    "CLEAN_ALL": "Clean All",
+    "SELECT_ALL": "Select All",
+    "CANCEL": "Cancel",
+    "OK": "Ok",
+    "CREATE_CLASS_REGISTER": "Create Class Register !",
+    "REGISTER": "Not Registered ? Join now",
+    "LOGIN": "Login",
+    "MANAGER_AUTHORIZE": "Manage Authorizations"
+
+  },
+  "status": {
+    "CLASS_REGISTER_NOT_CREATE": "Class Register not create !",
+    "CLASS_REGISTER_CREATE": "Class Register saved !",
+    "IS_ADMIN": "It is administrator",
+    "IS_NOT_ADMIN": "It is not an administrator",
+    "SAVED_SUCCESSFUL": "Saved Successfully ! !",
+    "DELETED_SUCCESSFUL": "Deleted Successfully ! !",
+    "UNAVAILABLE_SERVER": "Server Unavailable !",
+    "SUCCESS_REQUEST": "Request Successfully ! !",
+    "STUDENT_FOUNDED": "Student Founded !",
+    "STUDENT_EDITED": "Student Edited",
+    "WELCOME": "Welcome",
+    "SUCCESS": "Success",
+    "ACTION_CANCELED": "Action Canceled",
+    "COMPLETED": "Concluded !",
+    "NOT_AUTHORIZED": "You do not have authorization to access {{ resourceName }}",
+    "NOT_FOUND": "Not Found !!",
+    "NOT_AVAILABLE": "Server is not available !",
+    "UNAUTHORIZED": "Unauthorized Operation! You do not have authorization.",
+    "ERROR_LOGIN": "Login Failed !"
+  },
+  "home": {
+    "MESSAGE_START": "This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.",
+    "MESSAGE_DESCRIPTION": " The seed app doesn't do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples."
+  },
+  "info": {
+    "CHANGE_DISPOSAL": "All unsaved changes were discarded!",
+    "CHANGE_NOT_SAVE": "Changes have been made and not saved. Do you really want out of editing?",
+
+    "CLASS_NOT_DELETED": "Not excluded class",
+    "CLASS_DELETED": "Deleted successfully class",
+    "CLASS_CREATE": "Class registered successfully",
+    "CLASS_NOT_CREATE": "Not registered class",
+    "CLASS_EDITED": "Successfully updated class",
+    "CLASS_NOT_EDITED": "Changes in the class were not saved",
+
+    "STUDENT_NOT_DELETED": "Student not excluded",
+    "STUDENT_DELETED": "Student successfully deleted",
+    "STUDENT_CREATE": "Student successfully included",
+    "STUDENT_NOT_CREATE": "Unregistered student",
+    "STUDENT_EDITED": "Current student successfully",
+    "STUDENT_NOT_EDITED": "Changes in student unsaved",
+
+    "LESSON_NOT_DELETED": "Not excluded class",
+    "LESSON_DELETED": "Deleted successfully lesson",
+    "LESSON_CREATE": "Registered class successfully",
+    "LESSON_NOT_CREATE": "Not registered lesson",
+
+    "CLASS_REGISTER_CREATE": "Class Register Registered Successfully",
+    "CLASS_REGISTER_NOT_CREATE": "Class Register not registered",
+
+    "USER_NOT_DELETED": "User not deleted !",
+    "USER_DELETED": "User successfully deleted !",
+    "USER_CREATE": "Successfully registered User !",
+    "USER_NOT_CREATE": "User not registered !",
+    "USER_EDITED": "User updated successfully !",
+    "USER_NOT_EDITED": "User changes were not saved !",
+
+    "GROUP_NOT_DELETED": "Group not deleted !",
+    "GROUP_DELETED": "Successfully excluded group !",
+    "GROUP_CREATE": "Group successfully registered !",
+    "GROUP_NOT_CREATE": "Group not registered !",
+    "GROUP_EDITED": "Successfully updated group !",
+    "GROUP_NOT_EDITED": "Group changes were not saved !",
+
+    "AUTHORIZATION_NOT_MODIFIED": "Authorization unchanged !",
+    "AUTHORIZATION_MODIFIED": "Authorization modified !"
+
+  },
+  "confirm": {
+    "CONFIRM_ACTION": "Confirm Action",
+    "CONFIRM_DELETE": "Confirm Delete",
+    "CONFIRM_CREATE": "Confirm Register",
+    "CONFIRM_EDIT": "Confirm Edition",
+
+    "CONFIRM_DELETE_CLASS": "Want to remove the class {{classDescription}} ?",
+    "CONFIRM_CREATE_CLASS": "You want to create the class {{classDescription}} ?",
+    "CONFIRM_EDIT_CLASS": "Save changes made to {{classDescription}} ?",
+
+    "CONFIRM_DELETE_STUDENT": "Want to remove the student {{studentName}} ?",
+    "CONFIRM_CREATE_STUDENT": "Want to create the student {{studentName}} ?",
+    "CONFIRM_EDIT_STUDENT": "Save changes made to the student {{studentName}} ?",
+
+    "CONFIRM_DELETE_LESSON": "Want to remove the class {{lessonDate}} ?",
+    "CONFIRM_CREATE_LESSON": "Want to create the class {{lessonDate}} ?",
+
+    "CONFIRM_CREATE_CLASS_REGISTER": "Want to register the call {{dateClassRegister}} ?",
+
+    "CONFIRM_DELETE_USER": "Want to remove the user {{username}} ?",
+    "CONFIRM_CREATE_USER": "Want to create the user {{username}} ?",
+    "CONFIRM_EDIT_USER": "Save changes made to the user {{username}} ?",
+
+    "CONFIRM_DELETE_GROUP": "Want to remove the group {{groupname}} ?",
+    "CONFIRM_CREATE_GROUP": "Want to create the group {{groupname}} ?",
+    "CONFIRM_EDIT_GROUP": "Save changes made to the group {{groupname}} ?",
+
+    "CONFIRM_MODIFY_AUTHORIZATION": "Want to modify the authorizations of the Daily Academy ?"
+  },
+  "filter": {
+    "permission": {
+      "STUDENT": "Student",
+      "CLASS": "Class",
+      "CUSTOM": "Custom",
+      "USER": "User",
+      "CLASS_REGISTER": "Class Register",
+      "LESSON": "Lesson",
+      "GROUP": "Group",
+      "AUTHORIZE": "Authorization"
+    }
+  }
+
+}

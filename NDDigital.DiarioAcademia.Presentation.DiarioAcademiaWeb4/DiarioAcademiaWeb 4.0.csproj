@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E893D4E-D74D-4608-B210-19BF81ADE92D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NDDigital.DiarioAcademia.Presentation.DiarioAcademiaWeb4</RootNamespace>
+    <AssemblyName>NDDigital.DiarioAcademia.Presentation.DiarioAcademiaWeb4</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\common\authentication\authentication.config.js" />
+    <Content Include="src\common\authentication\authentication.module.js" />
+    <Content Include="src\common\authentication\authentication.routes.js" />
+    <Content Include="src\common\authentication\authentication.service.js" />
+    <Content Include="src\common\authentication\authInterceptor.factory.js" />
+    <Content Include="src\common\authentication\controllers\login.controller.js" />
+    <Content Include="src\common\authentication\controllers\signup.controller.js" />
+    <Content Include="src\common\authentication\directives\login.directive.js" />
+    <Content Include="src\common\authentication\directives\signup.directive.js" />
+    <Content Include="src\common\authentication\views\login.html" />
+    <Content Include="src\common\authentication\views\signup.html" />
+    <Content Include="src\common\authorization\authorization.adapter.js" />
+    <Content Include="src\common\authorization\authorization.factory.js" />
+    <Content Include="src\common\authorization\authorization.module.js" />
+    <Content Include="src\common\authorization\authorization.routes.js" />
+    <Content Include="src\common\authorization\authorization.run.js" />
+    <Content Include="src\common\authorization\authoutil.factory.js" />
+    <Content Include="src\common\authorization\controllers\claim-list.controller.js" />
+    <Content Include="src\common\authorization\directives\autho-claims.directive.js" />
+    <Content Include="src\common\authorization\services\authorization.service.js" />
+    <Content Include="src\common\authorization\services\claim.service.js" />
+    <Content Include="src\common\authorization\views\claim-list.html" />
+    <Content Include="src\common\automapper\automapper.factory.js" />
+    <Content Include="src\common\automapper\automapper.module.js" />
+    <Content Include="src\common\cep\cep.module.js" />
+    <Content Include="src\common\cep\cep.service.js" />
+    <Content Include="src\common\changes\changes.factory.js" />
+    <Content Include="src\common\changes\changes.module.js" />
+    <Content Include="src\common\common.module.js" />
+    <Content Include="src\common\core\core.config.js" />
+    <Content Include="src\common\extentions\extentions.module.js" />
+    <Content Include="src\common\layout\layout.constants.js" />
+    <Content Include="src\common\core\core.module.js" />
+    <Content Include="src\common\core\core.run.js" />
+    <Content Include="src\common\extentions\array.js" />
+    <Content Include="src\common\extentions\string.js" />
+    <Content Include="src\common\layout\layout.directive.js" />
+    <Content Include="src\common\layout\layout.module.js" />
+    <Content Include="src\common\layout\layout.routes.js" />
+    <Content Include="src\common\layout\shell.controller.js" />
+    <Content Include="src\common\layout\views\app.html" />
+    <Content Include="src\common\layout\views\home.html" />
+    <Content Include="src\common\layout\views\partials\footer.html" />
+    <Content Include="src\components\navbar\top-navbar.html" />
+    <Content Include="src\common\logger\logger.module.js" />
+    <Content Include="src\common\logger\logger.service.js" />
+    <Content Include="src\common\metadata\metadata.module.js" />
+    <Content Include="src\common\metadata\metadata.service.js" />
+    <Content Include="src\common\ndd-security\ndd-security.directive.js" />
+    <Content Include="src\common\ndd-security\ndd-security.module.js" />
+    <Content Include="src\components\navbar\navbar.controller.js" />
+    <Content Include="src\components\navbar\navbar.directive.js" />
+    <Content Include="src\components\navbar\navbar.module.js" />
+    <Content Include="src\components\offsidebar\offsidebar.controller.js" />
+    <Content Include="src\components\offsidebar\tab.directive.js" />
+    <Content Include="src\components\offsidebar\offsidebar.directive.js" />
+    <Content Include="src\components\offsidebar\offsidebar.module.js" />
+    <Content Include="src\components\preloader\preloader.directive.js" />
+    <Content Include="src\components\preloader\preloader.module.js" />
+    <Content Include="src\common\routes\routes.config.js" />
+    <Content Include="src\common\routes\routes.module.js" />
+    <Content Include="src\common\routes\routes.run.js" />
+    <Content Include="src\common\settings\settings.module.js" />
+    <Content Include="src\common\settings\settings.run.js" />
+    <Content Include="src\common\styles\styles.run.js" />
+    <Content Include="src\common\styles\styles.module.js" />
+    <Content Include="src\common\templatecache\templates.js" />
+    <Content Include="src\common\templates\components\inner-view.html" />
+    <Content Include="src\common\templates\components\user-profile.html" />
+    <Content Include="src\common\translate\translate.config.js" />
+    <Content Include="src\common\translate\translate.constants.js" />
+    <Content Include="src\common\translate\translate.module.js" />
+    <Content Include="src\common\translate\translate-resource.run.js" />
+    <Content Include="src\common\translate\translate.run.js" />
+    <Content Include="src\common\utils\animate-enabled.directive.js" />
+    <Content Include="src\common\utils\browser.service.js" />
+    <Content Include="src\common\utils\clear-storage.directive.js" />
+    <Content Include="src\common\utils\fullscreen.directive.js" />
+    <Content Include="src\common\utils\load-css.directive.js" />
+    <Content Include="src\common\utils\now.directive.js" />
+    <Content Include="src\common\utils\table-checkall.directive.js" />
+    <Content Include="src\common\utils\trigger-resize.directive.js" />
+    <Content Include="src\common\utils\utils.module.js" />
+    <Content Include="src\common\utils\utils.service.js" />
+    <Content Include="src\components\loadingbar\loadingbar.config.js" />
+    <Content Include="src\components\loadingbar\loadingbar.module.js" />
+    <Content Include="src\components\loadingbar\loadingbar.run.js" />
+    <Content Include="src\components\ndd-confirm\ndd-confirm.directive.js" />
+    <Content Include="src\components\ndd-confirm\ndd-confirm.module.js" />
+    <Content Include="src\components\ndd-group-checkbox\ndd-group-checkbox.directive.js" />
+    <Content Include="src\components\ndd-group-checkbox\ndd-group-checkbox.html" />
+    <Content Include="src\components\ndd-group-checkbox\ndd-group-checkbox.module.js" />
+    <Content Include="src\components\ndd-head\ndd-head.directive.js" />
+    <Content Include="src\components\ndd-head\ndd-head.html" />
+    <Content Include="src\components\ndd-head\ndd-head.module.js" />
+    <Content Include="src\components\ndd-modal\ndd-modal.directive.js" />
+    <Content Include="src\components\ndd-modal\ndd-modal.html" />
+    <Content Include="src\components\ndd-modal\ndd-modal.module.js" />
+    <Content Include="src\components\ndd-table\datatable-setup.directive.js" />
+    <Content Include="src\components\ndd-table\ndd-table.directive.js" />
+    <Content Include="src\components\ndd-table\ndd-table.html" />
+    <Content Include="src\components\ndd-table\ndd-table.module.js" />
+    <Content Include="src\components\ndd-toolbar\ndd-toolbar-option.directive.js" />
+    <Content Include="src\components\ndd-toolbar\ndd-toolbar-option.html" />
+    <Content Include="src\components\ndd-toolbar\ndd-toolbar.directive.js" />
+    <Content Include="src\components\ndd-toolbar\ndd-toolbar.html" />
+    <Content Include="src\components\ndd-toolbar\ndd-toolbar.module.js" />
+    <Content Include="src\components\sidebar\sidebar.controller.js" />
+    <Content Include="src\components\sidebar\sidebar.directive.js" />
+    <Content Include="src\components\sidebar\sidebar.module.js" />
+    <Content Include="src\components\sidebar\sidebar.service.js" />
+    <Content Include="src\components\offsidebar\views\offsidebar-tab1-config.html" />
+    <Content Include="src\components\offsidebar\views\offsidebar-tab2-config.html" />
+    <Content Include="src\components\offsidebar\views\offsidebar.html" />
+    <Content Include="src\components\sidebar\views\sidebar.html" />
+    <Content Include="src\features\aluno\aluno.adapter.js" />
+    <Content Include="src\features\aluno\aluno.module.js" />
+    <Content Include="src\features\aluno\aluno.routes.js" />
+    <Content Include="src\features\aluno\aluno.service.js" />
+    <Content Include="src\features\aluno\controllers\aluno-create.controller.js" />
+    <Content Include="src\features\aluno\controllers\aluno-details.controller.js" />
+    <Content Include="src\features\aluno\controllers\aluno-list.controller.js" />
+    <Content Include="src\features\aluno\directives\aluno-create.directive.js" />
+    <Content Include="src\features\aluno\directives\aluno-details.directive.js" />
+    <Content Include="src\features\aluno\directives\aluno-list.directive.js" />
+    <Content Include="src\features\aluno\views\aluno-create.html" />
+    <Content Include="src\features\aluno\views\aluno-details.html" />
+    <Content Include="src\features\aluno\views\aluno-list.html" />
+    <Content Include="src\features\aula\aula.module.js" />
+    <Content Include="src\features\aula\aula.routes.js" />
+    <Content Include="src\features\aula\aula.service.js" />
+    <Content Include="src\features\aula\controllers\aula-create.controller.js" />
+    <Content Include="src\features\aula\controllers\aula-list.controller.js" />
+    <Content Include="src\features\aula\directives\aula-create.directive.js" />
+    <Content Include="src\features\aula\directives\aula-list.directive.js" />
+    <Content Include="src\features\aula\views\aula-create.html" />
+    <Content Include="src\features\aula\views\aula-list.html" />
+    <Content Include="src\features\chamada\chamada.adapter.js" />
+    <Content Include="src\features\chamada\chamada.controller.js" />
+    <Content Include="src\features\chamada\views\chamada.html" />
+    <Content Include="src\features\chamada\chamada.module.js" />
+    <Content Include="src\features\chamada\chamada.routes.js" />
+    <Content Include="src\features\chamada\chamada.service.js" />
+    <Content Include="src\features\chamada\directives\chamada.directive.js" />
+    <Content Include="src\features\group\controllers\group-create.controller.js" />
+    <Content Include="src\features\group\controllers\group-edit.controller.js" />
+    <Content Include="src\features\group\controllers\group-list.controller.js" />
+    <Content Include="src\features\group\controllers\group-edit-permission.controller.js" />
+    <Content Include="src\features\group\directives\group-create.directive.js" />
+    <Content Include="src\features\group\directives\group-edit.directive.js" />
+    <Content Include="src\features\group\directives\group-edit-permission.directive.js" />
+    <Content Include="src\features\group\directives\group-list.directive.js" />
+    <Content Include="src\features\group\group.module.js" />
+    <Content Include="src\features\group\group.routes.js" />
+    <Content Include="src\features\group\group.service.js" />
+    <Content Include="src\features\group\views\group-create.html" />
+    <Content Include="src\features\group\views\group-edit.html" />
+    <Content Include="src\features\group\views\group-list.html" />
+    <Content Include="src\features\group\views\group-edit-permission.html" />
+    <Content Include="src\features\turma\controllers\turma-create.controller.js" />
+    <Content Include="src\features\turma\controllers\turma-details.controller.js" />
+    <Content Include="src\features\turma\controllers\turma-list.controller.js" />
+    <Content Include="src\features\turma\directives\turma-create.directive.js" />
+    <Content Include="src\features\turma\directives\turma-details.directive.js" />
+    <Content Include="src\features\turma\directives\turma-list.directive.js" />
+    <Content Include="src\features\turma\turma.module.js" />
+    <Content Include="src\features\turma\turma.routes.js" />
+    <Content Include="src\features\turma\turma.service.js" />
+    <Content Include="src\features\turma\views\turma-create.html" />
+    <Content Include="src\features\turma\views\turma-details.html" />
+    <Content Include="src\features\turma\views\turma-list.html" />
+    <Content Include="src\features\user\controllers\user-edit-group.controller.js" />
+    <Content Include="src\features\user\controllers\user-details.controller.js" />
+    <Content Include="src\features\user\controllers\user-list.controller.js" />
+    <Content Include="src\features\user\directives\user-groupedit.directive.js" />
+    <Content Include="src\features\user\directives\user-details.directive.js" />
+    <Content Include="src\features\user\directives\user-list.directive.js" />
+    <Content Include="src\features\user\user.module.js" />
+    <Content Include="src\features\user\user.routes.js" />
+    <Content Include="src\features\user\user.service.js" />
+    <Content Include="src\features\user\views\user-edit-group.html" />
+    <Content Include="src\features\user\views\user-details.html" />
+    <Content Include="src\features\user\views\user-list.html" />
+    <Content Include="src\images\avatar_login.png" />
+    <Content Include="src\images\language\en-active.png" />
+    <Content Include="src\images\language\en-active2.png" />
+    <Content Include="src\images\language\en.png" />
+    <Content Include="src\images\language\en2.png" />
+    <Content Include="src\images\language\es-active.png" />
+    <Content Include="src\images\language\es.png" />
+    <Content Include="src\images\language\pt-active.png" />
+    <Content Include="src\images\language\pt.png" />
+    <Content Include="src\images\logo-single.svg" />
+    <Content Include="src\images\logo.svg" />
+    <Content Include="src\images\preloader\preloader.empty.png" />
+    <Content Include="src\images\preloader\preloader.empty_.png" />
+    <Content Include="src\images\preloader\preloader.full.png" />
+    <Content Include="src\images\preloader\preloader.full_.png" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="src\common\authorization\claims.json" />
+    <Content Include="src\common\translate\resources\en.json" />
+    <Content Include="src\common\translate\resources\es.json" />
+    <Content Include="src\common\translate\resources\pt.json" />
+    <Content Include="src\components\sidebar\sidebar-menu.json" />
+    <Content Include="src\stylesheets\app.scss" />
+    <Content Include="src\stylesheets\base\bootstrap-reset.scss" />
+    <Content Include="src\stylesheets\base\media-queries.scss" />
+    <Content Include="src\stylesheets\base\typo.scss" />
+    <Content Include="src\stylesheets\base\utils-definitions.scss" />
+    <Content Include="src\stylesheets\base\utils.scss" />
+    <Content Include="src\stylesheets\base\variables.scss" />
+    <Content Include="src\stylesheets\component\circles.scss" />
+    <Content Include="src\stylesheets\component\color-settings.scss" />
+    <Content Include="src\stylesheets\component\input.scss" />
+    <Content Include="src\stylesheets\component\jumbotron.scss" />
+    <Content Include="src\stylesheets\component\language-button.scss" />
+    <Content Include="src\stylesheets\component\loading-bar.scss" />
+    <Content Include="src\stylesheets\component\panels.scss" />
+    <Content Include="src\stylesheets\component\preloader.scss" />
+    <Content Include="src\stylesheets\component\progress-extra.scss" />
+    <Content Include="src\stylesheets\component\switcher.scss" />
+    <Content Include="src\stylesheets\component\table\datatable.scss" />
+    <Content Include="src\stylesheets\component\table\table-extras.scss" />
+    <Content Include="src\stylesheets\component\table\table.scss" />
+    <Content Include="src\stylesheets\component\user-block.scss" />
+    <Content Include="src\stylesheets\layout\grid-system.scss" />
+    <Content Include="src\stylesheets\layout\layout-animation.scss" />
+    <Content Include="src\stylesheets\layout\layout-app.scss" />
+    <Content Include="src\stylesheets\layout\layout.scss" />
+    <Content Include="src\stylesheets\layout\offsidebar.scss" />
+    <Content Include="src\stylesheets\layout\sidebar.scss" />
+    <Content Include="src\stylesheets\layout\top-navbar.scss" />
+    <Content Include="src\stylesheets\libs.scss" />
+    <Content Include="src\stylesheets\theme\theme-a.scss" />
+    <Content Include="src\stylesheets\theme\theme-b.scss" />
+    <Content Include="src\stylesheets\theme\theme-c.scss" />
+    <Content Include="src\stylesheets\theme\theme-d.scss" />
+    <Content Include="src\stylesheets\theme\theme-e.scss" />
+    <Content Include="src\stylesheets\theme\theme-f.scss" />
+    <Content Include="src\stylesheets\theme\theme-g.scss" />
+    <Content Include="src\stylesheets\theme\theme-h.scss" />
+    <Content Include="src\app.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\index.js" />
+    <Content Include="src\index.html" />
+    <Content Include="bundle.js" />
+    <Content Include="config\webpack.config.production.js" />
+    <Content Include="config\webpack.config.development.js" />
+    <Content Include="config\webpack.make-config.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dist\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21596</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:21596/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

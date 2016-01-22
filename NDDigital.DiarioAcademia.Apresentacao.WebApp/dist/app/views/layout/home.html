@@ -1,0 +1,100 @@
+
+<div class="header-login">
+    <div class="content-head">
+        <img ng-src="app/images/logo_gray.png">
+        <a href="http:\\ndd.com.br" target="_blank">NDDIGITAL</a>
+        <a href="https://services.nddprint.com" target="_blank">NDDPRINT</a>
+        <span>
+            <small>Selecione seu idioma: </small>
+            <button ng-repeat="(key, value) in language.available" class="text-uppercase"
+                    ng-class="{active: language.selected == value}" ng-click="language.set(key)">
+                {{key}}
+            </button>
+        </span>
+    </div>
+</div>
+
+<div class="section-login">
+    <div class="card card-container">
+        <div class="container-img">
+            <img id="profile-img" class="profile-img-card" src="app/images/login.jpg" />
+            <div class="footer-icon-img">
+                <img src="app/images/logo-single.png" alt="" />
+            </div>
+            <div class="footer-img">
+                <span>{{'dashboard.APP_NAME' | translate}}</span>
+            </div>
+        </div>
+        <div class="container-form">
+            <form class="form-signin" name="login">
+                <span class="reauth-email"></span>
+
+                <label for="inputEmail">Login: </label>
+                <input type="text" name="inputEmail" placeholder="Username" required autofocus ng-model="vm.loginData.userName">
+
+
+                <label for="inputPassword">Senha: </label>
+                <input type="password" name="inputPassword" placeholder="Password" required ng-model="vm.loginData.password">
+
+                <button class="btn btn-default btn-login" type="submit" ng-click="login.$valid ? vm.login(): false">
+                    {{('action.LOGIN' | translate)}}
+                </button>
+            </form>
+        </div>
+        <div class="footer-form">
+            <span class="pull-right">
+                <a id="signup" data-toggle="popover" title="header.SIGNUP" ndd-popover="signup.html" href="#/home"> {{'action.SIGNUP' | translate}} </a>
+            </span>
+            <span class="pull-left description text-uppercase">
+                {{'home.TITLE' | translate}}
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="login-footer">
+    <div class="container-icon-group">
+        <div class="container-icon">
+            <div class="login_icon">
+                <i class="fa fa-graduation-cap"></i>
+            </div>
+            <span>{{'home.subtitles.STUDENT' | translate}}</span>
+        </div>
+        <div class="container-icon">
+            <div class="login_icon">
+                <i class="fa fa-university"></i>
+            </div>
+            <span>{{'home.subtitles.CLASS' | translate}}</span>
+        </div>
+        <div class="container-icon">
+            <div class="login_icon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <span>{{'home.subtitles.LESSON' | translate}}</span>
+        </div>
+        <div class="container-icon">
+            <div class="login_icon">
+                <i class="fa fa-check"></i>
+            </div>
+            <span>{{'home.subtitles.CLASS_REGISTER' | translate}}</span>
+        </div>
+    </div>
+    <span class="pull-right"> © {{shell.year}} NDDigital</span>
+</div>
+
+<!--Popover html-->
+<script type="text/ng-template" id="signup.html">
+    <form name="vm.aulaForm" class="text-right" ng-controller="homeController as vm">
+        <input type="text" class="form-control" placeholder="First Name" data-ng-model="vm.registration.firstName" required autofocus><br />
+        <input type="text" class="form-control" placeholder="Last Name" data-ng-model="vm.registration.lastName" required><br />
+        <input type="text" class="form-control" placeholder="Username" data-ng-model="vm.registration.userName" required><br />
+        <input type="email" class="form-control" placeholder="Email" data-ng-model="vm.registration.email" required><br />
+        <input type="password" class="form-control" placeholder="Password" data-ng-model="vm.registration.password" required><br />
+        <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="vm.registration.confirmPassword" required><br />
+        <button class="btn btn-info " type="submit" data-ng-click="vm.signUp()">{{'action.OK'| translate}}</button>
+        <br />
+        <div class="text-left" data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+            {{vm.message}}
+        </div>
+    </form>
+</script>

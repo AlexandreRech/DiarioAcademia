@@ -1,0 +1,29 @@
+<section class="layout-details">
+    <header class="header-details row">
+        <div class="logo-container col-xs-1 clear-padding">
+            <div class="logo">
+                <i class="fa fa-users"></i>
+            </div>
+        </div>
+        <div class="col-xs-11 clear-padding">
+            <h3 class="text-capitalize">{{vm.name}}</h3>
+            <div class="info">
+                <span class="msgAllPermission">
+                    <img src="/app/images/icons/user.svg"  ng-show="vm.group.isAdmin" />
+
+                    <i class="fa fa-exclamation-triangle" ng-show="!vm.group.isAdmin"></i>
+                    {{vm.group.isAdmin ? ('status.IS_ADMIN' | translate) : ('status.IS_NOT_ADMIN' | translate)}}
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="options">
+        <a ui-sref="app.group.details.summary({groupId: vm.group.id})"  ng-class="{'active': state.contains('summary')}">RESUMO</a>
+
+        <a href="" ng-click="vm.editPermission()" ng-dblclick="vm.group.isAdmin" ndd-security="app.group.details.authoedit"
+           ng-class="{'disabled-op': vm.group.isAdmin, 'active': state.contains('authoedit')}">{{'entities.AUTHORIZATION' | translate | uppercase}}</a>
+    </div>
+    <article>
+        <div ui-view></div>
+    </article>
+</section>

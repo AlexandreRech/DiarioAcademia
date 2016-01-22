@@ -1,0 +1,6 @@
+<ndd-toolbar cb-properties="vm.edit" security-properties="app.turma.details"
+             cb-remove="vm.remove" security-remove="action.deleteTurma"
+             state-new="app.turma.create"></ndd-toolbar>
+
+
+<ndd-table columns="['TURMA']" attrs="['descricao']" data="vm.turmas" cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>

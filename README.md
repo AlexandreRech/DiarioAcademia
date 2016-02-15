@@ -1,5 +1,7 @@
+<br/>
+<img src="http://tisc.com.br/wp-content/uploads/nddigital.png">
 
-# DiarioAcademia
+#DiarioAcademia
 
 Para executar este projeto em seu potencial é necessário ter um servidor Node rodando na máquina.
 

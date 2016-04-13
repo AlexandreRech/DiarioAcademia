@@ -1,4 +1,4 @@
-﻿<ndd-toolbar state-new="app.aula.create" cb-remove="vm.delete"></ndd-toolbar>
+﻿<ndd-toolbar state-new="app.aula.create" security-new="aula_create" cb-remove="vm.delete"></ndd-toolbar>
 
 <ndd-table columns="['DATA DA AULA', 'TURMA']" attrs="['dataAula', 'anoTurma']" data="vm.aulas" 
            cb-click="vm.onClick" ng-model="filterToolbar"></ndd-table>

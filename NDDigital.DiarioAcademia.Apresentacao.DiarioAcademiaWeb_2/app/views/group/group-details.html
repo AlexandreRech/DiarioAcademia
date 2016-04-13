@@ -20,7 +20,7 @@
     <div class="options">
         <a ui-sref="app.group.details.summary({groupId: vm.group.id})"  ng-class="{'active': state.contains('summary')}">RESUMO</a>
 
-        <a href="" ng-click="vm.editPermission()" ng-dblclick="vm.group.isAdmin" ndd-security="app.group.details.authoedit"
+        <a href="" ng-click="vm.editPermission()" ng-dblclick="vm.group.isAdmin" ndd-security="group_authoedit"
            ng-class="{'disabled-op': vm.group.isAdmin, 'active': state.contains('authoedit')}">{{'entities.AUTHORIZATION' | translate | uppercase}}</a>
     </div>
     <article>

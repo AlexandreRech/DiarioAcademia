@@ -33,7 +33,7 @@
                 return false;
             if (authorization.isAdmin)
                 return true;
-            if (namePermission == "app.homeapp")
+            if (namePermission == "app.homeapp" || namePermission == "home")
                 return true;
             return authoUtilFactory.containsByName(authorization.claims, namePermission);
         }

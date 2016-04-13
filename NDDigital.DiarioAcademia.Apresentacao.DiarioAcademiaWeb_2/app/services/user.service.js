@@ -13,7 +13,7 @@
 		var self = this;
 
 		var serviceUrl = baseUrl + "api/accounts/";
-		var serviceAuthenticationUrl = baseUrl + "api/authentication/";
+		var serviceAuthenticationUrl = baseUrl + "api/authorization/";
 
 		//public methods
 		self.getUsers = function () {

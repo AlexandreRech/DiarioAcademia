@@ -1,5 +1,5 @@
-﻿<ndd-toolbar cb-properties="vm.edit" security-properties="app.aluno.details"
-             cb-remove="vm.remove" security-remove="action.deleteAluno"
+﻿<ndd-toolbar cb-properties="vm.edit" security-properties="aluno_edit"
+             cb-remove="vm.remove" security-remove="action.deleteAluno" security-new="aluno_create"
              state-new="app.aluno.create"></ndd-toolbar>
 
 <ndd-table columns="['ALUNOS', 'PRESENÇAS', 'FALTAS']" attrs="['nome', 'presencas', 'faltas']" data="vm.alunos" 

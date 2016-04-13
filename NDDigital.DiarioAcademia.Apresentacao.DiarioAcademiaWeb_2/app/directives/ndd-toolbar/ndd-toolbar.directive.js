@@ -20,7 +20,8 @@
                 cbNew: "=",
                 stateNew: "@",
                 securityProperties: "@",
-                securityRemove: "@"
+                securityRemove: "@",
+                securityNew: "@"
             },
             templateUrl: 'app/directives/ndd-toolbar/ndd-toolbar.html'
         };

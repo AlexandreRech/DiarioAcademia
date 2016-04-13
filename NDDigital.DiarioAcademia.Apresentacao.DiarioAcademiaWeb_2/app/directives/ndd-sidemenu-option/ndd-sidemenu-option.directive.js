@@ -20,7 +20,8 @@
                 route: "@",
                 name: "@",
                 state: "@",
-                icon: "@"
+                icon: "@",
+                security: "="
             },
             templateUrl: 'app/directives/ndd-sidemenu-option/ndd-sidemenu-option.html'
         };

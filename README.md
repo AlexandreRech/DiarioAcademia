@@ -1,9 +1,9 @@
 <br/>
 <img src="http://tisc.com.br/wp-content/uploads/nddigital.png">
 
-#DiarioAcademia
+# DiarioAcademia
 
-Para executar este projeto em seu potencial é necessário ter um servidor Node rodando na máquina.
+Projeto de exemplo para a construção de portais web. ** Perceba que este é um projeto Legado **.
 
 #### Dependencias
 Todas as dependencias podem ser opcionalmente instaladas através do [Chocolatey](https://chocolatey.org/).

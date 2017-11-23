@@ -3,7 +3,7 @@
 
 # DiarioAcademia
 
-Projeto de exemplo para a construção de portais web. ** Perceba que este é um projeto Legado **.
+Projeto de exemplo para a construção de portais web. **Perceba que este é um projeto Legado**.
 
 #### Dependencias
 Todas as dependencias podem ser opcionalmente instaladas através do [Chocolatey](https://chocolatey.org/).
